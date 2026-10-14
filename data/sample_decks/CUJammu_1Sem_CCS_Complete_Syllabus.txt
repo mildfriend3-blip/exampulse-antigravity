@@ -1,0 +1,63 @@
+CENTRAL UNIVERSITY OF JAMMU
+School of Engineering & Technology
+Department of Computer Science & Information Technology
+CURRICULUM & SYLLABUS: B.Tech CSE (Cyber Security) - SEMESTER I [1 SEM CCS]
+Academic Session 2026
+
+================================================================================
+SUBJECT 1: [CSE-101] Programming for Problem Solving in C (Credits: 4)
+--------------------------------------------------------------------------------
+Unit 1: Fundamentals of Computing & C Basics
+- Architecture of a digital computer, compilers, interpreters, algorithms, flowcharts
+- C tokens, keywords, data types, operators, operator precedence, typecasting
+Unit 2: Control Structures & Iteration
+- Conditional branching: if-else, nested if, switch-case
+- Looping structures: while, do-while, for loops, break, continue, goto
+Unit 3: Arrays, Strings & Modular Programming
+- 1D and 2D arrays, matrix arithmetic, character arrays and string library functions (strlen, strcpy, strcmp)
+- Functions: function declaration, parameter passing (call by value vs call by reference), recursion
+Unit 4: Pointers & Dynamic Memory Allocation
+- Pointer arithmetic, pointers to pointers, arrays of pointers
+- Dynamic memory management: malloc(), calloc(), realloc(), free()
+- Common pointer bugs: Dangling pointers, memory leaks, buffer overflows
+Unit 5: Structures, Unions & File I/O
+- User-defined data types: struct, union, enum, typedef
+- Sequential and random file handling: fopen, fclose, fprintf, fscanf, fread, fwrite, fseek
+
+================================================================================
+SUBJECT 2: [ENG-101] Engineering Mathematics - I (Credits: 4)
+--------------------------------------------------------------------------------
+Unit 1: Linear Algebra & Matrices
+- Rank of matrix, Echelon form, Normal form, Consistency of linear systems AX = B
+Unit 2: Eigenvalues & Cayley-Hamilton Theorem
+- Characteristic equation, Eigenvalues and Eigenvectors, Properties of eigenvalues
+- Cayley-Hamilton theorem, computation of matrix inverse and matrix powers, Diagonalization
+Unit 3: Differential Calculus
+- Rolle's Theorem, Lagrange's Mean Value Theorem, Cauchy's Mean Value Theorem
+- Taylor's and Maclaurin's series expansions, Indeterminate forms and L'Hopital's rule
+Unit 4: Multivariable Calculus
+- Partial derivatives, Euler's Theorem on Homogeneous Functions, Jacobians, Maxima and Minima
+Unit 5: Multiple Integrals & Special Functions
+- Double and triple integrals, change of order of integration, Beta and Gamma functions
+
+================================================================================
+SUBJECT 3: [ECE-101] Basic Electrical & Electronics Engineering (Credits: 4)
+--------------------------------------------------------------------------------
+Unit 1: DC Circuit Analysis (Ohm's Law, KCL, KVL, Thevenin, Norton, Superposition)
+Unit 2: AC Fundamentals (Sinusoidal waveforms, phasor representation, RLC series and parallel)
+Unit 3: Transformers & Electrical Machines Basics
+Unit 4: Semiconductor Physics (PN junction diode, V-I characteristics, rectifiers, Zener diode regulator)
+Unit 5: Transistors & Digital Electronics (BJT CE configuration, Logic gates: AND, OR, NOT, NAND, NOR)
+
+================================================================================
+SUBJECT 4: [CYB-101] Introduction to Digital Systems & Cyber Hygiene (Credits: 3)
+--------------------------------------------------------------------------------
+Unit 1: Number Systems & Boolean Algebra (Binary, Octal, Hexadecimal, 2's complement, De Morgan's)
+Unit 2: Universal Logic Gates & Combinational Circuits (Half adder, Full adder, Multiplexers)
+Unit 3: CIA Triad & Information Assurance Fundamentals
+Unit 4: Password Security, Multi-Factor Authentication (MFA), Phishing & Social Engineering
+Unit 5: Cyber Ethics, IT Code of Conduct, Safe Computing Guidelines
+
+Evaluation Scheme:
+- Continuous Assessment / Minor Tests: 30 Marks
+- University End-Semester Examination: 70 Marks (3 Hours Duration)

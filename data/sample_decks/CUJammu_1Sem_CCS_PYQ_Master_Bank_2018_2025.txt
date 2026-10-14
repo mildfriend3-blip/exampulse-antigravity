@@ -1,0 +1,49 @@
+CENTRAL UNIVERSITY OF JAMMU - B.TECH CSE (CYBER SECURITY)
+FOLDER: "1 sem ccs" - MASTER PREVIOUS YEAR QUESTIONS (PYQs) 2018 - 2025
+
+================================================================================
+SUBJECT: CSE-101 PROGRAMMING FOR PROBLEM SOLVING IN C
+================================================================================
+SECTION A (2 MARKS COMPULSORY):
+1. Differentiate between compiler and interpreter. Which one does standard C use? [Appeared: 2024, 2022, 2020]
+2. What is a Dangling Pointer in C and how do you prevent Use-After-Free bugs? [Appeared: 2024, 2023, 2021]
+3. Explain the difference between malloc() and calloc() memory functions. [Appeared: 2023, 2021, 2019]
+4. What is the output of printf("%d", sizeof('A')) in standard C? Explain. [Appeared: 2022, 2020]
+5. Differentiate between structure and union regarding memory allocation. [Appeared: 2024, 2021]
+
+SECTION B (5 MARKS CONCEPTUAL):
+6. Explain Call by Value versus Call by Reference in C. Write a C function using pointers to swap two numbers. [Appeared: 2023, 2021, 2019]
+7. Explain dynamic memory allocation. Write a C program to allocate an array of N integers dynamically, find the maximum, and free memory. [Appeared: 2024, 2022]
+8. Describe recursion. Trace the recursive execution stack for calculating the factorial of 5. [Appeared: 2023, 2020]
+
+SECTION C (10 MARKS LONG & SYSTEM DESIGN):
+9. (a) Write a complete C program to dynamically allocate a 2D matrix of M x N using pointer to pointer (int**), populate values, compute transpose, and deallocate memory safely without memory leaks. [10M] [Appeared: 2024, 2022, 2019]
+   -- OR --
+   (b) Explain File I/O in C. Write a program to maintain a student record system using an array of structures written to and read from a binary file using fread() and fwrite(). [10M]
+
+================================================================================
+SUBJECT: ENG-101 ENGINEERING MATHEMATICS - I
+================================================================================
+SECTION A (2 MARKS):
+10. State the Cayley-Hamilton Theorem and write its use in matrix power computation. [Appeared: 2024, 2023, 2022]
+11. Define Rank of a Matrix. What is the rank of an identity matrix of order 4? [Appeared: 2023, 2021]
+12. State Euler's theorem on homogeneous functions of degree n. [Appeared: 2024, 2022]
+
+SECTION B (5 MARKS):
+13. Verify Cayley-Hamilton Theorem for matrix A = [[1, 2], [3, 4]] and hence compute A^-1. [Appeared: 2024, 2021]
+14. If u = log((x^4 + y^4)/(x + y)), prove using Euler's theorem that x(du/dx) + y(du/dy) = 3. [Appeared: 2023, 2020]
+
+SECTION C (10 MARKS):
+15. Find the eigenvalues and eigenvectors of matrix A = [[2, 1, 1], [1, 2, 1], [0, 0, 1]]. Diagonalize the matrix. [10M] [Appeared: 2024, 2021, 2018]
+
+================================================================================
+SUBJECT: CYB-101 DIGITAL SYSTEMS & CYBER HYGIENE
+================================================================================
+SECTION A (2 MARKS):
+16. Prove that NAND is a universal logic gate by constructing AND, OR, and NOT gates using NAND only. [Appeared: 2024, 2022]
+17. Define the CIA Triad in information security with real examples. [Appeared: 2024, 2023]
+18. Convert (1101101.11)_2 to decimal and hexadecimal representations. [Appeared: 2023, 2021]
+
+SECTION B & C (5M & 10M):
+19. Explain Multi-Factor Authentication (MFA). Differentiate the three authentication factors. [Appeared: 2024, 2022]
+20. Design a 4-to-1 Multiplexer using basic logic gates and explain its truth table. [Appeared: 2023, 2021]

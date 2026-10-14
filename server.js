@@ -315,6 +315,32 @@ app.post('/api/drive/export', (req, res) => {
   }
 });
 
+// Dedicated "1 sem ccs" Google Drive Folder endpoints
+app.get('/api/drive/folder/1-sem-ccs', (req, res) => {
+  try {
+    const files = googleDrive.getDriveFiles({ folder: '1_sem_ccs' });
+    res.json({
+      success: true,
+      folder: googleDrive.folder1SemCcs,
+      totalFiles: files.length,
+      files
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+app.post('/api/drive/folder/1-sem-ccs/load-pack', (req, res) => {
+  try {
+    const { subjectCode } = req.body;
+    const result = googleDrive.load1SemCcsPack(subjectCode || 'CSE-101');
+    res.json(result);
+  } catch (err) {
+    console.error('Error loading 1 sem ccs pack:', err);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
 // -----------------------------------------------------------------------------
 // 4. AI NOTES & EXAM GENERATOR ENDPOINTS
 // -----------------------------------------------------------------------------

@@ -216,18 +216,35 @@
 
       <!-- Drive Search & Filters -->
       <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
-        <div class="sm:col-span-8">
-          <input type="text" id="drive-search-input" oninput="loadDriveFiles()" placeholder="Search presentations &amp; syllabi in Drive (e.g. AES, Deadlocks, Forensics, RSA)..." class="w-full bg-slate-900/80 border border-slate-700 text-xs rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-mono">
+        <div class="sm:col-span-7">
+          <input type="text" id="drive-search-input" oninput="loadDriveFiles()" placeholder="Search in '1 sem ccs' or other folders (e.g. C Pointers, Math, Gates, Deadlocks)..." class="w-full bg-slate-900/80 border border-slate-700 text-xs rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-mono">
         </div>
-        <div class="sm:col-span-4">
+        <div class="sm:col-span-5">
           <select id="drive-sem-filter" onchange="loadDriveFiles()" class="w-full bg-slate-900/80 border border-slate-700 text-xs rounded-xl px-3 py-2.5 text-white font-mono focus:outline-none focus:border-emerald-500">
-            <option value="all">All Semesters</option>
+            <option value="1_sem_ccs" selected>📁 Folder: 1 sem ccs (All Sem 1 Subjects &amp; PYQs)</option>
+            <option value="all">All Drive Folders &amp; Files</option>
             <option value="4">Semester 4 (OS &amp; Security)</option>
-            <option value="5" selected>Semester 5 (Cryptography)</option>
+            <option value="5">Semester 5 (Cryptography)</option>
             <option value="6">Semester 6 (Digital Forensics)</option>
             <option value="7">Semester 7 (Ethical Hacking)</option>
           </select>
         </div>
+      </div>
+
+      <!-- Folder Breadcrumbs & Spotlight for 1 sem ccs -->
+      <div class="p-3 rounded-xl bg-slate-900/90 border border-emerald-500/40 flex flex-wrap items-center justify-between gap-2 shadow-inner">
+        <div class="flex items-center space-x-2 text-xs font-mono">
+          <span class="text-slate-400">Location:</span>
+          <span class="text-slate-300">My Drive</span>
+          <span class="text-slate-600">/</span>
+          <span class="text-slate-300">CUJammu</span>
+          <span class="text-slate-600">/</span>
+          <span class="text-emerald-400 font-bold bg-emerald-500/15 px-2 py-0.5 rounded border border-emerald-500/40">1 sem ccs</span>
+          <span class="text-[10px] text-slate-400 font-normal">(5 Subjects • 8 Decks &amp; Solved PYQs)</span>
+        </div>
+        <button onclick="load1SemCcsPack()" class="px-3 py-1 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-mono font-bold text-xs flex items-center space-x-1 transition-all">
+          <span>⚡ Import Complete '1 sem ccs' Pack</span>
+        </button>
       </div>
 
       <!-- Drive File List (Scrollable) -->
@@ -286,31 +303,54 @@
         </div>
       </div>
 
-      <!-- Google Drive Cloud Status Banner -->
-      <div class="glassmorphic rounded-2xl p-4 border border-emerald-500/35 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-[0_0_25px_rgba(16,185,129,0.1)]">
-        <div class="flex items-center space-x-3.5">
-          <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shrink-0">
-            <svg class="w-6 h-6" viewBox="0 0 24 24">
-              <path fill="#4285F4" d="M12.01 1.5l-8.5 14.72 4.25 7.36 8.5-14.72z"/>
-              <path fill="#34A853" d="M20.51 16.22l-4.25 7.36h-8.5l4.25-7.36z"/>
-              <path fill="#FBBC05" d="M12.01 1.5l4.25 7.36-8.5 14.72-4.25-7.36z"/>
-            </svg>
-          </div>
-          <div>
-            <div class="flex items-center space-x-2">
-              <span class="text-xs font-mono font-bold text-white">Google Drive Connected:</span>
-              <span id="drive-user-email" class="text-xs font-mono font-bold text-emerald-400">rahul.sharma@cujammu.ac.in</span>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-semibold">Active Sync</span>
+      <!-- Google Drive Cloud Status Banner & Folder "1 sem ccs" Spotlight -->
+      <div class="glassmorphic rounded-2xl p-5 border border-emerald-500/40 space-y-4 shadow-[0_0_25px_rgba(16,185,129,0.15)]">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <div class="flex items-center space-x-3.5">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shrink-0">
+              <svg class="w-6 h-6" viewBox="0 0 24 24">
+                <path fill="#4285F4" d="M12.01 1.5l-8.5 14.72 4.25 7.36 8.5-14.72z"/>
+                <path fill="#34A853" d="M20.51 16.22l-4.25 7.36h-8.5l4.25-7.36z"/>
+                <path fill="#FBBC05" d="M12.01 1.5l4.25 7.36-8.5 14.72-4.25-7.36z"/>
+              </svg>
             </div>
-            <p class="text-[11px] text-slate-400 font-mono">CUJammu Institutional Shared Drive • <span class="text-emerald-300 font-semibold">7 Curated PPTX Presentations &amp; Syllabi Ready to Import</span></p>
+            <div>
+              <div class="flex items-center space-x-2">
+                <span class="text-xs font-mono font-bold text-white">Google Drive Connected:</span>
+                <span id="drive-user-email" class="text-xs font-mono font-bold text-emerald-400">rahul.sharma@cujammu.ac.in</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-semibold">Active Sync</span>
+              </div>
+              <p class="text-[11px] text-slate-400 font-mono">CUJammu Institutional Shared Drive • <span class="text-emerald-300 font-semibold">Folder: "1 sem ccs" Connected (All Study Materials &amp; PYQs)</span></p>
+            </div>
+          </div>
+          <div class="flex items-center space-x-2">
+            <button onclick="toggleDriveModal()" class="px-3.5 py-1.5 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/50 text-emerald-300 font-mono text-xs font-bold flex items-center space-x-1.5 transition-all">
+              <span>🔍 Browse "1 sem ccs"</span>
+            </button>
+            <button onclick="connectNewDriveAccount()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-mono text-xs">
+              Switch Drive
+            </button>
           </div>
         </div>
-        <div class="flex items-center space-x-2">
-          <button onclick="toggleDriveModal()" class="px-3.5 py-1.5 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/50 text-emerald-300 font-mono text-xs font-bold flex items-center space-x-1.5 transition-all">
-            <span>🔍 Browse Drive Files</span>
-          </button>
-          <button onclick="connectNewDriveAccount()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-mono text-xs">
-            Switch Drive
+
+        <!-- 1 sem ccs One-Click Feature Card -->
+        <div class="p-4 rounded-xl bg-gradient-to-r from-emerald-950/50 via-slate-900/80 to-emerald-950/50 border border-emerald-500/30 flex flex-col md:flex-row md:items-center justify-between gap-3 shadow-inner">
+          <div class="flex items-center space-x-3.5">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+              📁
+            </div>
+            <div>
+              <div class="flex items-center space-x-2">
+                <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Folder: 1 sem ccs</h4>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">ALL SUBJECTS + PYQS</span>
+              </div>
+              <p class="text-xs text-slate-300 font-sans mt-0.5">
+                Contains complete study materials for <strong>CSE-101 (C Prog)</strong>, <strong>ENG-101 (Math-I)</strong>, <strong>ECE-101 (Electrical)</strong>, <strong>CYB-101 (Cyber Hygiene)</strong>, plus <strong>2018–2025 PYQs</strong> with model solutions.
+              </p>
+            </div>
+          </div>
+          <button onclick="load1SemCcsPack()" id="btn-load-1sem-pack" class="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-mono font-bold text-xs flex items-center justify-center space-x-1.5 shadow-[0_0_15px_rgba(16,185,129,0.35)] shrink-0 transition-all">
+            <span>⚡ Load '1 sem ccs' Study Pack</span>
           </button>
         </div>
       </div>
@@ -1812,6 +1852,38 @@ Generated by ExamPulse Antigravity for University Engineering Students`;
         });
         alert(`Google Drive connected for ${email}!`);
         loadDriveFiles();
+      }
+    }
+
+    async function load1SemCcsPack(subjectCode = 'CSE-101') {
+      const btn = document.getElementById('btn-load-1sem-pack');
+      if (btn) btn.innerHTML = '<span>⏳</span><span>Ingesting "1 sem ccs" Pack...</span>';
+
+      try {
+        const res = await fetch('/api/drive/folder/1-sem-ccs/load-pack', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ subjectCode })
+        });
+        const json = await res.json();
+        if (json.success && json.data) {
+          applyProcessedData(json.data);
+          const modal = document.getElementById('drive-modal');
+          if (!modal.classList.contains('hidden')) {
+            modal.classList.add('hidden');
+          }
+          if (btn) btn.innerHTML = '<span>✅</span><span>"1 sem ccs" Pack Loaded!</span>';
+          alert('🎉 Connected to Google Drive Folder: "1 sem ccs"!\nLoaded Semester 1 study materials (C Programming, Engineering Math-1, Cyber Hygiene, and 2018–2025 PYQs).');
+          setTimeout(() => {
+            if (btn) btn.innerHTML = '<span>⚡ Load \'1 sem ccs\' Study Pack</span>';
+            switchTab('notes');
+          }, 800);
+        } else {
+          throw new Error(json.error || 'Server error loading 1 sem ccs folder pack');
+        }
+      } catch (err) {
+        alert('Error loading 1 sem ccs pack: ' + err.message);
+        if (btn) btn.innerHTML = '<span>⚡ Load \'1 sem ccs\' Study Pack</span>';
       }
     }
   </script>
