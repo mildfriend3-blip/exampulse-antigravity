@@ -1,0 +1,17 @@
+Course Code: EVS-101
+Course Title: Environmental Studies - Unit 1: Natural Resources & Conservation
+Semester: 1
+Credits: 2
+University: Central University of Jammu
+
+Unit 1: Classification of Earth's Natural Resources
+- Inexhaustible resources (Solar, Wind, Tidal) vs Exhaustible resources
+- Renewable resources (Forests, Biomass, Fresh Water) vs Non-renewable (Fossil Fuels, Metal Ores)
+- Resource degradation and carrying capacity of the biosphere
+- Sustainable development: Brundtland Commission definition ("meeting needs of present without compromising future generations")
+
+Unit 2: Land and Water Resource Management
+- Land degradation: Soil erosion, desertification, waterlogging, and soil salinization
+- Water scarcity: Overdraft of aquifers, rainwater harvesting, watershed management
+- Case studies of major dams: Tehri Dam and Sardar Sarovar project environmental impacts
+- Forest conservation: Chipko Movement, Appiko Movement, Joint Forest Management (JFM)

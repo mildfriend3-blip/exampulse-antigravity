@@ -1,0 +1,24 @@
+Course Code: CSE-101
+Course Title: B.Tech CSE (Cyber Security) - Python Programming Foundations
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Python Interpreted Architecture & Core Syntax
+- Python execution model: Source code (.py) -> Bytecode (.pyc) -> Python Virtual Machine (PVM)
+- Dynamic typing, duck typing, and automatic garbage collection
+- Variables, naming conventions (PEP 8), and indentation syntax
+- Built-in data types: int, float, str, bool, NoneType
+
+Unit 2: Python Data Structures for Cyber Security
+- Lists: Mutable ordered sequences, slicing, list comprehensions
+- Tuples: Immutable sequences and tuple unpacking
+- Dictionaries: Hash maps, key-value lookups O(1), iterating keys/values
+- Sets: Unique elements, set operations (union, intersection, difference)
+- String manipulations, hex decoding, and regex patterns (re module)
+
+Unit 3: File I/O and Socket Programming Basics
+- Context managers: with open('file.txt', 'r') as f:
+- Parsing CSV, JSON, and raw log files for security event detection
+- Python socket module: Creating TCP/UDP sockets, simple port scanner script
+- Exception handling: try, except, else, finally blocks

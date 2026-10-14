@@ -1,0 +1,21 @@
+Course Code: BEE-101
+Course Title: Basic Electrical Engineering - Lecture 1: Circuit Fundamentals & Ohm's Law
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Basic Electrical Quantities
+- Electric charge (q), Coulomb's definition, current I = dq/dt (Amperes)
+- Electric potential, voltage V = dw/dq (Volts), work done in moving charge
+- Electrical power P = V * I = I^2 * R = V^2 / R (Watts)
+- Energy W = int P dt (Joules or kiloWatt-hours kWh)
+
+Unit 2: Circuit Elements and Ohm's Law
+- Resistor: Resistance R = rho * L / A; temperature coefficient of resistance
+- Ohm's law: Current proportional to voltage at constant temperature (V = I * R)
+- Linear vs non-linear resistors, bilateral vs unilateral elements
+- Independent voltage and current sources vs dependent sources (VCVS, VCCS, CCVS, CCCS)
+
+Unit 3: Series and Parallel Resistor Networks
+- Resistors in series: R_eq = R_1 + R_2 + ... + R_n; Voltage divider rule: V_1 = V_total * (R_1 / R_eq)
+- Resistors in parallel: 1/R_eq = 1/R_1 + 1/R_2; Current divider rule: I_1 = I_total * (R_2 / (R_1 + R_2))

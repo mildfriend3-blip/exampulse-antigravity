@@ -1,0 +1,36 @@
+Course Code: BEE-101
+Course Title: Basic Electrical Engineering (Official Syllabus 2026)
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: DC Circuit Analysis & Network Theorems
+- Electrical circuit elements: Resistor, Inductor, Capacitor
+- Ohm's law, Kirchhoff's Current Law (KCL) and Voltage Law (KVL)
+- Node Voltage method and Mesh Current method
+- Network Theorems: Superposition Theorem, Thevenin's Theorem, Norton's Theorem, Maximum Power Transfer Theorem
+- Star-Delta (T-Pi) transformations
+
+Unit 2: Single Phase AC Circuits
+- Representation of sinusoidal waveforms, peak, RMS, and average values, form factor, peak factor
+- Phasor representation of alternating quantities, j-operator
+- Analysis of pure R, L, C circuits
+- Series R-L, R-C, and R-L-C circuits: Impedance, admittance, power factor, active power (P), reactive power (Q), apparent power (S)
+- Series and Parallel resonance, resonant frequency, Quality factor (Q-factor), and bandwidth
+
+Unit 3: Three Phase AC Circuits
+- Advantages of 3-phase systems over 1-phase systems
+- Generation of 3-phase balanced voltages
+- Star (Y) and Delta (Delta) connections: Line vs phase voltages and currents
+- Power measurement in 3-phase circuits using two-wattmeter method
+
+Unit 4: Magnetic Circuits & Single Phase Transformers
+- Magnetic flux, reluctance, magnetomotive force (MMF), magnetic field intensity (H), flux density (B), B-H curve
+- Faraday's laws of electromagnetic induction, Lenz's law, self and mutual inductance
+- Transformer working principle, EMF equation: E = 4.44 * f * N * Phi_m
+- Ideal vs practical transformer on no-load and full-load, equivalent circuit, voltage regulation, and efficiency
+
+Unit 5: Electrical Machines & Safety Devices
+- Construction and operating principle of DC motor and 3-phase induction motor
+- Fuse, miniature circuit breaker (MCB), earth leakage circuit breaker (ELCB)
+- Earthing: Pipe earthing, plate earthing, and importance of neutral wire

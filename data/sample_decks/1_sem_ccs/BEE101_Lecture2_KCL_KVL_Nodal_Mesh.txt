@@ -1,0 +1,20 @@
+Course Code: BEE-101
+Course Title: Basic Electrical Engineering - Lecture 2: Kirchhoff's Laws & Systematic Analysis
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Kirchhoff's Laws (Conservation Principles)
+- Kirchhoff's Current Law (KCL): Algebraic sum of currents meeting at any node is zero (sum I_in = sum I_out); based on conservation of charge
+- Kirchhoff's Voltage Law (KVL): Algebraic sum of potential drops and rises around any closed mesh is zero (sum V = 0); based on conservation of energy
+- Sign convention rules for traversal across sources and resistive elements
+
+Unit 2: Nodal Voltage Analysis
+- Selecting a reference node (Ground 0V)
+- Formulating KCL equations at non-reference nodes: (V_1 - V_2)/R + ... = 0
+- Supernode concept: Dealing with ideal voltage sources between two non-reference nodes
+
+Unit 3: Mesh Current Analysis
+- Identifying fundamental planar meshes and assigning loop currents (clockwise)
+- Writing KVL equations in matrix form: [R] [I] = [V]
+- Supermesh concept: Dealing with ideal current sources shared between two meshes

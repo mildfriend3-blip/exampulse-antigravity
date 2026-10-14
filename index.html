@@ -240,15 +240,32 @@
           <span class="text-slate-300">CUJammu</span>
           <span class="text-slate-600">/</span>
           <span class="text-emerald-400 font-bold bg-emerald-500/15 px-2 py-0.5 rounded border border-emerald-500/40">1 sem ccs</span>
-          <span class="text-[10px] text-slate-400 font-normal">(5 Subjects • 8 Decks &amp; Solved PYQs)</span>
+          <span class="text-[10px] text-slate-400 font-normal">(5 Subjects • 34 Files &amp; Master Examination PYQ)</span>
         </div>
-        <button onclick="load1SemCcsPack()" class="px-3 py-1 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-mono font-bold text-xs flex items-center space-x-1 transition-all">
-          <span>⚡ Import Complete '1 sem ccs' Pack</span>
-        </button>
+        <div class="flex items-center space-x-2">
+          <button onclick="importFromDrive('gdrive_master_examination_pyq', 'examination pyq.pdf')" class="px-3 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/50 text-amber-300 font-mono font-bold text-xs flex items-center space-x-1 transition-all">
+            <span>⭐ Ingest Master PYQ</span>
+          </button>
+          <button onclick="load1SemCcsPack()" class="px-3 py-1 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-mono font-bold text-xs flex items-center space-x-1 transition-all">
+            <span>⚡ Import Complete Pack</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Subject Category Filter Pills -->
+      <div class="flex flex-wrap items-center gap-1.5 font-mono text-xs">
+        <span class="text-slate-500 text-[10px] uppercase font-bold mr-1">Filter Subject:</span>
+        <button onclick="setDriveCategory('all')" id="cat-pill-all" class="px-2.5 py-1 rounded-lg bg-emerald-500 text-slate-950 font-bold text-[11px] transition-all">All (34)</button>
+        <button onclick="setDriveCategory('programming')" id="cat-pill-programming" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">💻 Programming (8)</button>
+        <button onclick="setDriveCategory('math')" id="cat-pill-math" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">📐 Math &amp; Vectors (5)</button>
+        <button onclick="setDriveCategory('bee')" id="cat-pill-bee" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">⚡ Electrical BEE (7)</button>
+        <button onclick="setDriveCategory('evs')" id="cat-pill-evs" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">🌱 Environmental (3)</button>
+        <button onclick="setDriveCategory('entrepreneurship')" id="cat-pill-entrepreneurship" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">🚀 Entrepreneurship (10)</button>
+        <button onclick="setDriveCategory('pyq')" id="cat-pill-pyq" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-[11px] border border-amber-400/50 font-bold transition-all">⭐ University PYQ (1)</button>
       </div>
 
       <!-- Drive File List (Scrollable) -->
-      <div id="drive-file-list" class="overflow-y-auto space-y-3 flex-1 pr-1 max-h-[50vh]">
+      <div id="drive-file-list" class="overflow-y-auto space-y-3 flex-1 pr-1 max-h-[48vh]">
         <!-- Populated by JS -->
       </div>
 
@@ -334,24 +351,30 @@
         </div>
 
         <!-- 1 sem ccs One-Click Feature Card -->
-        <div class="p-4 rounded-xl bg-gradient-to-r from-emerald-950/50 via-slate-900/80 to-emerald-950/50 border border-emerald-500/30 flex flex-col md:flex-row md:items-center justify-between gap-3 shadow-inner">
+        <div class="p-4 rounded-xl bg-gradient-to-r from-emerald-950/60 via-slate-900/90 to-amber-950/40 border border-emerald-500/40 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-inner">
           <div class="flex items-center space-x-3.5">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center text-xl shrink-0">
+            <div class="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-2xl shrink-0">
               📁
             </div>
             <div>
-              <div class="flex items-center space-x-2">
+              <div class="flex flex-wrap items-center gap-2">
                 <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Folder: 1 sem ccs</h4>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">ALL SUBJECTS + PYQS</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">34 REAL DRIVE FILES</span>
+                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">⭐ MASTER PYQ ATTACHED</span>
               </div>
-              <p class="text-xs text-slate-300 font-sans mt-0.5">
-                Contains complete study materials for <strong>CSE-101 (C Prog)</strong>, <strong>ENG-101 (Math-I)</strong>, <strong>ECE-101 (Electrical)</strong>, <strong>CYB-101 (Cyber Hygiene)</strong>, plus <strong>2018–2025 PYQs</strong> with model solutions.
+              <p class="text-xs text-slate-300 font-sans mt-1">
+                Connected: <strong>Programming in C &amp; Python</strong> (8 files), <strong>Math-I &amp; Vectors</strong> (5 files), <strong>BEE Electrical</strong> (7 files), <strong>Environmental Studies</strong> (3 files), <strong>Entrepreneurship</strong> (10 files), and <strong>examination pyq.pdf</strong> (Master University Paper).
               </p>
             </div>
           </div>
-          <button onclick="load1SemCcsPack()" id="btn-load-1sem-pack" class="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-mono font-bold text-xs flex items-center justify-center space-x-1.5 shadow-[0_0_15px_rgba(16,185,129,0.35)] shrink-0 transition-all">
-            <span>⚡ Load '1 sem ccs' Study Pack</span>
-          </button>
+          <div class="flex flex-wrap items-center gap-2 shrink-0">
+            <button onclick="importFromDrive('gdrive_master_examination_pyq', 'examination pyq.pdf')" class="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono font-bold text-xs flex items-center space-x-1.5 shadow-[0_0_15px_rgba(245,158,11,0.4)] transition-all">
+              <span>⭐ Ingest Master PYQ</span>
+            </button>
+            <button onclick="load1SemCcsPack()" id="btn-load-1sem-pack" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-mono font-bold text-xs flex items-center space-x-1.5 shadow-[0_0_15px_rgba(16,185,129,0.35)] transition-all">
+              <span>⚡ Load Full Study Pack</span>
+            </button>
+          </div>
         </div>
       </div>
 
@@ -1714,50 +1737,90 @@ Generated by ExamPulse Antigravity for University Engineering Students`;
       }
     }
 
+    let currentDriveCategory = 'all';
+
+    function setDriveCategory(cat) {
+      currentDriveCategory = cat;
+      const categories = ['all', 'programming', 'math', 'bee', 'evs', 'entrepreneurship', 'pyq'];
+      categories.forEach(c => {
+        const pill = document.getElementById(`cat-pill-${c}`);
+        if (pill) {
+          if (c === cat) {
+            pill.className = c === 'pyq'
+              ? 'px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold text-[11px] shadow-[0_0_12px_rgba(245,158,11,0.5)] transition-all'
+              : 'px-2.5 py-1 rounded-lg bg-emerald-500 text-slate-950 font-bold text-[11px] shadow-[0_0_10px_rgba(16,185,129,0.4)] transition-all';
+          } else {
+            pill.className = c === 'pyq'
+              ? 'px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-[11px] border border-amber-400/50 font-bold transition-all'
+              : 'px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all';
+          }
+        }
+      });
+      loadDriveFiles();
+    }
+
     async function loadDriveFiles() {
       const listContainer = document.getElementById('drive-file-list');
       const semFilter = document.getElementById('drive-sem-filter').value;
       const query = (document.getElementById('drive-search-input').value || '').trim();
 
-      listContainer.innerHTML = '<div class="p-6 text-center text-xs font-mono text-slate-400">⏳ Accessing Google Drive study materials...</div>';
+      listContainer.innerHTML = '<div class="p-6 text-center text-xs font-mono text-slate-400">⏳ Accessing Google Drive "1 sem ccs" study materials...</div>';
 
       try {
         let url = `/api/drive/files?semester=${semFilter}`;
+        if (currentDriveCategory && currentDriveCategory !== 'all') {
+          url += `&category=${encodeURIComponent(currentDriveCategory)}`;
+        }
         if (query) url += `&query=${encodeURIComponent(query)}`;
 
         const res = await fetch(url);
         const json = await res.json();
 
         if (!json.success || !json.files || json.files.length === 0) {
-          listContainer.innerHTML = '<div class="p-8 text-center text-xs font-mono text-slate-500">No matching study materials found in Google Drive.</div>';
+          listContainer.innerHTML = '<div class="p-8 text-center text-xs font-mono text-slate-500">No matching study materials found in Google Drive for selected filter.</div>';
           return;
         }
 
         listContainer.innerHTML = '';
         json.files.forEach(file => {
           const isPptx = file.name.endsWith('.pptx');
+          const isMaster = !!file.isMasterPyq;
           const card = document.createElement('div');
-          card.className = "glassmorphic-card p-4 rounded-xl space-y-2.5 border border-slate-800 hover:border-emerald-500/50 transition-all";
+          
+          card.className = isMaster
+            ? "p-4 rounded-xl space-y-3 border-2 border-amber-400/80 bg-gradient-to-r from-amber-950/40 via-slate-900/90 to-amber-950/40 shadow-[0_0_25px_rgba(245,158,11,0.25)] transition-all"
+            : "glassmorphic-card p-4 rounded-xl space-y-2.5 border border-slate-800 hover:border-emerald-500/50 transition-all";
+
           card.innerHTML = `
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div class="flex items-center space-x-2.5">
-                <span class="text-xl">${isPptx ? '📊' : '📋'}</span>
+                <span class="text-xl">${isMaster ? '⭐' : (isPptx ? '📊' : '📋')}</span>
                 <div>
-                  <h4 class="text-xs font-mono font-bold text-white hover:text-emerald-400 cursor-pointer" onclick="importFromDrive('${file.id}', '${file.name}')">${file.name}</h4>
+                  <div class="flex flex-wrap items-center gap-1.5">
+                    <h4 class="text-xs font-mono font-bold ${isMaster ? 'text-amber-300' : 'text-white hover:text-emerald-400'} cursor-pointer" onclick="importFromDrive('${file.id}', '${file.name}')">${file.name}</h4>
+                    ${isMaster ? '<span class="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold bg-amber-500 text-slate-950 uppercase">University Master PYQ</span>' : ''}
+                  </div>
                   <p class="text-[10px] font-mono text-slate-400">${file.folder}</p>
                 </div>
               </div>
               <div class="flex items-center space-x-2">
                 <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700">${file.size}</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">${file.university}</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold ${isMaster ? 'bg-amber-500/20 text-amber-300 border border-amber-400/50' : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'}">${file.courseCode || file.university}</span>
               </div>
             </div>
             <p class="text-[11px] text-slate-300 font-sans leading-relaxed">${file.description}</p>
-            <div class="pt-2 border-t border-slate-800 flex items-center justify-between font-mono text-xs">
+            <div class="pt-2 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
               <span class="text-[10px] text-slate-500">Author: ${file.author}</span>
-              <button onclick="importFromDrive('${file.id}', '${file.name}')" id="btn-import-${file.id}" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center space-x-1.5 shadow-[0_0_12px_rgba(16,185,129,0.3)] transition-all">
-                <span>⚡ Import &amp; Process with AI</span>
-              </button>
+              <div class="flex items-center space-x-2">
+                ${file.driveUrl ? `
+                  <a href="${file.driveUrl}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] flex items-center space-x-1 transition-all">
+                    <span>🔗 Open in Drive</span>
+                  </a>
+                ` : ''}
+                <button onclick="importFromDrive('${file.id}', '${file.name}')" id="btn-import-${file.id}" class="px-3 py-1.5 rounded-lg ${isMaster ? 'bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold shadow-[0_0_12px_rgba(245,158,11,0.4)]' : 'bg-emerald-600 hover:bg-emerald-500 text-white font-bold shadow-[0_0_12px_rgba(16,185,129,0.3)]'} text-xs flex items-center space-x-1.5 transition-all">
+                  <span>⚡ Import &amp; Process with AI</span>
+                </button>
+              </div>
             </div>
           `;
           listContainer.appendChild(card);

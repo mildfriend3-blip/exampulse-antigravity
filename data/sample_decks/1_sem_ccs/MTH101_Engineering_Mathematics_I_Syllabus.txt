@@ -1,0 +1,36 @@
+Course Code: MTH-101
+Course Title: Engineering Mathematics - I (Complete Syllabus)
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Linear Algebra & Matrix Theory
+- Rank of a matrix using Echelon and Normal form
+- Consistency and solution of system of linear equations AX = B
+- Linear dependence and independence of vectors
+- Orthogonal and Unitary matrices
+
+Unit 2: Eigenvalues, Eigenvectors & Cayley-Hamilton Theorem
+- Characteristic equation det(A - lambda*I) = 0 and spectrum
+- Properties of eigenvalues and eigenvectors of symmetric matrices
+- Statement and verification of Cayley-Hamilton Theorem
+- Calculation of inverse A^-1 and large powers A^n
+- Diagonalization of matrices via similarity transformation P^-1 A P = D
+
+Unit 3: Linear Transformations & Inner Product Spaces
+- Linear transformation T: V -> W, Kernel (Null space), Image (Range space)
+- Rank-Nullity Theorem: dim(Ker T) + dim(Im T) = dim(V)
+- Matrix representation of linear transformations relative to standard bases
+- Inner product spaces, norm of a vector, Cauchy-Schwarz Inequality
+- Gram-Schmidt Orthogonalization process to generate orthonormal bases
+
+Unit 4: Differential Calculus & Mean Value Theorems
+- Successive differentiation and Leibniz's Theorem for n-th derivative of product
+- Rolle's Theorem, Lagrange's and Cauchy's Mean Value Theorems
+- Taylor's and Maclaurin's series expansions of single-variable functions
+- Indeterminate forms and L'Hopital's Rule
+
+Unit 5: Vector Calculus & Field Integrals
+- Gradient, Divergence, Curl and physical interpretations
+- Line, Surface, and Volume integrals
+- Green's, Stokes', and Gauss Divergence Theorems and computational problems

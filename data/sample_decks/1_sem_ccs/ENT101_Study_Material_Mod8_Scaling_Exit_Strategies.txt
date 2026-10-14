@@ -1,0 +1,17 @@
+Course Code: ENT-101
+Course Title: Entrepreneurship Module 8: Scaling, Pivot vs Persevere & Exit Strategies
+Semester: 1
+Credits: 3
+University: Central University of Jammu
+
+Unit 1: Scaling Challenges in High-Growth Ventures
+- Blitzscaling vs steady sustainable expansion: When to prioritize speed over efficiency
+- Organizational scaling: Hiring executive leadership, culture preservation, delegation
+- Technical debt vs architectural rewrites during 100x traffic surges
+- Regulatory hurdles and compliance scaling
+
+Unit 2: Exit Strategies for Founders and Investors
+- Mergers and Acquisitions (M&A): Strategic acquisitions by Big Tech, acqui-hires
+- Initial Public Offering (IPO): Mainboard IPO vs SME IPO on BSE/NSE
+- Secondary share sales: Liquidity events for early angel investors and employees
+- Orderly shutdown and insolvency under Insolvency and Bankruptcy Code (IBC)

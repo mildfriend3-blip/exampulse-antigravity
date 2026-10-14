@@ -1,0 +1,22 @@
+Course Code: CSE-101
+Course Title: Computer Programming Unit 2 - Part 2: Conditionals & Iterative Logic
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Selective Control Flow
+- Boolean expressions, relational operators (==, !=, <, >, <=, >=)
+- If, if-else, and else-if ladders
+- Nested conditionals and readability conventions
+- Switch-case statement: Integer and char constants, default case
+
+Unit 2: Iterative Statements
+- while loop: Pre-test loop condition
+- do-while loop: Post-test loop guaranteed at least one execution
+- for loop: Initialization, condition, and increment/decrement expression
+- Choosing the optimal loop construct for known vs unknown iterations
+
+Unit 3: Flow Control Modifications
+- break statement: Premature loop termination and switch exit
+- continue statement: Skipping remaining loop body to next iteration
+- goto statement and labeled statements (structured programming hazards)

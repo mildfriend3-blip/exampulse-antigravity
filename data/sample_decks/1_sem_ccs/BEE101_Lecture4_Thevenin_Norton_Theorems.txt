@@ -1,0 +1,21 @@
+Course Code: BEE-101
+Course Title: Basic Electrical Engineering - Lecture 4: Thevenin's & Norton's Theorems
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Thevenin's Theorem
+- Statement: Any linear bilateral two-terminal network containing sources and resistances can be replaced by an equivalent circuit consisting of an ideal voltage source V_th in series with resistance R_th
+- Step 1: Open-circuit the load terminals A-B and compute open-circuit voltage V_oc = V_th
+- Step 2: Deactivate all independent sources (short voltage sources, open current sources) and find resistance R_th looking into terminals A-B
+- Step 3: Load current calculation: I_L = V_th / (R_th + R_L)
+
+Unit 2: Norton's Theorem
+- Statement: Any linear two-terminal circuit can be replaced by an equivalent circuit consisting of an ideal current source I_N in parallel with resistance R_N
+- Step 1: Short-circuit terminals A-B and find short-circuit current I_sc = I_N
+- Step 2: Compute Norton resistance R_N = R_th
+- Step 3: Load current via current division: I_L = I_N * (R_N / (R_N + R_L))
+
+Unit 3: Source Transformation
+- Duality between Thevenin and Norton equivalents: V_th = I_N * R_th, and R_N = R_th
+- Simplifying complex ladder networks using successive source transformations

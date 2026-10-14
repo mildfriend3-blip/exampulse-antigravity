@@ -1,0 +1,19 @@
+Course Code: ENT-101
+Course Title: Entrepreneurship Module 1: Foundational Mindset & Opportunity Recognition
+Semester: 1
+Credits: 3
+University: Central University of Jammu
+
+Unit 1: Opportunity Recognition Frameworks
+- Schumpeter's Creative Destruction: Technological revolutions disrupting legacy industries
+- Kirznerian arbitrage: Exploiting market inefficiencies and information asymmetry
+- Systematic search vs serendipity in spotting startup opportunities
+- PESTLE analysis: Political, Economic, Social, Technological, Legal, and Environmental drivers of change
+
+Unit 2: Founder Psychology and Risk Management
+- Calculated risk taking vs reckless gambling
+- Effectuation theory (Saras Sarasvathy):
+  - Bird-in-Hand principle (start with who you are, what you know, whom you know)
+  - Affordable Loss principle (focus on downside risk you can tolerate rather than expected return)
+  - Crazy Quilt principle (forming partnerships early)
+  - Lemonade principle (leveraging contingencies and surprises)

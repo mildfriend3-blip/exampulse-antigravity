@@ -1,0 +1,26 @@
+Course Code: BEE-101
+Course Title: Basic Electrical Engineering - Lecture 7: Magnetic Circuits & Transformers
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Magnetic Circuit Laws
+- Magnetomotive Force (MMF) = N * I (Ampere-turns, AT)
+- Magnetic flux Phi = MMF / Reluctance S; Reluctance S = l / (mu_0 * mu_r * A)
+- Analogy between electric and magnetic circuits (EMF -> MMF, Current -> Flux, Resistance -> Reluctance)
+- B-H magnetization curve, magnetic saturation, and hysteresis loss
+
+Unit 2: Electromagnetic Induction
+- Faraday's First Law: Whenever magnetic flux linking a circuit changes, an EMF is induced
+- Faraday's Second Law: Magnitude of induced EMF is proportional to rate of change of flux linkages e = -N * (dPhi / dt)
+- Lenz's Law: Induced current opposes the cause that produces it (negative sign)
+- Self-inductance L = (N * Phi) / I = (N^2 * mu * A) / l; Mutual inductance M = k * sqrt(L_1 * L_2)
+
+Unit 3: Single-Phase Transformers
+- Construction: Core type and Shell type laminated silicon steel cores
+- Working principle: Mutual induction between primary and secondary windings
+- EMF Equation: E_1 = 4.44 * f * N_1 * Phi_m, and E_2 = 4.44 * f * N_2 * Phi_m
+- Transformation ratio K = E_2 / E_1 = N_2 / N_1 = I_1 / I_2
+- Ideal transformer properties (zero winding resistance, infinite permeability, no leakage flux)
+- Losses in transformer: Core losses (hysteresis and eddy current losses, constant) + Copper losses (I^2 * R, variable with load)
+- Efficiency: eta = (Output Power) / (Output Power + Losses) * 100%

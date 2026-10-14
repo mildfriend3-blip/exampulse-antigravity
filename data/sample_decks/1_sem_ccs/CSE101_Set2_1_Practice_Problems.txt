@@ -1,0 +1,23 @@
+Course Code: CSE-101
+Course Title: Programming for Problem Solving in C (Set 2 Practice Problems Part 1)
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Conditional Control Structures
+- If-else branching and ternary conditional operator (?:)
+- Switch-case structure, fall-through behavior, and break statements
+- Menu-driven calculator and grade evaluator programs
+- Logical short-circuiting in conditional evaluations (&& and ||)
+
+Unit 2: Iteration Statements and Loop Invariants
+- Entry-controlled loops (for, while) vs exit-controlled loops (do-while)
+- Infinite loops, loop condition termination and edge cases
+- Nested loops: Matrix printing, Pascal's triangle, and Floyd's triangle
+- Jump statements: break, continue, and goto (why goto is discouraged)
+
+Unit 3: Number Theory Programming Exercises
+- Prime number checking algorithms and sieve of Eratosthenes
+- Armstrong number verification, palindrome numbers, and Harshad numbers
+- Fibonacci series generation (iterative vs recursion)
+- Greatest Common Divisor (GCD) using Euclidean division algorithm

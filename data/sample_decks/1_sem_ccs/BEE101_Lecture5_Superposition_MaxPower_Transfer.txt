@@ -1,0 +1,19 @@
+Course Code: BEE-101
+Course Title: Basic Electrical Engineering - Lecture 5: Superposition & Maximum Power Transfer
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Superposition Theorem
+- Statement: In a linear bilateral network containing multiple independent sources, the response (voltage or current) in any branch is the algebraic sum of the responses caused by each source acting alone
+- Method: Turn off all other independent sources (replace independent voltage sources with short circuits, independent current sources with open circuits) while keeping dependent sources intact
+- Limitation: Valid only for linear quantities (V and I); NOT directly applicable for Power (P proportional to I^2, non-linear)
+
+Unit 2: Maximum Power Transfer Theorem
+- Statement: A resistive load connected to a DC network will receive maximum power when its resistance R_L is equal to the Thevenin resistance R_th of the source network: R_L = R_th
+- Mathematical derivation:
+  - Load power P_L = I_L^2 * R_L = [ V_th / (R_th + R_L) ]^2 * R_L
+  - Differentiate with respect to R_L: dP_L / dR_L = V_th^2 * (R_th - R_L) / (R_th + R_L)^3 = 0
+  - Condition for maximum: R_L = R_th
+  - Maximum power delivered: P_max = V_th^2 / (4 * R_th)
+  - Efficiency at maximum power transfer: eta = 50%

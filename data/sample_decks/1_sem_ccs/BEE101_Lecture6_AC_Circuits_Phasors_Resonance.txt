@@ -1,0 +1,25 @@
+Course Code: BEE-101
+Course Title: Basic Electrical Engineering - Lecture 6: Single-Phase AC Circuits & Resonance
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: AC Sinusoidal Fundamentals
+- Sinusoidal voltage: v(t) = V_m * sin(omega*t + phi); angular frequency omega = 2*pi*f
+- RMS value: V_rms = V_m / sqrt(2) = 0.707 * V_m; Average value: V_avg = 2*V_m / pi = 0.637 * V_m
+- Form factor = RMS / Avg = 1.11; Peak factor = V_m / RMS = 1.414
+
+Unit 2: Phasor Algebra and Impedance
+- Complex notation: Polar form Z = |Z| /_theta, Rectangular form Z = R + jX
+- Pure resistor: Voltage and current in phase (theta = 0)
+- Pure inductor: Current lags voltage by 90 degrees (inductive reactance X_L = omega * L)
+- Pure capacitor: Current leads voltage by 90 degrees (capacitive reactance X_C = 1 / (omega * C))
+- Series R-L-C Impedance: Z = R + j(X_L - X_C); magnitude |Z| = sqrt(R^2 + (X_L - X_C)^2)
+- Power Triangle: Active power P = V*I*cos(phi), Reactive power Q = V*I*sin(phi), Apparent power S = V*I
+
+Unit 3: Series Resonance in RLC Circuits
+- Condition for resonance: Net reactance is zero => X_L = X_C => omega_0 * L = 1 / (omega_0 * C)
+- Resonant frequency: f_0 = 1 / (2 * pi * sqrt(L * C))
+- Minimum impedance Z_min = R; Maximum circuit current I_0 = V / R; Unity power factor (cos phi = 1)
+- Quality Factor Q = (omega_0 * L) / R = 1 / (omega_0 * C * R) = (1 / R) * sqrt(L / C)
+- Bandwidth BW = f_0 / Q = R / (2 * pi * L)

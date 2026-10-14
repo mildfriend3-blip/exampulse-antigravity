@@ -1,0 +1,24 @@
+Course Code: CSE-101
+Course Title: Computer Programming Unit 2 - Part 4: Pointers & Dynamic Memory
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Foundations of Memory and Addresses
+- Computer memory organization: Stack, Heap, Data segment, and Code segment
+- The address-of operator (&) and dereference operator (*)
+- Pointer variable declaration and type importance
+- Void pointers (generic pointers) and explicit type casting
+
+Unit 2: Pointer Arithmetic and Arrays
+- Adding/subtracting integers to pointers (scaled by sizeof target type)
+- Subtraction between two pointers of identical type
+- Equivalence of a[i] and *(a + i)
+- Pointers to string literals and const char* immutability
+
+Unit 3: Heap Management with stdlib.h
+- malloc(size_t size): Allocating uninitialized bytes on the heap
+- calloc(size_t num, size_t size): Allocating zero-initialized blocks
+- realloc(void *ptr, size_t new_size): In-place or copy-relocation expansion
+- free(void *ptr): Returning heap memory to the OS
+- Dangling pointers and Use-After-Free (UAF) exploitation prevention

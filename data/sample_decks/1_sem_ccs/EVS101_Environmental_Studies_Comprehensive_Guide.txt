@@ -1,0 +1,23 @@
+Course Code: EVS-101
+Course Title: Environmental Studies: Comprehensive Coursebook & Pollution Control
+Semester: 1
+Credits: 2
+University: Central University of Jammu
+
+Unit 1: Atmospheric Chemistry and Air Pollution
+- Composition of clean air and major air pollutants: Particulate Matter (PM2.5, PM10), SOx, NOx, CO, O3
+- Photochemical smog formation (PAN, ozone) and health impacts
+- Control technologies: Electrostatic Precipitators (ESP), Baghouse filters, Cyclone separators, Catalytic converters
+- Acid rain chemistry: SO2 and NOx converting to H2SO4 and HNO3; pH < 5.6
+
+Unit 2: Water Pollution and Wastewater Treatment
+- Point sources vs non-point sources of water pollution
+- Water quality parameters: Dissolved Oxygen (DO), Biochemical Oxygen Demand (BOD), Chemical Oxygen Demand (COD)
+- Eutrophication mechanism: Nutrient runoff (N and P), algal bloom, DO depletion, dead zones
+- Sewage Treatment Plant (STP) stages: Primary (screening, sedimentation), Secondary (activated sludge, trickling filters), Tertiary (chlorination, UV disinfection)
+
+Unit 3: Environmental Legislation & International Treaties
+- Environmental Protection Act (EPA) 1986: Umbrella legislation in India
+- National Green Tribunal (NGT) role and judicial powers
+- Montreal Protocol (1987) for Ozone Layer Protection (CFC phaseout)
+- Kyoto Protocol (1997) and Paris Agreement (2015) for carbon emissions reduction and Nationally Determined Contributions (NDCs)

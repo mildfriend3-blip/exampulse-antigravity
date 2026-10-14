@@ -1,0 +1,22 @@
+Course Code: ENT-101
+Course Title: Introduction to Entrepreneurship - Lesson 2: Value Proposition & Customer Fit
+Semester: 1
+Credits: 3
+University: Central University of Jammu
+
+Unit 1: Customer Discovery Interviews (The Mom Test)
+- How to talk to customers without asking them if your idea is good
+- Validating past behavior instead of hypothetical future opinions
+- Identifying critical "hair-on-fire" problems customers actively spend time/money trying to solve
+- Avoiding false positives and polite compliments from survey participants
+
+Unit 2: The Value Proposition Canvas
+- Customer Profile:
+  - Customer Jobs: What functional, social, and emotional tasks are they trying to accomplish?
+  - Customer Pains: What annoyances, obstacles, and risks do they face?
+  - Customer Gains: What positive outcomes and benefits do they expect?
+- Value Map:
+  - Products & Services: What are you building?
+  - Pain Relievers: Exactly how do you eliminate their primary frustrations?
+  - Gain Creators: How do you produce concrete positive value?
+- Achieving Problem-Solution Fit when the Value Map matches the Customer Profile perfectly

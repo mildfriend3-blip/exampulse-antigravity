@@ -1,0 +1,23 @@
+Course Code: CSE-101
+Course Title: Computer Programming Unit 2 - Part 3: Arrays, Strings & Matrices
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: One-Dimensional Arrays
+- Array declaration, contiguous memory allocation and zero-based indexing
+- Bounds checking in C (absence of bounds checking and buffer overflow)
+- Passing arrays to functions as pointers (decaying)
+- Linear search O(N) and Bubble Sort O(N^2) algorithms
+
+Unit 2: Two-Dimensional Arrays and Matrix Operations
+- Declaration and row-major layout: array[row][col]
+- Matrix addition and subtraction (dimension matching constraints)
+- Matrix multiplication algorithm: C[i][j] = sum(A[i][k] * B[k][j]) with O(N^3)
+- Symmetric matrix checking and transpose in-place
+
+Unit 3: Character Arrays and C Strings
+- The null terminator character ('\0') and its critical role in strings
+- Standard string library: strlen, strcpy, strcat, strcmp, strstr
+- Reading strings with spaces: fgets(buffer, sizeof(buffer), stdin)
+- Palindrome string checking and string reversal algorithms

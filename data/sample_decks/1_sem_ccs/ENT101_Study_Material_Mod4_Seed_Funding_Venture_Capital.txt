@@ -1,0 +1,17 @@
+Course Code: ENT-101
+Course Title: Entrepreneurship Module 4: Startup Capital & Venture Financing
+Semester: 1
+Credits: 3
+University: Central University of Jammu
+
+Unit 1: Sources of Early-Stage Startup Capital
+- Bootstrapping: Self-funding and customer-funded growth without dilution
+- Incubators vs Accelerators (Y Combinator, Techstars, IIT/CUJ Innovation Centers)
+- Angel Investors: High-net-worth individuals investing personal wealth for equity or convertible debt
+- Venture Capital (VC) firms: Institutional limited partner funds seeking 10x-100x power-law returns
+
+Unit 2: Valuation and Investment Instruments
+- Pre-Money Valuation vs Post-Money Valuation: Post-Money = Pre-Money + Investment Amount
+- Equity Dilution: New investor share = Investment Amount / Post-Money Valuation
+- SAFE (Simple Agreement for Future Equity) and Convertible Notes: Valuation cap, discount rate, and conversion triggers
+- Term Sheet anatomy: Liquidation preference (1x non-participating), vesting schedules (4-year vest with 1-year cliff), anti-dilution clauses, and board representation rights

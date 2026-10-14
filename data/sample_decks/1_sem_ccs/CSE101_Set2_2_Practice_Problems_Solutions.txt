@@ -1,0 +1,29 @@
+Course Code: CSE-101
+Course Title: Programming for Problem Solving in C (Set 2 Practice Problems & Solutions Part 2)
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Advanced Pointers and Memory Addresses
+- Pointer arithmetic and scaling by sizeof(datatype)
+- Double pointers (int **pp) and pointer arrays
+- Dynamic memory allocation on heap: malloc, calloc, realloc, and free
+- Memory leak detection and dangling pointer prevention
+
+Unit 2: Dynamic Multidimensional Arrays
+- Allocating 2D matrices dynamically using int** array of pointers
+- Row-major vs column-major traversal efficiency
+- Freeing 2D arrays in reverse allocation order to prevent orphan blocks
+- Transpose, matrix multiplication and determinant calculation algorithms
+
+Unit 3: String Manipulation and Pointer Traversals
+- String manipulation using pointer increment (*p++) vs array indexing
+- Custom implementations of strlen, strcpy, strcat, and strcmp
+- Dynamic string arrays (char **names) and lexicographical sorting
+- Buffer overflow vulnerabilities in gets() and migration to fgets()
+
+Unit 4: Structures, Unions and Binary File I/O
+- Structure padding, memory byte alignment and sizeof evaluation
+- Nested structures and pointer to structure operator (->)
+- fread() and fwrite() operations on binary records
+- Mini-project: Student marks records persistence system

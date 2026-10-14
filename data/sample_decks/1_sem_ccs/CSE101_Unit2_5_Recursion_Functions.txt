@@ -1,0 +1,23 @@
+Course Code: CSE-101
+Course Title: Computer Programming Unit 2 - Part 5: Modular Programming & Recursion
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Function Prototypes and Call Stack Architecture
+- Function definition, declaration (prototype), and return types
+- Call by Value vs Call by Reference using pointers
+- CPU Call stack frame: Activation record, saved frame pointer, local variables
+- Stack overflow conditions and recursion depth limits
+
+Unit 2: Recursive Algorithms
+- Mathematical induction and base cases in recursion
+- Factorial calculation and Fibonacci series recursion trees
+- Tower of Hanoi algorithm: recurrence relation T(n) = 2T(n-1) + 1 = 2^n - 1
+- Binary search recursion and divide-and-conquer principles
+
+Unit 3: Advanced Function Mechanics
+- Function pointers syntax (int (*fp)(int, int)) and callback functions
+- Command line arguments: int argc, char *argv[]
+- Variable argument lists using stdarg.h (va_list, va_start, va_arg, va_end)
+- Static functions and internal linkage in multi-file C programs

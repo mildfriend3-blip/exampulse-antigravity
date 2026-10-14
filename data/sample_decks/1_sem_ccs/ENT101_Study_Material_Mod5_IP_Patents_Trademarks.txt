@@ -1,0 +1,17 @@
+Course Code: ENT-101
+Course Title: Entrepreneurship Module 5: Intellectual Property & Patent Strategies
+Semester: 1
+Credits: 3
+University: Central University of Jammu
+
+Unit 1: The Four Pillars of Intellectual Property (IP)
+- Patents: Exclusive monopoly rights granted for 20 years for novel, non-obvious, and industrially applicable inventions
+- Copyrights: Protection of original literary, artistic, and software source code works (author's life + 60 years)
+- Trademarks: Brand names, logos, slogans, and distinctive trade dress (registered with Controller General of Patents, Designs & Trademarks)
+- Trade Secrets: Proprietary algorithms, recipes (Coca-Cola), and customer lists protected via Non-Disclosure Agreements (NDAs)
+
+Unit 2: Patent Application Process in India
+- Prior Art search to confirm novelty using patent databases (Google Patents, Indian Patent Office IPO)
+- Filing Provisional Specification: Establishing priority date with low initial cost
+- Complete Specification filing within 12 months: Detailed claims, drawings, and working examples
+- Patent examination, First Examination Report (FER) response, and grant

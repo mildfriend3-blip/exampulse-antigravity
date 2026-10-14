@@ -1,0 +1,34 @@
+Course Code: ENT-101
+Course Title: Introduction to Entrepreneurship & Startups (Official Syllabus)
+Semester: 1
+Credits: 3
+University: Central University of Jammu
+
+Unit 1: The Entrepreneurial Mindset & Innovation
+- Definition, role of entrepreneurship in economic growth and job creation
+- Entrepreneur vs Manager vs Intrapreneur
+- Traits of successful founders: Grit, risk tolerance, resilience, visionary thinking
+- Innovation types: Disruptive innovation (Christensen model), sustaining innovation, reverse innovation
+
+Unit 2: Ideation, Customer Discovery & Value Proposition
+- Problem discovery: Identifying pain points, unmet customer needs, white spaces
+- Design Thinking methodology: Empathize, Define, Ideate, Prototype, Test
+- Customer personas, target market segmentation (TAM, SAM, SOM)
+- Value Proposition Canvas: Customer Jobs, Pains, Gains vs Product Features, Pain Relievers, Gain Creators
+
+Unit 3: Business Model Canvas (BMC) & Lean Startup
+- The 9 building blocks of the Business Model Canvas (Alexander Osterwalder)
+- Lean Startup methodology (Eric Ries): Build-Measure-Learn feedback loop
+- Minimum Viable Product (MVP): Types of MVPs (Landing page, Concierge, Wizard of Oz)
+- Pivot vs Persevere decisions: Strategic pivots in technology startups
+
+Unit 4: Startup Financials, Unit Economics & Pitching
+- Revenue models: Subscription SaaS, marketplace commission, freemium, licensing
+- Financial metrics: Burn rate, runway, Customer Acquisition Cost (CAC), Lifetime Value (LTV), CAC-to-LTV ratio (target > 3:1)
+- Funding stages: Bootstrapping, FFF (Friends, Family, Fools), Pre-seed, Seed, Series A/B/C
+- Crafting a winning 10-slide Pitch Deck for angel investors and venture capitalists
+
+Unit 5: Legal Framework, Intellectual Property & Government Schemes
+- Startup legal structures: Sole Proprietorship, LLP, Private Limited Company (Pvt Ltd)
+- Intellectual Property Rights: Patents (provisional vs complete), Trademarks, Copyrights, Trade Secrets
+- Startup India initiative: DPIIT recognition, 80-IAC tax exemption, Section 56 angel tax relief

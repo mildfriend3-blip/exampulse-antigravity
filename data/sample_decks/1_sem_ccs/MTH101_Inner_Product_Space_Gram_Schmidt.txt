@@ -1,0 +1,29 @@
+Course Code: MTH-101
+Course Title: Engineering Mathematics - I: Inner Product Spaces & Gram-Schmidt Orthogonalization
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Axioms of Inner Product Spaces
+- Definition of inner product <u, v> over real vector space:
+  1. Positivity: <v, v> >= 0, and <v, v> = 0 iff v = 0
+  2. Linearity in first argument: <c*u + w, v> = c*<u, v> + <w, v>
+  3. Symmetry: <u, v> = <v, u>
+- Standard Euclidean inner product (dot product) in R^n: <u, v> = sum(u_i * v_i)
+- Norm (length) induced by inner product: ||v|| = sqrt(<v, v>)
+- Distance between vectors: d(u, v) = ||u - v||
+
+Unit 2: Fundamental Inequalities and Orthogonality
+- Cauchy-Schwarz Inequality: |<u, v>| <= ||u|| * ||v|| (equality iff u and v are linearly dependent)
+- Triangle Inequality: ||u + v|| <= ||u|| + ||v||
+- Orthogonal vectors: <u, v> = 0; Orthogonal complement W^perp
+- Pythagoras Theorem in inner product spaces: ||u + v||^2 = ||u||^2 + ||v||^2
+
+Unit 3: Gram-Schmidt Orthogonalization Algorithm
+- Constructing an orthogonal basis {w_1, w_2, ..., w_n} from linearly independent set {v_1, v_2, ..., v_n}:
+  - Step 1: w_1 = v_1
+  - Step 2: w_2 = v_2 - (<v_2, w_1> / ||w_1||^2) * w_1
+  - Step 3: w_3 = v_3 - (<v_3, w_1> / ||w_1||^2) * w_1 - (<v_3, w_2> / ||w_2||^2) * w_2
+  - General step: w_k = v_k - sum_{j=1}^{k-1} (<v_k, w_j> / ||w_j||^2) * w_j
+- Normalizing each vector to obtain an orthonormal basis: u_i = w_i / ||w_i||
+- Solved CUJammu numerical problems in R^3 and polynomial spaces P_2(R)

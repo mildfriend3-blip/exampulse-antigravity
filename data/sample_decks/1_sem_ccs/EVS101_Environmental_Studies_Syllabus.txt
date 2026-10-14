@@ -1,0 +1,31 @@
+Course Code: EVS-101
+Course Title: Environmental Studies (Official Syllabus)
+Semester: 1
+Credits: 2
+University: Central University of Jammu
+
+Unit 1: Multidisciplinary Nature of Environmental Studies & Natural Resources
+- Definition, scope, and multidisciplinary importance
+- Forest resources: Deforestation, timber extraction, mining, dams and effects on forests and tribal people
+- Water resources: Over-utilization of surface and groundwater, floods, drought, conflicts over water
+- Mineral resources: Exploitation and environmental impacts
+- Energy resources: Renewable (solar, wind, biomass, hydro) vs non-renewable (coal, petroleum) energy
+
+Unit 2: Ecosystems & Ecological Balance
+- Concept and structural components of ecosystems: Biotic (producers, consumers, decomposers) and Abiotic
+- Energy flow in ecosystem: Thermodynamic laws, 10% energy transfer rule
+- Food chains, food webs, and ecological pyramids (pyramid of numbers, biomass, and energy)
+- Types of ecosystems: Forest, grassland, desert, and aquatic ecosystems
+
+Unit 3: Biodiversity and Its Conservation
+- Genetic, species, and ecosystem diversity; Biogeographical classification of India
+- Biodiversity value: Consumptive use, productive use, social, ethical, and aesthetic values
+- Biodiversity hotspots: Western Ghats, Eastern Himalayas, Indo-Burma, Sundaland
+- Threats to biodiversity: Habitat loss, poaching of wildlife, man-wildlife conflicts
+- In-situ conservation (National parks, wildlife sanctuaries, biosphere reserves) vs Ex-situ conservation (seed banks, botanical gardens)
+
+Unit 4: Environmental Pollution & Social Issues
+- Causes, effects, and control of Air pollution, Water pollution, Soil pollution, and Noise pollution
+- Solid waste management: Segregation, composting, recycling, sanitary landfills
+- Global environmental phenomena: Climate change, global warming, acid rain, ozone layer depletion
+- Environmental Protection Acts: Environment (Protection) Act 1986, Air Act 1981, Water Act 1974

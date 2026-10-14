@@ -1,0 +1,21 @@
+Course Code: ENT-101
+Course Title: Entrepreneurship Module 2: The Business Model Canvas Deep-Dive
+Semester: 1
+Credits: 3
+University: Central University of Jammu
+
+Unit 1: The 9 Building Blocks of Business Models
+1. Customer Segments: Mass market, niche market, segmented, diversified, multi-sided platforms
+2. Value Propositions: Newness, performance, customization, getting the job done, brand/status, price
+3. Channels: Direct sales, web sales, physical stores, partner stores, wholesale
+4. Customer Relationships: Personal assistance, dedicated service, self-service, automated, communities
+5. Revenue Streams: Asset sale, usage fee, subscription, lending/renting, licensing, advertising
+6. Key Resources: Physical assets, intellectual property, human talent, financial capital
+7. Key Activities: Production, problem solving, platform/network management
+8. Key Partnerships: Strategic alliances between non-competitors, coopetition, joint ventures
+9. Cost Structure: Cost-driven vs value-driven; fixed costs, variable costs, economies of scale
+
+Unit 2: Real-World Case Studies
+- Uber and Airbnb two-sided asset-light marketplace business models
+- Spotify freemium to premium recurring SaaS model
+- Zerodha discount brokerage low-cost fintech model in India

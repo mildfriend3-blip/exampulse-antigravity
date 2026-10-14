@@ -1,0 +1,25 @@
+Course Code: MTH-101
+Course Title: Engineering Mathematics - I: Vector Calculus & Field Theorems
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Vector Differential Calculus
+- Vector-valued functions of single variables and their derivatives
+- Gradient of a scalar field: grad(phi) = nabla phi = (d/dx i + d/dy j + d/dz k) phi
+- Directional derivative along a unit vector u: D_u(phi) = grad(phi) . u
+- Unit normal vector to level surfaces: n = grad(phi) / |grad(phi)|
+- Divergence of vector field: div(F) = nabla . F (solenoidal fields when div(F) = 0)
+- Curl of vector field: curl(F) = nabla x F (irrotational/conservative fields when curl(F) = 0)
+- Scalar potential phi for conservative field F = grad(phi)
+
+Unit 2: Vector Integral Calculus
+- Line integrals of vector fields along curves: int_C F . dr (Work done)
+- Surface integrals over 2D manifolds: iint_S F . n dS (Flux across surface)
+- Volume integrals over 3D enclosed regions: iiint_V f(x,y,z) dV
+
+Unit 3: Fundamental Integral Theorems
+- Green's Theorem in the Plane: oint_C (P dx + Q dy) = iint_R (dQ/dx - dP/dy) dA
+- Stokes' Theorem: oint_C F . dr = iint_S (curl F) . n dS
+- Gauss's Divergence Theorem: ioint_S F . n dS = iiint_V (div F) dV
+- Physical applications in electrostatics and fluid dynamics

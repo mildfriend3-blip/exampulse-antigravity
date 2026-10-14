@@ -1,0 +1,23 @@
+Course Code: MTH-101
+Course Title: Engineering Mathematics - I: Matrix Representation of Linear Transformations
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Constructing the Matrix Representation [T]_{B_1}^{B_2}
+- Ordered bases B_1 = {v_1, ..., v_n} for V and B_2 = {w_1, ..., w_m} for W
+- Coordinates vector [v]_B with respect to basis B
+- Expressing T(v_j) as a linear combination of basis vectors in B_2
+- Column j of matrix [T] is the coordinate vector of T(v_j)
+- Property: [T(v)]_{B_2} = [T]_{B_1}^{B_2} * [v]_{B_1}
+
+Unit 2: Change of Basis Matrix
+- Transition matrix P from old basis B to new basis B'
+- Change of coordinate formula: [v]_B = P * [v]_{B'}
+- Invertibility of change of basis matrix P (det(P) != 0)
+
+Unit 3: Similarity Transformation and Diagonalization
+- Similar matrices: A and B are similar if B = P^-1 * A * P
+- Invariance of trace, determinant, characteristic polynomial, and eigenvalues under similarity
+- Condition for diagonalizability: An n x n matrix is diagonalizable iff it has n linearly independent eigenvectors
+- Matrix powers: A^k = P * D^k * P^-1

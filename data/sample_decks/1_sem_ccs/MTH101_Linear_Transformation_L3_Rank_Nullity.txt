@@ -1,0 +1,26 @@
+Course Code: MTH-101
+Course Title: Engineering Mathematics - I: Linear Transformation L3 - Rank-Nullity Theorem
+Semester: 1
+Credits: 4
+University: Central University of Jammu
+
+Unit 1: Definition of Linear Transformation
+- Homomorphism between vector spaces over field F: T(c*u + v) = c*T(u) + T(v)
+- Properties: T(0) = 0, T(-v) = -T(v)
+- Linear operators (T: V -> V) and identity transformation
+
+Unit 2: Kernel (Null Space) and Range (Image)
+- Kernel of T: Ker(T) = {v in V : T(v) = 0}; Ker(T) is a subspace of V
+- Image of T: Im(T) = {w in W : exists v in V with T(v) = w}; Im(T) is a subspace of W
+- Nullity of T: nullity(T) = dim(Ker(T))
+- Rank of T: rank(T) = dim(Im(T))
+- Criterion for injectivity: T is one-to-one if and only if Ker(T) = {0}
+
+Unit 3: The Rank-Nullity Theorem (Dimension Theorem)
+- Theorem Statement: Let V be a finite-dimensional vector space. Then rank(T) + nullity(T) = dim(V)
+- Rigorous step-by-step mathematical proof:
+  1. Let {v_1, ..., v_k} be a basis for Ker(T), so nullity(T) = k.
+  2. Extend this basis to a basis of V: {v_1, ..., v_k, u_1, ..., u_m}, so dim(V) = k + m.
+  3. Prove that {T(u_1), ..., T(u_m)} spans Im(T) and is linearly independent.
+  4. Conclude dim(Im(T)) = m, thus dim(Im(T)) + dim(Ker(T)) = m + k = dim(V).
+- Examination numerical examples finding basis for Ker(T) and Im(T) for R^3 -> R^3

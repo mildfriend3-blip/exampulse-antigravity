@@ -279,8 +279,8 @@ app.post('/api/drive/connect', (req, res) => {
 
 app.get('/api/drive/files', (req, res) => {
   try {
-    const { semester, university, query } = req.query;
-    const files = googleDrive.getDriveFiles({ semester, university, query });
+    const { semester, category, university, query } = req.query;
+    const files = googleDrive.getDriveFiles({ semester, category, university, query });
     res.json({
       success: true,
       totalFiles: files.length,
@@ -318,7 +318,8 @@ app.post('/api/drive/export', (req, res) => {
 // Dedicated "1 sem ccs" Google Drive Folder endpoints
 app.get('/api/drive/folder/1-sem-ccs', (req, res) => {
   try {
-    const files = googleDrive.getDriveFiles({ folder: '1_sem_ccs' });
+    const { category, query } = req.query;
+    const files = googleDrive.getDriveFiles({ folder: '1_sem_ccs', category, query });
     res.json({
       success: true,
       folder: googleDrive.folder1SemCcs,

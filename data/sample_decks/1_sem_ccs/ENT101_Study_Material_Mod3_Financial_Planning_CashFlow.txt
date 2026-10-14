@@ -1,0 +1,18 @@
+Course Code: ENT-101
+Course Title: Entrepreneurship Module 3: Startup Financials, Unit Economics & Cash Flow
+Semester: 1
+Credits: 3
+University: Central University of Jammu
+
+Unit 1: Core Financial Statements for Startups
+- Cash Flow Statement: Operating, investing, and financing cash flows
+- Cash Burn Rate: Gross burn (total monthly cash outlays) vs Net burn (cash spent minus cash revenue received)
+- Runway Calculation: Total cash in bank / Net monthly burn rate = Months of survival remaining
+- Income Statement (P&L): Gross Margin = (Revenue - COGS) / Revenue * 100%
+
+Unit 2: Unit Economics & SaaS Metrics
+- Contribution Margin: Revenue per unit minus variable cost per unit
+- Break-Even Point (BEP): Fixed Costs / (Selling Price per unit - Variable Cost per unit)
+- Customer Acquisition Cost (CAC): Total sales & marketing spend / Number of new customers acquired
+- Customer Lifetime Value (LTV): (Average Revenue Per User ARPU * Gross Margin %) / Churn Rate
+- Churn Rate: Percentage of subscribers canceling over a given billing cycle

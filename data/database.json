@@ -17,6 +17,1718 @@
   ],
   "uploads": [
     {
+      "source": "Google Drive (Folder: 1 sem ccs)",
+      "driveFileId": "1N7kbMvHBw_4OnOlA66NNRobLGgcA1CDC",
+      "driveUrl": "https://drive.google.com/file/d/1N7kbMvHBw_4OnOlA66NNRobLGgcA1CDC/view",
+      "driveFolder": "1 sem ccs / Official PYQ Paper",
+      "courseTitle": "CUJAMMU-SEM1-PYQ: Central University of Jammu - B.Tech Semester 1 Official Examination PYQ Paper",
+      "semester": 1,
+      "subjectCategory": "pyq",
+      "isMasterPyq": true,
+      "universityId": "cujammu",
+      "pptx": {
+        "fileName": "examination pyq.pdf",
+        "totalSlides": 3,
+        "keywords": [
+          "Course",
+          "Code",
+          "CUJAMMU",
+          "Title",
+          "Tech",
+          "Cyber",
+          "Security",
+          "Semester",
+          "Official",
+          "Term",
+          "Examination",
+          "Paper",
+          "Credits",
+          "University",
+          "Central"
+        ],
+        "slides": [
+          {
+            "slideNumber": 1,
+            "title": "Section A - Compulsory Conceptual & Definitions (2 Marks Each)",
+            "bulletPoints": [
+              "Question 1 (Computer Programming): What is a Dangling Pointer in C? Explain its memory risk and how setting the pointer to NULL mitigates vulnerabilities.",
+              "Question 2 (Programming): Differentiate between Call by Value and Call by Reference with a memory diagram.",
+              "Question 3 (Mathematics): State the Cayley-Hamilton Theorem. How is it applied to calculate high powers of square matrices?",
+              "Question 4 (Mathematics): Define the Kernel (Null Space) of a linear transformation T: V -> W. Under what condition is T injective?",
+              "Question 5 (BEE): State Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL). State the fundamental conservation laws they are derived from."
+            ],
+            "speakerNotes": "Core exam topic under Unit 1 for Central University of Jammu - B.Tech Semester 1 Official Examination PYQ Paper. Focus on definitions and 5-mark proofs.",
+            "fullText": "Section A - Compulsory Conceptual & Definitions (2 Marks Each) - Question 1 (Computer Programming): What is a Dangling Pointer in C? Explain its memory risk and how setting the pointer to NULL mitigates vulnerabilities.; Question 2 (Programming): Differentiate between Call by Value and Call by Reference with a memory diagram.; Question 3 (Mathematics): State the Cayley-Hamilton Theorem. How is it applied to calculate high powers of square matrices?; Question 4 (Mathematics): Define the Kernel (Null Space) of a linear transformation T: V -> W. Under what condition is T injective?; Question 5 (BEE): State Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL). State the fundamental conservation laws they are derived from.; Question 6 (BEE): Define the Quality Factor (Q-factor) of a series RLC resonant circuit and write its mathematical formula in terms of R, L, and C.; Question 7 (Environmental Studies): What is Eutrophication? Describe how nutrient runoffs lead to aquatic oxygen depletion.; Question 8 (Environmental Studies): Distinguish between In-situ and Ex-situ biodiversity conservation with two Indian examples for each.; Question 9 (Entrepreneurship): Explain the Lean Startup Build-Measure-Learn feedback loop.; Question 10 (Entrepreneurship): Define Customer Acquisition Cost (CAC) and Lifetime Value (LTV). What is the ideal CAC-to-LTV ratio for sustainable startups?"
+          },
+          {
+            "slideNumber": 2,
+            "title": "Section B - Technical, Algorithmic & Numerical Problems (5 Marks Each)",
+            "bulletPoints": [
+              "Question 11 (Computer Programming): Write a complete C function using dynamic memory allocation (malloc and free) to reverse a string in-place without using library functions. Explain why buffer overflow occurs if gets() is used instead of fgets().",
+              "Question 12 (Engineering Mathematics): Find an orthonormal basis for the subspace of R^3 spanned by vectors v1 = (1, 1, 0)^T and v2 = (1, 0, 1)^T using the Gram-Schmidt Orthogonalization process.",
+              "Question 13 (Basic Electrical Engineering): State Thevenin's Theorem. Find the Thevenin equivalent circuit across terminals A-B for a DC circuit containing a 24V source and resistances R1=4ohm, R2=12ohm, R3=3ohm. Compute current through load resistor RL = 6ohm.",
+              "Question 14 (Entrepreneurship & Startups): Explain the 9 building blocks of the Business Model Canvas (BMC). Construct a concise BMC for a cyber security vulnerability management SaaS platform."
+            ],
+            "speakerNotes": "Core exam topic under Unit 2 for Central University of Jammu - B.Tech Semester 1 Official Examination PYQ Paper. Focus on definitions and 5-mark proofs.",
+            "fullText": "Section B - Technical, Algorithmic & Numerical Problems (5 Marks Each) - Question 11 (Computer Programming): Write a complete C function using dynamic memory allocation (malloc and free) to reverse a string in-place without using library functions. Explain why buffer overflow occurs if gets() is used instead of fgets().; Question 12 (Engineering Mathematics): Find an orthonormal basis for the subspace of R^3 spanned by vectors v1 = (1, 1, 0)^T and v2 = (1, 0, 1)^T using the Gram-Schmidt Orthogonalization process.; Question 13 (Basic Electrical Engineering): State Thevenin's Theorem. Find the Thevenin equivalent circuit across terminals A-B for a DC circuit containing a 24V source and resistances R1=4ohm, R2=12ohm, R3=3ohm. Compute current through load resistor RL = 6ohm.; Question 14 (Entrepreneurship & Startups): Explain the 9 building blocks of the Business Model Canvas (BMC). Construct a concise BMC for a cyber security vulnerability management SaaS platform."
+          },
+          {
+            "slideNumber": 3,
+            "title": "Section C - Comprehensive Derivation, Proofs & System Design (10 Marks Each with Internal Choice)",
+            "bulletPoints": [
+              "Question 15A (Computer Programming): Discuss dynamic memory allocation functions malloc(), calloc(), realloc(), and free(). Write an industrial-grade C program that dynamically allocates a 2D matrix of dimensions M x N, takes user input, computes its transpose, displays the transposed matrix, and safely deallocates all heap memory without leaks.",
+              "Question 15B (OR - Structures & File I/O): Explain memory alignment and padding in C structures. Write a complete C program to maintain student cyber security test records using an array of structures written to and read from a binary file using fwrite() and fread().",
+              "Question 16A (Engineering Mathematics): Verify the Cayley-Hamilton Theorem for matrix A = [[2, 1, 1], [0, 1, 0], [1, 1, 2]]. Hence find A^-1 and compute A^4.",
+              "Question 16B (OR - Rank-Nullity Theorem): State and prove the Rank-Nullity Theorem for a linear transformation T: V -> W between finite-dimensional vector spaces. For linear transformation T: R^3 -> R^3 defined by T(x, y, z) = (x + y, y + z, x - z), find the basis and dimensions of Ker(T) and Im(T).",
+              "Question 17A (Basic Electrical Engineering): Derive the EMF equation of a single-phase transformer: E = 4.44 * f * N * Phi_m. Explain the open-circuit and short-circuit tests used to determine transformer core and copper losses and efficiency."
+            ],
+            "speakerNotes": "Core exam topic under Unit 3 for Central University of Jammu - B.Tech Semester 1 Official Examination PYQ Paper. Focus on definitions and 5-mark proofs.",
+            "fullText": "Section C - Comprehensive Derivation, Proofs & System Design (10 Marks Each with Internal Choice) - Question 15A (Computer Programming): Discuss dynamic memory allocation functions malloc(), calloc(), realloc(), and free(). Write an industrial-grade C program that dynamically allocates a 2D matrix of dimensions M x N, takes user input, computes its transpose, displays the transposed matrix, and safely deallocates all heap memory without leaks.; Question 15B (OR - Structures & File I/O): Explain memory alignment and padding in C structures. Write a complete C program to maintain student cyber security test records using an array of structures written to and read from a binary file using fwrite() and fread().; Question 16A (Engineering Mathematics): Verify the Cayley-Hamilton Theorem for matrix A = [[2, 1, 1], [0, 1, 0], [1, 1, 2]]. Hence find A^-1 and compute A^4.; Question 16B (OR - Rank-Nullity Theorem): State and prove the Rank-Nullity Theorem for a linear transformation T: V -> W between finite-dimensional vector spaces. For linear transformation T: R^3 -> R^3 defined by T(x, y, z) = (x + y, y + z, x - z), find the basis and dimensions of Ker(T) and Im(T).; Question 17A (Basic Electrical Engineering): Derive the EMF equation of a single-phase transformer: E = 4.44 * f * N * Phi_m. Explain the open-circuit and short-circuit tests used to determine transformer core and copper losses and efficiency.; Question 17B (OR - AC Resonance & Theorems): Derive the condition for resonance in a series RLC AC circuit. Derive expressions for resonant frequency, bandwidth, and dynamic impedance. If R = 10 ohms, L = 100 mH, and C = 10 microFarads, calculate resonant frequency, Q-factor, and half-power frequencies."
+          }
+        ]
+      },
+      "syllabus": {
+        "fileName": "examination pyq.pdf",
+        "totalUnits": 3,
+        "units": [
+          {
+            "number": "1",
+            "title": "Section A - Compulsory Conceptual & Definitions (2 Marks Each)",
+            "topics": [
+              "Question 1 (Computer Programming): What is a Dangling Pointer in C? Explain its memory risk and how setting the pointer to NULL mitigates vulnerabilities.",
+              "Question 2 (Programming): Differentiate between Call by Value and Call by Reference with a memory diagram.",
+              "Question 3 (Mathematics): State the Cayley-Hamilton Theorem. How is it applied to calculate high powers of square matrices?",
+              "Question 4 (Mathematics): Define the Kernel (Null Space) of a linear transformation T: V -> W. Under what condition is T injective?",
+              "Question 5 (BEE): State Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL). State the fundamental conservation laws they are derived from.",
+              "Question 6 (BEE): Define the Quality Factor (Q-factor) of a series RLC resonant circuit and write its mathematical formula in terms of R, L, and C.",
+              "Question 7 (Environmental Studies): What is Eutrophication? Describe how nutrient runoffs lead to aquatic oxygen depletion.",
+              "Question 8 (Environmental Studies): Distinguish between In-situ and Ex-situ biodiversity conservation with two Indian examples for each.",
+              "Question 9 (Entrepreneurship): Explain the Lean Startup Build-Measure-Learn feedback loop.",
+              "Question 10 (Entrepreneurship): Define Customer Acquisition Cost (CAC) and Lifetime Value (LTV). What is the ideal CAC-to-LTV ratio for sustainable startups?"
+            ]
+          },
+          {
+            "number": "2",
+            "title": "Section B - Technical, Algorithmic & Numerical Problems (5 Marks Each)",
+            "topics": [
+              "Question 11 (Computer Programming): Write a complete C function using dynamic memory allocation (malloc and free) to reverse a string in-place without using library functions. Explain why buffer overflow occurs if gets() is used instead of fgets().",
+              "Question 12 (Engineering Mathematics): Find an orthonormal basis for the subspace of R^3 spanned by vectors v1 = (1, 1, 0)^T and v2 = (1, 0, 1)^T using the Gram-Schmidt Orthogonalization process.",
+              "Question 13 (Basic Electrical Engineering): State Thevenin's Theorem. Find the Thevenin equivalent circuit across terminals A-B for a DC circuit containing a 24V source and resistances R1=4ohm, R2=12ohm, R3=3ohm. Compute current through load resistor RL = 6ohm.",
+              "Question 14 (Entrepreneurship & Startups): Explain the 9 building blocks of the Business Model Canvas (BMC). Construct a concise BMC for a cyber security vulnerability management SaaS platform."
+            ]
+          },
+          {
+            "number": "3",
+            "title": "Section C - Comprehensive Derivation, Proofs & System Design (10 Marks Each with Internal Choice)",
+            "topics": [
+              "Question 15A (Computer Programming): Discuss dynamic memory allocation functions malloc(), calloc(), realloc(), and free(). Write an industrial-grade C program that dynamically allocates a 2D matrix of dimensions M x N, takes user input, computes its transpose, displays the transposed matrix, and safely deallocates all heap memory without leaks.",
+              "Question 15B (OR - Structures & File I/O): Explain memory alignment and padding in C structures. Write a complete C program to maintain student cyber security test records using an array of structures written to and read from a binary file using fwrite() and fread().",
+              "Question 16A (Engineering Mathematics): Verify the Cayley-Hamilton Theorem for matrix A = [[2, 1, 1], [0, 1, 0], [1, 1, 2]]. Hence find A^-1 and compute A^4.",
+              "Question 16B (OR - Rank-Nullity Theorem): State and prove the Rank-Nullity Theorem for a linear transformation T: V -> W between finite-dimensional vector spaces. For linear transformation T: R^3 -> R^3 defined by T(x, y, z) = (x + y, y + z, x - z), find the basis and dimensions of Ker(T) and Im(T).",
+              "Question 17A (Basic Electrical Engineering): Derive the EMF equation of a single-phase transformer: E = 4.44 * f * N * Phi_m. Explain the open-circuit and short-circuit tests used to determine transformer core and copper losses and efficiency.",
+              "Question 17B (OR - AC Resonance & Theorems): Derive the condition for resonance in a series RLC AC circuit. Derive expressions for resonant frequency, bandwidth, and dynamic impedance. If R = 10 ohms, L = 100 mH, and C = 10 microFarads, calculate resonant frequency, Q-factor, and half-power frequencies."
+            ]
+          }
+        ],
+        "courseInfo": {
+          "courseCode": "CYB-COURSE",
+          "courseTitle": ": B.Tech CSE (Cyber Security) Semester 1 - Official End-Term Examination PYQ Paper",
+          "semester": "1",
+          "credits": 20
+        }
+      },
+      "shortNotes": {
+        "courseTitle": "CUJAMMU-SEM1-PYQ: Central University of Jammu - B.Tech Semester 1 Official Examination PYQ Paper",
+        "generatedAt": "2026-10-14T06:28:10.155Z",
+        "executiveSummary": [
+          "Section A - Compulsory Conceptual & Definitions (2 Marks Each): Key examination topic covered in lecture slides.",
+          "Section B - Technical, Algorithmic & Numerical Problems (5 Marks Each): Key examination topic covered in lecture slides.",
+          "Section C - Comprehensive Derivation, Proofs & System Design (10 Marks Each with Internal Choice): Key examination topic covered in lecture slides."
+        ],
+        "highYieldFormulas": [
+          {
+            "topic": "RSA Asymmetric Cryptosystem",
+            "formula": "n = p \\times q, \\quad \\phi(n) = (p-1)(q-1), \\quad e \\cdot d \\equiv 1 \\pmod{\\phi(n)}, \\quad C = M^e \\pmod n",
+            "explanation": "Public key (e, n), Private key (d, n). d is computed using the Extended Euclidean Algorithm."
+          },
+          {
+            "topic": "Diffie-Hellman Key Exchange",
+            "formula": "A = g^a \\pmod p, \\quad B = g^b \\pmod p, \\quad K = B^a \\equiv A^b \\equiv g^{ab} \\pmod p",
+            "explanation": "Security relies on the hardness of the Discrete Logarithm Problem (DLP) in GF(p)."
+          },
+          {
+            "topic": "Hash Function Collision Resistance (Birthday Bound)",
+            "formula": "P(\\text{collision}) > 0.5 \\implies \\text{Complexity} = O(2^{n/2})",
+            "explanation": "An n-bit cryptographic hash requires only 2^(n/2) operations to discover a pair of colliding messages."
+          },
+          {
+            "topic": "AES Finite Field Arithmetic",
+            "formula": "GF(2^8) / (x^8 + x^4 + x^3 + x + 1) \\quad \\text{with irreducible polynomial } 0x11B",
+            "explanation": "Used in MixColumns matrix multiplication and SubBytes S-Box affine inversion."
+          },
+          {
+            "topic": "Extended Euclidean Multiplicative Inverse",
+            "formula": "a \\cdot x + m \\cdot y = \\gcd(a, m) = 1 \\implies x \\equiv a^{-1} \\pmod m",
+            "explanation": "Mandatory condition: gcd(a, m) = 1. Fast calculation in O(log(min(a, m))) steps."
+          }
+        ],
+        "keyDefinitions": [
+          {
+            "term": "Confusion vs Diffusion",
+            "definition": "Confusion obscures relationship between key and ciphertext (via S-Boxes). Diffusion disperses statistical plaintext redundancy over ciphertext (via P-Boxes/MixColumns)."
+          },
+          {
+            "term": "Zero-Trust Architecture (ZTA)",
+            "definition": "Security paradigm enforcing 'Never Trust, Always Verify' across identity, device posture, and network microsegmentation under NIST SP 800-207."
+          },
+          {
+            "term": "Address Space Layout Randomization (ASLR)",
+            "definition": "Kernel defense randomizing base addresses of stack, heap, and libraries on each program execution to foil Return-Oriented Programming (ROP) and shellcode injection."
+          },
+          {
+            "term": "Dynamic ARP Inspection (DAI)",
+            "definition": "Switch security feature intercepting and validating ARP packets against the DHCP Snooping database to prevent ARP Poisoning and MITM attacks on switched LANs."
+          },
+          {
+            "term": "Order of Volatility (RFC 3227)",
+            "definition": "Forensic acquisition hierarchy prioritizing the most perishable digital evidence: CPU registers -> Memory/RAM -> Swap -> Disks -> Remote Logs -> Physical media."
+          }
+        ],
+        "keyTerms": [
+          "Course",
+          "Code",
+          "CUJAMMU",
+          "Title",
+          "Tech",
+          "Cyber",
+          "Security",
+          "Semester",
+          "Official",
+          "Term",
+          "Examination",
+          "Paper",
+          "Credits",
+          "University",
+          "Central"
+        ]
+      },
+      "interactiveNotes": {
+        "flashcards": [
+          {
+            "id": "fc-1",
+            "unit": "UNIT 1 • NUMBER THEORY & FOUNDATIONS",
+            "prompt": "What is the condition for an integer 'a' to have a modular multiplicative inverse modulo 'm'?",
+            "answer": "gcd(a, m) = 1 (a and m must be relatively prime). The inverse is computed using the Extended Euclidean Algorithm: a*x + m*y = 1 => a^-1 = x mod m.",
+            "formula": "Extended Euclidean: a*x + m*y = 1",
+            "probability": "98% Highest Yield",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          },
+          {
+            "id": "fc-2",
+            "unit": "UNIT 2 • SYMMETRIC CIPHERS",
+            "prompt": "Explain why ECB mode is vulnerable to statistical pattern leakage whereas CBC mode is not.",
+            "answer": "ECB encrypts identical plaintext blocks into identical ciphertext blocks. In CBC mode, each plaintext block is XORed with the preceding ciphertext block (C_i = E(P_i XOR C_{i-1})), ensuring randomized outputs even for identical input blocks.",
+            "formula": "CBC: C_i = E_K(P_i \\oplus C_{i-1})",
+            "probability": "94% Frequent",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          },
+          {
+            "id": "fc-3",
+            "unit": "UNIT 3 • PUBLIC KEY CRYPTO",
+            "prompt": "Why must primes 'p' and 'q' in RSA not be close to each other in magnitude?",
+            "answer": "If p and q are close to sqrt(n), Fermat's Factorization Method can trivially factor n = p*q in O(|p-q|) steps by searching values of a = ceil(sqrt(n)) where a^2 - n is a square b^2.",
+            "formula": "Fermat: n = a^2 - b^2 = (a-b)(a+b)",
+            "probability": "91% Core Concept",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          },
+          {
+            "id": "fc-4",
+            "unit": "UNIT 4 • OPERATING SYSTEM SECURITY",
+            "prompt": "What is a Stack Canary and how does it detect buffer overflow exploits?",
+            "answer": "A Stack Canary is a random 32/64-bit integer placed on the stack right before the saved return address (EIP/RIP). If a buffer overflow overwrites the return pointer, it inevitably alters the canary. The function epilogue checks the canary; if modified, __stack_chk_fail terminates execution immediately.",
+            "formula": "Canary Guard: cmp [rbp-8], fs:28h",
+            "probability": "96% Highest Yield",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          },
+          {
+            "id": "fc-5",
+            "unit": "UNIT 5 • WEB & NETWORK SECURITY",
+            "prompt": "How does the 'HttpOnly' cookie flag protect against Cross-Site Scripting (XSS)?",
+            "answer": "The HttpOnly flag instructs the browser that the cookie cannot be accessed via client-side scripts (such as document.cookie). Even if an attacker executes stored or reflected JavaScript, the session token cannot be stolen via DOM extraction.",
+            "formula": "Set-Cookie: session_id=...; Secure; HttpOnly; SameSite=Strict",
+            "probability": "95% Highest Yield",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          }
+        ],
+        "quiz": [
+          {
+            "id": "qz-1",
+            "question": "In the AES cipher, which transformation round provides non-linear confusion?",
+            "options": [
+              "ShiftRows",
+              "SubBytes (using S-Box)",
+              "MixColumns",
+              "AddRoundKey"
+            ],
+            "correctIndex": 1,
+            "explanation": "SubBytes is the sole non-linear transformation in AES, substituting bytes using an inversion in GF(2^8) followed by an affine transformation to resist differential and linear cryptanalysis."
+          },
+          {
+            "id": "qz-2",
+            "question": "Which necessary condition for Deadlock is eliminated by preempting resources from processes?",
+            "options": [
+              "Mutual Exclusion",
+              "Hold and Wait",
+              "No Preemption",
+              "Circular Wait"
+            ],
+            "correctIndex": 2,
+            "explanation": "The 'No Preemption' condition dictates that allocated resources cannot be forcibly seized. Allowing the OS to preempt resources directly breaks this condition, preventing deadlock."
+          },
+          {
+            "id": "qz-3",
+            "question": "According to RFC 3227 Order of Volatility, which evidence source must be collected FIRST?",
+            "options": [
+              "Hard disk partitions",
+              "Routing table and process memory (RAM)",
+              "CPU Registers and Cache",
+              "Archival backup tapes"
+            ],
+            "correctIndex": 2,
+            "explanation": "CPU registers and processor cache change nanoseconds apart and are lost immediately upon system shutdown or instruction execution, making them the most volatile."
+          },
+          {
+            "id": "qz-4",
+            "question": "What is the computational complexity required to discover a collision in an n-bit hash function using the Birthday Attack?",
+            "options": [
+              "O(2^n)",
+              "O(2^{n/2})",
+              "O(n^2)",
+              "O(log n)"
+            ],
+            "correctIndex": 1,
+            "explanation": "By the Birthday Paradox, comparing pairs of outputs yields a collision with probability > 50% in approximately O(2^(n/2)) evaluations, halving the effective security bits."
+          }
+        ],
+        "mindmap": {
+          "root": "Cyber Security & Examination Core",
+          "children": [
+            {
+              "name": "Cryptographic Foundations",
+              "children": [
+                {
+                  "name": "Symmetric: AES, DES, GCM, CBC"
+                },
+                {
+                  "name": "Asymmetric: RSA, Diffie-Hellman, ECC"
+                },
+                {
+                  "name": "Hash Functions: SHA-256, HMAC, Birthday Bound"
+                }
+              ]
+            },
+            {
+              "name": "System & Software Security",
+              "children": [
+                {
+                  "name": "Buffer Overflow & Shellcoding"
+                },
+                {
+                  "name": "Defenses: ASLR, DEP/NX, Stack Canaries"
+                },
+                {
+                  "name": "Race Conditions & Peterson's Algorithm"
+                }
+              ]
+            },
+            {
+              "name": "Network & Perimeter Defense",
+              "children": [
+                {
+                  "name": "TCP 3-Way Handshake & SYN Cookies"
+                },
+                {
+                  "name": "ARP Spoofing & Dynamic ARP Inspection"
+                },
+                {
+                  "name": "IPsec (Tunnel vs Transport Mode) & TLS 1.3"
+                }
+              ]
+            },
+            {
+              "name": "Digital Forensics & Incident Response",
+              "children": [
+                {
+                  "name": "Order of Volatility (RFC 3227)"
+                },
+                {
+                  "name": "Memory Forensics: Volatility Framework"
+                },
+                {
+                  "name": "Chain of Custody & Bit-Stream Hashing"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "predictedPaper": {
+        "university": "Central University of Jammu (CUJammu)",
+        "universityId": "cujammu",
+        "department": "Department of Computer Science & Information Technology",
+        "program": "B.Tech Computer Science & Engineering (Cyber Security)",
+        "semester": 1,
+        "courseCode": "CUJAMMU-SEM1-PYQ",
+        "courseTitle": "Official Semester 1 End-Term Examination PYQ Paper (All Subjects)",
+        "durationHours": 3,
+        "maxMarks": 70,
+        "overallAccuracy": 97,
+        "instructions": [
+          "Section A is COMPULSORY. Answer all questions (2 marks each).",
+          "Section B: Attempt any FOUR questions (5 marks each).",
+          "Section C: Attempt THREE questions with internal choices (10 marks each).",
+          "Assume suitable data wherever necessary. Neat diagrams carry due weightage."
+        ],
+        "sections": {
+          "A": {
+            "title": "SECTION A (Compulsory Short Answers - 2 Marks Each)",
+            "totalMarks": 20,
+            "questions": [
+              {
+                "id": "CUJ-MASTER-S1-01",
+                "section": "A",
+                "marks": 2,
+                "unit": 1,
+                "text": "What is a Dangling Pointer in C and how does free() without NULL assignment lead to Use-After-Free (UAF) exploits?",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2022"
+                ],
+                "freq": "99% Highest Yield",
+                "probability": 99,
+                "bloom": "Analyze",
+                "answer": "A dangling pointer stores the address of deallocated memory. If accessed, attackers can overwrite heap metadata or function pointers in Use-After-Free attacks. Setting pointer = NULL immediately eliminates the vulnerability.",
+                "rubric": "1 Mark for definition; 1 Mark for security impact."
+              },
+              {
+                "id": "CUJ-MASTER-S1-02",
+                "section": "A",
+                "marks": 2,
+                "unit": 1,
+                "text": "State the Cayley-Hamilton Theorem. Verify if it holds for the 2x2 identity matrix I.",
+                "years": [
+                  "2024",
+                  "2023"
+                ],
+                "freq": "98% Highest Yield",
+                "probability": 98,
+                "bloom": "Remember",
+                "answer": "Every square matrix satisfies its own characteristic equation det(A - lambda*I) = 0. For I_2, det(I - lambda*I) = (1 - lambda)^2 = lambda^2 - 2lambda + 1 = 0. Substituting I gives I^2 - 2I + I = I - 2I + I = 0, verifying the theorem.",
+                "rubric": "1 Mark for theorem; 1 Mark for 2x2 identity matrix verification."
+              },
+              {
+                "id": "CUJ-MASTER-S1-03",
+                "section": "A",
+                "marks": 2,
+                "unit": 1,
+                "text": "State Kirchhoff's Current Law (KCL) and explain its derivation from the conservation of electric charge.",
+                "years": [
+                  "2024",
+                  "2022"
+                ],
+                "freq": "99% Highest Yield",
+                "probability": 99,
+                "bloom": "Understand",
+                "answer": "KCL states the algebraic sum of currents entering any node is zero (sum I = 0). Because electrical charge cannot accumulate indefinitely or disappear at a junction (dq/dt = 0), current flowing in must equal current flowing out.",
+                "rubric": "1 Mark for law; 1 Mark for charge conservation rationale."
+              },
+              {
+                "id": "CUJ-MASTER-S1-04",
+                "section": "A",
+                "marks": 2,
+                "unit": 1,
+                "text": "Define Eutrophication and explain the relationship between Biochemical Oxygen Demand (BOD) and Dissolved Oxygen (DO).",
+                "years": [
+                  "2024",
+                  "2023"
+                ],
+                "freq": "97% Highest Yield",
+                "probability": 97,
+                "bloom": "Understand",
+                "answer": "Eutrophication is nutrient over-enrichment causing algal blooms. Higher BOD means more oxygen is consumed by decomposers, resulting in depletion of DO below survivable thresholds for fish.",
+                "rubric": "1 Mark for Eutrophication; 1 Mark for inverse BOD-DO relationship."
+              },
+              {
+                "id": "CUJ-MASTER-S1-05",
+                "section": "A",
+                "marks": 2,
+                "unit": 1,
+                "text": "Explain the Lean Startup Build-Measure-Learn feedback loop and define a Minimum Viable Product (MVP).",
+                "years": [
+                  "2024",
+                  "2023"
+                ],
+                "freq": "96% Highest Yield",
+                "probability": 96,
+                "bloom": "Understand",
+                "answer": "The loop is an iterative process of testing hypotheses: Build an MVP (the simplest version that allows validated learning with minimal effort), Measure customer behavioral metrics, and Learn whether to pivot or persevere.",
+                "rubric": "1 Mark for loop; 1 Mark for MVP definition."
+              }
+            ]
+          },
+          "B": {
+            "title": "SECTION B (Conceptual & Analytical - 5 Marks Each)",
+            "totalMarks": 20,
+            "questions": [
+              {
+                "id": "CUJ-MASTER-S1-06",
+                "section": "B",
+                "marks": 5,
+                "unit": 2,
+                "text": "Write a complete C function using dynamic memory allocation (malloc and free) to reverse a string in-place without using string library functions. Explain the vulnerability of gets() versus fgets().",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2022"
+                ],
+                "freq": "96% Highest Yield",
+                "probability": 96,
+                "bloom": "Apply",
+                "answer": "Maintains two pointer offsets (start and end) swapping characters until they meet. gets() lacks boundary limits causing stack-buffer overflow; fgets() specifies buffer size preventing overrun.",
+                "rubric": "3 Marks for reversal logic; 2 Marks for fgets buffer security."
+              },
+              {
+                "id": "CUJ-MASTER-S1-07",
+                "section": "B",
+                "marks": 5,
+                "unit": 2,
+                "text": "Using the Gram-Schmidt process, construct an orthonormal basis for the subspace of R^3 spanned by vectors v1 = (1, 1, 0)^T and v2 = (1, 0, 1)^T.",
+                "years": [
+                  "2024",
+                  "2023"
+                ],
+                "freq": "95% Highest Yield",
+                "probability": 95,
+                "bloom": "Apply",
+                "answer": "u1 = (1/sqrt(2), 1/sqrt(2), 0)^T; w2 = v2 - proj_{w1}(v2) = (1/2, -1/2, 1)^T; normalizing w2 gives u2 = (1/sqrt(6), -1/sqrt(6), 2/sqrt(6))^T.",
+                "rubric": "2.5 Marks for orthogonalization; 2.5 Marks for normalization."
+              }
+            ]
+          },
+          "C": {
+            "title": "SECTION C (Architectural, Numerical & System Design - 10 Marks Each)",
+            "totalMarks": 30,
+            "questions": [
+              {
+                "id": "CUJ-MASTER-S1-08",
+                "section": "C",
+                "marks": 10,
+                "unit": 3,
+                "text": "Discuss dynamic memory allocation in C: malloc(), calloc(), realloc(), and free(). Write an industrial-grade C program that dynamically allocates a 2D matrix of dimensions M x N, populates it, computes its transpose, and deallocates memory without leaks.",
+                "choice": "OR: State and prove the Rank-Nullity Theorem for linear transformation T: V -> W. For T(x, y, z) = (x + y, y + z, x - z), determine the basis and dimensions of Ker(T) and Im(T).",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2022"
+                ],
+                "freq": "98% Highest Yield",
+                "probability": 98,
+                "bloom": "Evaluate",
+                "answer": "Provides complete heap memory allocation functions, 2D pointer of pointers int** allocation, transpose calculation, and deallocation loop. The OR choice provides the rigorous mathematical dimension proof.",
+                "rubric": "4 Marks for functions; 4 Marks for 2D matrix C code; 2 Marks for memory leak cleanup."
+              },
+              {
+                "id": "GEN-C1",
+                "section": "C",
+                "marks": 10,
+                "text": "In an RSA cryptosystem, prime numbers selected are p = 17 and q = 11. Public exponent e = 7.\n(i) Calculate private key d using Extended Euclidean Algorithm.\n(ii) Encrypt plaintext M = 88.\n(iii) Decrypt ciphertext C to prove correctness.\n(iv) Explain how Wiener's Attack exploits small private exponents.",
+                "choice": "OR: Discuss Elliptic Curve Cryptography (ECC). Define Weierstrass elliptic curve equation over GF(p). Explain point addition and point doubling geometrically and algebraically, and show why a 256-bit ECC key offers equivalent security to 3072-bit RSA.",
+                "years": [
+                  "2024",
+                  "2022",
+                  "2021",
+                  "2020"
+                ],
+                "freq": "97% Highest Yield",
+                "probability": 97,
+                "bloom": "Apply",
+                "answer": "n = 187, phi(n) = 160. d * 7 = 1 mod 160 => d = 23. C = 88^7 mod 187 = 11. Decryption M = 11^23 mod 187 = 88. Wiener's attack uses continued fractions when d < (1/3)n^(0.25).",
+                "rubric": "3 Marks for Extended Euclidean d; 3 Marks for encryption/decryption; 4 Marks for Wiener attack condition."
+              }
+            ]
+          }
+        }
+      },
+      "id": "doc_1791959290157",
+      "uploadedAt": "2026-10-14T06:28:10.157Z"
+    },
+    {
+      "source": "Google Drive (Folder: 1 sem ccs)",
+      "driveFileId": "1N7kbMvHBw_4OnOlA66NNRobLGgcA1CDC",
+      "driveUrl": "https://drive.google.com/file/d/1N7kbMvHBw_4OnOlA66NNRobLGgcA1CDC/view",
+      "driveFolder": "1 sem ccs / Official PYQ Paper",
+      "courseTitle": "CUJAMMU-SEM1-PYQ: Central University of Jammu - B.Tech Semester 1 Official Examination PYQ Paper",
+      "semester": 1,
+      "subjectCategory": "pyq",
+      "isMasterPyq": true,
+      "universityId": "cujammu",
+      "pptx": {
+        "fileName": "examination pyq.pdf",
+        "totalSlides": 3,
+        "keywords": [
+          "Course",
+          "Code",
+          "CUJAMMU",
+          "Title",
+          "Tech",
+          "Cyber",
+          "Security",
+          "Semester",
+          "Official",
+          "Term",
+          "Examination",
+          "Paper",
+          "Credits",
+          "University",
+          "Central"
+        ],
+        "slides": [
+          {
+            "slideNumber": 1,
+            "title": "Section A - Compulsory Conceptual & Definitions (2 Marks Each)",
+            "bulletPoints": [
+              "Question 1 (Computer Programming): What is a Dangling Pointer in C? Explain its memory risk and how setting the pointer to NULL mitigates vulnerabilities.",
+              "Question 2 (Programming): Differentiate between Call by Value and Call by Reference with a memory diagram.",
+              "Question 3 (Mathematics): State the Cayley-Hamilton Theorem. How is it applied to calculate high powers of square matrices?",
+              "Question 4 (Mathematics): Define the Kernel (Null Space) of a linear transformation T: V -> W. Under what condition is T injective?",
+              "Question 5 (BEE): State Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL). State the fundamental conservation laws they are derived from."
+            ],
+            "speakerNotes": "Core exam topic under Unit 1 for Central University of Jammu - B.Tech Semester 1 Official Examination PYQ Paper. Focus on definitions and 5-mark proofs.",
+            "fullText": "Section A - Compulsory Conceptual & Definitions (2 Marks Each) - Question 1 (Computer Programming): What is a Dangling Pointer in C? Explain its memory risk and how setting the pointer to NULL mitigates vulnerabilities.; Question 2 (Programming): Differentiate between Call by Value and Call by Reference with a memory diagram.; Question 3 (Mathematics): State the Cayley-Hamilton Theorem. How is it applied to calculate high powers of square matrices?; Question 4 (Mathematics): Define the Kernel (Null Space) of a linear transformation T: V -> W. Under what condition is T injective?; Question 5 (BEE): State Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL). State the fundamental conservation laws they are derived from.; Question 6 (BEE): Define the Quality Factor (Q-factor) of a series RLC resonant circuit and write its mathematical formula in terms of R, L, and C.; Question 7 (Environmental Studies): What is Eutrophication? Describe how nutrient runoffs lead to aquatic oxygen depletion.; Question 8 (Environmental Studies): Distinguish between In-situ and Ex-situ biodiversity conservation with two Indian examples for each.; Question 9 (Entrepreneurship): Explain the Lean Startup Build-Measure-Learn feedback loop.; Question 10 (Entrepreneurship): Define Customer Acquisition Cost (CAC) and Lifetime Value (LTV). What is the ideal CAC-to-LTV ratio for sustainable startups?"
+          },
+          {
+            "slideNumber": 2,
+            "title": "Section B - Technical, Algorithmic & Numerical Problems (5 Marks Each)",
+            "bulletPoints": [
+              "Question 11 (Computer Programming): Write a complete C function using dynamic memory allocation (malloc and free) to reverse a string in-place without using library functions. Explain why buffer overflow occurs if gets() is used instead of fgets().",
+              "Question 12 (Engineering Mathematics): Find an orthonormal basis for the subspace of R^3 spanned by vectors v1 = (1, 1, 0)^T and v2 = (1, 0, 1)^T using the Gram-Schmidt Orthogonalization process.",
+              "Question 13 (Basic Electrical Engineering): State Thevenin's Theorem. Find the Thevenin equivalent circuit across terminals A-B for a DC circuit containing a 24V source and resistances R1=4ohm, R2=12ohm, R3=3ohm. Compute current through load resistor RL = 6ohm.",
+              "Question 14 (Entrepreneurship & Startups): Explain the 9 building blocks of the Business Model Canvas (BMC). Construct a concise BMC for a cyber security vulnerability management SaaS platform."
+            ],
+            "speakerNotes": "Core exam topic under Unit 2 for Central University of Jammu - B.Tech Semester 1 Official Examination PYQ Paper. Focus on definitions and 5-mark proofs.",
+            "fullText": "Section B - Technical, Algorithmic & Numerical Problems (5 Marks Each) - Question 11 (Computer Programming): Write a complete C function using dynamic memory allocation (malloc and free) to reverse a string in-place without using library functions. Explain why buffer overflow occurs if gets() is used instead of fgets().; Question 12 (Engineering Mathematics): Find an orthonormal basis for the subspace of R^3 spanned by vectors v1 = (1, 1, 0)^T and v2 = (1, 0, 1)^T using the Gram-Schmidt Orthogonalization process.; Question 13 (Basic Electrical Engineering): State Thevenin's Theorem. Find the Thevenin equivalent circuit across terminals A-B for a DC circuit containing a 24V source and resistances R1=4ohm, R2=12ohm, R3=3ohm. Compute current through load resistor RL = 6ohm.; Question 14 (Entrepreneurship & Startups): Explain the 9 building blocks of the Business Model Canvas (BMC). Construct a concise BMC for a cyber security vulnerability management SaaS platform."
+          },
+          {
+            "slideNumber": 3,
+            "title": "Section C - Comprehensive Derivation, Proofs & System Design (10 Marks Each with Internal Choice)",
+            "bulletPoints": [
+              "Question 15A (Computer Programming): Discuss dynamic memory allocation functions malloc(), calloc(), realloc(), and free(). Write an industrial-grade C program that dynamically allocates a 2D matrix of dimensions M x N, takes user input, computes its transpose, displays the transposed matrix, and safely deallocates all heap memory without leaks.",
+              "Question 15B (OR - Structures & File I/O): Explain memory alignment and padding in C structures. Write a complete C program to maintain student cyber security test records using an array of structures written to and read from a binary file using fwrite() and fread().",
+              "Question 16A (Engineering Mathematics): Verify the Cayley-Hamilton Theorem for matrix A = [[2, 1, 1], [0, 1, 0], [1, 1, 2]]. Hence find A^-1 and compute A^4.",
+              "Question 16B (OR - Rank-Nullity Theorem): State and prove the Rank-Nullity Theorem for a linear transformation T: V -> W between finite-dimensional vector spaces. For linear transformation T: R^3 -> R^3 defined by T(x, y, z) = (x + y, y + z, x - z), find the basis and dimensions of Ker(T) and Im(T).",
+              "Question 17A (Basic Electrical Engineering): Derive the EMF equation of a single-phase transformer: E = 4.44 * f * N * Phi_m. Explain the open-circuit and short-circuit tests used to determine transformer core and copper losses and efficiency."
+            ],
+            "speakerNotes": "Core exam topic under Unit 3 for Central University of Jammu - B.Tech Semester 1 Official Examination PYQ Paper. Focus on definitions and 5-mark proofs.",
+            "fullText": "Section C - Comprehensive Derivation, Proofs & System Design (10 Marks Each with Internal Choice) - Question 15A (Computer Programming): Discuss dynamic memory allocation functions malloc(), calloc(), realloc(), and free(). Write an industrial-grade C program that dynamically allocates a 2D matrix of dimensions M x N, takes user input, computes its transpose, displays the transposed matrix, and safely deallocates all heap memory without leaks.; Question 15B (OR - Structures & File I/O): Explain memory alignment and padding in C structures. Write a complete C program to maintain student cyber security test records using an array of structures written to and read from a binary file using fwrite() and fread().; Question 16A (Engineering Mathematics): Verify the Cayley-Hamilton Theorem for matrix A = [[2, 1, 1], [0, 1, 0], [1, 1, 2]]. Hence find A^-1 and compute A^4.; Question 16B (OR - Rank-Nullity Theorem): State and prove the Rank-Nullity Theorem for a linear transformation T: V -> W between finite-dimensional vector spaces. For linear transformation T: R^3 -> R^3 defined by T(x, y, z) = (x + y, y + z, x - z), find the basis and dimensions of Ker(T) and Im(T).; Question 17A (Basic Electrical Engineering): Derive the EMF equation of a single-phase transformer: E = 4.44 * f * N * Phi_m. Explain the open-circuit and short-circuit tests used to determine transformer core and copper losses and efficiency.; Question 17B (OR - AC Resonance & Theorems): Derive the condition for resonance in a series RLC AC circuit. Derive expressions for resonant frequency, bandwidth, and dynamic impedance. If R = 10 ohms, L = 100 mH, and C = 10 microFarads, calculate resonant frequency, Q-factor, and half-power frequencies."
+          }
+        ]
+      },
+      "syllabus": {
+        "fileName": "examination pyq.pdf",
+        "totalUnits": 3,
+        "units": [
+          {
+            "number": "1",
+            "title": "Section A - Compulsory Conceptual & Definitions (2 Marks Each)",
+            "topics": [
+              "Question 1 (Computer Programming): What is a Dangling Pointer in C? Explain its memory risk and how setting the pointer to NULL mitigates vulnerabilities.",
+              "Question 2 (Programming): Differentiate between Call by Value and Call by Reference with a memory diagram.",
+              "Question 3 (Mathematics): State the Cayley-Hamilton Theorem. How is it applied to calculate high powers of square matrices?",
+              "Question 4 (Mathematics): Define the Kernel (Null Space) of a linear transformation T: V -> W. Under what condition is T injective?",
+              "Question 5 (BEE): State Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL). State the fundamental conservation laws they are derived from.",
+              "Question 6 (BEE): Define the Quality Factor (Q-factor) of a series RLC resonant circuit and write its mathematical formula in terms of R, L, and C.",
+              "Question 7 (Environmental Studies): What is Eutrophication? Describe how nutrient runoffs lead to aquatic oxygen depletion.",
+              "Question 8 (Environmental Studies): Distinguish between In-situ and Ex-situ biodiversity conservation with two Indian examples for each.",
+              "Question 9 (Entrepreneurship): Explain the Lean Startup Build-Measure-Learn feedback loop.",
+              "Question 10 (Entrepreneurship): Define Customer Acquisition Cost (CAC) and Lifetime Value (LTV). What is the ideal CAC-to-LTV ratio for sustainable startups?"
+            ]
+          },
+          {
+            "number": "2",
+            "title": "Section B - Technical, Algorithmic & Numerical Problems (5 Marks Each)",
+            "topics": [
+              "Question 11 (Computer Programming): Write a complete C function using dynamic memory allocation (malloc and free) to reverse a string in-place without using library functions. Explain why buffer overflow occurs if gets() is used instead of fgets().",
+              "Question 12 (Engineering Mathematics): Find an orthonormal basis for the subspace of R^3 spanned by vectors v1 = (1, 1, 0)^T and v2 = (1, 0, 1)^T using the Gram-Schmidt Orthogonalization process.",
+              "Question 13 (Basic Electrical Engineering): State Thevenin's Theorem. Find the Thevenin equivalent circuit across terminals A-B for a DC circuit containing a 24V source and resistances R1=4ohm, R2=12ohm, R3=3ohm. Compute current through load resistor RL = 6ohm.",
+              "Question 14 (Entrepreneurship & Startups): Explain the 9 building blocks of the Business Model Canvas (BMC). Construct a concise BMC for a cyber security vulnerability management SaaS platform."
+            ]
+          },
+          {
+            "number": "3",
+            "title": "Section C - Comprehensive Derivation, Proofs & System Design (10 Marks Each with Internal Choice)",
+            "topics": [
+              "Question 15A (Computer Programming): Discuss dynamic memory allocation functions malloc(), calloc(), realloc(), and free(). Write an industrial-grade C program that dynamically allocates a 2D matrix of dimensions M x N, takes user input, computes its transpose, displays the transposed matrix, and safely deallocates all heap memory without leaks.",
+              "Question 15B (OR - Structures & File I/O): Explain memory alignment and padding in C structures. Write a complete C program to maintain student cyber security test records using an array of structures written to and read from a binary file using fwrite() and fread().",
+              "Question 16A (Engineering Mathematics): Verify the Cayley-Hamilton Theorem for matrix A = [[2, 1, 1], [0, 1, 0], [1, 1, 2]]. Hence find A^-1 and compute A^4.",
+              "Question 16B (OR - Rank-Nullity Theorem): State and prove the Rank-Nullity Theorem for a linear transformation T: V -> W between finite-dimensional vector spaces. For linear transformation T: R^3 -> R^3 defined by T(x, y, z) = (x + y, y + z, x - z), find the basis and dimensions of Ker(T) and Im(T).",
+              "Question 17A (Basic Electrical Engineering): Derive the EMF equation of a single-phase transformer: E = 4.44 * f * N * Phi_m. Explain the open-circuit and short-circuit tests used to determine transformer core and copper losses and efficiency.",
+              "Question 17B (OR - AC Resonance & Theorems): Derive the condition for resonance in a series RLC AC circuit. Derive expressions for resonant frequency, bandwidth, and dynamic impedance. If R = 10 ohms, L = 100 mH, and C = 10 microFarads, calculate resonant frequency, Q-factor, and half-power frequencies."
+            ]
+          }
+        ],
+        "courseInfo": {
+          "courseCode": "CYB-COURSE",
+          "courseTitle": ": B.Tech CSE (Cyber Security) Semester 1 - Official End-Term Examination PYQ Paper",
+          "semester": "1",
+          "credits": 20
+        }
+      },
+      "shortNotes": {
+        "courseTitle": "CUJAMMU-SEM1-PYQ: Central University of Jammu - B.Tech Semester 1 Official Examination PYQ Paper",
+        "generatedAt": "2026-10-14T06:24:13.179Z",
+        "executiveSummary": [
+          "Section A - Compulsory Conceptual & Definitions (2 Marks Each): Key examination topic covered in lecture slides.",
+          "Section B - Technical, Algorithmic & Numerical Problems (5 Marks Each): Key examination topic covered in lecture slides.",
+          "Section C - Comprehensive Derivation, Proofs & System Design (10 Marks Each with Internal Choice): Key examination topic covered in lecture slides."
+        ],
+        "highYieldFormulas": [
+          {
+            "topic": "RSA Asymmetric Cryptosystem",
+            "formula": "n = p \\times q, \\quad \\phi(n) = (p-1)(q-1), \\quad e \\cdot d \\equiv 1 \\pmod{\\phi(n)}, \\quad C = M^e \\pmod n",
+            "explanation": "Public key (e, n), Private key (d, n). d is computed using the Extended Euclidean Algorithm."
+          },
+          {
+            "topic": "Diffie-Hellman Key Exchange",
+            "formula": "A = g^a \\pmod p, \\quad B = g^b \\pmod p, \\quad K = B^a \\equiv A^b \\equiv g^{ab} \\pmod p",
+            "explanation": "Security relies on the hardness of the Discrete Logarithm Problem (DLP) in GF(p)."
+          },
+          {
+            "topic": "Hash Function Collision Resistance (Birthday Bound)",
+            "formula": "P(\\text{collision}) > 0.5 \\implies \\text{Complexity} = O(2^{n/2})",
+            "explanation": "An n-bit cryptographic hash requires only 2^(n/2) operations to discover a pair of colliding messages."
+          },
+          {
+            "topic": "AES Finite Field Arithmetic",
+            "formula": "GF(2^8) / (x^8 + x^4 + x^3 + x + 1) \\quad \\text{with irreducible polynomial } 0x11B",
+            "explanation": "Used in MixColumns matrix multiplication and SubBytes S-Box affine inversion."
+          },
+          {
+            "topic": "Extended Euclidean Multiplicative Inverse",
+            "formula": "a \\cdot x + m \\cdot y = \\gcd(a, m) = 1 \\implies x \\equiv a^{-1} \\pmod m",
+            "explanation": "Mandatory condition: gcd(a, m) = 1. Fast calculation in O(log(min(a, m))) steps."
+          }
+        ],
+        "keyDefinitions": [
+          {
+            "term": "Confusion vs Diffusion",
+            "definition": "Confusion obscures relationship between key and ciphertext (via S-Boxes). Diffusion disperses statistical plaintext redundancy over ciphertext (via P-Boxes/MixColumns)."
+          },
+          {
+            "term": "Zero-Trust Architecture (ZTA)",
+            "definition": "Security paradigm enforcing 'Never Trust, Always Verify' across identity, device posture, and network microsegmentation under NIST SP 800-207."
+          },
+          {
+            "term": "Address Space Layout Randomization (ASLR)",
+            "definition": "Kernel defense randomizing base addresses of stack, heap, and libraries on each program execution to foil Return-Oriented Programming (ROP) and shellcode injection."
+          },
+          {
+            "term": "Dynamic ARP Inspection (DAI)",
+            "definition": "Switch security feature intercepting and validating ARP packets against the DHCP Snooping database to prevent ARP Poisoning and MITM attacks on switched LANs."
+          },
+          {
+            "term": "Order of Volatility (RFC 3227)",
+            "definition": "Forensic acquisition hierarchy prioritizing the most perishable digital evidence: CPU registers -> Memory/RAM -> Swap -> Disks -> Remote Logs -> Physical media."
+          }
+        ],
+        "keyTerms": [
+          "Course",
+          "Code",
+          "CUJAMMU",
+          "Title",
+          "Tech",
+          "Cyber",
+          "Security",
+          "Semester",
+          "Official",
+          "Term",
+          "Examination",
+          "Paper",
+          "Credits",
+          "University",
+          "Central"
+        ]
+      },
+      "interactiveNotes": {
+        "flashcards": [
+          {
+            "id": "fc-1",
+            "unit": "UNIT 1 • NUMBER THEORY & FOUNDATIONS",
+            "prompt": "What is the condition for an integer 'a' to have a modular multiplicative inverse modulo 'm'?",
+            "answer": "gcd(a, m) = 1 (a and m must be relatively prime). The inverse is computed using the Extended Euclidean Algorithm: a*x + m*y = 1 => a^-1 = x mod m.",
+            "formula": "Extended Euclidean: a*x + m*y = 1",
+            "probability": "98% Highest Yield",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          },
+          {
+            "id": "fc-2",
+            "unit": "UNIT 2 • SYMMETRIC CIPHERS",
+            "prompt": "Explain why ECB mode is vulnerable to statistical pattern leakage whereas CBC mode is not.",
+            "answer": "ECB encrypts identical plaintext blocks into identical ciphertext blocks. In CBC mode, each plaintext block is XORed with the preceding ciphertext block (C_i = E(P_i XOR C_{i-1})), ensuring randomized outputs even for identical input blocks.",
+            "formula": "CBC: C_i = E_K(P_i \\oplus C_{i-1})",
+            "probability": "94% Frequent",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          },
+          {
+            "id": "fc-3",
+            "unit": "UNIT 3 • PUBLIC KEY CRYPTO",
+            "prompt": "Why must primes 'p' and 'q' in RSA not be close to each other in magnitude?",
+            "answer": "If p and q are close to sqrt(n), Fermat's Factorization Method can trivially factor n = p*q in O(|p-q|) steps by searching values of a = ceil(sqrt(n)) where a^2 - n is a square b^2.",
+            "formula": "Fermat: n = a^2 - b^2 = (a-b)(a+b)",
+            "probability": "91% Core Concept",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          },
+          {
+            "id": "fc-4",
+            "unit": "UNIT 4 • OPERATING SYSTEM SECURITY",
+            "prompt": "What is a Stack Canary and how does it detect buffer overflow exploits?",
+            "answer": "A Stack Canary is a random 32/64-bit integer placed on the stack right before the saved return address (EIP/RIP). If a buffer overflow overwrites the return pointer, it inevitably alters the canary. The function epilogue checks the canary; if modified, __stack_chk_fail terminates execution immediately.",
+            "formula": "Canary Guard: cmp [rbp-8], fs:28h",
+            "probability": "96% Highest Yield",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          },
+          {
+            "id": "fc-5",
+            "unit": "UNIT 5 • WEB & NETWORK SECURITY",
+            "prompt": "How does the 'HttpOnly' cookie flag protect against Cross-Site Scripting (XSS)?",
+            "answer": "The HttpOnly flag instructs the browser that the cookie cannot be accessed via client-side scripts (such as document.cookie). Even if an attacker executes stored or reflected JavaScript, the session token cannot be stolen via DOM extraction.",
+            "formula": "Set-Cookie: session_id=...; Secure; HttpOnly; SameSite=Strict",
+            "probability": "95% Highest Yield",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          }
+        ],
+        "quiz": [
+          {
+            "id": "qz-1",
+            "question": "In the AES cipher, which transformation round provides non-linear confusion?",
+            "options": [
+              "ShiftRows",
+              "SubBytes (using S-Box)",
+              "MixColumns",
+              "AddRoundKey"
+            ],
+            "correctIndex": 1,
+            "explanation": "SubBytes is the sole non-linear transformation in AES, substituting bytes using an inversion in GF(2^8) followed by an affine transformation to resist differential and linear cryptanalysis."
+          },
+          {
+            "id": "qz-2",
+            "question": "Which necessary condition for Deadlock is eliminated by preempting resources from processes?",
+            "options": [
+              "Mutual Exclusion",
+              "Hold and Wait",
+              "No Preemption",
+              "Circular Wait"
+            ],
+            "correctIndex": 2,
+            "explanation": "The 'No Preemption' condition dictates that allocated resources cannot be forcibly seized. Allowing the OS to preempt resources directly breaks this condition, preventing deadlock."
+          },
+          {
+            "id": "qz-3",
+            "question": "According to RFC 3227 Order of Volatility, which evidence source must be collected FIRST?",
+            "options": [
+              "Hard disk partitions",
+              "Routing table and process memory (RAM)",
+              "CPU Registers and Cache",
+              "Archival backup tapes"
+            ],
+            "correctIndex": 2,
+            "explanation": "CPU registers and processor cache change nanoseconds apart and are lost immediately upon system shutdown or instruction execution, making them the most volatile."
+          },
+          {
+            "id": "qz-4",
+            "question": "What is the computational complexity required to discover a collision in an n-bit hash function using the Birthday Attack?",
+            "options": [
+              "O(2^n)",
+              "O(2^{n/2})",
+              "O(n^2)",
+              "O(log n)"
+            ],
+            "correctIndex": 1,
+            "explanation": "By the Birthday Paradox, comparing pairs of outputs yields a collision with probability > 50% in approximately O(2^(n/2)) evaluations, halving the effective security bits."
+          }
+        ],
+        "mindmap": {
+          "root": "Cyber Security & Examination Core",
+          "children": [
+            {
+              "name": "Cryptographic Foundations",
+              "children": [
+                {
+                  "name": "Symmetric: AES, DES, GCM, CBC"
+                },
+                {
+                  "name": "Asymmetric: RSA, Diffie-Hellman, ECC"
+                },
+                {
+                  "name": "Hash Functions: SHA-256, HMAC, Birthday Bound"
+                }
+              ]
+            },
+            {
+              "name": "System & Software Security",
+              "children": [
+                {
+                  "name": "Buffer Overflow & Shellcoding"
+                },
+                {
+                  "name": "Defenses: ASLR, DEP/NX, Stack Canaries"
+                },
+                {
+                  "name": "Race Conditions & Peterson's Algorithm"
+                }
+              ]
+            },
+            {
+              "name": "Network & Perimeter Defense",
+              "children": [
+                {
+                  "name": "TCP 3-Way Handshake & SYN Cookies"
+                },
+                {
+                  "name": "ARP Spoofing & Dynamic ARP Inspection"
+                },
+                {
+                  "name": "IPsec (Tunnel vs Transport Mode) & TLS 1.3"
+                }
+              ]
+            },
+            {
+              "name": "Digital Forensics & Incident Response",
+              "children": [
+                {
+                  "name": "Order of Volatility (RFC 3227)"
+                },
+                {
+                  "name": "Memory Forensics: Volatility Framework"
+                },
+                {
+                  "name": "Chain of Custody & Bit-Stream Hashing"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "predictedPaper": {
+        "university": "Central University of Jammu (CUJammu)",
+        "universityId": "cujammu",
+        "department": "Department of Computer Science & Information Technology",
+        "program": "B.Tech Computer Science & Engineering (Cyber Security)",
+        "semester": 1,
+        "courseCode": "CSE-101",
+        "courseTitle": "Programming for Problem Solving in C",
+        "durationHours": 3,
+        "maxMarks": 70,
+        "overallAccuracy": 94,
+        "instructions": [
+          "Section A is COMPULSORY. Answer all questions (2 marks each).",
+          "Section B: Attempt any FOUR questions (5 marks each).",
+          "Section C: Attempt THREE questions with internal choices (10 marks each).",
+          "Assume suitable data wherever necessary. Neat diagrams carry due weightage."
+        ],
+        "sections": {
+          "A": {
+            "title": "SECTION A (Compulsory Short Answers - 2 Marks Each)",
+            "totalMarks": 20,
+            "questions": [
+              {
+                "id": "CUJ-S1-C-01",
+                "section": "A",
+                "marks": 2,
+                "unit": 1,
+                "text": "Differentiate between compiler and interpreter. Which one does standard C use?",
+                "years": [
+                  "2024",
+                  "2022",
+                  "2020"
+                ],
+                "freq": "94% Highest Yield",
+                "probability": 95,
+                "bloom": "Understand",
+                "answer": "A compiler translates the entire source code into machine code in one pass generating an object file (e.g. GCC for C), leading to faster runtime execution. An interpreter executes code line-by-line without producing a standalone executable. Standard C utilizes a compiler.",
+                "rubric": "1 Mark for core difference; 1 Mark for specifying C compiler and rationale."
+              },
+              {
+                "id": "CUJ-S1-C-02",
+                "section": "A",
+                "marks": 2,
+                "unit": 4,
+                "text": "What is a Dangling Pointer in C and how can it lead to memory vulnerabilities?",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2021"
+                ],
+                "freq": "92% Frequent",
+                "probability": 92,
+                "bloom": "Analyze",
+                "answer": "A dangling pointer points to a memory location that has already been deallocated using free(). Accessing it causes undefined behavior, segmentation faults, or Use-After-Free (UAF) security exploits. Fix: Assign pointer = NULL immediately after free(pointer).",
+                "rubric": "1 Mark for definition; 1 Mark for security implication & fix."
+              },
+              {
+                "id": "GEN-A1",
+                "section": "A",
+                "marks": 2,
+                "text": "Differentiate between Confusion and Diffusion as conceptualized by Claude Shannon.",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2021"
+                ],
+                "freq": "98% Highest Yield",
+                "probability": 98,
+                "bloom": "Understand",
+                "answer": "Confusion obscures relationship between ciphertext and secret key using non-linear S-Boxes. Diffusion disperses redundancy of plaintext across the ciphertext using P-Boxes.",
+                "rubric": "1 Mark for Confusion; 1 Mark for Diffusion."
+              },
+              {
+                "id": "GEN-A2",
+                "section": "A",
+                "marks": 2,
+                "text": "Why is ECB (Electronic Codebook) mode insecure for transmitting structured records?",
+                "years": [
+                  "2024",
+                  "2022"
+                ],
+                "freq": "94% Frequent",
+                "probability": 94,
+                "bloom": "Analyze",
+                "answer": "In ECB, identical plaintext blocks encrypt to identical ciphertext blocks, preserving visual and statistical patterns.",
+                "rubric": "1 Mark for block deterministic property; 1 Mark for visual pattern leak."
+              },
+              {
+                "id": "GEN-A3",
+                "section": "A",
+                "marks": 2,
+                "text": "Compute Euler's Totient function value phi(55) and state its role in RSA.",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2020"
+                ],
+                "freq": "92% Core Concept",
+                "probability": 92,
+                "bloom": "Apply",
+                "answer": "55 = 5 * 11 => phi(55) = (5-1)*(11-1) = 40. RSA public exponent e must satisfy gcd(e, 40) = 1.",
+                "rubric": "1 Mark for calculation; 1 Mark for RSA coprimality requirement."
+              }
+            ]
+          },
+          "B": {
+            "title": "SECTION B (Conceptual & Analytical - 5 Marks Each)",
+            "totalMarks": 20,
+            "questions": [
+              {
+                "id": "CUJ-S1-C-03",
+                "section": "B",
+                "marks": 5,
+                "unit": 3,
+                "text": "Explain Call by Value versus Call by Reference in C with memory diagrams and code examples. Why is Call by Reference essential for swapping two integers?",
+                "years": [
+                  "2023",
+                  "2021",
+                  "2019"
+                ],
+                "freq": "89% Core Concept",
+                "probability": 88,
+                "bloom": "Apply",
+                "answer": "Call by Value copies actual argument values into function parameters; modifications inside the function do not affect the caller's stack frame. Call by Reference passes memory addresses via pointers, allowing direct mutation of original variables. Swapping requires dereferencing (*a = *b) to alter values in the caller's memory scope.",
+                "rubric": "2 Marks for comparison; 2 Marks for C swap code; 1 Mark for memory stack explanation."
+              },
+              {
+                "id": "GEN-B1",
+                "section": "B",
+                "marks": 5,
+                "text": "Explain the four transformation rounds of AES: SubBytes, ShiftRows, MixColumns, and AddRoundKey. Why is MixColumns omitted in the final 10th round?",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2022",
+                  "2019"
+                ],
+                "freq": "96% Highest Yield",
+                "probability": 96,
+                "bloom": "Understand",
+                "answer": "SubBytes (non-linear S-box GF(2^8)), ShiftRows (cyclic byte shifts), MixColumns (matrix multiplication for diffusion), AddRoundKey (XOR with subkey). Omitted in 10th round to harmonize decryption logic and save clock cycles.",
+                "rubric": "3 Marks for transformation descriptions; 2 Marks for round 10 rationale."
+              }
+            ]
+          },
+          "C": {
+            "title": "SECTION C (Architectural, Numerical & System Design - 10 Marks Each)",
+            "totalMarks": 30,
+            "questions": [
+              {
+                "id": "CUJ-S1-C-04",
+                "section": "C",
+                "marks": 10,
+                "unit": 4,
+                "text": "Discuss Dynamic Memory Allocation functions: malloc(), calloc(), realloc(), and free(). Write a complete C program to dynamically allocate a 2D matrix of size M x N, populate it, compute its transpose, and deallocate memory safely without memory leaks.",
+                "choice": "OR: Explain Structures vs Unions with memory layout alignment. Write a program to manage a student record database using an array of structures written to and read from a binary file.",
+                "years": [
+                  "2024",
+                  "2022",
+                  "2019"
+                ],
+                "freq": "96% Highest Yield",
+                "probability": 96,
+                "bloom": "Evaluate",
+                "answer": "malloc(size) allocates uninitialized bytes; calloc(n, size) allocates and zeroes bytes; realloc(ptr, size) resizes memory blocks; free(ptr) releases heap memory. The 2D array program uses int** ptr = (int**)malloc(M * sizeof(int*)) followed by allocating each row, calculating transpose into another matrix, and freeing rows in reverse order followed by ptr.",
+                "rubric": "3 Marks for 4 memory functions; 5 Marks for correct C program with 2D pointers; 2 Marks for complete deallocation."
+              },
+              {
+                "id": "GEN-C1",
+                "section": "C",
+                "marks": 10,
+                "text": "In an RSA cryptosystem, prime numbers selected are p = 17 and q = 11. Public exponent e = 7.\n(i) Calculate private key d using Extended Euclidean Algorithm.\n(ii) Encrypt plaintext M = 88.\n(iii) Decrypt ciphertext C to prove correctness.\n(iv) Explain how Wiener's Attack exploits small private exponents.",
+                "choice": "OR: Discuss Elliptic Curve Cryptography (ECC). Define Weierstrass elliptic curve equation over GF(p). Explain point addition and point doubling geometrically and algebraically, and show why a 256-bit ECC key offers equivalent security to 3072-bit RSA.",
+                "years": [
+                  "2024",
+                  "2022",
+                  "2021",
+                  "2020"
+                ],
+                "freq": "97% Highest Yield",
+                "probability": 97,
+                "bloom": "Apply",
+                "answer": "n = 187, phi(n) = 160. d * 7 = 1 mod 160 => d = 23. C = 88^7 mod 187 = 11. Decryption M = 11^23 mod 187 = 88. Wiener's attack uses continued fractions when d < (1/3)n^(0.25).",
+                "rubric": "3 Marks for Extended Euclidean d; 3 Marks for encryption/decryption; 4 Marks for Wiener attack condition."
+              }
+            ]
+          }
+        }
+      },
+      "id": "doc_1791959053181",
+      "uploadedAt": "2026-10-14T06:24:13.181Z"
+    },
+    {
+      "courseTitle": "CYB-501: Cryptography and Network Security",
+      "semester": 5,
+      "universityId": "cujammu",
+      "isSample": true,
+      "pptx": {
+        "fileName": "CUJammu_CYB501_LectureSlides.pptx",
+        "totalSlides": 4,
+        "keywords": [
+          "Security",
+          "Encryption",
+          "AES",
+          "phi",
+          "exponent",
+          "mod",
+          "Cryptography",
+          "University",
+          "Cyber",
+          "Round",
+          "over",
+          "MixColumns",
+          "RSA",
+          "Proof",
+          "Compute",
+          "Euler",
+          "private",
+          "Common",
+          "trap",
+          "Section",
+          "identical",
+          "CYB-501",
+          "Network",
+          "Lecture",
+          "Central"
+        ],
+        "slides": [
+          {
+            "slideNumber": 1,
+            "title": "CYB-501: Cryptography & Network Security Lecture 04",
+            "content": [
+              "Central University of Jammu - Department of CSE (Cyber Security)",
+              "Instructor: Faculty of Cyber Security & Information Assurance",
+              "Module: Symmetric Encryption & Advanced Encryption Standard (AES)"
+            ],
+            "notes": ""
+          },
+          {
+            "slideNumber": 2,
+            "title": "AES Architecture & 4 Core Round Transformations",
+            "content": [
+              "1. SubBytes: Non-linear byte substitution using 16x16 S-box over GF(2^8).",
+              "2. ShiftRows: Cyclic permutation of matrix rows for intra-block diffusion.",
+              "3. MixColumns: Matrix multiplication over GF(2^8) modulo (x^4 + 1).",
+              "4. AddRoundKey: Bitwise XOR of the 128-bit state with the round subkey.",
+              "Notice: MixColumns is skipped in Round 10 to ensure symmetric decryption circuit."
+            ],
+            "notes": ""
+          },
+          {
+            "slideNumber": 3,
+            "title": "Public Key Cryptography & RSA Mathematical Proof",
+            "content": [
+              "Choose primes p and q. Compute modulus n = p * q and Euler phi(n) = (p-1)(q-1).",
+              "Select public exponent e such that gcd(e, phi(n)) = 1.",
+              "Compute private exponent d: d * e = 1 mod phi(n) via Extended Euclidean Algorithm.",
+              "Encryption: Ciphertext C = M^e mod n.",
+              "Decryption: Plaintext M = C^d mod n. Proof holds by Euler's Totient Theorem."
+            ],
+            "notes": ""
+          },
+          {
+            "slideNumber": 4,
+            "title": "High-Yield University Examination PYQ Weightage",
+            "content": [
+              "Historical Exam Focus: 32% Number Theory & RSA, 28% AES, 24% TLS/IPsec Protocols.",
+              "Common trap in Section A: ECB mode leak (identical plaintext produces identical ciphertext).",
+              "Common trap in Section C: Wiener's attack on small private exponent d"
+            ],
+            "notes": ""
+          }
+        ]
+      },
+      "syllabus": {
+        "fileName": "CUJammu_CYB501_Syllabus.txt",
+        "totalUnits": 5,
+        "units": [
+          {
+            "number": "1",
+            "title": "Classical Ciphers & Number Theory",
+            "topics": [
+              "Historical Ciphers: Caesar, Playfair, Hill, Vigenere, Transposition ciphers",
+              "Modular Arithmetic, GCD, Extended Euclidean Algorithm",
+              "Fermat's and Euler's Totient Theorem, Discrete Logarithms"
+            ]
+          },
+          {
+            "number": "2",
+            "title": "Symmetric Block Ciphers & Hash Functions",
+            "topics": [
+              "Shannon's Principles of Confusion and Diffusion, Feistel Networks",
+              "Data Encryption Standard (DES) and Triple-DES",
+              "Advanced Encryption Standard (AES): SubBytes, ShiftRows, MixColumns, AddRoundKey",
+              "Block Cipher Modes: ECB, CBC, CFB, OFB, CTR, GCM",
+              "Cryptographic Hash Functions: SHA-256, SHA-3, Birthday Paradox & Collision Resistance"
+            ]
+          },
+          {
+            "number": "3",
+            "title": "Public Key Cryptography & Key Exchange",
+            "topics": [
+              "Principles of Asymmetric Cryptography",
+              "RSA Algorithm: Key Generation, Encryption, Decryption, Security against Wiener's Attack",
+              "Diffie-Hellman Key Exchange and Man-in-the-Middle (MITM) Vulnerability",
+              "Elliptic Curve Cryptography (ECC) & Digital Signature Standard (ECDSA)"
+            ]
+          },
+          {
+            "number": "4",
+            "title": "System & Network Security Protocols",
+            "topics": [
+              "Transport Layer Security (TLS 1.3) Handshake vs TLS 1.2",
+              "IPsec Architecture: AH vs ESP in Tunnel and Transport Modes",
+              "Kerberos v5 Authentication and Cross-Realm Trust",
+              "Buffer Overflows, Stack Canaries, ASLR, and Return-Oriented Programming (ROP)"
+            ]
+          },
+          {
+            "number": "5",
+            "title": "Perimeter Defense & Modern Threat Landscapes",
+            "topics": [
+              "Firewalls: Packet Filtering, Stateful Inspection, Next-Generation Firewalls (NGFW)",
+              "Intrusion Detection & Prevention (Snort / Suricata IDS/IPS)",
+              "Zero Trust Architecture (ZTA) under NIST SP 800-207",
+              "Digital Forensics Chain of Custody & RFC 3227 Order of Volatility",
+              "William Stallings, \"Cryptography and Network Security: Principles and Practice\", Pearson 8th Edition.",
+              "Behrouz A. Forouzan, \"Cryptography & Network Security\", McGraw-Hill."
+            ]
+          }
+        ],
+        "courseInfo": {
+          "courseCode": "CYB-501",
+          "courseTitle": ": Cryptography & Network Security",
+          "semester": "5",
+          "credits": 4
+        }
+      },
+      "shortNotes": {
+        "courseTitle": "CYB-501: Cryptography & Network Security",
+        "generatedAt": "2026-10-14T06:16:07.353Z",
+        "executiveSummary": [
+          "CYB-501: Cryptography & Network Security Lecture 04: Central University of Jammu - Department of CSE (Cyber Security)",
+          "AES Architecture & 4 Core Round Transformations: 1. SubBytes: Non-linear byte substitution using 16x16 S-box over GF(2^8).",
+          "Public Key Cryptography & RSA Mathematical Proof: Choose primes p and q. Compute modulus n = p * q and Euler phi(n) = (p-1)(q-1).",
+          "High-Yield University Examination PYQ Weightage: Historical Exam Focus: 32% Number Theory & RSA, 28% AES, 24% TLS/IPsec Protocols."
+        ],
+        "highYieldFormulas": [
+          {
+            "topic": "RSA Asymmetric Cryptosystem",
+            "formula": "n = p \\times q, \\quad \\phi(n) = (p-1)(q-1), \\quad e \\cdot d \\equiv 1 \\pmod{\\phi(n)}, \\quad C = M^e \\pmod n",
+            "explanation": "Public key (e, n), Private key (d, n). d is computed using the Extended Euclidean Algorithm."
+          },
+          {
+            "topic": "Diffie-Hellman Key Exchange",
+            "formula": "A = g^a \\pmod p, \\quad B = g^b \\pmod p, \\quad K = B^a \\equiv A^b \\equiv g^{ab} \\pmod p",
+            "explanation": "Security relies on the hardness of the Discrete Logarithm Problem (DLP) in GF(p)."
+          },
+          {
+            "topic": "Hash Function Collision Resistance (Birthday Bound)",
+            "formula": "P(\\text{collision}) > 0.5 \\implies \\text{Complexity} = O(2^{n/2})",
+            "explanation": "An n-bit cryptographic hash requires only 2^(n/2) operations to discover a pair of colliding messages."
+          },
+          {
+            "topic": "AES Finite Field Arithmetic",
+            "formula": "GF(2^8) / (x^8 + x^4 + x^3 + x + 1) \\quad \\text{with irreducible polynomial } 0x11B",
+            "explanation": "Used in MixColumns matrix multiplication and SubBytes S-Box affine inversion."
+          },
+          {
+            "topic": "Extended Euclidean Multiplicative Inverse",
+            "formula": "a \\cdot x + m \\cdot y = \\gcd(a, m) = 1 \\implies x \\equiv a^{-1} \\pmod m",
+            "explanation": "Mandatory condition: gcd(a, m) = 1. Fast calculation in O(log(min(a, m))) steps."
+          }
+        ],
+        "keyDefinitions": [
+          {
+            "term": "Confusion vs Diffusion",
+            "definition": "Confusion obscures relationship between key and ciphertext (via S-Boxes). Diffusion disperses statistical plaintext redundancy over ciphertext (via P-Boxes/MixColumns)."
+          },
+          {
+            "term": "Zero-Trust Architecture (ZTA)",
+            "definition": "Security paradigm enforcing 'Never Trust, Always Verify' across identity, device posture, and network microsegmentation under NIST SP 800-207."
+          },
+          {
+            "term": "Address Space Layout Randomization (ASLR)",
+            "definition": "Kernel defense randomizing base addresses of stack, heap, and libraries on each program execution to foil Return-Oriented Programming (ROP) and shellcode injection."
+          },
+          {
+            "term": "Dynamic ARP Inspection (DAI)",
+            "definition": "Switch security feature intercepting and validating ARP packets against the DHCP Snooping database to prevent ARP Poisoning and MITM attacks on switched LANs."
+          },
+          {
+            "term": "Order of Volatility (RFC 3227)",
+            "definition": "Forensic acquisition hierarchy prioritizing the most perishable digital evidence: CPU registers -> Memory/RAM -> Swap -> Disks -> Remote Logs -> Physical media."
+          }
+        ],
+        "keyTerms": [
+          "Security",
+          "Encryption",
+          "AES",
+          "phi",
+          "exponent",
+          "mod",
+          "Cryptography",
+          "University",
+          "Cyber",
+          "Round",
+          "over",
+          "MixColumns",
+          "RSA",
+          "Proof",
+          "Compute",
+          "Euler",
+          "private",
+          "Common",
+          "trap",
+          "Section",
+          "identical",
+          "CYB-501",
+          "Network",
+          "Lecture",
+          "Central"
+        ]
+      },
+      "interactiveNotes": {
+        "flashcards": [
+          {
+            "id": "fc-1",
+            "unit": "UNIT 1 • NUMBER THEORY & FOUNDATIONS",
+            "prompt": "What is the condition for an integer 'a' to have a modular multiplicative inverse modulo 'm'?",
+            "answer": "gcd(a, m) = 1 (a and m must be relatively prime). The inverse is computed using the Extended Euclidean Algorithm: a*x + m*y = 1 => a^-1 = x mod m.",
+            "formula": "Extended Euclidean: a*x + m*y = 1",
+            "probability": "98% Highest Yield",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          },
+          {
+            "id": "fc-2",
+            "unit": "UNIT 2 • SYMMETRIC CIPHERS",
+            "prompt": "Explain why ECB mode is vulnerable to statistical pattern leakage whereas CBC mode is not.",
+            "answer": "ECB encrypts identical plaintext blocks into identical ciphertext blocks. In CBC mode, each plaintext block is XORed with the preceding ciphertext block (C_i = E(P_i XOR C_{i-1})), ensuring randomized outputs even for identical input blocks.",
+            "formula": "CBC: C_i = E_K(P_i \\oplus C_{i-1})",
+            "probability": "94% Frequent",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          },
+          {
+            "id": "fc-3",
+            "unit": "UNIT 3 • PUBLIC KEY CRYPTO",
+            "prompt": "Why must primes 'p' and 'q' in RSA not be close to each other in magnitude?",
+            "answer": "If p and q are close to sqrt(n), Fermat's Factorization Method can trivially factor n = p*q in O(|p-q|) steps by searching values of a = ceil(sqrt(n)) where a^2 - n is a square b^2.",
+            "formula": "Fermat: n = a^2 - b^2 = (a-b)(a+b)",
+            "probability": "91% Core Concept",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          },
+          {
+            "id": "fc-4",
+            "unit": "UNIT 4 • OPERATING SYSTEM SECURITY",
+            "prompt": "What is a Stack Canary and how does it detect buffer overflow exploits?",
+            "answer": "A Stack Canary is a random 32/64-bit integer placed on the stack right before the saved return address (EIP/RIP). If a buffer overflow overwrites the return pointer, it inevitably alters the canary. The function epilogue checks the canary; if modified, __stack_chk_fail terminates execution immediately.",
+            "formula": "Canary Guard: cmp [rbp-8], fs:28h",
+            "probability": "96% Highest Yield",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          },
+          {
+            "id": "fc-5",
+            "unit": "UNIT 5 • WEB & NETWORK SECURITY",
+            "prompt": "How does the 'HttpOnly' cookie flag protect against Cross-Site Scripting (XSS)?",
+            "answer": "The HttpOnly flag instructs the browser that the cookie cannot be accessed via client-side scripts (such as document.cookie). Even if an attacker executes stored or reflected JavaScript, the session token cannot be stolen via DOM extraction.",
+            "formula": "Set-Cookie: session_id=...; Secure; HttpOnly; SameSite=Strict",
+            "probability": "95% Highest Yield",
+            "efactor": 2.5,
+            "interval": 1,
+            "reps": 0
+          }
+        ],
+        "quiz": [
+          {
+            "id": "qz-1",
+            "question": "In the AES cipher, which transformation round provides non-linear confusion?",
+            "options": [
+              "ShiftRows",
+              "SubBytes (using S-Box)",
+              "MixColumns",
+              "AddRoundKey"
+            ],
+            "correctIndex": 1,
+            "explanation": "SubBytes is the sole non-linear transformation in AES, substituting bytes using an inversion in GF(2^8) followed by an affine transformation to resist differential and linear cryptanalysis."
+          },
+          {
+            "id": "qz-2",
+            "question": "Which necessary condition for Deadlock is eliminated by preempting resources from processes?",
+            "options": [
+              "Mutual Exclusion",
+              "Hold and Wait",
+              "No Preemption",
+              "Circular Wait"
+            ],
+            "correctIndex": 2,
+            "explanation": "The 'No Preemption' condition dictates that allocated resources cannot be forcibly seized. Allowing the OS to preempt resources directly breaks this condition, preventing deadlock."
+          },
+          {
+            "id": "qz-3",
+            "question": "According to RFC 3227 Order of Volatility, which evidence source must be collected FIRST?",
+            "options": [
+              "Hard disk partitions",
+              "Routing table and process memory (RAM)",
+              "CPU Registers and Cache",
+              "Archival backup tapes"
+            ],
+            "correctIndex": 2,
+            "explanation": "CPU registers and processor cache change nanoseconds apart and are lost immediately upon system shutdown or instruction execution, making them the most volatile."
+          },
+          {
+            "id": "qz-4",
+            "question": "What is the computational complexity required to discover a collision in an n-bit hash function using the Birthday Attack?",
+            "options": [
+              "O(2^n)",
+              "O(2^{n/2})",
+              "O(n^2)",
+              "O(log n)"
+            ],
+            "correctIndex": 1,
+            "explanation": "By the Birthday Paradox, comparing pairs of outputs yields a collision with probability > 50% in approximately O(2^(n/2)) evaluations, halving the effective security bits."
+          }
+        ],
+        "mindmap": {
+          "root": "Cyber Security & Examination Core",
+          "children": [
+            {
+              "name": "Cryptographic Foundations",
+              "children": [
+                {
+                  "name": "Symmetric: AES, DES, GCM, CBC"
+                },
+                {
+                  "name": "Asymmetric: RSA, Diffie-Hellman, ECC"
+                },
+                {
+                  "name": "Hash Functions: SHA-256, HMAC, Birthday Bound"
+                }
+              ]
+            },
+            {
+              "name": "System & Software Security",
+              "children": [
+                {
+                  "name": "Buffer Overflow & Shellcoding"
+                },
+                {
+                  "name": "Defenses: ASLR, DEP/NX, Stack Canaries"
+                },
+                {
+                  "name": "Race Conditions & Peterson's Algorithm"
+                }
+              ]
+            },
+            {
+              "name": "Network & Perimeter Defense",
+              "children": [
+                {
+                  "name": "TCP 3-Way Handshake & SYN Cookies"
+                },
+                {
+                  "name": "ARP Spoofing & Dynamic ARP Inspection"
+                },
+                {
+                  "name": "IPsec (Tunnel vs Transport Mode) & TLS 1.3"
+                }
+              ]
+            },
+            {
+              "name": "Digital Forensics & Incident Response",
+              "children": [
+                {
+                  "name": "Order of Volatility (RFC 3227)"
+                },
+                {
+                  "name": "Memory Forensics: Volatility Framework"
+                },
+                {
+                  "name": "Chain of Custody & Bit-Stream Hashing"
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "predictedPaper": {
+        "university": "Central University of Jammu (CUJammu)",
+        "universityId": "cujammu",
+        "department": "Department of Computer Science & Information Technology",
+        "program": "B.Tech Computer Science & Engineering (Cyber Security)",
+        "semester": 5,
+        "courseCode": "CYB-501",
+        "courseTitle": "Cryptography and Network Security",
+        "durationHours": 3,
+        "maxMarks": 70,
+        "overallAccuracy": 96,
+        "instructions": [
+          "Section A is COMPULSORY. Answer all questions (2 marks each).",
+          "Section B: Attempt any FOUR questions (5 marks each).",
+          "Section C: Attempt THREE questions with internal choices (10 marks each).",
+          "Assume suitable data wherever necessary. Neat diagrams carry due weightage."
+        ],
+        "sections": {
+          "A": {
+            "title": "SECTION A (Compulsory Short Answers - 2 Marks Each)",
+            "totalMarks": 20,
+            "questions": [
+              {
+                "id": "CUJ-S5-CNS-01",
+                "section": "A",
+                "marks": 2,
+                "unit": 1,
+                "text": "Differentiate between Confusion and Diffusion as defined by Claude Shannon.",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2022",
+                  "2020"
+                ],
+                "freq": "98% Highest Yield",
+                "probability": 98,
+                "bloom": "Understand",
+                "answer": "Confusion obscures the statistical relationship between the ciphertext and the encryption key (implemented using non-linear Substitution Boxes - S-Boxes). Diffusion spreads the influence of individual plaintext bits over multiple ciphertext bits (implemented using Permutation Boxes - P-Boxes and matrix multiplications like MixColumns).",
+                "rubric": "1 Mark for Confusion with mechanism; 1 Mark for Diffusion with mechanism."
+              },
+              {
+                "id": "CUJ-S5-CNS-02",
+                "section": "A",
+                "marks": 2,
+                "unit": 2,
+                "text": "Why is ECB (Electronic Codebook) mode strictly forbidden for encrypting structured data or images?",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2021"
+                ],
+                "freq": "93% Frequent",
+                "probability": 92,
+                "bloom": "Analyze",
+                "answer": "ECB mode encrypts identical plaintext blocks into identical ciphertext blocks under the same key without chaining or initialization vector (IV). This preserves underlying structural patterns and data frequency, making plaintext recognizable (e.g. the iconic ECB Tux penguin vulnerability).",
+                "rubric": "1 Mark for deterministic block property; 1 Mark for security implication."
+              },
+              {
+                "id": "GEN-A1",
+                "section": "A",
+                "marks": 2,
+                "text": "Differentiate between Confusion and Diffusion as conceptualized by Claude Shannon.",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2021"
+                ],
+                "freq": "98% Highest Yield",
+                "probability": 98,
+                "bloom": "Understand",
+                "answer": "Confusion obscures relationship between ciphertext and secret key using non-linear S-Boxes. Diffusion disperses redundancy of plaintext across the ciphertext using P-Boxes.",
+                "rubric": "1 Mark for Confusion; 1 Mark for Diffusion."
+              },
+              {
+                "id": "GEN-A2",
+                "section": "A",
+                "marks": 2,
+                "text": "Why is ECB (Electronic Codebook) mode insecure for transmitting structured records?",
+                "years": [
+                  "2024",
+                  "2022"
+                ],
+                "freq": "94% Frequent",
+                "probability": 94,
+                "bloom": "Analyze",
+                "answer": "In ECB, identical plaintext blocks encrypt to identical ciphertext blocks, preserving visual and statistical patterns.",
+                "rubric": "1 Mark for block deterministic property; 1 Mark for visual pattern leak."
+              },
+              {
+                "id": "GEN-A3",
+                "section": "A",
+                "marks": 2,
+                "text": "Compute Euler's Totient function value phi(55) and state its role in RSA.",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2020"
+                ],
+                "freq": "92% Core Concept",
+                "probability": 92,
+                "bloom": "Apply",
+                "answer": "55 = 5 * 11 => phi(55) = (5-1)*(11-1) = 40. RSA public exponent e must satisfy gcd(e, 40) = 1.",
+                "rubric": "1 Mark for calculation; 1 Mark for RSA coprimality requirement."
+              }
+            ]
+          },
+          "B": {
+            "title": "SECTION B (Conceptual & Analytical - 5 Marks Each)",
+            "totalMarks": 20,
+            "questions": [
+              {
+                "id": "CUJ-S5-CNS-03",
+                "section": "B",
+                "marks": 5,
+                "unit": 2,
+                "text": "Detail the four transformation rounds of the Advanced Encryption Standard (AES): SubBytes, ShiftRows, MixColumns, and AddRoundKey. Why is MixColumns omitted in the final 10th round?",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2022",
+                  "2019"
+                ],
+                "freq": "96% Highest Yield",
+                "probability": 96,
+                "bloom": "Understand",
+                "answer": "SubBytes: non-linear byte substitution using Rijndael S-box in GF(2^8). ShiftRows: cyclic left shifts of matrix rows (0, 1, 2, 3 bytes). MixColumns: linear transformation multiplying columns by a fixed MDS matrix for column diffusion. AddRoundKey: XORing state with round subkey. MixColumns is omitted in round 10 to make encryption and decryption architectures symmetric and hardware-efficient.",
+                "rubric": "3 Marks for describing 4 transformations; 2 Marks for explaining why MixColumns is omitted in the final round."
+              },
+              {
+                "id": "GEN-B1",
+                "section": "B",
+                "marks": 5,
+                "text": "Explain the four transformation rounds of AES: SubBytes, ShiftRows, MixColumns, and AddRoundKey. Why is MixColumns omitted in the final 10th round?",
+                "years": [
+                  "2024",
+                  "2023",
+                  "2022",
+                  "2019"
+                ],
+                "freq": "96% Highest Yield",
+                "probability": 96,
+                "bloom": "Understand",
+                "answer": "SubBytes (non-linear S-box GF(2^8)), ShiftRows (cyclic byte shifts), MixColumns (matrix multiplication for diffusion), AddRoundKey (XOR with subkey). Omitted in 10th round to harmonize decryption logic and save clock cycles.",
+                "rubric": "3 Marks for transformation descriptions; 2 Marks for round 10 rationale."
+              }
+            ]
+          },
+          "C": {
+            "title": "SECTION C (Architectural, Numerical & System Design - 10 Marks Each)",
+            "totalMarks": 30,
+            "questions": [
+              {
+                "id": "CUJ-S5-CNS-04",
+                "section": "C",
+                "marks": 10,
+                "unit": 3,
+                "text": "In an RSA cryptosystem, prime numbers are p = 17 and q = 11. Public key exponent e = 7.\n(a) Compute the private key d using the Extended Euclidean Algorithm.\n(b) Encrypt message M = 88.\n(c) Decrypt resulting ciphertext C.\n(d) Explain Wiener's Attack on small private exponents.",
+                "choice": "OR: Explain Diffie-Hellman Key Exchange with mathematical proof. Illustrate how an active Man-In-The-Middle (MITM) attacker compromises the exchange without mutual authentication, and how digital signatures fix it.",
+                "years": [
+                  "2024",
+                  "2022",
+                  "2021",
+                  "2020"
+                ],
+                "freq": "97% Highest Yield",
+                "probability": 97,
+                "bloom": "Apply",
+                "answer": "n = p*q = 187; phi(n) = (17-1)*(11-1) = 160. e*d = 1 mod 160 => 7*d = 1 mod 160. Using Extended Euclidean: 160 = 22*7 + 6; 7 = 1*6 + 1 => 1 = 7 - 1*(160 - 22*7) = 23*7 - 160. Thus d = 23. Encryption: C = 88^7 mod 187 = 11. Decryption: M = 11^23 mod 187 = 88. Wiener's attack uses continued fraction expansion to recover d if d < (1/3)*n^(0.25).",
+                "rubric": "3 Marks for Euclidean d calculation; 3 Marks for encryption/decryption arithmetic; 4 Marks for Wiener attack conditions."
+              },
+              {
+                "id": "GEN-C1",
+                "section": "C",
+                "marks": 10,
+                "text": "In an RSA cryptosystem, prime numbers selected are p = 17 and q = 11. Public exponent e = 7.\n(i) Calculate private key d using Extended Euclidean Algorithm.\n(ii) Encrypt plaintext M = 88.\n(iii) Decrypt ciphertext C to prove correctness.\n(iv) Explain how Wiener's Attack exploits small private exponents.",
+                "choice": "OR: Discuss Elliptic Curve Cryptography (ECC). Define Weierstrass elliptic curve equation over GF(p). Explain point addition and point doubling geometrically and algebraically, and show why a 256-bit ECC key offers equivalent security to 3072-bit RSA.",
+                "years": [
+                  "2024",
+                  "2022",
+                  "2021",
+                  "2020"
+                ],
+                "freq": "97% Highest Yield",
+                "probability": 97,
+                "bloom": "Apply",
+                "answer": "n = 187, phi(n) = 160. d * 7 = 1 mod 160 => d = 23. C = 88^7 mod 187 = 11. Decryption M = 11^23 mod 187 = 88. Wiener's attack uses continued fractions when d < (1/3)n^(0.25).",
+                "rubric": "3 Marks for Extended Euclidean d; 3 Marks for encryption/decryption; 4 Marks for Wiener attack condition."
+              }
+            ]
+          }
+        }
+      },
+      "id": "doc_1791958567355",
+      "uploadedAt": "2026-10-14T06:16:07.355Z"
+    },
+    {
       "source": "Google Drive - Folder: 1 sem ccs",
       "folderName": "1 sem ccs",
       "courseTitle": "CSE-101: Programming for Problem Solving in C (1 Sem CCS)",

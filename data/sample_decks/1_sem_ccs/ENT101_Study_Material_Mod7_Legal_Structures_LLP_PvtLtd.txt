@@ -1,0 +1,16 @@
+Course Code: ENT-101
+Course Title: Entrepreneurship Module 7: Legal Incorporation & Regulatory Compliance
+Semester: 1
+Credits: 3
+University: Central University of Jammu
+
+Unit 1: Comparative Analysis of Legal Entities in India
+- Sole Proprietorship: Simplest setup, zero formal separation, unlimited personal liability
+- Partnership Firm (Indian Partnership Act 1932): Shared liability between partners, dissolution on exit
+- Limited Liability Partnership (LLP Act 2008): Liability limited to agreed capital contribution, lower compliance than companies
+- Private Limited Company (Companies Act 2013): Separate legal juristic person, limited liability by shares, mandatory requirement for institutional VC equity funding
+
+Unit 2: Key Founder Agreements & Corporate Governance
+- Co-founder Agreement: Roles, equity split, IP assignment to company, deadlocks, and reverse vesting
+- Employment contracts, Employee Stock Ownership Plans (ESOPs) pool creation
+- DPIIT Recognition under Startup India: Tax exemptions under Section 80-IAC, fast-track patent filings

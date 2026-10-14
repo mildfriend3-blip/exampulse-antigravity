@@ -1,0 +1,19 @@
+Course Code: ENT-101
+Course Title: Entrepreneurship Module 6: Go-To-Market (GTM) Strategy & Growth
+Semester: 1
+Credits: 3
+University: Central University of Jammu
+
+Unit 1: Go-To-Market Execution
+- Inbound marketing: SEO, educational technical blogs, open source tools, webinars
+- Outbound marketing: Cold outreach, LinkedIn account-based marketing (ABM), direct enterprise sales
+- Product-Led Growth (PLG): Free self-serve tier driving organic adoption (Slack, Figma, Zoom)
+- Viral loops and K-factor coefficient: K = i * c (where i = invites sent per user, c = conversion rate)
+
+Unit 2: Conversion Funnels and Growth Hacking
+- AARRR Pirate Metrics:
+  - Acquisition: How do users find you?
+  - Activation: Do users experience the "Aha!" moment on day 1?
+  - Retention: Do users keep coming back week after week?
+  - Referral: Do users tell their peers?
+  - Revenue: How do you monetize their usage?

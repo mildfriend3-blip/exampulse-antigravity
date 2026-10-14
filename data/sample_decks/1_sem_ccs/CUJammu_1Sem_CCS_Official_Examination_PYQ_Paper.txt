@@ -1,0 +1,36 @@
+Course Code: CUJAMMU-SEM1-PYQ
+Course Title: B.Tech CSE (Cyber Security) Semester 1 - Official End-Term Examination PYQ Paper
+Semester: 1
+Credits: 20
+University: Central University of Jammu
+
+Course Information:
+- Total Marks: 70
+- Time Allowed: 3 Hours
+- Examination Scheme: Section A (10 x 2 = 20 Marks, Compulsory), Section B (4 x 5 = 20 Marks, Analytical), Section C (3 x 10 = 30 Marks, Comprehensive Design/Proof with Internal Choice)
+
+Unit 1: Section A - Compulsory Conceptual & Definitions (2 Marks Each)
+- Question 1 (Computer Programming): What is a Dangling Pointer in C? Explain its memory risk and how setting the pointer to NULL mitigates vulnerabilities.
+- Question 2 (Programming): Differentiate between Call by Value and Call by Reference with a memory diagram.
+- Question 3 (Mathematics): State the Cayley-Hamilton Theorem. How is it applied to calculate high powers of square matrices?
+- Question 4 (Mathematics): Define the Kernel (Null Space) of a linear transformation T: V -> W. Under what condition is T injective?
+- Question 5 (BEE): State Kirchhoff's Current Law (KCL) and Kirchhoff's Voltage Law (KVL). State the fundamental conservation laws they are derived from.
+- Question 6 (BEE): Define the Quality Factor (Q-factor) of a series RLC resonant circuit and write its mathematical formula in terms of R, L, and C.
+- Question 7 (Environmental Studies): What is Eutrophication? Describe how nutrient runoffs lead to aquatic oxygen depletion.
+- Question 8 (Environmental Studies): Distinguish between In-situ and Ex-situ biodiversity conservation with two Indian examples for each.
+- Question 9 (Entrepreneurship): Explain the Lean Startup Build-Measure-Learn feedback loop.
+- Question 10 (Entrepreneurship): Define Customer Acquisition Cost (CAC) and Lifetime Value (LTV). What is the ideal CAC-to-LTV ratio for sustainable startups?
+
+Unit 2: Section B - Technical, Algorithmic & Numerical Problems (5 Marks Each)
+- Question 11 (Computer Programming): Write a complete C function using dynamic memory allocation (malloc and free) to reverse a string in-place without using library functions. Explain why buffer overflow occurs if gets() is used instead of fgets().
+- Question 12 (Engineering Mathematics): Find an orthonormal basis for the subspace of R^3 spanned by vectors v1 = (1, 1, 0)^T and v2 = (1, 0, 1)^T using the Gram-Schmidt Orthogonalization process.
+- Question 13 (Basic Electrical Engineering): State Thevenin's Theorem. Find the Thevenin equivalent circuit across terminals A-B for a DC circuit containing a 24V source and resistances R1=4ohm, R2=12ohm, R3=3ohm. Compute current through load resistor RL = 6ohm.
+- Question 14 (Entrepreneurship & Startups): Explain the 9 building blocks of the Business Model Canvas (BMC). Construct a concise BMC for a cyber security vulnerability management SaaS platform.
+
+Unit 3: Section C - Comprehensive Derivation, Proofs & System Design (10 Marks Each with Internal Choice)
+- Question 15A (Computer Programming): Discuss dynamic memory allocation functions malloc(), calloc(), realloc(), and free(). Write an industrial-grade C program that dynamically allocates a 2D matrix of dimensions M x N, takes user input, computes its transpose, displays the transposed matrix, and safely deallocates all heap memory without leaks.
+- Question 15B (OR - Structures & File I/O): Explain memory alignment and padding in C structures. Write a complete C program to maintain student cyber security test records using an array of structures written to and read from a binary file using fwrite() and fread().
+- Question 16A (Engineering Mathematics): Verify the Cayley-Hamilton Theorem for matrix A = [[2, 1, 1], [0, 1, 0], [1, 1, 2]]. Hence find A^-1 and compute A^4.
+- Question 16B (OR - Rank-Nullity Theorem): State and prove the Rank-Nullity Theorem for a linear transformation T: V -> W between finite-dimensional vector spaces. For linear transformation T: R^3 -> R^3 defined by T(x, y, z) = (x + y, y + z, x - z), find the basis and dimensions of Ker(T) and Im(T).
+- Question 17A (Basic Electrical Engineering): Derive the EMF equation of a single-phase transformer: E = 4.44 * f * N * Phi_m. Explain the open-circuit and short-circuit tests used to determine transformer core and copper losses and efficiency.
+- Question 17B (OR - AC Resonance & Theorems): Derive the condition for resonance in a series RLC AC circuit. Derive expressions for resonant frequency, bandwidth, and dynamic impedance. If R = 10 ohms, L = 100 mH, and C = 10 microFarads, calculate resonant frequency, Q-factor, and half-power frequencies.
