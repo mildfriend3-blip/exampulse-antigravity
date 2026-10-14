@@ -17,6 +17,7 @@ const {
   universitiesList
 } = require('./ai_engine');
 const db = require('./db_store');
+const googleDrive = require('./google_drive_service');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -255,7 +256,67 @@ app.post('/api/upload/load-sample', (req, res) => {
 });
 
 // -----------------------------------------------------------------------------
-// 3. AI NOTES & EXAM GENERATOR ENDPOINTS
+// 3. GOOGLE DRIVE STUDY MATERIAL INTEGRATION
+// -----------------------------------------------------------------------------
+app.get('/api/drive/status', (req, res) => {
+  res.json({
+    success: true,
+    driveSession: googleDrive.driveSession
+  });
+});
+
+app.post('/api/drive/connect', (req, res) => {
+  const { email, name } = req.body;
+  if (email) googleDrive.driveSession.userEmail = email;
+  if (name) googleDrive.driveSession.userName = name;
+  googleDrive.driveSession.connected = true;
+  res.json({
+    success: true,
+    message: `Google Drive connected for ${googleDrive.driveSession.userEmail}`,
+    driveSession: googleDrive.driveSession
+  });
+});
+
+app.get('/api/drive/files', (req, res) => {
+  try {
+    const { semester, university, query } = req.query;
+    const files = googleDrive.getDriveFiles({ semester, university, query });
+    res.json({
+      success: true,
+      totalFiles: files.length,
+      files
+    });
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+app.post('/api/drive/import', (req, res) => {
+  try {
+    const { fileId } = req.body;
+    if (!fileId) {
+      return res.status(400).json({ success: false, error: 'fileId is required' });
+    }
+    const result = googleDrive.importDriveFile(fileId);
+    res.json(result);
+  } catch (err) {
+    console.error('Drive import error:', err);
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+app.post('/api/drive/export', (req, res) => {
+  try {
+    const { title, type, content, userEmail } = req.body;
+    const result = googleDrive.exportToGoogleDrive({ title, type, content, userEmail });
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ success: false, error: err.message });
+  }
+});
+
+// -----------------------------------------------------------------------------
+// 4. AI NOTES & EXAM GENERATOR ENDPOINTS
 // -----------------------------------------------------------------------------
 app.post('/api/notes/generate', (req, res) => {
   try {

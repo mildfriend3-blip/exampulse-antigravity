@@ -191,6 +191,65 @@
     </div>
   </div>
 
+  <!-- Google Drive Study Material Explorer Modal -->
+  <div id="drive-modal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="glassmorphic rounded-2xl max-w-4xl w-full p-6 border border-emerald-500/40 shadow-[0_0_50px_rgba(16,185,129,0.2)] space-y-5 max-h-[90vh] flex flex-col">
+      <div class="flex items-center justify-between border-b border-slate-700/80 pb-3">
+        <div class="flex items-center space-x-3">
+          <div class="w-9 h-9 rounded-xl bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center text-lg">
+            <svg class="w-5 h-5" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M12.01 1.5l-8.5 14.72 4.25 7.36 8.5-14.72z"/>
+              <path fill="#34A853" d="M20.51 16.22l-4.25 7.36h-8.5l4.25-7.36z"/>
+              <path fill="#FBBC05" d="M12.01 1.5l4.25 7.36-8.5 14.72-4.25-7.36z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <h3 class="text-base font-bold text-white font-mono">Google Drive Study Materials</h3>
+              <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 font-bold">Cloud Connected</span>
+            </div>
+            <p class="text-xs text-slate-400 font-mono">CUJammu Institutional Workspace • <span id="drive-modal-user" class="text-emerald-400 font-semibold">rahul.sharma@cujammu.ac.in</span></p>
+          </div>
+        </div>
+        <button onclick="toggleDriveModal()" class="text-slate-400 hover:text-white text-2xl font-mono">&times;</button>
+      </div>
+
+      <!-- Drive Search & Filters -->
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
+        <div class="sm:col-span-8">
+          <input type="text" id="drive-search-input" oninput="loadDriveFiles()" placeholder="Search presentations &amp; syllabi in Drive (e.g. AES, Deadlocks, Forensics, RSA)..." class="w-full bg-slate-900/80 border border-slate-700 text-xs rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-mono">
+        </div>
+        <div class="sm:col-span-4">
+          <select id="drive-sem-filter" onchange="loadDriveFiles()" class="w-full bg-slate-900/80 border border-slate-700 text-xs rounded-xl px-3 py-2.5 text-white font-mono focus:outline-none focus:border-emerald-500">
+            <option value="all">All Semesters</option>
+            <option value="4">Semester 4 (OS &amp; Security)</option>
+            <option value="5" selected>Semester 5 (Cryptography)</option>
+            <option value="6">Semester 6 (Digital Forensics)</option>
+            <option value="7">Semester 7 (Ethical Hacking)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Drive File List (Scrollable) -->
+      <div id="drive-file-list" class="overflow-y-auto space-y-3 flex-1 pr-1 max-h-[50vh]">
+        <!-- Populated by JS -->
+      </div>
+
+      <!-- Modal Footer -->
+      <div class="pt-3 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+        <span class="text-slate-400">💡 Tap any file to instantly extract slides and generate 60–70% exam prediction.</span>
+        <div class="flex items-center space-x-2">
+          <button onclick="connectNewDriveAccount()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700">
+            Connect Another Drive
+          </button>
+          <button onclick="toggleDriveModal()" class="px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <main class="max-w-7xl mx-auto px-4 sm:px-6 pb-20">
 
     <!-- ===================================================================== -->
@@ -210,9 +269,48 @@
               Our neural parser unpacks PPTX slide structures, extracts speaker notes, parses syllabus units, and cross-references historical university examination patterns to generate high-yield short notes and a 60–70% accurate predicted question paper.
             </p>
           </div>
-          <button onclick="loadSampleDeck()" id="btn-load-sample" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-mono text-xs font-bold transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] flex items-center space-x-2 shrink-0">
-            <span>✨</span>
-            <span>1-Click Load CUJammu CYB-501 Sample Deck</span>
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="toggleDriveModal()" id="btn-open-drive" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-mono text-xs font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.35)] flex items-center space-x-2 shrink-0">
+              <svg class="w-4 h-4" viewBox="0 0 24 24">
+                <path fill="#ffffff" d="M12.01 1.5l-8.5 14.72 4.25 7.36 8.5-14.72z" opacity=".8"/>
+                <path fill="#ffffff" d="M20.51 16.22l-4.25 7.36h-8.5l4.25-7.36z" opacity=".9"/>
+                <path fill="#ffffff" d="M12.01 1.5l4.25 7.36-8.5 14.72-4.25-7.36z"/>
+              </svg>
+              <span>📂 Connect Google Drive Study Materials</span>
+            </button>
+            <button onclick="loadSampleDeck()" id="btn-load-sample" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-mono text-xs font-bold transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] flex items-center space-x-2 shrink-0">
+              <span>✨</span>
+              <span>1-Click Load CUJammu CYB-501 Deck</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Google Drive Cloud Status Banner -->
+      <div class="glassmorphic rounded-2xl p-4 border border-emerald-500/35 flex flex-col sm:flex-row sm:items-center justify-between gap-3 shadow-[0_0_25px_rgba(16,185,129,0.1)]">
+        <div class="flex items-center space-x-3.5">
+          <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" viewBox="0 0 24 24">
+              <path fill="#4285F4" d="M12.01 1.5l-8.5 14.72 4.25 7.36 8.5-14.72z"/>
+              <path fill="#34A853" d="M20.51 16.22l-4.25 7.36h-8.5l4.25-7.36z"/>
+              <path fill="#FBBC05" d="M12.01 1.5l4.25 7.36-8.5 14.72-4.25-7.36z"/>
+            </svg>
+          </div>
+          <div>
+            <div class="flex items-center space-x-2">
+              <span class="text-xs font-mono font-bold text-white">Google Drive Connected:</span>
+              <span id="drive-user-email" class="text-xs font-mono font-bold text-emerald-400">rahul.sharma@cujammu.ac.in</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-semibold">Active Sync</span>
+            </div>
+            <p class="text-[11px] text-slate-400 font-mono">CUJammu Institutional Shared Drive • <span class="text-emerald-300 font-semibold">7 Curated PPTX Presentations &amp; Syllabi Ready to Import</span></p>
+          </div>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button onclick="toggleDriveModal()" class="px-3.5 py-1.5 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/50 text-emerald-300 font-mono text-xs font-bold flex items-center space-x-1.5 transition-all">
+            <span>🔍 Browse Drive Files</span>
+          </button>
+          <button onclick="connectNewDriveAccount()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-mono text-xs">
+            Switch Drive
           </button>
         </div>
       </div>
@@ -391,7 +489,10 @@
             <h2 id="notes-course-title" class="text-xl font-bold text-white">CYB-501: Cryptography and Network Security</h2>
             <p class="text-xs text-slate-400 font-mono">Synthesized from uploaded lecture slides, syllabus units, and CUJammu exam patterns</p>
           </div>
-          <div class="flex items-center space-x-2">
+          <div class="flex flex-wrap items-center gap-2">
+            <button onclick="exportShortNotesToDrive()" class="px-3 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-bold flex items-center space-x-1.5 transition-all">
+              <span>💾 Save to Google Drive</span>
+            </button>
             <button onclick="copyShortNotes()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-mono font-bold flex items-center space-x-1">
               <span>📋 Copy Notes</span>
             </button>
@@ -639,6 +740,9 @@
           <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
             <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300">Time: 3 Hours</span>
             <span class="px-3 py-1.5 rounded-lg bg-[#10B981]/20 border border-[#10B981]/40 text-[#10B981] font-bold">Max Marks: 70</span>
+            <button onclick="exportExamPaperToDrive()" class="px-3 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-500/40 text-emerald-300 font-bold flex items-center space-x-1.5 transition-all">
+              <span>💾 Save to Google Drive</span>
+            </button>
             <button onclick="regenerateExamPaper()" class="px-3 py-1.5 rounded-lg bg-[#8B5CF6]/20 hover:bg-[#8B5CF6]/30 border border-[#8B5CF6]/50 text-[#8B5CF6] font-bold flex items-center space-x-1">
               <span>🔄 Re-predict</span>
             </button>
@@ -1556,6 +1660,158 @@ Generated by ExamPulse Antigravity for University Engineering Students`;
         document.getElementById('user-sub').innerText = email.includes('cujammu') ? "CUJammu • Cyber Security" : "University Student";
         toggleAuthModal();
         alert(`Signed in with Google as ${email}!`);
+      }
+    }
+
+    // =========================================================================
+    // GOOGLE DRIVE STUDY MATERIAL INTEGRATION
+    // =========================================================================
+    function toggleDriveModal() {
+      const modal = document.getElementById('drive-modal');
+      modal.classList.toggle('hidden');
+      if (!modal.classList.contains('hidden')) {
+        loadDriveFiles();
+      }
+    }
+
+    async function loadDriveFiles() {
+      const listContainer = document.getElementById('drive-file-list');
+      const semFilter = document.getElementById('drive-sem-filter').value;
+      const query = (document.getElementById('drive-search-input').value || '').trim();
+
+      listContainer.innerHTML = '<div class="p-6 text-center text-xs font-mono text-slate-400">⏳ Accessing Google Drive study materials...</div>';
+
+      try {
+        let url = `/api/drive/files?semester=${semFilter}`;
+        if (query) url += `&query=${encodeURIComponent(query)}`;
+
+        const res = await fetch(url);
+        const json = await res.json();
+
+        if (!json.success || !json.files || json.files.length === 0) {
+          listContainer.innerHTML = '<div class="p-8 text-center text-xs font-mono text-slate-500">No matching study materials found in Google Drive.</div>';
+          return;
+        }
+
+        listContainer.innerHTML = '';
+        json.files.forEach(file => {
+          const isPptx = file.name.endsWith('.pptx');
+          const card = document.createElement('div');
+          card.className = "glassmorphic-card p-4 rounded-xl space-y-2.5 border border-slate-800 hover:border-emerald-500/50 transition-all";
+          card.innerHTML = `
+            <div class="flex flex-wrap items-center justify-between gap-2">
+              <div class="flex items-center space-x-2.5">
+                <span class="text-xl">${isPptx ? '📊' : '📋'}</span>
+                <div>
+                  <h4 class="text-xs font-mono font-bold text-white hover:text-emerald-400 cursor-pointer" onclick="importFromDrive('${file.id}', '${file.name}')">${file.name}</h4>
+                  <p class="text-[10px] font-mono text-slate-400">${file.folder}</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2">
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700">${file.size}</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">${file.university}</span>
+              </div>
+            </div>
+            <p class="text-[11px] text-slate-300 font-sans leading-relaxed">${file.description}</p>
+            <div class="pt-2 border-t border-slate-800 flex items-center justify-between font-mono text-xs">
+              <span class="text-[10px] text-slate-500">Author: ${file.author}</span>
+              <button onclick="importFromDrive('${file.id}', '${file.name}')" id="btn-import-${file.id}" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs flex items-center space-x-1.5 shadow-[0_0_12px_rgba(16,185,129,0.3)] transition-all">
+                <span>⚡ Import &amp; Process with AI</span>
+              </button>
+            </div>
+          `;
+          listContainer.appendChild(card);
+        });
+      } catch (err) {
+        listContainer.innerHTML = `<div class="p-6 text-center text-xs font-mono text-red-400">Failed to load Google Drive files: ${err.message}</div>`;
+      }
+    }
+
+    async function importFromDrive(fileId, fileName) {
+      const btn = document.getElementById(`btn-import-${fileId}`);
+      if (btn) btn.innerHTML = '<span>⏳</span><span>Importing...</span>';
+
+      try {
+        const res = await fetch('/api/drive/import', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ fileId })
+        });
+        const json = await res.json();
+        if (json.success && json.data) {
+          applyProcessedData(json.data);
+          toggleDriveModal();
+          alert(`🎉 Successfully imported "${fileName}" from Google Drive!\nAI Short Notes, Interactive SM-2 Flashcards, and Predicted Exam Paper are ready.`);
+          switchTab('notes');
+        } else {
+          throw new Error(json.error || 'Server could not import file');
+        }
+      } catch (err) {
+        alert('Google Drive Import Error: ' + err.message);
+        if (btn) btn.innerHTML = '<span>⚡ Import &amp; Process with AI</span>';
+      }
+    }
+
+    async function exportShortNotesToDrive() {
+      if (!currentShortNotes) {
+        alert('Please process or load study material first.');
+        return;
+      }
+      try {
+        const res = await fetch('/api/drive/export', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            title: currentShortNotes.courseTitle || 'CyberSecurity',
+            type: 'notes',
+            content: currentShortNotes
+          })
+        });
+        const json = await res.json();
+        if (json.success) {
+          alert(`✅ ${json.message}\nFile link: ${json.exportedItem?.webUrl}`);
+        }
+      } catch (err) {
+        alert('Export to Drive error: ' + err.message);
+      }
+    }
+
+    async function exportExamPaperToDrive() {
+      if (!currentExamPaper) {
+        alert('Please generate an exam question paper first.');
+        return;
+      }
+      try {
+        const res = await fetch('/api/drive/export', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            title: `${currentExamPaper.courseCode}_${currentExamPaper.courseTitle}`,
+            type: 'exam',
+            content: currentExamPaper
+          })
+        });
+        const json = await res.json();
+        if (json.success) {
+          alert(`✅ ${json.message}\nFile link: ${json.exportedItem?.webUrl}`);
+        }
+      } catch (err) {
+        alert('Export to Drive error: ' + err.message);
+      }
+    }
+
+    function connectNewDriveAccount() {
+      const email = prompt("Enter Google Drive Account Email to connect:", "rahul.sharma@cujammu.ac.in");
+      if (email) {
+        document.getElementById('drive-user-email').innerText = email;
+        document.getElementById('drive-modal-user').innerText = email;
+        fetch('/api/drive/connect', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email })
+        });
+        alert(`Google Drive connected for ${email}!`);
+        loadDriveFiles();
       }
     }
   </script>
