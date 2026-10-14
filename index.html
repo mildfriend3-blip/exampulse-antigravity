@@ -10,111 +10,47 @@
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: #040711;
-      color: #f1f5f9;
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: #09090b;
+      color: #f4f4f5;
       overflow-x: hidden;
+      letter-spacing: -0.011em;
     }
     .font-mono {
       font-family: 'JetBrains Mono', monospace;
     }
-    /* Dynamic Cyber Grid */
-    .cyber-grid {
-      background-image: 
-        linear-gradient(to right, rgba(0, 240, 255, 0.04) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
-      background-size: 36px 36px;
+    /* Subtle dot grid pattern */
+    .bg-dot-pattern {
+      background-image: radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+      background-size: 28px 28px;
     }
-    /* Ambient Glowing Nebula Orbs */
-    .mesh-orb {
-      position: fixed;
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 0;
-      filter: blur(120px);
-      opacity: 0.55;
-    }
-    .orb-cyan {
-      top: -12%;
-      left: 15%;
-      width: 550px;
-      height: 550px;
-      background: radial-gradient(circle, rgba(0, 240, 255, 0.22) 0%, rgba(0,0,0,0) 70%);
-      animation: floatOrb 18s ease-in-out infinite alternate;
-    }
-    .orb-purple {
-      top: 35%;
-      right: -8%;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle, rgba(139, 92, 246, 0.20) 0%, rgba(0,0,0,0) 70%);
-      animation: floatOrb 24s ease-in-out infinite alternate-reverse;
-    }
-    .orb-emerald {
-      bottom: -15%;
-      left: 25%;
-      width: 550px;
-      height: 550px;
-      background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(0,0,0,0) 70%);
-      animation: floatOrb 20s ease-in-out infinite alternate;
-    }
-    .orb-amber {
-      top: 60%;
-      left: -10%;
-      width: 450px;
-      height: 450px;
-      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(0,0,0,0) 70%);
-      animation: floatOrb 22s ease-in-out infinite alternate;
-    }
-    @keyframes floatOrb {
-      0% { transform: translate(0, 0) scale(1); }
-      50% { transform: translate(40px, -30px) scale(1.08); }
-      100% { transform: translate(-30px, 40px) scale(0.95); }
-    }
-    /* Glassmorphism 2.0 */
-    .glassmorphic {
-      background: rgba(10, 16, 30, 0.75);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
+    /* Linear/Vercel Minimal Card Classes */
+    .card-base {
+      background: rgba(24, 24, 27, 0.65);
       border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.55);
+      border-radius: 16px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      transition: border-color 0.15s ease;
+    }
+    .card-base:hover {
+      border-color: rgba(255, 255, 255, 0.14);
+    }
+    .glassmorphic {
+      background: rgba(24, 24, 27, 0.7);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
     .glassmorphic-card {
-      background: rgba(15, 23, 42, 0.65);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      background: rgba(24, 24, 27, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 12px;
+      transition: all 0.15s ease;
     }
     .glassmorphic-card:hover {
-      border-color: rgba(0, 240, 255, 0.45);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.25);
-    }
-    /* Laser Scanner Beam */
-    @keyframes laserScan {
-      0% { top: 4%; opacity: 0.9; }
-      50% { top: 92%; opacity: 1; }
-      100% { top: 4%; opacity: 0.9; }
-    }
-    .laser-beam {
-      position: absolute;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent 5%, #00F0FF 30%, #8B5CF6 70%, transparent 95%);
-      box-shadow: 0 0 16px #00F0FF, 0 0 32px #8B5CF6;
-      animation: laserScan 3.2s ease-in-out infinite;
-      pointer-events: none;
-    }
-    /* Shimmer Badge */
-    @keyframes shimmerGold {
-      0% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.3); }
-      50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.65), 0 0 10px rgba(251, 191, 36, 0.4); }
-      100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.3); }
-    }
-    .glow-gold-pulse {
-      animation: shimmerGold 2.8s ease-in-out infinite;
+      background: rgba(39, 39, 42, 0.55);
+      border-color: rgba(255, 255, 255, 0.16);
     }
     /* 3D Perspective Card */
     .perspective-1000 {
@@ -130,156 +66,139 @@
     .rotate-y-180 {
       transform: rotateY(180deg);
     }
-    /* Custom Scrollbar */
+    /* Minimal Scrollbar */
     ::-webkit-scrollbar {
-      width: 6px;
-      height: 6px;
+      width: 5px;
+      height: 5px;
     }
     ::-webkit-scrollbar-track {
-      background: #040711;
+      background: transparent;
     }
     ::-webkit-scrollbar-thumb {
-      background: #1e293b;
+      background: #27272a;
       border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #00F0FF;
+      background: #3f3f46;
     }
   </style>
 </head>
-<body class="bg-[#040711] text-slate-100 min-h-screen font-sans antialiased selection:bg-[#00F0FF] selection:text-black relative cyber-grid">
+<body class="bg-zinc-950 text-zinc-100 min-h-screen font-sans antialiased selection:bg-zinc-800 selection:text-white relative bg-dot-pattern">
 
-  <!-- Ambient Glowing Nebula Mesh -->
-  <div class="mesh-orb orb-cyan"></div>
-  <div class="mesh-orb orb-purple"></div>
-  <div class="mesh-orb orb-emerald"></div>
-  <div class="mesh-orb orb-amber"></div>
-
-  <!-- Top Zero-G HUD Status Bar -->
-  <header class="sticky top-0 z-50 glassmorphic border-b border-white/10 px-4 sm:px-6 py-2.5 mb-6 backdrop-blur-2xl">
+  <!-- Top Minimal Navbar -->
+  <header class="sticky top-0 z-50 bg-zinc-950/85 border-b border-zinc-800/80 px-4 sm:px-6 py-3 mb-6 backdrop-blur-xl">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
-      <div class="flex items-center space-x-3.5">
-        <div class="relative flex items-center justify-center">
-          <div class="w-3.5 h-3.5 rounded-full bg-[#00F0FF] animate-ping absolute opacity-75"></div>
-          <div class="w-3.5 h-3.5 rounded-full bg-[#00F0FF] relative shadow-[0_0_15px_#00F0FF]"></div>
+      <div class="flex items-center space-x-3">
+        <div class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center text-zinc-100 font-mono font-bold text-sm shadow-sm">
+          ⚡
         </div>
         <div>
           <div class="flex items-center space-x-2">
-            <h1 class="text-base font-extrabold tracking-wider font-mono text-white flex items-center">
-              EXAMPULSE <span class="text-[#00F0FF] mx-1">//</span> <span class="bg-gradient-to-r from-[#00F0FF] via-[#A78BFA] to-[#34D399] bg-clip-text text-transparent">ANTIGRAVITY</span>
+            <h1 class="text-sm font-semibold tracking-tight text-white flex items-center">
+              ExamPulse
             </h1>
-            <span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-cyan-500/15 border border-cyan-400/40 text-cyan-300 font-bold tracking-wide">AI EXAM COCKPIT 2026</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-400">CUJammu • Cyber Security</span>
+            <span class="text-[11px] font-medium px-2 py-0.5 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-400 hidden sm:inline">Sem 1–8</span>
           </div>
-          <p class="text-[11px] text-slate-400 font-mono flex items-center space-x-1.5">
-            <span>Central University of Jammu</span>
-            <span class="text-slate-600">•</span>
-            <span class="text-cyan-400 font-semibold">B.Tech CSE Cyber Security (Sem 1-8)</span>
-            <span class="text-slate-600">•</span>
-            <span>IITs &amp; NITs</span>
-          </p>
         </div>
       </div>
 
-      <!-- Quick Ticker Stats HUD -->
-      <div class="hidden xl:flex items-center space-x-2 font-mono text-xs">
-        <div class="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 flex items-center space-x-1.5">
-          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-          <span class="text-slate-400">Drive:</span>
-          <span class="text-emerald-400 font-bold">34 Files Synced</span>
+      <!-- Clean Status Pills -->
+      <div class="hidden lg:flex items-center space-x-2 text-xs">
+        <div class="px-2.5 py-1 rounded-md bg-zinc-900/80 border border-zinc-800 text-zinc-400 flex items-center space-x-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          <span>Drive: <strong class="text-zinc-200">34 Files Synced</strong></span>
         </div>
-        <div class="px-3 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center space-x-1.5">
-          <span class="text-amber-400">⭐ Master PYQ:</span>
-          <span class="text-amber-300 font-bold">70M Ready</span>
+        <div class="px-2.5 py-1 rounded-md bg-zinc-900/80 border border-zinc-800 text-zinc-400 flex items-center space-x-1.5">
+          <span class="text-amber-400 text-xs">⭐</span>
+          <span>Master PYQ: <strong class="text-zinc-200">70M Ready</strong></span>
         </div>
-        <div class="px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center space-x-1.5">
-          <span class="text-purple-400">Accuracy:</span>
-          <span class="text-purple-300 font-bold">96% High Match</span>
+        <div class="px-2.5 py-1 rounded-md bg-zinc-900/80 border border-zinc-800 text-zinc-400 flex items-center space-x-1.5">
+          <span>Target: <strong class="text-zinc-200">60–70% Match</strong></span>
         </div>
       </div>
 
-      <!-- User & Google Login Bar -->
-      <div class="flex items-center space-x-3">
+      <!-- User & Google Auth Bar -->
+      <div class="flex items-center space-x-2.5">
         <!-- Auth Profile State -->
-        <div id="auth-logged-in" class="flex items-center space-x-2.5 bg-slate-900/90 px-3 py-1.5 rounded-xl border border-white/10 shadow-inner">
-          <img id="user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250" alt="Avatar" class="w-6 h-6 rounded-full border border-[#00F0FF]">
+        <div id="auth-logged-in" class="flex items-center space-x-2 bg-zinc-900 px-2.5 py-1.5 rounded-lg border border-zinc-800">
+          <img id="user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250" alt="Avatar" class="w-5 h-5 rounded-full object-cover">
           <div class="text-left font-mono">
-            <span id="user-name" class="text-xs font-bold text-white block leading-tight">Rahul Sharma</span>
-            <span id="user-sub" class="text-[10px] text-[#00F0FF] block leading-tight">CUJammu • Cyber Security Sem 1</span>
+            <span id="user-name" class="text-xs font-medium text-zinc-200 block leading-none">Rahul Sharma</span>
           </div>
-          <button onclick="toggleAuthModal()" title="Switch Account" class="text-slate-400 hover:text-white text-xs ml-1 font-mono">
+          <button onclick="toggleAuthModal()" title="Switch Account" class="text-zinc-500 hover:text-zinc-300 text-xs ml-1 font-mono">
             ⚙️
           </button>
         </div>
 
-        <!-- Google Login Button (if logged out or switcher) -->
-        <button id="google-login-btn" onclick="toggleAuthModal()" class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all bg-white text-slate-900 hover:bg-slate-100 flex items-center space-x-2 shadow-[0_0_20px_rgba(255,255,255,0.25)]">
-          <svg class="w-4 h-4" viewBox="0 0 24 24">
+        <!-- Google Login Button -->
+        <button id="google-login-btn" onclick="toggleAuthModal()" class="px-3 py-1.5 rounded-lg text-xs font-medium transition-colors bg-zinc-900 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 flex items-center space-x-2">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24">
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
             <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
             <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
             <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
           </svg>
-          <span class="hidden sm:inline">Google Login</span>
+          <span class="hidden sm:inline">Google</span>
         </button>
 
-        <a href="/download/apk" class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all bg-gradient-to-r from-[#00F0FF] to-[#10B981] text-[#080C14] shadow-[0_0_20px_rgba(0,240,255,0.4)] flex items-center space-x-1.5 hover:opacity-90">
-          <span>📱</span>
+        <a href="/download/apk" class="px-2.5 py-1.5 rounded-lg text-xs font-medium transition-colors bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 flex items-center space-x-1">
           <span>APK</span>
         </a>
       </div>
     </div>
 
-    <!-- Navigation Tabs Ribbon -->
-    <div class="max-w-7xl mx-auto mt-3 pt-2.5 border-t border-white/10 flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none">
-      <button onclick="switchTab('upload')" id="tab-btn-upload" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-[#00F0FF] bg-[#00F0FF]/20 text-[#00F0FF] flex items-center space-x-2 whitespace-nowrap shadow-[0_0_15px_rgba(0,240,255,0.25)]">
-        <span>⚡ 1. STUDY MATRIX &amp; DRIVE</span>
+    <!-- Segmented Navigation Ribbon (Linear Style) -->
+    <div class="max-w-7xl mx-auto mt-3 flex items-center gap-1 overflow-x-auto pb-0.5 scrollbar-none">
+      <button onclick="switchTab('upload')" id="tab-btn-upload" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium transition-colors bg-zinc-800 text-white border border-zinc-700/60 flex items-center space-x-1.5 whitespace-nowrap shadow-sm">
+        <span>Study Matrix &amp; Drive</span>
       </button>
-      <button onclick="switchTab('notes')" id="tab-btn-notes" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-slate-800 hover:border-slate-600 text-slate-300 flex items-center space-x-2 whitespace-nowrap">
-        <span>📜 2. AI SHORT NOTES</span>
+      <button onclick="switchTab('notes')" id="tab-btn-notes" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium transition-colors text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900 flex items-center space-x-1.5 whitespace-nowrap">
+        <span>Short Notes</span>
       </button>
-      <button onclick="switchTab('interactive')" id="tab-btn-interactive" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-slate-800 hover:border-slate-600 text-slate-300 flex items-center space-x-2 whitespace-nowrap">
-        <span>🧠 3. SM-2 RECALL STUDIO</span>
+      <button onclick="switchTab('interactive')" id="tab-btn-interactive" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium transition-colors text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900 flex items-center space-x-1.5 whitespace-nowrap">
+        <span>SM-2 Flashcards</span>
       </button>
-      <button onclick="switchTab('simulator')" id="tab-btn-simulator" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-slate-800 hover:border-slate-600 text-slate-300 flex items-center space-x-2 whitespace-nowrap">
-        <span>🎯 4. EXAM PREDICTOR (70M)</span>
+      <button onclick="switchTab('simulator')" id="tab-btn-simulator" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium transition-colors text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900 flex items-center space-x-1.5 whitespace-nowrap">
+        <span>Exam Predictor (70M)</span>
       </button>
-      <button onclick="switchTab('pyqarchive')" id="tab-btn-pyqarchive" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-slate-800 hover:border-slate-600 text-slate-300 flex items-center space-x-2 whitespace-nowrap">
-        <span>📚 5. ALL UNIVERSITIES (SEM 1-8)</span>
+      <button onclick="switchTab('pyqarchive')" id="tab-btn-pyqarchive" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium transition-colors text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900 flex items-center space-x-1.5 whitespace-nowrap">
+        <span>All Universities</span>
       </button>
-      <button onclick="switchTab('viva')" id="tab-btn-viva" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-slate-800 hover:border-slate-600 text-slate-300 flex items-center space-x-2 whitespace-nowrap">
-        <span>🎙️ 6. RAPID VIVA</span>
+      <button onclick="switchTab('viva')" id="tab-btn-viva" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium transition-colors text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900 flex items-center space-x-1.5 whitespace-nowrap">
+        <span>Rapid Viva</span>
       </button>
-      <button onclick="switchTab('export')" id="tab-btn-export" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-slate-800 hover:border-slate-600 text-slate-300 flex items-center space-x-2 whitespace-nowrap">
-        <span>🖨️ 7. PRINT PDF</span>
+      <button onclick="switchTab('export')" id="tab-btn-export" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-medium transition-colors text-zinc-400 hover:text-zinc-200 hover:bg-zinc-900 flex items-center space-x-1.5 whitespace-nowrap">
+        <span>Print PDF</span>
       </button>
     </div>
   </header>
 
-  <!-- Google Login / Profile Modal -->
-  <div id="auth-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
-    <div class="glassmorphic rounded-2xl max-w-md w-full p-6 border border-[#00F0FF]/40 shadow-[0_0_50px_rgba(0,240,255,0.2)] space-y-5">
-      <div class="flex items-center justify-between border-b border-slate-700/80 pb-3">
+  <!-- Google Login / Profile Modal (Minimal Linear Style) -->
+  <div id="auth-modal" class="hidden fixed inset-0 z-50 bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="rounded-2xl max-w-md w-full p-6 border border-zinc-800 bg-zinc-950 shadow-2xl space-y-4">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
         <div class="flex items-center space-x-2">
-          <span class="text-xl">🔐</span>
-          <h3 class="text-base font-bold text-white font-mono">University Google Authentication</h3>
+          <span class="text-base">🔐</span>
+          <h3 class="text-sm font-semibold text-zinc-100">University Google Authentication</h3>
         </div>
-        <button onclick="toggleAuthModal()" class="text-slate-400 hover:text-white text-lg font-mono">&times;</button>
+        <button onclick="toggleAuthModal()" class="text-zinc-400 hover:text-white text-base">&times;</button>
       </div>
 
-      <p class="text-xs text-slate-300 leading-relaxed font-sans">
-        Sign in with your university Google account (<code class="text-[#00F0FF]">@cujammu.ac.in</code> / <code class="text-[#00F0FF]">@iitjammu.ac.in</code> / <code class="text-[#00F0FF]">@nitsri.ac.in</code>) to sync your uploaded slides, personalized short notes, and predicted exam question papers.
+      <p class="text-xs text-zinc-400 leading-relaxed">
+        Sign in with your university Google account (<code class="text-zinc-200">@cujammu.ac.in</code> / <code class="text-zinc-200">@iitjammu.ac.in</code>) to sync your slides, study notes, and predicted exam papers.
       </p>
 
-      <div class="space-y-3 pt-2">
+      <div class="space-y-2 pt-1">
         <!-- 1-Click Instant CUJammu Student Demo Login -->
-        <button onclick="loginAsDemo('cujammu')" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-mono font-bold text-xs flex items-center justify-center space-x-2 shadow-lg transition-all">
+        <button onclick="loginAsDemo('cujammu')" class="w-full py-2 px-3 rounded-lg bg-zinc-800 hover:bg-zinc-700 text-zinc-100 font-medium text-xs flex items-center justify-center space-x-2 transition-colors border border-zinc-700">
           <span>🎓</span>
           <span>Sign In as CUJammu Cyber Security Student (Demo)</span>
         </button>
 
         <!-- Google OAuth Standard Button -->
-        <button onclick="simulateGoogleLogin()" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-mono font-bold text-xs flex items-center justify-center space-x-2 shadow transition-all">
-          <svg class="w-4 h-4" viewBox="0 0 24 24">
+        <button onclick="simulateGoogleLogin()" class="w-full py-2 px-3 rounded-lg bg-white hover:bg-zinc-100 text-zinc-950 font-medium text-xs flex items-center justify-center space-x-2 transition-colors shadow-sm">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24">
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
             <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
             <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
@@ -289,19 +208,19 @@
         </button>
       </div>
 
-      <div class="pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-400 text-center">
+      <div class="pt-2 border-t border-zinc-800/80 text-[11px] font-mono text-zinc-500 text-center">
         Data encrypted &amp; stored locally in SQLite / JSON Database
       </div>
     </div>
   </div>
 
-  <!-- Google Drive Study Material Explorer Modal -->
-  <div id="drive-modal" class="hidden fixed inset-0 z-50 bg-black/85 backdrop-blur-md flex items-center justify-center p-4">
-    <div class="glassmorphic rounded-2xl max-w-4xl w-full p-6 border border-emerald-500/40 shadow-[0_0_50px_rgba(16,185,129,0.2)] space-y-5 max-h-[90vh] flex flex-col">
-      <div class="flex items-center justify-between border-b border-slate-700/80 pb-3">
+  <!-- Google Drive Study Material Explorer Modal (Minimal Linear Style) -->
+  <div id="drive-modal" class="hidden fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="rounded-2xl max-w-4xl w-full p-6 border border-zinc-800 bg-zinc-950 shadow-2xl space-y-4 max-h-[90vh] flex flex-col font-sans">
+      <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
         <div class="flex items-center space-x-3">
-          <div class="w-9 h-9 rounded-xl bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center text-lg">
-            <svg class="w-5 h-5" viewBox="0 0 24 24">
+          <div class="w-8 h-8 rounded-lg bg-zinc-900 border border-zinc-800 flex items-center justify-center">
+            <svg class="w-4 h-4" viewBox="0 0 24 24">
               <path fill="#4285F4" d="M12.01 1.5l-8.5 14.72 4.25 7.36 8.5-14.72z"/>
               <path fill="#34A853" d="M20.51 16.22l-4.25 7.36h-8.5l4.25-7.36z"/>
               <path fill="#FBBC05" d="M12.01 1.5l4.25 7.36-8.5 14.72-4.25-7.36z"/>
@@ -309,22 +228,22 @@
           </div>
           <div>
             <div class="flex items-center space-x-2">
-              <h3 class="text-base font-bold text-white font-mono">Google Drive Study Materials</h3>
-              <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 font-bold">Cloud Connected</span>
+              <h3 class="text-sm font-semibold text-zinc-100">Google Drive: "1 sem ccs"</h3>
+              <span class="text-[10px] font-medium px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">Synced</span>
             </div>
-            <p class="text-xs text-slate-400 font-mono">CUJammu Institutional Workspace • <span id="drive-modal-user" class="text-emerald-400 font-semibold">rahul.sharma@cujammu.ac.in</span></p>
+            <p class="text-xs text-zinc-400 font-mono">CUJammu Institutional Workspace • <span id="drive-modal-user" class="text-zinc-200">rahul.sharma@cujammu.ac.in</span></p>
           </div>
         </div>
-        <button onclick="toggleDriveModal()" class="text-slate-400 hover:text-white text-2xl font-mono">&times;</button>
+        <button onclick="toggleDriveModal()" class="text-zinc-400 hover:text-white text-xl">&times;</button>
       </div>
 
       <!-- Drive Search & Filters -->
-      <div class="grid grid-cols-1 sm:grid-cols-12 gap-3">
+      <div class="grid grid-cols-1 sm:grid-cols-12 gap-2.5">
         <div class="sm:col-span-7">
-          <input type="text" id="drive-search-input" oninput="loadDriveFiles()" placeholder="Search in '1 sem ccs' or other folders (e.g. C Pointers, Math, Gates, Deadlocks)..." class="w-full bg-slate-900/80 border border-slate-700 text-xs rounded-xl px-3.5 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-emerald-500 font-mono">
+          <input type="text" id="drive-search-input" oninput="loadDriveFiles()" placeholder="Search in '1 sem ccs' (e.g. C Pointers, Math, BEE, Gates)..." class="w-full bg-zinc-900 border border-zinc-800 text-xs rounded-lg px-3 py-2 text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-700 font-mono">
         </div>
         <div class="sm:col-span-5">
-          <select id="drive-sem-filter" onchange="loadDriveFiles()" class="w-full bg-slate-900/80 border border-slate-700 text-xs rounded-xl px-3 py-2.5 text-white font-mono focus:outline-none focus:border-emerald-500">
+          <select id="drive-sem-filter" onchange="loadDriveFiles()" class="w-full bg-zinc-900 border border-zinc-800 text-xs rounded-lg px-3 py-2 text-zinc-200 font-mono focus:outline-none focus:border-zinc-700">
             <option value="1_sem_ccs" selected>📁 Folder: 1 sem ccs (All Sem 1 Subjects &amp; PYQs)</option>
             <option value="all">All Drive Folders &amp; Files</option>
             <option value="4">Semester 4 (OS &amp; Security)</option>
@@ -336,51 +255,51 @@
       </div>
 
       <!-- Folder Breadcrumbs & Spotlight for 1 sem ccs -->
-      <div class="p-3 rounded-xl bg-slate-900/90 border border-emerald-500/40 flex flex-wrap items-center justify-between gap-2 shadow-inner">
-        <div class="flex items-center space-x-2 text-xs font-mono">
-          <span class="text-slate-400">Location:</span>
-          <span class="text-slate-300">My Drive</span>
-          <span class="text-slate-600">/</span>
-          <span class="text-slate-300">CUJammu</span>
-          <span class="text-slate-600">/</span>
-          <span class="text-emerald-400 font-bold bg-emerald-500/15 px-2 py-0.5 rounded border border-emerald-500/40">1 sem ccs</span>
-          <span class="text-[10px] text-slate-400 font-normal">(5 Subjects • 34 Files &amp; Master Examination PYQ)</span>
+      <div class="p-2.5 rounded-lg bg-zinc-900/60 border border-zinc-800 flex flex-wrap items-center justify-between gap-2">
+        <div class="flex items-center space-x-1.5 text-xs font-mono">
+          <span class="text-zinc-500">Path:</span>
+          <span class="text-zinc-400">My Drive</span>
+          <span class="text-zinc-600">/</span>
+          <span class="text-zinc-400">CUJammu</span>
+          <span class="text-zinc-600">/</span>
+          <span class="text-zinc-200 font-medium bg-zinc-800 px-2 py-0.5 rounded border border-zinc-700">1 sem ccs</span>
+          <span class="text-[11px] text-zinc-500 font-normal">(34 Files &amp; Master PYQ)</span>
         </div>
         <div class="flex items-center space-x-2">
-          <button onclick="importFromDrive('gdrive_master_examination_pyq', 'examination pyq.pdf')" class="px-3 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 border border-amber-400/50 text-amber-300 font-mono font-bold text-xs flex items-center space-x-1 transition-all">
+          <button onclick="importFromDrive('gdrive_master_examination_pyq', 'examination pyq.pdf')" class="px-2.5 py-1 rounded-md bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 text-amber-300 font-medium text-xs flex items-center space-x-1 transition-colors">
             <span>⭐ Ingest Master PYQ</span>
           </button>
-          <button onclick="load1SemCcsPack()" class="px-3 py-1 rounded-lg bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-mono font-bold text-xs flex items-center space-x-1 transition-all">
+          <button onclick="load1SemCcsPack()" class="px-3 py-1 rounded-md bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs flex items-center space-x-1 transition-colors shadow-sm">
             <span>⚡ Import Complete Pack</span>
           </button>
         </div>
       </div>
 
       <!-- Subject Category Filter Pills -->
-      <div class="flex flex-wrap items-center gap-1.5 font-mono text-xs">
-        <span class="text-slate-500 text-[10px] uppercase font-bold mr-1">Filter Subject:</span>
-        <button onclick="setDriveCategory('all')" id="cat-pill-all" class="px-2.5 py-1 rounded-lg bg-emerald-500 text-slate-950 font-bold text-[11px] transition-all">All (34)</button>
-        <button onclick="setDriveCategory('programming')" id="cat-pill-programming" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">💻 Programming (8)</button>
-        <button onclick="setDriveCategory('math')" id="cat-pill-math" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">📐 Math &amp; Vectors (5)</button>
-        <button onclick="setDriveCategory('bee')" id="cat-pill-bee" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">⚡ Electrical BEE (7)</button>
-        <button onclick="setDriveCategory('evs')" id="cat-pill-evs" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">🌱 Environmental (3)</button>
-        <button onclick="setDriveCategory('entrepreneurship')" id="cat-pill-entrepreneurship" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">🚀 Entrepreneurship (10)</button>
-        <button onclick="setDriveCategory('pyq')" id="cat-pill-pyq" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-[11px] border border-amber-400/50 font-bold transition-all">⭐ University PYQ (1)</button>
+      <div class="flex flex-wrap items-center gap-1.5 text-xs">
+        <span class="text-zinc-500 text-[11px] uppercase font-mono mr-1">Filter:</span>
+        <button onclick="setDriveCategory('all')" id="cat-pill-all" class="px-2.5 py-1 rounded-md bg-zinc-200 text-zinc-950 font-medium text-xs transition-colors">All (34)</button>
+        <button onclick="setDriveCategory('programming')" id="cat-pill-programming" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 text-xs border border-zinc-800 transition-colors">Programming (8)</button>
+        <button onclick="setDriveCategory('math')" id="cat-pill-math" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 text-xs border border-zinc-800 transition-colors">Math &amp; Vectors (5)</button>
+        <button onclick="setDriveCategory('bee')" id="cat-pill-bee" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 text-xs border border-zinc-800 transition-colors">Electrical BEE (7)</button>
+        <button onclick="setDriveCategory('evs')" id="cat-pill-evs" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 text-xs border border-zinc-800 transition-colors">Environmental (3)</button>
+        <button onclick="setDriveCategory('entrepreneurship')" id="cat-pill-entrepreneurship" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 text-xs border border-zinc-800 transition-colors">Entrepreneurship (10)</button>
+        <button onclick="setDriveCategory('pyq')" id="cat-pill-pyq" class="px-2.5 py-1 rounded-md bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 text-xs border border-amber-500/30 font-medium transition-colors">Master PYQ (1)</button>
       </div>
 
       <!-- Drive File List (Scrollable) -->
-      <div id="drive-file-list" class="overflow-y-auto space-y-3 flex-1 pr-1 max-h-[48vh]">
+      <div id="drive-file-list" class="overflow-y-auto space-y-2 flex-1 pr-1 max-h-[48vh]">
         <!-- Populated by JS -->
       </div>
 
       <!-- Modal Footer -->
-      <div class="pt-3 border-t border-slate-800 flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
-        <span class="text-slate-400">💡 Tap any file to instantly extract slides and generate 60–70% exam prediction.</span>
+      <div class="pt-3 border-t border-zinc-800 flex flex-wrap items-center justify-between gap-3 text-xs">
+        <span class="text-zinc-500">Tap any file to extract slides and generate 60–70% exam prediction.</span>
         <div class="flex items-center space-x-2">
-          <button onclick="connectNewDriveAccount()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700">
+          <button onclick="connectNewDriveAccount()" class="px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800">
             Connect Another Drive
           </button>
-          <button onclick="toggleDriveModal()" class="px-4 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-bold">
+          <button onclick="toggleDriveModal()" class="px-4 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium">
             Close
           </button>
         </div>
@@ -395,63 +314,60 @@
     <!-- ===================================================================== -->
     <section id="tab-upload" class="space-y-6">
 
-      <!-- MASTER UNIVERSITY EXAMINATION PYQ HERO SPOTLIGHT -->
-      <div class="relative rounded-3xl p-6 sm:p-7 border-2 border-amber-400/80 bg-gradient-to-r from-amber-950/40 via-slate-900/95 to-cyan-950/40 shadow-[0_0_40px_rgba(245,158,11,0.22)] overflow-hidden glow-gold-pulse">
-        <div class="absolute -right-16 -top-16 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute -left-16 -bottom-16 w-64 h-64 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
-
-        <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-          <div class="space-y-2.5 max-w-3xl">
+      <!-- MASTER UNIVERSITY EXAMINATION PYQ HERO CARD -->
+      <div class="rounded-2xl p-5 sm:p-6 border border-zinc-800 bg-zinc-900/50 backdrop-blur-md space-y-4">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+          <div class="space-y-2 max-w-3xl">
             <div class="flex flex-wrap items-center gap-2">
-              <span class="px-3 py-1 rounded-full text-xs font-mono font-extrabold bg-amber-500 text-slate-950 flex items-center space-x-1.5 shadow-[0_0_15px_rgba(245,158,11,0.6)]">
+              <span class="px-2.5 py-0.5 rounded-md text-[11px] font-medium bg-amber-500/10 text-amber-300 border border-amber-500/20 flex items-center space-x-1.5">
                 <span>⭐</span>
-                <span>OFFICIAL UNIVERSITY MASTER EXAMINATION PAPER</span>
+                <span>Official University Master Paper</span>
               </span>
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-400/40">
-                100% CUJAMMU BLUEPRINT
+              <span class="px-2 py-0.5 rounded-md text-[11px] font-medium bg-zinc-800 text-zinc-300 border border-zinc-700">
+                CUJammu Semester 1
               </span>
-              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/40">
-                60–70% ACCURACY TARGET
+              <span class="px-2 py-0.5 rounded-md text-[11px] font-medium bg-zinc-800 text-zinc-300 border border-zinc-700">
+                70 Marks Blueprint
               </span>
             </div>
 
-            <h2 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight font-mono">
-              Central University of Jammu <span class="text-amber-400">//</span> Semester 1 End-Term Examination Paper
+            <h2 class="text-lg sm:text-xl font-semibold text-zinc-100 tracking-tight">
+              Central University of Jammu • End-Term Examination Paper
             </h2>
 
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
-              Linked file: <code class="text-amber-300 font-mono font-bold bg-amber-500/15 px-2 py-0.5 rounded border border-amber-500/30">examination pyq.pdf</code>. Official 70-mark paper containing <strong>Section A</strong> (10 × 2M Compulsory), <strong>Section B</strong> (4 × 5M Analytical &amp; Code), and <strong>Section C</strong> (3 × 10M Design &amp; Proofs with internal choices).
+            <p class="text-xs sm:text-sm text-zinc-400 leading-relaxed">
+              Linked file: <code class="text-zinc-200 font-mono bg-zinc-800/80 px-1.5 py-0.5 rounded border border-zinc-700">examination pyq.pdf</code>. Authentic 70-mark paper spanning Section A (10 × 2M Compulsory), Section B (4 × 5M Analytical &amp; Code), and Section C (3 × 10M Design &amp; Proofs with internal choices).
             </p>
 
             <!-- Marks Blueprint Quick Chips -->
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 font-mono text-xs">
-              <div class="px-3 py-2 rounded-xl bg-slate-900/80 border border-amber-500/30 flex items-center justify-between">
-                <span class="text-slate-400">Section A:</span>
-                <span class="text-amber-300 font-bold">10 Qs × 2M = 20M</span>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 pt-1 text-xs">
+              <div class="px-3 py-2 rounded-lg bg-zinc-950/60 border border-zinc-800/80 flex items-center justify-between">
+                <span class="text-zinc-400">Section A:</span>
+                <span class="text-zinc-200 font-medium font-mono">10 Qs × 2M = 20M</span>
               </div>
-              <div class="px-3 py-2 rounded-xl bg-slate-900/80 border border-cyan-500/30 flex items-center justify-between">
-                <span class="text-slate-400">Section B:</span>
-                <span class="text-cyan-300 font-bold">4 Qs × 5M = 20M</span>
+              <div class="px-3 py-2 rounded-lg bg-zinc-950/60 border border-zinc-800/80 flex items-center justify-between">
+                <span class="text-zinc-400">Section B:</span>
+                <span class="text-zinc-200 font-medium font-mono">4 Qs × 5M = 20M</span>
               </div>
-              <div class="px-3 py-2 rounded-xl bg-slate-900/80 border border-purple-500/30 flex items-center justify-between">
-                <span class="text-slate-400">Section C:</span>
-                <span class="text-purple-300 font-bold">3 Qs × 10M = 30M (OR)</span>
+              <div class="px-3 py-2 rounded-lg bg-zinc-950/60 border border-zinc-800/80 flex items-center justify-between">
+                <span class="text-zinc-400">Section C:</span>
+                <span class="text-zinc-200 font-medium font-mono">3 Qs × 10M = 30M (OR)</span>
               </div>
             </div>
           </div>
 
           <!-- Hero Action Buttons -->
-          <div class="flex flex-col sm:flex-row lg:flex-col gap-2.5 shrink-0">
-            <button onclick="importFromDrive('gdrive_master_examination_pyq', 'examination pyq.pdf')" class="px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 font-mono font-extrabold text-xs flex items-center justify-center space-x-2 shadow-[0_0_25px_rgba(245,158,11,0.5)] hover:scale-[1.02] transition-all">
+          <div class="flex flex-col sm:flex-row lg:flex-col gap-2 shrink-0">
+            <button onclick="importFromDrive('gdrive_master_examination_pyq', 'examination pyq.pdf')" class="px-4 py-2.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs flex items-center justify-center space-x-2 transition-colors shadow-sm">
               <span>⭐</span>
-              <span>INGEST MASTER PYQ &amp; PREDICT PAPER</span>
+              <span>Ingest Master PYQ &amp; Predict Paper</span>
             </button>
             <div class="flex items-center space-x-2">
-              <a href="https://drive.google.com/file/d/1N7kbMvHBw_4OnOlA66NNRobLGgcA1CDC/view" target="_blank" rel="noopener noreferrer" class="flex-1 px-3.5 py-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-white/15 text-slate-200 hover:text-white font-mono text-xs font-bold flex items-center justify-center space-x-1.5 transition-all">
+              <a href="https://drive.google.com/file/d/1N7kbMvHBw_4OnOlA66NNRobLGgcA1CDC/view" target="_blank" rel="noopener noreferrer" class="flex-1 px-3 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 hover:text-white text-xs font-medium flex items-center justify-center space-x-1.5 transition-colors">
                 <span>🔗</span>
                 <span>Open in Drive</span>
               </a>
-              <button onclick="switchTab('simulator')" class="flex-1 px-3.5 py-2.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-300 font-mono text-xs font-bold flex items-center justify-center space-x-1.5 transition-all">
+              <button onclick="switchTab('simulator')" class="flex-1 px-3 py-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 hover:text-white text-xs font-medium flex items-center justify-center space-x-1.5 transition-colors">
                 <span>🎯</span>
                 <span>Exam Simulator</span>
               </button>
@@ -465,12 +381,12 @@
 
         <!-- DECK 1 (LEFT): GOOGLE DRIVE "1 SEM CCS" EMBEDDED STUDY MATRIX (34 FILES) -->
         <div class="lg:col-span-7 space-y-4">
-          <div class="glassmorphic rounded-2xl p-5 border border-cyan-500/30 space-y-4">
+          <div class="rounded-2xl p-5 border border-zinc-800 bg-zinc-900/50 backdrop-blur-md space-y-4">
             
-            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-3">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-zinc-800/80 pb-3">
               <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center shrink-0">
-                  <svg class="w-6 h-6" viewBox="0 0 24 24">
+                <div class="w-8 h-8 rounded-lg bg-zinc-800/80 border border-zinc-700/60 flex items-center justify-center shrink-0">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24">
                     <path fill="#4285F4" d="M12.01 1.5l-8.5 14.72 4.25 7.36 8.5-14.72z"/>
                     <path fill="#34A853" d="M20.51 16.22l-4.25 7.36h-8.5l4.25-7.36z"/>
                     <path fill="#FBBC05" d="M12.01 1.5l4.25 7.36-8.5 14.72-4.25-7.36z"/>
@@ -478,18 +394,18 @@
                 </div>
                 <div>
                   <div class="flex items-center space-x-2">
-                    <h3 class="text-sm font-bold font-mono text-white">Google Drive: Folder "1 sem ccs"</h3>
-                    <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">34 Files Synced</span>
+                    <h3 class="text-xs font-semibold uppercase tracking-wider text-zinc-200">Google Drive: "1 sem ccs"</h3>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">34 Files Synced</span>
                   </div>
-                  <p class="text-[11px] text-slate-400 font-mono">CUJammu Shared Workspace • rahul.sharma@cujammu.ac.in</p>
+                  <p class="text-[11px] text-zinc-400 font-mono">CUJammu Institutional Workspace • rahul.sharma@cujammu.ac.in</p>
                 </div>
               </div>
               <div class="flex items-center space-x-2">
-                <button onclick="load1SemCcsPack()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-xs font-bold flex items-center space-x-1.5 shadow-[0_0_15px_rgba(16,185,129,0.35)] transition-all">
+                <button onclick="load1SemCcsPack()" class="px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-medium flex items-center space-x-1.5 transition-colors shadow-sm">
                   <span>⚡</span>
                   <span>1-Click Load Full Pack</span>
                 </button>
-                <button onclick="toggleDriveModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 font-mono text-xs">
+                <button onclick="toggleDriveModal()" class="px-2.5 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 text-xs">
                   Full Modal
                 </button>
               </div>
@@ -498,149 +414,142 @@
             <!-- Real-time Filter & Search Bar -->
             <div class="space-y-2.5">
               <div class="relative">
-                <input type="text" id="deck-drive-search" oninput="filterDeckDriveFiles()" placeholder="🔍 Live search 34 study files (e.g. malloc, KCL, Vectors, BMC, Eutrophication)..." class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 font-mono focus:outline-none focus:border-cyan-400 shadow-inner">
+                <input type="text" id="deck-drive-search" oninput="filterDeckDriveFiles()" placeholder="Filter 34 study files (e.g. malloc, KCL, Vectors, BMC, Eutrophication)..." class="w-full bg-zinc-950 border border-zinc-800 rounded-lg px-3.5 py-2 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-700 font-mono">
               </div>
 
               <!-- Subject Category Filter Pills -->
-              <div class="flex flex-wrap items-center gap-1.5 font-mono text-xs">
-                <button onclick="setDeckCategory('all')" id="deck-cat-all" class="px-2.5 py-1 rounded-lg bg-cyan-500 text-slate-950 font-bold text-[11px] shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all">All (34)</button>
-                <button onclick="setDeckCategory('programming')" id="deck-cat-programming" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">💻 Programming (8)</button>
-                <button onclick="setDeckCategory('math')" id="deck-cat-math" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">📐 Math &amp; Vectors (5)</button>
-                <button onclick="setDeckCategory('bee')" id="deck-cat-bee" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">⚡ Electrical BEE (7)</button>
-                <button onclick="setDeckCategory('evs')" id="deck-cat-evs" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">🌱 EVS (3)</button>
-                <button onclick="setDeckCategory('entrepreneurship')" id="deck-cat-entrepreneurship" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">🚀 Startups (10)</button>
-                <button onclick="setDeckCategory('pyq')" id="deck-cat-pyq" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-[11px] border border-amber-400/50 font-bold transition-all">⭐ Master PYQ (1)</button>
+              <div class="flex flex-wrap items-center gap-1.5 text-xs">
+                <button onclick="setDeckCategory('all')" id="deck-cat-all" class="px-2.5 py-1 rounded-md bg-zinc-200 text-zinc-950 font-medium text-xs transition-colors">All (34)</button>
+                <button onclick="setDeckCategory('programming')" id="deck-cat-programming" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 text-xs border border-zinc-800 transition-colors">Programming (8)</button>
+                <button onclick="setDeckCategory('math')" id="deck-cat-math" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 text-xs border border-zinc-800 transition-colors">Math &amp; Vectors (5)</button>
+                <button onclick="setDeckCategory('bee')" id="deck-cat-bee" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 text-xs border border-zinc-800 transition-colors">Electrical BEE (7)</button>
+                <button onclick="setDeckCategory('evs')" id="deck-cat-evs" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 text-xs border border-zinc-800 transition-colors">EVS (3)</button>
+                <button onclick="setDeckCategory('entrepreneurship')" id="deck-cat-entrepreneurship" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 text-xs border border-zinc-800 transition-colors">Startups (10)</button>
+                <button onclick="setDeckCategory('pyq')" id="deck-cat-pyq" class="px-2.5 py-1 rounded-md bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 text-xs border border-amber-500/30 font-medium transition-colors">Master PYQ (1)</button>
               </div>
             </div>
 
             <!-- Embedded Live Drive File Scrollable List -->
-            <div id="deck-drive-file-list" class="space-y-2.5 max-h-[560px] overflow-y-auto pr-1">
+            <div id="deck-drive-file-list" class="space-y-2 max-h-[540px] overflow-y-auto pr-1">
               <!-- Dynamically rendered by deck file renderer -->
             </div>
 
-            <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
-              <span>💡 Tap "⚡ Process with AI" on any file to immediately synthesize notes &amp; questions.</span>
-              <span id="deck-file-count-badge" class="text-cyan-400 font-bold">34 Files</span>
+            <div class="pt-2 border-t border-zinc-800/80 flex items-center justify-between text-[11px] font-mono text-zinc-500">
+              <span>Select any file to synthesize notes &amp; model answers.</span>
+              <span id="deck-file-count-badge" class="text-zinc-400 font-medium">34 Files</span>
             </div>
           </div>
         </div>
 
-        <!-- DECK 2 (RIGHT): NEURAL INGESTION REACTOR & RADAR -->
+        <!-- DECK 2 (RIGHT): DOCUMENT INGESTION & TELEMETRY -->
         <div class="lg:col-span-5 space-y-4">
 
-          <!-- Drag & Drop Reactor Box with Laser Scanner -->
-          <div class="glassmorphic rounded-2xl p-5 border border-purple-500/30 space-y-4 relative overflow-hidden">
-            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+          <!-- Drag & Drop Ingestion Box (Linear Clean Style) -->
+          <div class="rounded-2xl p-5 border border-zinc-800 bg-zinc-900/50 backdrop-blur-md space-y-4">
+            <div class="flex items-center justify-between border-b border-zinc-800/80 pb-3">
               <div class="flex items-center space-x-2">
-                <span class="text-lg">⚡</span>
-                <h3 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Neural Document Ingestion Reactor</h3>
+                <span class="text-sm">📄</span>
+                <h3 class="text-xs font-semibold text-zinc-200 uppercase tracking-wider">Document Ingestion</h3>
               </div>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-400/40 font-bold">AI Scanner</span>
+              <span class="text-[10px] font-medium px-2 py-0.5 rounded-md bg-zinc-800 text-zinc-300 border border-zinc-700">AI Parser</span>
             </div>
 
             <!-- Quick Subject Presets -->
             <div>
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold block mb-1.5">Quick Subject Presets:</span>
-              <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
-                <button type="button" onclick="loadSubjectPreset('programming')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-cyan-500/30 transition-all">💻 C Pointers</button>
-                <button type="button" onclick="loadSubjectPreset('math')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-purple-300 border border-purple-500/30 transition-all">📐 Cayley-Hamilton</button>
-                <button type="button" onclick="loadSubjectPreset('bee')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-300 border border-emerald-500/30 transition-all">⚡ Thevenin &amp; RLC</button>
-                <button type="button" onclick="loadSubjectPreset('evs')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-teal-300 border border-teal-500/30 transition-all">🌱 EVS Dead Zones</button>
-                <button type="button" onclick="loadSubjectPreset('entrepreneurship')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 transition-all">🚀 Business Canvas</button>
+              <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block mb-1.5">Quick Subject Presets:</span>
+              <div class="flex flex-wrap gap-1.5 text-xs">
+                <button type="button" onclick="loadSubjectPreset('programming')" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors">C Pointers</button>
+                <button type="button" onclick="loadSubjectPreset('math')" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors">Cayley-Hamilton</button>
+                <button type="button" onclick="loadSubjectPreset('bee')" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors">Thevenin &amp; RLC</button>
+                <button type="button" onclick="loadSubjectPreset('evs')" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors">EVS Ecosystems</button>
+                <button type="button" onclick="loadSubjectPreset('entrepreneurship')" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors">Lean Startup</button>
               </div>
             </div>
 
-            <form id="upload-form" onsubmit="handleUploadSubmit(event)" class="space-y-3.5">
-              <!-- Upload Box with Laser Scanner -->
-              <div class="relative border-2 border-dashed border-cyan-500/40 hover:border-cyan-400 rounded-2xl p-5 text-center cursor-pointer transition-all bg-slate-900/60 overflow-hidden group" onclick="document.getElementById('pptx-input').click()">
-                <div class="laser-beam"></div>
+            <form id="upload-form" onsubmit="handleUploadSubmit(event)" class="space-y-3">
+              <!-- Upload Box -->
+              <div class="border border-dashed border-zinc-800 hover:border-zinc-700 rounded-xl p-5 text-center cursor-pointer transition-colors bg-zinc-950/40 group" onclick="document.getElementById('pptx-input').click()">
                 <input type="file" id="pptx-input" accept=".pptx" class="hidden" onchange="handlePptxSelect(event)">
-                <div class="space-y-1.5 relative z-10">
-                  <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mx-auto text-xl shadow-[0_0_15px_rgba(0,240,255,0.25)]">
+                <div class="space-y-1">
+                  <div class="w-8 h-8 rounded-lg bg-zinc-800/80 border border-zinc-700 text-zinc-300 flex items-center justify-center mx-auto text-sm">
                     📊
                   </div>
-                  <div class="text-xs text-white font-mono font-bold">
-                    Drop Slide Deck (.PPTX) or <span class="text-cyan-400 underline">Browse</span>
+                  <div class="text-xs text-zinc-200 font-medium">
+                    Drop Slide Deck (.PPTX) or <span class="text-indigo-400 underline">browse</span>
                   </div>
-                  <div id="pptx-file-status" class="text-[10px] text-slate-400 font-mono">
-                    Ready for PPTX XML unpacking
+                  <div id="pptx-file-status" class="text-[11px] text-zinc-500 font-mono">
+                    Ready to parse slides
                   </div>
                 </div>
               </div>
 
               <!-- Syllabus Text Paste -->
               <div class="space-y-1.5">
-                <div class="flex items-center justify-between text-xs font-mono">
-                  <span class="text-slate-300 font-bold flex items-center space-x-1">
-                    <span>📋</span>
-                    <span>Syllabus or Module Text:</span>
-                  </span>
-                  <button type="button" onclick="document.getElementById('syllabus-input').click()" class="text-purple-400 hover:underline text-[10px]">Attach File</button>
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-zinc-400 font-medium">Syllabus or Module Units:</span>
+                  <button type="button" onclick="document.getElementById('syllabus-input').click()" class="text-zinc-400 hover:text-zinc-200 text-[11px]">Attach File</button>
                 </div>
                 <input type="file" id="syllabus-input" accept=".txt,.md,.json,.pdf,.docx" class="hidden" onchange="handleSyllabusSelect(event)">
-                <textarea id="syllabus-text-input" rows="3" placeholder="...or paste course syllabus units directly (e.g. Unit 1: Pointers & Memory, Unit 2: Matrices...)" class="w-full bg-slate-900/80 border border-white/10 rounded-xl p-2.5 text-xs text-slate-200 placeholder-slate-500 font-mono focus:outline-none focus:border-purple-400 shadow-inner"></textarea>
-                <div id="syllabus-file-status" class="text-[10px] font-mono text-slate-500">Default: CUJammu Cyber Security Syllabus</div>
+                <textarea id="syllabus-text-input" rows="3" placeholder="...or paste course syllabus units directly..." class="w-full bg-zinc-950 border border-zinc-800 rounded-lg p-2.5 text-xs text-zinc-200 placeholder-zinc-500 font-mono focus:outline-none focus:border-zinc-700"></textarea>
+                <div id="syllabus-file-status" class="text-[10px] font-mono text-zinc-500">Default: CUJammu Cyber Security Syllabus</div>
               </div>
 
               <!-- Main Ingestion Action Button -->
-              <button type="submit" id="btn-process-docs" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-400 via-indigo-500 to-emerald-400 hover:opacity-95 text-slate-950 font-mono font-extrabold text-xs tracking-wider shadow-[0_0_25px_rgba(0,240,255,0.4)] flex items-center justify-center space-x-2 transition-all">
-                <span>🚀</span>
-                <span>SYNTHESIZE CHEATSHEET &amp; PREDICT EXAM</span>
+              <button type="submit" id="btn-process-docs" class="w-full py-2.5 px-4 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs transition-colors shadow-sm flex items-center justify-center space-x-2">
+                <span>⚡</span>
+                <span>Synthesize Cheatsheet &amp; Predict Exam</span>
               </button>
             </form>
           </div>
 
           <!-- Neural Radar Telemetry Card -->
-          <div class="glassmorphic rounded-2xl p-5 border border-white/10 space-y-3.5">
-            <div class="flex items-center justify-between border-b border-white/10 pb-2.5">
-              <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center space-x-1.5">
-                <span>📡</span>
-                <span>Live Neural Telemetry Radar</span>
+          <div class="rounded-2xl p-5 border border-zinc-800 bg-zinc-900/50 backdrop-blur-md space-y-3">
+            <div class="flex items-center justify-between border-b border-zinc-800/80 pb-2.5">
+              <h4 class="text-xs font-semibold text-zinc-200 uppercase tracking-wider">
+                Ingestion Metrics
               </h4>
-              <span id="ingestion-badge" class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 font-bold">
-                ACTIVE
+              <span id="ingestion-badge" class="px-2 py-0.5 rounded-md text-[10px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                Active
               </span>
             </div>
 
-            <div class="grid grid-cols-2 gap-2.5 font-mono text-xs">
-              <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
-                <span class="text-slate-400 block text-[10px]">Slides Unpacked:</span>
-                <span id="stat-slides" class="text-cyan-400 font-bold text-sm">4 Slides</span>
+            <div class="grid grid-cols-2 gap-2 text-xs font-mono">
+              <div class="p-2.5 rounded-lg bg-zinc-950/60 border border-zinc-800/80">
+                <span class="text-zinc-500 block text-[10px]">Slides Unpacked:</span>
+                <span id="stat-slides" class="text-zinc-200 font-medium text-sm">4 Slides</span>
               </div>
-              <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
-                <span class="text-slate-400 block text-[10px]">Syllabus Modules:</span>
-                <span id="stat-units" class="text-purple-400 font-bold text-sm">5 Units</span>
+              <div class="p-2.5 rounded-lg bg-zinc-950/60 border border-zinc-800/80">
+                <span class="text-zinc-500 block text-[10px]">Syllabus Modules:</span>
+                <span id="stat-units" class="text-zinc-200 font-medium text-sm">5 Units</span>
               </div>
-              <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
-                <span class="text-slate-400 block text-[10px]">Core Concepts:</span>
-                <span id="stat-keywords" class="text-emerald-400 font-bold text-sm">25 Terms</span>
+              <div class="p-2.5 rounded-lg bg-zinc-950/60 border border-zinc-800/80">
+                <span class="text-zinc-500 block text-[10px]">Core Concepts:</span>
+                <span id="stat-keywords" class="text-zinc-200 font-medium text-sm">25 Terms</span>
               </div>
-              <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
-                <span class="text-slate-400 block text-[10px]">PYQ Accuracy Match:</span>
-                <span id="stat-accuracy" class="text-amber-300 font-bold text-sm">96% High Match</span>
+              <div class="p-2.5 rounded-lg bg-zinc-950/60 border border-zinc-800/80">
+                <span class="text-zinc-500 block text-[10px]">PYQ Match Target:</span>
+                <span id="stat-accuracy" class="text-zinc-200 font-medium text-sm">96% High Match</span>
               </div>
             </div>
 
             <!-- Extracted High-Yield Topic Tags -->
             <div>
-              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold block mb-1.5">Extracted High-Yield Exam Topics:</span>
+              <span class="text-[10px] font-mono text-zinc-500 uppercase tracking-wider block mb-1.5">Extracted High-Yield Topics:</span>
               <div id="keywords-tags-container" class="flex flex-wrap gap-1.5">
-                <span class="px-2 py-1 rounded bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-[10px] font-mono font-semibold">Dangling Pointer &amp; Malloc</span>
-                <span class="px-2 py-1 rounded bg-purple-500/15 border border-purple-400/30 text-purple-300 text-[10px] font-mono font-semibold">Rank-Nullity Theorem</span>
-                <span class="px-2 py-1 rounded bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-[10px] font-mono font-semibold">Thevenin &amp; KCL/KVL</span>
-                <span class="px-2 py-1 rounded bg-teal-500/15 border border-teal-400/30 text-teal-300 text-[10px] font-mono font-semibold">Eutrophication Dead Zones</span>
-                <span class="px-2 py-1 rounded bg-amber-500/15 border border-amber-400/30 text-amber-300 text-[10px] font-mono font-semibold">Business Model Canvas</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 text-[10px] font-mono">Dangling Pointer &amp; Malloc</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 text-[10px] font-mono">Rank-Nullity Theorem</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 text-[10px] font-mono">Thevenin &amp; KCL/KVL</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 text-[10px] font-mono">Eutrophication Dead Zones</span>
+                <span class="px-2 py-0.5 rounded bg-zinc-900 border border-zinc-800 text-zinc-300 text-[10px] font-mono">Business Model Canvas</span>
               </div>
             </div>
 
             <!-- Fast Tab Navigation Quick Buttons -->
-            <div class="pt-3 border-t border-white/10 grid grid-cols-2 gap-2 font-mono text-xs">
-              <button onclick="switchTab('notes')" class="p-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-white/10 flex items-center justify-center space-x-1.5 transition-all">
-                <span>📜</span>
+            <div class="pt-2 border-t border-zinc-800/80 grid grid-cols-2 gap-2 text-xs">
+              <button onclick="switchTab('notes')" class="p-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 flex items-center justify-center space-x-1.5 transition-colors">
                 <span>View Cheatsheet</span>
               </button>
-              <button onclick="switchTab('simulator')" class="p-2.5 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 hover:bg-cyan-500/30 flex items-center justify-center space-x-1.5 transition-all">
-                <span>🎯</span>
+              <button onclick="switchTab('simulator')" class="p-2 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 flex items-center justify-center space-x-1.5 transition-colors">
                 <span>Predict Exam Paper</span>
               </button>
             </div>
@@ -654,33 +563,33 @@
     <!-- TAB 2: AI SHORT NOTES & EXAM CHEATSHEET -->
     <!-- ===================================================================== -->
     <section id="tab-notes" class="hidden space-y-6">
-      <div class="glassmorphic rounded-2xl p-6 border border-[#00F0FF]/30 space-y-6">
-        <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-700/80 gap-3">
+      <div class="rounded-2xl p-6 border border-zinc-800 bg-zinc-900/50 backdrop-blur-md space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-zinc-800/80 gap-3">
           <div>
-            <div class="flex items-center space-x-2 text-[#00F0FF] font-mono text-xs font-bold mb-1">
-              <span>⚡ HIGH-YIELD EXAM CHEATSHEET</span>
+            <div class="flex items-center space-x-2 text-zinc-400 font-mono text-xs font-medium mb-1">
+              <span>HIGH-YIELD EXAM CHEATSHEET</span>
             </div>
-            <h2 id="notes-course-title" class="text-xl font-bold text-white">CYB-501: Cryptography and Network Security</h2>
-            <p class="text-xs text-slate-400 font-mono">Synthesized from uploaded lecture slides, syllabus units, and CUJammu exam patterns</p>
+            <h2 id="notes-course-title" class="text-lg font-semibold text-zinc-100">CYB-501: Cryptography and Network Security</h2>
+            <p class="text-xs text-zinc-400 font-mono">Synthesized from uploaded lecture slides, syllabus units, and CUJammu exam patterns</p>
           </div>
           <div class="flex flex-wrap items-center gap-2">
-            <button onclick="exportShortNotesToDrive()" class="px-3 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-500/40 text-emerald-300 text-xs font-mono font-bold flex items-center space-x-1.5 transition-all">
-              <span>💾 Save to Google Drive</span>
+            <button onclick="exportShortNotesToDrive()" class="px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 text-xs font-medium flex items-center space-x-1.5 transition-colors">
+              <span>Save to Drive</span>
             </button>
-            <button onclick="copyShortNotes()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-mono font-bold flex items-center space-x-1">
-              <span>📋 Copy Notes</span>
+            <button onclick="copyShortNotes()" class="px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 text-xs font-medium flex items-center space-x-1 transition-colors">
+              <span>Copy Notes</span>
             </button>
-            <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-[#00F0FF]/20 hover:bg-[#00F0FF]/30 border border-[#00F0FF]/50 text-[#00F0FF] text-xs font-mono font-bold flex items-center space-x-1">
-              <span>🖨️ Export PDF</span>
+            <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 text-xs font-medium flex items-center space-x-1 transition-colors shadow-sm">
+              <span>Export PDF</span>
             </button>
           </div>
         </div>
 
         <!-- Executive Summary -->
         <div class="space-y-3">
-          <h3 class="text-xs font-mono font-bold text-[#00F0FF] uppercase tracking-wider flex items-center space-x-1.5">
+          <h3 class="text-xs font-semibold text-zinc-200 uppercase tracking-wider flex items-center space-x-1.5">
             <span>📌</span>
-            <span>EXECUTIVE EXAMINATION TAKEAWAYS</span>
+            <span>Executive Examination Takeaways</span>
           </h3>
           <div id="notes-executive-summary" class="grid grid-cols-1 md:grid-cols-2 gap-3">
             <!-- Rendered by JS -->
@@ -689,9 +598,9 @@
 
         <!-- High-Yield Formulas -->
         <div class="space-y-3 pt-2">
-          <h3 class="text-xs font-mono font-bold text-[#8B5CF6] uppercase tracking-wider flex items-center space-x-1.5">
+          <h3 class="text-xs font-semibold text-zinc-200 uppercase tracking-wider flex items-center space-x-1.5">
             <span>📐</span>
-            <span>MUST-MEMORIZE MATHEMATICAL FORMULAS &amp; ALGORITHMS</span>
+            <span>Mathematical Formulas &amp; Algorithms</span>
           </h3>
           <div id="notes-formulas-container" class="space-y-3">
             <!-- Rendered by JS -->
@@ -700,9 +609,9 @@
 
         <!-- 15 Must-Know Definitions -->
         <div class="space-y-3 pt-2">
-          <h3 class="text-xs font-mono font-bold text-[#10B981] uppercase tracking-wider flex items-center space-x-1.5">
+          <h3 class="text-xs font-semibold text-zinc-200 uppercase tracking-wider flex items-center space-x-1.5">
             <span>🎯</span>
-            <span>CRITICAL UNIVERSITY EXAM BUZZWORDS &amp; DEFINITIONS (2-MARK YIELD)</span>
+            <span>University Exam Definitions &amp; Buzzwords (2-Mark Yield)</span>
           </h3>
           <div id="notes-definitions-container" class="grid grid-cols-1 md:grid-cols-2 gap-3">
             <!-- Rendered by JS -->
@@ -712,47 +621,48 @@
     </section>
 
     <!-- ===================================================================== -->
+    <!-- ===================================================================== -->
     <!-- TAB 3: INTERACTIVE NOTES (SM-2 FLASHCARDS & SELF-TEST QUIZ) -->
     <!-- ===================================================================== -->
     <section id="tab-interactive" class="hidden space-y-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
         <!-- Left: Mastery Meter & Controls -->
-        <div class="lg:col-span-4 glassmorphic rounded-2xl p-6 border border-[#8B5CF6]/40 flex flex-col justify-between">
+        <div class="lg:col-span-4 card-base rounded-2xl p-6 border border-zinc-800 flex flex-col justify-between">
           <div>
-            <div class="flex items-center space-x-2 text-[#8B5CF6] font-mono text-xs font-bold mb-1">
+            <div class="flex items-center space-x-2 text-zinc-400 font-mono text-xs font-medium mb-1">
               <span>🧠 ACTIVE RECALL SRS</span>
             </div>
-            <h2 class="text-lg font-bold text-white mb-2">Subject Mastery Meter</h2>
-            <p class="text-xs text-slate-400 leading-relaxed mb-6 font-sans">
+            <h2 class="text-base font-semibold text-zinc-100 mb-2">Subject Mastery Meter</h2>
+            <p class="text-xs text-zinc-400 leading-relaxed mb-6 font-sans">
               Powered by SuperMemo-2 (SM-2) algorithm. Flashcards adapt intervals based on your active recall precision.
             </p>
 
             <div class="flex flex-col items-center justify-center my-4">
               <div class="relative w-40 h-40 flex items-center justify-center">
                 <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-                  <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="8" class="text-slate-800" fill="transparent" />
-                  <circle id="mastery-circle" cx="50" cy="50" r="42" stroke="currentColor" stroke-width="8" class="text-[#8B5CF6]" stroke-dasharray="264" stroke-dashoffset="65" stroke-linecap="round" fill="transparent" style="transition: stroke-dashoffset 0.8s ease;" />
+                  <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="6" class="text-zinc-800" fill="transparent" />
+                  <circle id="mastery-circle" cx="50" cy="50" r="42" stroke="currentColor" stroke-width="6" class="text-emerald-400" stroke-dasharray="264" stroke-dashoffset="65" stroke-linecap="round" fill="transparent" style="transition: stroke-dashoffset 0.8s ease;" />
                 </svg>
                 <div class="absolute text-center font-mono">
-                  <span id="mastery-percentage-text" class="text-3xl font-bold text-white">76%</span>
-                  <span class="block text-[10px] text-slate-400 uppercase">Retention Rate</span>
+                  <span id="mastery-percentage-text" class="text-3xl font-bold text-zinc-100">76%</span>
+                  <span class="block text-[10px] text-zinc-500 uppercase tracking-wide mt-0.5">Retention Rate</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="space-y-2 pt-4 border-t border-slate-800 font-mono text-xs">
-            <div class="flex justify-between text-slate-300">
+          <div class="space-y-2 pt-4 border-t border-zinc-800/80 font-mono text-xs">
+            <div class="flex justify-between text-zinc-400">
               <span>Cards Reviewed:</span>
-              <span id="fc-stat-reviewed" class="text-[#00F0FF] font-bold">12 / 18</span>
+              <span id="fc-stat-reviewed" class="text-zinc-200 font-semibold">12 / 18</span>
             </div>
-            <div class="flex justify-between text-slate-300">
+            <div class="flex justify-between text-zinc-400">
               <span>Average E-Factor:</span>
-              <span id="fc-stat-efactor" class="text-[#10B981] font-bold">2.52</span>
+              <span id="fc-stat-efactor" class="text-emerald-400 font-semibold">2.52</span>
             </div>
-            <div class="flex justify-between text-slate-300">
+            <div class="flex justify-between text-zinc-400">
               <span>Current Interval:</span>
-              <span class="text-[#8B5CF6] font-bold">6 Days</span>
+              <span class="text-zinc-200 font-semibold">6 Days</span>
             </div>
           </div>
         </div>
@@ -761,26 +671,26 @@
         <div class="lg:col-span-8 space-y-6">
           <!-- Sub-mode buttons -->
           <div class="flex items-center space-x-2">
-            <button onclick="switchInteractiveMode('flashcard')" id="sub-btn-flashcard" class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]">
-              🃏 3D FLASHCARDS (SM-2)
+            <button onclick="switchInteractiveMode('flashcard')" id="sub-btn-flashcard" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-800 text-zinc-100 border border-zinc-700/60 shadow-sm transition-colors">
+              🃏 Flashcards (SM-2)
             </button>
-            <button onclick="switchInteractiveMode('quiz')" id="sub-btn-quiz" class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">
-              ❓ INTERACTIVE SELF-TEST QUIZ
+            <button onclick="switchInteractiveMode('quiz')" id="sub-btn-quiz" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900/60 text-zinc-400 border border-zinc-800/80 hover:text-zinc-200 hover:bg-zinc-800/40 transition-colors">
+              ❓ Self-Test Quiz
             </button>
-            <button onclick="switchInteractiveMode('mindmap')" id="sub-btn-mindmap" class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">
-              🌳 CONCEPT MINDMAP
+            <button onclick="switchInteractiveMode('mindmap')" id="sub-btn-mindmap" class="px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900/60 text-zinc-400 border border-zinc-800/80 hover:text-zinc-200 hover:bg-zinc-800/40 transition-colors">
+              🌳 Concept Mindmap
             </button>
           </div>
 
           <!-- Mode 1: 3D Flashcard Container -->
           <div id="interactive-mode-flashcard" class="space-y-4">
             <div class="flex items-center justify-between text-xs font-mono">
-              <span id="fc-unit-badge" class="px-2.5 py-1 rounded-full bg-[#00F0FF]/15 text-[#00F0FF] border border-[#00F0FF]/30 font-bold">
+              <span id="fc-unit-badge" class="px-2.5 py-1 rounded-md bg-zinc-800 text-zinc-300 border border-zinc-700/60 text-[11px] font-medium">
                 UNIT 1 • NUMBER THEORY
               </span>
               <div class="flex items-center space-x-2">
-                <span id="fc-index-indicator" class="text-slate-400">Card 1 of 5</span>
-                <span id="fc-probability-badge" class="px-2.5 py-1 rounded-full bg-[#10B981]/20 text-[#10B981] font-bold border border-[#10B981]/40">
+                <span id="fc-index-indicator" class="text-zinc-500 text-xs">Card 1 of 5</span>
+                <span id="fc-probability-badge" class="px-2 py-0.5 rounded text-[11px] font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   98% Highest Yield
                 </span>
               </div>
@@ -790,32 +700,32 @@
             <div class="perspective-1000 w-full min-h-[300px] cursor-pointer" onclick="toggleCardFlip()">
               <div id="flashcard-card" class="relative w-full min-h-[300px] transition-transform duration-700 transform-style-preserve-3d rounded-2xl">
                 <!-- Front Side -->
-                <div class="absolute inset-0 backface-hidden glassmorphic rounded-2xl p-8 border border-[#00F0FF]/30 flex flex-col justify-between shadow-2xl">
+                <div class="absolute inset-0 backface-hidden card-interactive rounded-2xl p-8 border border-zinc-800 flex flex-col justify-between bg-zinc-900/40 shadow-xl">
                   <div>
-                    <span class="text-xs font-mono text-[#00F0FF] uppercase tracking-wider block mb-3 font-bold">ACTIVE RECALL CHALLENGE</span>
-                    <h3 id="fc-front-prompt" class="text-lg sm:text-xl font-semibold text-white leading-relaxed">
+                    <span class="text-xs font-mono text-zinc-500 uppercase tracking-wider block mb-3 font-medium">ACTIVE RECALL CHALLENGE</span>
+                    <h3 id="fc-front-prompt" class="text-lg sm:text-xl font-medium text-zinc-100 leading-relaxed font-sans">
                       What is the condition for an integer 'a' to have a modular multiplicative inverse modulo 'm'?
                     </h3>
                   </div>
-                  <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
-                    <span>💡 Tap anywhere to flip card &amp; reveal answer</span>
-                    <span id="fc-efactor-badge" class="text-[#8B5CF6] font-bold">E-Factor: 2.50</span>
+                  <div class="pt-4 border-t border-zinc-800/80 flex items-center justify-between text-xs font-mono text-zinc-500">
+                    <span>💡 Click card to flip and verify solution</span>
+                    <span id="fc-efactor-badge" class="text-zinc-400 font-semibold">E-Factor: 2.50</span>
                   </div>
                 </div>
 
                 <!-- Back Side -->
-                <div class="absolute inset-0 backface-hidden rotate-y-180 glassmorphic rounded-2xl p-8 border border-[#10B981]/40 flex flex-col justify-between shadow-2xl bg-[#0F172A]/90">
+                <div class="absolute inset-0 backface-hidden rotate-y-180 card-interactive rounded-2xl p-8 border border-zinc-800 flex flex-col justify-between shadow-xl bg-zinc-950">
                   <div>
-                    <span class="text-xs font-mono text-[#10B981] uppercase tracking-wider block mb-3 font-bold">BENCHMARK RECALL ANSWER</span>
-                    <p id="fc-back-answer" class="text-sm sm:text-base text-slate-100 leading-relaxed mb-4">
+                    <span class="text-xs font-mono text-emerald-400 uppercase tracking-wider block mb-3 font-medium">BENCHMARK RECALL ANSWER</span>
+                    <p id="fc-back-answer" class="text-sm sm:text-base text-zinc-200 leading-relaxed mb-4 font-sans">
                       gcd(a, m) = 1 (a and m must be relatively prime / coprime). The inverse is computed using the Extended Euclidean Algorithm: a*x + m*y = 1 => a^-1 = x mod m.
                     </p>
-                    <div class="p-3 rounded-lg bg-black/40 border border-slate-800 text-xs font-mono text-[#00F0FF]" id="fc-formula-note">
+                    <div class="p-3 rounded-lg bg-zinc-900 border border-zinc-800 text-xs font-mono text-zinc-300" id="fc-formula-note">
                       Extended Euclidean: a*x + m*y = 1
                     </div>
                   </div>
 
-                  <div class="pt-4 border-t border-slate-800 text-xs font-mono text-slate-400">
+                  <div class="pt-4 border-t border-zinc-800/80 text-xs font-mono text-zinc-500">
                     <span>Rate your recall quality below to update next review interval</span>
                   </div>
                 </div>
@@ -824,35 +734,35 @@
 
             <!-- SM-2 Rating Buttons -->
             <div class="grid grid-cols-4 gap-2 pt-2">
-              <button onclick="rateFlashcard(0)" class="py-2.5 px-3 rounded-xl bg-red-950/40 hover:bg-red-900/50 border border-red-500/40 text-red-300 font-mono text-xs font-bold transition-all text-center">
-                <span class="block">Again</span>
-                <span class="text-[10px] text-slate-400 font-normal">(&lt; 1 min)</span>
+              <button onclick="rateFlashcard(0)" class="py-2.5 px-3 rounded-xl bg-zinc-900 hover:bg-zinc-800/80 border border-zinc-800 hover:border-red-500/30 text-zinc-300 hover:text-red-300 font-mono text-xs transition-colors text-center">
+                <span class="block font-medium">Again</span>
+                <span class="text-[10px] text-zinc-500 font-normal">(&lt; 1 min)</span>
               </button>
-              <button onclick="rateFlashcard(1)" class="py-2.5 px-3 rounded-xl bg-amber-950/40 hover:bg-amber-900/50 border border-amber-500/40 text-amber-300 font-mono text-xs font-bold transition-all text-center">
-                <span class="block">Hard</span>
-                <span class="text-[10px] text-slate-400 font-normal">(1 day)</span>
+              <button onclick="rateFlashcard(1)" class="py-2.5 px-3 rounded-xl bg-zinc-900 hover:bg-zinc-800/80 border border-zinc-800 hover:border-amber-500/30 text-zinc-300 hover:text-amber-300 font-mono text-xs transition-colors text-center">
+                <span class="block font-medium">Hard</span>
+                <span class="text-[10px] text-zinc-500 font-normal">(1 day)</span>
               </button>
-              <button onclick="rateFlashcard(2)" class="py-2.5 px-3 rounded-xl bg-blue-950/40 hover:bg-blue-900/50 border border-blue-500/40 text-blue-300 font-mono text-xs font-bold transition-all text-center">
-                <span class="block">Good</span>
-                <span class="text-[10px] text-slate-400 font-normal">(3 days)</span>
+              <button onclick="rateFlashcard(2)" class="py-2.5 px-3 rounded-xl bg-zinc-900 hover:bg-zinc-800/80 border border-zinc-800 hover:border-blue-500/30 text-zinc-300 hover:text-blue-300 font-mono text-xs transition-colors text-center">
+                <span class="block font-medium">Good</span>
+                <span class="text-[10px] text-zinc-500 font-normal">(3 days)</span>
               </button>
-              <button onclick="rateFlashcard(3)" class="py-2.5 px-3 rounded-xl bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-500/40 text-emerald-300 font-mono text-xs font-bold transition-all text-center">
-                <span class="block">Easy</span>
-                <span class="text-[10px] text-slate-400 font-normal">(6 days)</span>
+              <button onclick="rateFlashcard(3)" class="py-2.5 px-3 rounded-xl bg-zinc-900 hover:bg-zinc-800/80 border border-zinc-800 hover:border-emerald-500/30 text-zinc-300 hover:text-emerald-300 font-mono text-xs transition-colors text-center">
+                <span class="block font-medium">Easy</span>
+                <span class="text-[10px] text-zinc-500 font-normal">(6 days)</span>
               </button>
             </div>
           </div>
 
           <!-- Mode 2: Interactive Quiz Container -->
           <div id="interactive-mode-quiz" class="hidden space-y-4">
-            <div class="glassmorphic rounded-2xl p-6 border border-slate-700/80 space-y-5">
-              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <span class="text-xs font-mono font-bold text-[#00F0FF] uppercase">Interactive Knowledge Check</span>
-                <span id="quiz-progress-text" class="text-xs font-mono text-slate-400">Question 1 of 4</span>
+            <div class="card-base rounded-2xl p-6 border border-zinc-800 space-y-5">
+              <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+                <span class="text-xs font-mono font-medium text-zinc-400 uppercase">Interactive Knowledge Check</span>
+                <span id="quiz-progress-text" class="text-xs font-mono text-zinc-500">Question 1 of 4</span>
               </div>
 
               <div>
-                <h3 id="quiz-question-text" class="text-base sm:text-lg font-bold text-white leading-relaxed">
+                <h3 id="quiz-question-text" class="text-base sm:text-lg font-medium text-zinc-100 leading-relaxed font-sans">
                   In the AES cipher, which transformation round provides non-linear confusion?
                 </h3>
               </div>
@@ -867,8 +777,8 @@
                 <!-- Populated by JS -->
               </div>
 
-              <div class="flex justify-end pt-3 border-t border-slate-800">
-                <button onclick="nextQuizQuestion()" id="btn-next-quiz" class="px-5 py-2 rounded-xl bg-[#00F0FF] hover:bg-[#00F0FF]/90 text-black font-mono font-bold text-xs transition-all flex items-center space-x-1.5 shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+              <div class="flex justify-end pt-3 border-t border-zinc-800">
+                <button onclick="nextQuizQuestion()" id="btn-next-quiz" class="px-4 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs transition-colors flex items-center space-x-1.5 shadow-sm">
                   <span>Next Question &rarr;</span>
                 </button>
               </div>
@@ -877,10 +787,10 @@
 
           <!-- Mode 3: Concept Mindmap Container -->
           <div id="interactive-mode-mindmap" class="hidden space-y-4">
-            <div class="glassmorphic rounded-2xl p-6 border border-slate-700/80 space-y-4">
-              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-                <span class="text-xs font-mono font-bold text-[#8B5CF6] uppercase">Hierarchical Concept Mindmap</span>
-                <span class="text-xs font-mono text-slate-400">Click branches to explore</span>
+            <div class="card-base rounded-2xl p-6 border border-zinc-800 space-y-4">
+              <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+                <span class="text-xs font-mono font-medium text-zinc-400 uppercase">Hierarchical Concept Mindmap</span>
+                <span class="text-xs font-mono text-zinc-500">Click branches to explore</span>
               </div>
               <div id="mindmap-container" class="space-y-3 font-mono text-xs">
                 <!-- Populated by JS -->
@@ -895,29 +805,29 @@
     <!-- TAB 4: 60-70% ACCURATE EXAM QUESTION PAPER GENERATOR -->
     <!-- ===================================================================== -->
     <section id="tab-simulator" class="hidden space-y-6">
-      <div class="glassmorphic rounded-2xl p-6 border border-[#00F0FF]/30 space-y-5">
+      <div class="card-base rounded-2xl p-6 border border-zinc-800 space-y-5">
         <!-- University Official Header -->
-        <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-700/80 gap-3">
+        <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-zinc-800 gap-3">
           <div>
             <div class="flex items-center space-x-2">
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/40">
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                 60-70% ACCURATE PYQ SYNTHESIS
               </span>
-              <span id="exam-accuracy-badge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#00F0FF]/20 text-[#00F0FF] border border-[#00F0FF]/40">
+              <span id="exam-accuracy-badge" class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-zinc-800 text-zinc-300 border border-zinc-700/60">
                 96% Match
               </span>
             </div>
-            <h2 id="paper-university-name" class="text-xl font-bold text-white mt-1">CENTRAL UNIVERSITY OF JAMMU (CUJAMMU)</h2>
-            <p id="paper-subtitle" class="text-xs text-slate-400 font-mono">B.Tech Computer Science &amp; Engineering (Cyber Security) • Semester V</p>
-            <p id="paper-subject-code" class="text-xs text-[#00F0FF] font-mono font-semibold">Subject: [CYB-501] Cryptography and Network Security</p>
+            <h2 id="paper-university-name" class="text-lg font-semibold text-zinc-100 mt-1">CENTRAL UNIVERSITY OF JAMMU (CUJAMMU)</h2>
+            <p id="paper-subtitle" class="text-xs text-zinc-400 font-mono">B.Tech Computer Science &amp; Engineering (Cyber Security) • Semester V</p>
+            <p id="paper-subject-code" class="text-xs text-zinc-300 font-mono font-medium">Subject: [CYB-501] Cryptography and Network Security</p>
           </div>
           <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
-            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300">Time: 3 Hours</span>
-            <span class="px-3 py-1.5 rounded-lg bg-[#10B981]/20 border border-[#10B981]/40 text-[#10B981] font-bold">Max Marks: 70</span>
-            <button onclick="exportExamPaperToDrive()" class="px-3 py-1.5 rounded-lg bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-500/40 text-emerald-300 font-bold flex items-center space-x-1.5 transition-all">
+            <span class="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-400">Time: 3 Hours</span>
+            <span class="px-2.5 py-1 rounded-md bg-zinc-900 border border-zinc-800 text-zinc-200 font-medium">Max Marks: 70</span>
+            <button onclick="exportExamPaperToDrive()" class="px-3 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-200 font-medium flex items-center space-x-1.5 transition-colors">
               <span>💾 Save to Google Drive</span>
             </button>
-            <button onclick="regenerateExamPaper()" class="px-3 py-1.5 rounded-lg bg-[#8B5CF6]/20 hover:bg-[#8B5CF6]/30 border border-[#8B5CF6]/50 text-[#8B5CF6] font-bold flex items-center space-x-1">
+            <button onclick="regenerateExamPaper()" class="px-3 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium flex items-center space-x-1 transition-colors shadow-sm">
               <span>🔄 Re-predict</span>
             </button>
           </div>
@@ -925,10 +835,10 @@
 
         <!-- Section Filters -->
         <div class="flex items-center space-x-2 overflow-x-auto pb-1">
-          <button onclick="filterExamSection('ALL')" id="sec-filter-ALL" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#00F0FF]/20 text-[#00F0FF] border border-[#00F0FF]">All Sections</button>
-          <button onclick="filterExamSection('A')" id="sec-filter-A" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">Section A (2-Mark Compulsory)</button>
-          <button onclick="filterExamSection('B')" id="sec-filter-B" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">Section B (5-Mark Conceptual)</button>
-          <button onclick="filterExamSection('C')" id="sec-filter-C" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">Section C (10-Mark Architectural)</button>
+          <button onclick="filterExamSection('ALL')" id="sec-filter-ALL" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-800 text-zinc-100 border border-zinc-700/60 shadow-sm transition-colors">All Sections</button>
+          <button onclick="filterExamSection('A')" id="sec-filter-A" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900/60 text-zinc-400 border border-zinc-800/80 hover:text-zinc-200 hover:bg-zinc-800/40 transition-colors">Section A (2-Mark Compulsory)</button>
+          <button onclick="filterExamSection('B')" id="sec-filter-B" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900/60 text-zinc-400 border border-zinc-800/80 hover:text-zinc-200 hover:bg-zinc-800/40 transition-colors">Section B (5-Mark Conceptual)</button>
+          <button onclick="filterExamSection('C')" id="sec-filter-C" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900/60 text-zinc-400 border border-zinc-800/80 hover:text-zinc-200 hover:bg-zinc-800/40 transition-colors">Section C (10-Mark Architectural)</button>
         </div>
 
         <!-- Questions List -->
@@ -942,26 +852,26 @@
     <!-- TAB 5: ALL UNIVERSITIES PYQ ARCHIVE (CUJAMMU SEMESTERS 1 TO 8) -->
     <!-- ===================================================================== -->
     <section id="tab-pyqarchive" class="hidden space-y-6">
-      <div class="glassmorphic rounded-2xl p-6 border border-[#8B5CF6]/30 space-y-5">
-        <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-700/80 gap-3">
+      <div class="card-base rounded-2xl p-6 border border-zinc-800 space-y-5">
+        <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-zinc-800 gap-3">
           <div>
-            <div class="flex items-center space-x-2 text-[#8B5CF6] font-mono text-xs font-bold mb-1">
-              <span>📚 COMPREHENSIVE UNIVERSITY PYQ REPOSITORY</span>
+            <div class="flex items-center space-x-2 text-zinc-400 font-mono text-xs font-medium mb-1">
+              <span>📚 UNIVERSITY PYQ REPOSITORY</span>
             </div>
-            <h2 class="text-xl font-bold text-white">Central University of Jammu &amp; Premier Institutes PYQ Bank</h2>
-            <p class="text-xs text-slate-400 font-mono">Curated past exam papers across all 8 Semesters for B.Tech CSE (Cyber Security) &amp; IITs/NITs</p>
+            <h2 class="text-lg font-semibold text-zinc-100">Central University of Jammu &amp; Premier Institutes PYQ Bank</h2>
+            <p class="text-xs text-zinc-400 font-mono">Curated past exam papers across all 8 Semesters for B.Tech CSE (Cyber Security) &amp; IITs/NITs</p>
           </div>
           <div class="flex items-center space-x-2">
-            <span class="text-xs font-mono text-slate-400">Total Curated Questions:</span>
-            <span id="pyq-total-count" class="px-2 py-0.5 rounded font-mono text-xs font-bold bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/40">100+</span>
+            <span class="text-xs font-mono text-zinc-500">Total Questions:</span>
+            <span id="pyq-total-count" class="px-2 py-0.5 rounded font-mono text-xs font-medium bg-zinc-800 text-zinc-300 border border-zinc-700/60">100+</span>
           </div>
         </div>
 
         <!-- Filter Ribbon -->
         <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
           <div>
-            <label class="text-[11px] font-mono text-slate-400 block mb-1">SELECT UNIVERSITY</label>
-            <select id="archive-uni-select" onchange="filterArchiveQuestions()" class="w-full bg-[#0F172A] border border-slate-700 text-xs font-semibold rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-[#8B5CF6]">
+            <label class="text-[11px] font-mono text-zinc-400 block mb-1">SELECT UNIVERSITY</label>
+            <select id="archive-uni-select" onchange="filterArchiveQuestions()" class="w-full bg-zinc-900 border border-zinc-800 text-xs font-medium rounded-lg px-3 py-2 text-zinc-200 focus:outline-none focus:border-zinc-700">
               <option value="cujammu" selected>Central University of Jammu (CUJammu)</option>
               <option value="iit_jammu">IIT Jammu</option>
               <option value="nit_srinagar">NIT Srinagar</option>
@@ -969,8 +879,8 @@
             </select>
           </div>
           <div>
-            <label class="text-[11px] font-mono text-slate-400 block mb-1">SELECT SEMESTER</label>
-            <select id="archive-sem-select" onchange="filterArchiveQuestions()" class="w-full bg-[#0F172A] border border-slate-700 text-xs font-semibold rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-[#8B5CF6]">
+            <label class="text-[11px] font-mono text-zinc-400 block mb-1">SELECT SEMESTER</label>
+            <select id="archive-sem-select" onchange="filterArchiveQuestions()" class="w-full bg-zinc-900 border border-zinc-800 text-xs font-medium rounded-lg px-3 py-2 text-zinc-200 focus:outline-none focus:border-zinc-700">
               <option value="all">All Semesters (1 to 8)</option>
               <option value="1">Semester 1 (C, Math-I)</option>
               <option value="2">Semester 2 (Data Structures, Math-II)</option>
@@ -983,13 +893,13 @@
             </select>
           </div>
           <div class="sm:col-span-2">
-            <label class="text-[11px] font-mono text-slate-400 block mb-1">SEARCH QUESTION OR TOPIC KEYWORD</label>
-            <input type="text" id="archive-search-input" oninput="filterArchiveQuestions()" placeholder="Search, e.g. RSA, AES, Deadlock, Buffer Overflow, Volatility, SUID..." class="w-full bg-[#0F172A] border border-slate-700 text-xs rounded-lg px-3 py-2 text-white placeholder-slate-500 focus:outline-none focus:border-[#8B5CF6] font-mono">
+            <label class="text-[11px] font-mono text-zinc-400 block mb-1">SEARCH QUESTION OR TOPIC KEYWORD</label>
+            <input type="text" id="archive-search-input" oninput="filterArchiveQuestions()" placeholder="Search, e.g. RSA, AES, Deadlock, Buffer Overflow, Volatility, SUID..." class="w-full bg-zinc-900 border border-zinc-800 text-xs rounded-lg px-3 py-2 text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-700 font-sans">
           </div>
         </div>
 
         <!-- Archive Question Cards Container -->
-        <div id="archive-questions-container" class="space-y-3.5 pt-2">
+        <div id="archive-questions-container" class="space-y-3 pt-2">
           <!-- Populated by JS -->
         </div>
       </div>
@@ -999,52 +909,52 @@
     <!-- TAB 6: RAPID VIVA -->
     <!-- ===================================================================== -->
     <section id="tab-viva" class="hidden space-y-6">
-      <div class="glassmorphic rounded-2xl p-6 border border-[#F59E0B]/30 space-y-4">
-        <div class="flex items-center justify-between border-b border-slate-700/80 pb-4">
+      <div class="card-base rounded-2xl p-6 border border-zinc-800 space-y-5">
+        <div class="flex items-center justify-between border-b border-zinc-800 pb-4">
           <div>
-            <span class="text-xs font-mono text-[#F59E0B] uppercase font-bold tracking-wider">END-SEMESTER ORAL &amp; LABORATORY VIVA</span>
-            <h2 class="text-xl font-bold text-white">One-Tap Rapid-Fire Viva Defense Prep</h2>
-            <p class="text-xs text-slate-400 font-mono">High-pressure defense simulator: Instant punchlines and examiner trap warnings</p>
+            <span class="text-xs font-mono text-zinc-400 uppercase font-medium tracking-wider">END-SEMESTER ORAL &amp; LABORATORY VIVA</span>
+            <h2 class="text-lg font-semibold text-zinc-100">Rapid-Fire Viva Defense Prep</h2>
+            <p class="text-xs text-zinc-400 font-mono">High-pressure defense simulator: Instant punchlines and examiner trap warnings</p>
           </div>
-          <span id="viva-difficulty-tag" class="px-3 py-1 rounded-full text-xs font-mono bg-[#F59E0B]/20 text-[#F59E0B] border border-[#F59E0B]/40 font-bold">
+          <span id="viva-difficulty-tag" class="px-2.5 py-1 rounded-full text-xs font-mono bg-zinc-800 text-zinc-300 border border-zinc-700/60 font-medium">
             Pass Benchmark
           </span>
         </div>
 
-        <div class="glassmorphic-card rounded-xl p-6 border border-slate-700/80 space-y-6">
+        <div class="p-6 rounded-xl border border-zinc-800/80 bg-zinc-900/30 space-y-5">
           <div>
-            <span class="text-xs font-mono text-[#00F0FF] uppercase tracking-wider block mb-2 font-bold" id="viva-lab-name">
+            <span class="text-xs font-mono text-zinc-400 uppercase tracking-wider block mb-2 font-medium" id="viva-lab-name">
               CYB-501P: CRYPTOGRAPHY LAB • UNIT 2
             </span>
-            <h3 id="viva-question-text" class="text-lg sm:text-xl font-semibold text-white leading-relaxed">
+            <h3 id="viva-question-text" class="text-base sm:text-lg font-medium text-zinc-100 leading-relaxed font-sans">
               Professor: "Can AES be broken by trying all 2^128 keys on a modern supercomputer?"
             </h3>
           </div>
 
           <!-- Reveal Punchline -->
           <div class="space-y-3">
-            <button onclick="toggleVivaAnswer()" class="px-4 py-2 rounded-lg bg-[#10B981]/20 hover:bg-[#10B981]/30 border border-[#10B981]/50 text-[#10B981] font-mono font-bold text-xs transition-all">
-              👁️ ONE-TAP REVEAL PUNCHLINE
+            <button onclick="toggleVivaAnswer()" class="px-3.5 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 text-xs font-medium transition-colors">
+              👁️ Reveal Punchline
             </button>
-            <div id="viva-answer-box" class="hidden p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/40 text-sm text-slate-100 leading-relaxed font-sans">
+            <div id="viva-answer-box" class="hidden p-4 rounded-xl bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-200 leading-relaxed font-sans">
               <strong>Expected Answer:</strong> "No, Sir. 2^128 equals ~3.4 &times; 10^38 keys. Even testing 1 billion keys/sec across 1 billion computers would take billions of years, far surpassing the age of the universe."
             </div>
           </div>
 
           <!-- Reveal Trap -->
           <div class="space-y-3">
-            <button onclick="toggleVivaTrap()" class="px-4 py-2 rounded-lg bg-red-950/30 hover:bg-red-950/50 border border-red-500/40 text-red-400 font-mono font-bold text-xs transition-all flex items-center space-x-1.5">
-              <span>⚠️ REVEAL EXAMINER FOLLOW-UP TRAP</span>
+            <button onclick="toggleVivaTrap()" class="px-3.5 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 text-xs font-medium transition-colors flex items-center space-x-1.5">
+              <span>⚠️ Reveal Examiner Follow-up Trap</span>
             </button>
-            <div id="viva-trap-box" class="hidden p-4 rounded-xl bg-red-950/25 border border-red-500/50 text-sm text-slate-100 leading-relaxed">
-              <strong class="text-red-400 block mb-1">Critical Follow-up:</strong>
+            <div id="viva-trap-box" class="hidden p-4 rounded-xl bg-zinc-900/80 border border-zinc-800 text-xs text-zinc-200 leading-relaxed font-sans">
+              <strong class="text-amber-400 block mb-1">Critical Follow-up:</strong>
               "The examiner will counter: 'What about quantum computers using Grover's Algorithm?' Answer: 'Grover's algorithm reduces complexity to &radic;(2^128) = 2^64, which is why AES-256 (providing 128-bit quantum security) is mandated for post-quantum safety.'"
             </div>
           </div>
 
-          <div class="pt-4 border-t border-slate-800 flex justify-end">
-            <button onclick="nextVivaQuestion()" class="px-6 py-2.5 rounded-xl bg-[#00F0FF] hover:bg-[#00F0FF]/90 text-black font-mono font-bold text-xs transition-all shadow-[0_0_15px_rgba(0,240,255,0.4)] flex items-center space-x-2">
-              <span>NEXT RAPID-FIRE VIVA QUESTION &rarr;</span>
+          <div class="pt-4 border-t border-zinc-800 flex justify-end">
+            <button onclick="nextVivaQuestion()" class="px-4 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs transition-colors flex items-center space-x-2 shadow-sm">
+              <span>Next Viva Question &rarr;</span>
             </button>
           </div>
         </div>
@@ -1055,26 +965,26 @@
     <!-- TAB 7: PRINT & EXPORT CLEAN VIEW -->
     <!-- ===================================================================== -->
     <section id="tab-export" class="hidden space-y-6">
-      <div class="glassmorphic rounded-2xl p-6 border border-[#8B5CF6]/40 space-y-4">
-        <div class="flex items-center justify-between border-b border-slate-700/80 pb-4">
+      <div class="card-base rounded-2xl p-6 border border-zinc-800 space-y-4">
+        <div class="flex items-center justify-between border-b border-zinc-800 pb-4">
           <div>
-            <span class="text-xs font-mono text-[#8B5CF6] uppercase font-bold tracking-wider">OFFLINE PRACTICE &amp; PEER SHARING</span>
-            <h2 class="text-xl font-bold text-white">Printable University Standard Layout</h2>
-            <p class="text-xs text-slate-400 font-mono">Formatted to official Central University of Jammu examination standards</p>
+            <span class="text-xs font-mono text-zinc-400 uppercase font-medium tracking-wider">OFFLINE PRACTICE &amp; PEER SHARING</span>
+            <h2 class="text-lg font-semibold text-zinc-100">Printable University Standard Layout</h2>
+            <p class="text-xs text-zinc-400 font-mono">Formatted to official Central University of Jammu examination standards</p>
           </div>
 
           <div class="flex items-center space-x-3">
-            <button onclick="copyPrintablePaper()" class="px-4 py-2 rounded-xl bg-[#00F0FF] hover:bg-[#00F0FF]/90 text-black font-mono font-bold text-xs transition-all shadow-[0_0_12px_rgba(0,240,255,0.3)]">
-              📋 COPY CLEAN PAPER
+            <button onclick="copyPrintablePaper()" class="px-3.5 py-1.5 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs transition-colors shadow-sm">
+              📋 Copy Clean Paper
             </button>
-            <button onclick="window.print()" class="px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-600 text-white font-mono font-bold text-xs transition-all">
-              🖨️ PRINT PDF
+            <button onclick="window.print()" class="px-3.5 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-200 text-xs font-medium transition-colors">
+              🖨️ Print PDF
             </button>
           </div>
         </div>
 
         <!-- Clean Print Sheet View -->
-        <div class="bg-slate-950 p-6 md:p-8 rounded-xl border border-slate-800 font-mono text-xs text-slate-200 leading-relaxed overflow-x-auto whitespace-pre-wrap selection:bg-[#8B5CF6]" id="printable-sheet">
+        <div class="bg-zinc-950 p-6 md:p-8 rounded-xl border border-zinc-800 font-mono text-xs text-zinc-300 leading-relaxed overflow-x-auto whitespace-pre-wrap" id="printable-sheet">
 ================================================================================
 CENTRAL UNIVERSITY OF JAMMU
 Department of Computer Science & Information Technology
@@ -1240,21 +1150,16 @@ Generated by ExamPulse Antigravity for University Engineering Students
         document.getElementById('stat-keywords').innerText = `${data.pptx.keywords.length} Keywords`;
         const kwContainer = document.getElementById('keywords-tags-container');
         kwContainer.innerHTML = '';
-        data.pptx.keywords.slice(0, 8).forEach((k, idx) => {
-          const colors = ['#00F0FF', '#8B5CF6', '#10B981', '#F59E0B'];
-          const col = colors[idx % colors.length];
+        data.pptx.keywords.slice(0, 8).forEach(k => {
           const span = document.createElement('span');
-          span.className = "px-2 py-1 rounded text-[11px] font-mono font-semibold border";
-          span.style.color = col;
-          span.style.borderColor = col + '55';
-          span.style.background = col + '18';
+          span.className = "px-2 py-0.5 rounded text-[11px] font-mono text-zinc-300 bg-zinc-800 border border-zinc-700/60 font-medium";
           span.innerText = k;
           kwContainer.appendChild(span);
         });
       }
 
       document.getElementById('ingestion-badge').innerText = 'PROCESSED';
-      document.getElementById('ingestion-badge').className = 'px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 font-bold';
+      document.getElementById('ingestion-badge').className = 'px-2 py-0.5 rounded text-[10px] font-mono bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 font-medium';
     }
 
     // Switch Navigation Tabs
@@ -1264,14 +1169,14 @@ Generated by ExamPulse Antigravity for University Engineering Students
       if (activeSec) activeSec.classList.remove('hidden');
 
       document.querySelectorAll('.tab-btn').forEach(btn => {
-        btn.classList.remove('bg-[#00F0FF]/20', 'text-[#00F0FF]', 'border-[#00F0FF]');
-        btn.classList.add('border-slate-700', 'text-slate-300');
+        btn.classList.remove('bg-zinc-800', 'text-white', 'border-zinc-700/60', 'shadow-sm');
+        btn.classList.add('text-zinc-400');
       });
 
       const activeBtn = document.getElementById('tab-btn-' + tabId);
       if (activeBtn) {
-        activeBtn.classList.remove('border-slate-700', 'text-slate-300');
-        activeBtn.classList.add('bg-[#00F0FF]/20', 'text-[#00F0FF]', 'border-[#00F0FF]');
+        activeBtn.classList.remove('text-zinc-400');
+        activeBtn.classList.add('bg-zinc-800', 'text-white', 'border-zinc-700/60', 'shadow-sm');
       }
     }
 
@@ -1298,7 +1203,7 @@ Generated by ExamPulse Antigravity for University Engineering Students
       const file = e.target.files[0];
       if (file) {
         document.getElementById('pptx-file-status').innerText = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
-        document.getElementById('pptx-file-status').className = 'text-[11px] font-mono text-[#00F0FF] font-bold';
+        document.getElementById('pptx-file-status').className = 'text-[11px] font-mono text-zinc-300 font-medium';
       }
     }
 
@@ -1306,7 +1211,7 @@ Generated by ExamPulse Antigravity for University Engineering Students
       const file = e.target.files[0];
       if (file) {
         document.getElementById('syllabus-file-status').innerText = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
-        document.getElementById('syllabus-file-status').className = 'text-[11px] font-mono text-[#8B5CF6] font-bold';
+        document.getElementById('syllabus-file-status').className = 'text-[11px] font-mono text-zinc-300 font-medium';
       }
     }
 
@@ -1365,8 +1270,8 @@ Generated by ExamPulse Antigravity for University Engineering Students
       sumContainer.innerHTML = '';
       (notes.executiveSummary || []).forEach(point => {
         const div = document.createElement('div');
-        div.className = "p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-200 leading-relaxed font-sans";
-        div.innerHTML = `<span class="text-[#00F0FF] font-bold mr-1.5">&bull;</span> ${point}`;
+        div.className = "p-3.5 rounded-xl bg-zinc-900/40 border border-zinc-800 text-xs text-zinc-300 leading-relaxed font-sans";
+        div.innerHTML = `<span class="text-zinc-400 font-bold mr-1.5">&bull;</span> ${point}`;
         sumContainer.appendChild(div);
       });
 
@@ -1375,16 +1280,16 @@ Generated by ExamPulse Antigravity for University Engineering Students
       fContainer.innerHTML = '';
       (notes.highYieldFormulas || []).forEach(f => {
         const div = document.createElement('div');
-        div.className = "glassmorphic-card p-4 rounded-xl space-y-1.5 border border-slate-800";
+        div.className = "p-4 rounded-xl space-y-1.5 border border-zinc-800 bg-zinc-900/30";
         div.innerHTML = `
           <div class="flex items-center justify-between">
-            <span class="text-xs font-mono font-bold text-white">${f.topic}</span>
-            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]/40">High Frequency</span>
+            <span class="text-xs font-mono font-semibold text-zinc-200">${f.topic}</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-800 text-zinc-400 border border-zinc-700/60">High Frequency</span>
           </div>
-          <div class="p-2.5 rounded-lg bg-black/50 border border-slate-800 font-mono text-xs text-[#00F0FF] overflow-x-auto">
+          <div class="p-2.5 rounded-lg bg-zinc-950 border border-zinc-800 font-mono text-xs text-zinc-200 overflow-x-auto">
             ${f.formula}
           </div>
-          <p class="text-[11px] text-slate-400 font-sans">${f.explanation}</p>
+          <p class="text-[11px] text-zinc-400 font-sans leading-relaxed">${f.explanation}</p>
         `;
         fContainer.appendChild(div);
       });
@@ -1394,10 +1299,10 @@ Generated by ExamPulse Antigravity for University Engineering Students
       defContainer.innerHTML = '';
       (notes.keyDefinitions || []).forEach(d => {
         const div = document.createElement('div');
-        div.className = "p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1";
+        div.className = "p-3.5 rounded-xl bg-zinc-900/40 border border-zinc-800 space-y-1";
         div.innerHTML = `
-          <span class="text-xs font-mono font-bold text-[#10B981] block">${d.term}</span>
-          <p class="text-xs text-slate-300 font-sans leading-relaxed">${d.definition}</p>
+          <span class="text-xs font-mono font-semibold text-zinc-200 block">${d.term}</span>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">${d.definition}</p>
         `;
         defContainer.appendChild(div);
       });
@@ -1423,37 +1328,37 @@ Generated by ExamPulse Antigravity for University Engineering Students
 
       questionsToRender.forEach(q => {
         const card = document.createElement('div');
-        card.className = "glassmorphic-card p-5 rounded-xl space-y-3 transition-all";
+        card.className = "p-4 sm:p-5 rounded-xl border border-zinc-800 bg-zinc-900/30 hover:border-zinc-700/80 transition-colors space-y-3";
         card.innerHTML = `
           <div class="flex flex-wrap items-center justify-between gap-2">
             <div class="flex items-center space-x-2">
-              <span class="px-2.5 py-0.5 rounded font-mono text-xs font-bold bg-[#00F0FF]/15 text-[#00F0FF] border border-[#00F0FF]/30">${q.qNum}</span>
-              <span class="text-xs font-mono font-bold text-[#10B981]">[${q.marks} Marks]</span>
-              <span class="text-[11px] font-mono text-slate-400">(${q.sectionLabel})</span>
+              <span class="px-2 py-0.5 rounded font-mono text-xs font-semibold bg-zinc-800 text-zinc-200 border border-zinc-700/60">${q.qNum}</span>
+              <span class="text-xs font-mono text-zinc-400">[${q.marks} Marks]</span>
+              <span class="text-[11px] font-mono text-zinc-500">(${q.sectionLabel})</span>
             </div>
             <div class="flex items-center space-x-2">
-              <span class="px-2 py-0.5 rounded-full font-mono text-[11px] font-semibold bg-[#8B5CF6]/15 text-[#8B5CF6] border border-[#8B5CF6]/40">
+              <span class="px-2 py-0.5 rounded font-mono text-[10px] text-zinc-400 bg-zinc-800 border border-zinc-700/50">
                 Bloom: ${q.bloom || 'Analyze'}
               </span>
-              <span class="px-2 py-0.5 rounded-full font-mono text-[11px] font-semibold bg-[#10B981]/15 text-[#10B981] border border-[#10B981]/40">
+              <span class="px-2 py-0.5 rounded font-mono text-[10px] font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20">
                 ${q.freq || `${q.probability}% Probability`}
               </span>
             </div>
           </div>
-          <p class="text-sm font-medium text-slate-100 leading-relaxed font-sans">${q.text.replace(/\n/g, '<br>')}</p>
-          ${q.choice ? `<div class="p-3 rounded-lg bg-[#8B5CF6]/10 border border-[#8B5CF6]/30 text-xs italic text-slate-300 font-sans">${q.choice.replace(/\n/g, '<br>')}</div>` : ''}
-          <div class="pt-2 border-t border-slate-700/60 flex items-center justify-between">
-            <button onclick="toggleExamAnswer('${q.id}')" class="text-xs font-mono text-[#00F0FF] hover:underline font-semibold flex items-center space-x-1">
+          <p class="text-sm font-medium text-zinc-100 leading-relaxed font-sans">${q.text.replace(/\n/g, '<br>')}</p>
+          ${q.choice ? `<div class="p-3 rounded-lg bg-zinc-950 border border-zinc-800/80 text-xs text-zinc-300 font-sans">${q.choice.replace(/\n/g, '<br>')}</div>` : ''}
+          <div class="pt-2 border-t border-zinc-800/80 flex items-center justify-between">
+            <button onclick="toggleExamAnswer('${q.id}')" class="text-xs font-mono text-zinc-400 hover:text-zinc-200 transition-colors font-medium flex items-center space-x-1">
               <span>View Benchmark Model Answer &amp; Rubric</span> &darr;
             </button>
-            <span class="text-[10px] font-mono text-slate-400">Past Papers: ${(q.years || ['2024', '2022']).join(', ')}</span>
+            <span class="text-[10px] font-mono text-zinc-500">Past Papers: ${(q.years || ['2024', '2022']).join(', ')}</span>
           </div>
-          <div id="exam-ans-${q.id}" class="hidden p-4 rounded-xl bg-black/60 border border-slate-700 text-xs text-slate-300 space-y-2 font-mono">
+          <div id="exam-ans-${q.id}" class="hidden p-4 rounded-xl bg-zinc-950 border border-zinc-800 text-xs text-zinc-300 space-y-2 font-mono">
             <div>
-              <span class="text-[#10B981] font-bold block mb-1">BENCHMARK MODEL SOLUTION:</span>
-              <p class="leading-relaxed font-sans text-slate-200">${q.answer}</p>
+              <span class="text-zinc-200 font-semibold block mb-1">BENCHMARK MODEL SOLUTION:</span>
+              <p class="leading-relaxed font-sans text-zinc-300">${q.answer}</p>
             </div>
-            ${q.rubric ? `<div class="pt-2 border-t border-slate-800 text-[11px] text-yellow-400"><strong class="text-white">Examiner Rubric:</strong> ${q.rubric}</div>` : ''}
+            ${q.rubric ? `<div class="pt-2 border-t border-zinc-800 text-[11px] text-zinc-400"><strong class="text-zinc-300">Examiner Rubric:</strong> ${q.rubric}</div>` : ''}
           </div>
         `;
         container.appendChild(card);
@@ -1467,13 +1372,13 @@ Generated by ExamPulse Antigravity for University Engineering Students
 
     function filterExamSection(sec) {
       document.querySelectorAll('.sec-filter-btn').forEach(b => {
-        b.classList.remove('bg-[#00F0FF]/20', 'text-[#00F0FF]', 'border-[#00F0FF]');
-        b.classList.add('bg-slate-800', 'text-slate-400', 'border-slate-700');
+        b.classList.remove('bg-zinc-800', 'text-zinc-100', 'border-zinc-700/60', 'shadow-sm');
+        b.classList.add('bg-zinc-900/60', 'text-zinc-400', 'border-zinc-800/80');
       });
       const active = document.getElementById('sec-filter-' + sec);
       if (active) {
-        active.classList.remove('bg-slate-800', 'text-slate-400', 'border-slate-700');
-        active.classList.add('bg-[#00F0FF]/20', 'text-[#00F0FF]', 'border-[#00F0FF]');
+        active.classList.remove('bg-zinc-900/60', 'text-zinc-400', 'border-zinc-800/80');
+        active.classList.add('bg-zinc-800', 'text-zinc-100', 'border-zinc-700/60', 'shadow-sm');
       }
       renderExamQuestions(sec);
     }
@@ -1509,12 +1414,18 @@ Generated by ExamPulse Antigravity for University Engineering Students
       document.getElementById('interactive-mode-quiz').classList.add('hidden');
       document.getElementById('interactive-mode-mindmap').classList.add('hidden');
 
-      document.getElementById('sub-btn-flashcard').className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700';
-      document.getElementById('sub-btn-quiz').className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700';
-      document.getElementById('sub-btn-mindmap').className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700';
+      ['flashcard', 'quiz', 'mindmap'].forEach(m => {
+        const btn = document.getElementById(`sub-btn-${m}`);
+        if (btn) {
+          btn.className = 'px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-900/60 text-zinc-400 border border-zinc-800/80 hover:text-zinc-200 hover:bg-zinc-800/40 transition-colors';
+        }
+      });
 
       document.getElementById(`interactive-mode-${mode}`).classList.remove('hidden');
-      document.getElementById(`sub-btn-${mode}`).className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]';
+      const activeBtn = document.getElementById(`sub-btn-${mode}`);
+      if (activeBtn) {
+        activeBtn.className = 'px-3 py-1.5 rounded-lg text-xs font-medium bg-zinc-800 text-zinc-100 border border-zinc-700/60 shadow-sm transition-colors';
+      }
     }
 
     function toggleCardFlip() {
@@ -1570,9 +1481,9 @@ Generated by ExamPulse Antigravity for University Engineering Students
 
       item.options.forEach((opt, idx) => {
         const btn = document.createElement('button');
-        btn.className = "w-full text-left p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-[#00F0FF] text-xs text-slate-200 font-mono transition-all flex items-center space-x-3";
+        btn.className = "w-full text-left p-3.5 rounded-xl bg-zinc-900/50 border border-zinc-800 hover:border-zinc-700 hover:bg-zinc-800/40 text-xs text-zinc-200 font-mono transition-colors flex items-center space-x-3";
         btn.innerHTML = `
-          <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center font-bold text-[11px] shrink-0">${String.fromCharCode(65 + idx)}</span>
+          <span class="w-6 h-6 rounded bg-zinc-800 text-zinc-300 flex items-center justify-center font-semibold text-[11px] shrink-0 border border-zinc-700/60">${String.fromCharCode(65 + idx)}</span>
           <span>${opt}</span>
         `;
         btn.onclick = () => selectQuizOption(idx, item.correctIndex, item.explanation);
@@ -1585,19 +1496,19 @@ Generated by ExamPulse Antigravity for University Engineering Students
       options.forEach((btn, idx) => {
         btn.disabled = true;
         if (idx === correctIdx) {
-          btn.className = "w-full text-left p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500 text-xs text-emerald-200 font-mono transition-all flex items-center space-x-3";
+          btn.className = "w-full text-left p-3.5 rounded-xl bg-emerald-950/30 border border-emerald-500/40 text-xs text-emerald-200 font-mono transition-colors flex items-center space-x-3";
         } else if (idx === selectedIdx) {
-          btn.className = "w-full text-left p-3.5 rounded-xl bg-red-950/40 border border-red-500 text-xs text-red-200 font-mono transition-all flex items-center space-x-3";
+          btn.className = "w-full text-left p-3.5 rounded-xl bg-red-950/30 border border-red-500/40 text-xs text-red-200 font-mono transition-colors flex items-center space-x-3";
         }
       });
 
       const expBox = document.getElementById('quiz-explanation-box');
       expBox.classList.remove('hidden');
       if (selectedIdx === correctIdx) {
-        expBox.className = "p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/50 text-emerald-300 font-mono text-xs";
+        expBox.className = "p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/30 text-emerald-300 font-mono text-xs leading-relaxed";
         expBox.innerHTML = `<strong>✅ Correct!</strong> ${explanation}`;
       } else {
-        expBox.className = "p-4 rounded-xl bg-red-950/20 border border-red-500/50 text-red-300 font-mono text-xs";
+        expBox.className = "p-4 rounded-xl bg-red-950/20 border border-red-500/30 text-red-300 font-mono text-xs leading-relaxed";
         expBox.innerHTML = `<strong>❌ Incorrect.</strong> ${explanation}`;
       }
     }
@@ -1615,20 +1526,20 @@ Generated by ExamPulse Antigravity for University Engineering Students
       if (!mindmap) return;
 
       const rootDiv = document.createElement('div');
-      rootDiv.className = "p-3 rounded-xl bg-[#8B5CF6]/15 border border-[#8B5CF6]/40 text-[#8B5CF6] font-bold";
+      rootDiv.className = "p-3 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-200 font-semibold text-xs";
       rootDiv.innerText = `🌌 ${mindmap.root}`;
       container.appendChild(rootDiv);
 
       (mindmap.children || []).forEach(child => {
         const branch = document.createElement('div');
-        branch.className = "ml-4 pl-4 border-l-2 border-slate-800 space-y-2 py-1";
+        branch.className = "ml-4 pl-4 border-l border-zinc-800 space-y-2 py-1";
         branch.innerHTML = `
-          <div class="text-white font-bold text-xs flex items-center space-x-1.5">
+          <div class="text-zinc-200 font-medium text-xs flex items-center space-x-1.5">
             <span>🔹</span>
             <span>${child.name}</span>
           </div>
           <div class="ml-4 space-y-1">
-            ${(child.children || []).map(leaf => `<div class="text-slate-400 text-[11px]">&bull; ${leaf.name}</div>`).join('')}
+            ${(child.children || []).map(leaf => `<div class="text-zinc-400 text-[11px]">&bull; ${leaf.name}</div>`).join('')}
           </div>
         `;
         container.appendChild(branch);
@@ -1707,30 +1618,30 @@ Generated by ExamPulse Antigravity for University Engineering Students
 
       matching.forEach(q => {
         const div = document.createElement('div');
-        div.className = "glassmorphic-card p-4 rounded-xl space-y-2 border border-slate-800";
+        div.className = "p-4 rounded-xl space-y-2 border border-zinc-800 bg-zinc-900/30 hover:border-zinc-700/80 transition-colors";
         div.innerHTML = `
           <div class="flex flex-wrap items-center justify-between gap-2">
             <div class="flex items-center space-x-2">
-              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]/40">
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-zinc-800 text-zinc-300 border border-zinc-700/60">
                 SEM ${q.sem} • ${q.subjectCode}
               </span>
-              <span class="text-xs font-mono font-bold text-[#10B981]">[${q.marks} Marks]</span>
+              <span class="text-xs font-mono text-zinc-400">[${q.marks} Marks]</span>
             </div>
             <div class="flex items-center space-x-2">
-              <span class="text-[11px] font-mono text-slate-400">${(q.years || []).join(', ')}</span>
-              <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/15 text-emerald-400 font-bold">
+              <span class="text-[11px] font-mono text-zinc-500">${(q.years || []).join(', ')}</span>
+              <span class="px-2 py-0.5 rounded font-mono text-[10px] font-medium text-emerald-400 bg-emerald-500/10 border border-emerald-500/20">
                 ${q.freq || 'High Yield'}
               </span>
             </div>
           </div>
-          <h4 class="text-xs font-semibold text-white font-mono leading-relaxed">${q.subjectTitle}</h4>
-          <p class="text-xs text-slate-200 font-sans leading-relaxed">${q.text.replace(/\n/g, '<br>')}</p>
-          <div class="pt-2 border-t border-slate-800">
-            <button onclick="this.nextElementSibling.classList.toggle('hidden')" class="text-[11px] font-mono text-[#00F0FF] hover:underline font-semibold">
+          <h4 class="text-xs font-medium text-zinc-200 font-mono leading-relaxed">${q.subjectTitle}</h4>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">${q.text.replace(/\n/g, '<br>')}</p>
+          <div class="pt-2 border-t border-zinc-800/80">
+            <button onclick="this.nextElementSibling.classList.toggle('hidden')" class="text-[11px] font-mono text-zinc-400 hover:text-zinc-200 transition-colors font-medium">
               Show Model Solution &darr;
             </button>
-            <div class="hidden mt-2 p-3 rounded-lg bg-black/60 border border-slate-800 text-xs font-mono text-slate-300">
-              <span class="text-[#10B981] font-bold block mb-1">MODEL ANSWER:</span>
+            <div class="hidden mt-2 p-3 rounded-lg bg-zinc-950 border border-zinc-800 text-xs font-mono text-zinc-300">
+              <span class="text-zinc-200 font-semibold block mb-1">MODEL ANSWER:</span>
               ${q.answer}
             </div>
           </div>
@@ -1861,12 +1772,12 @@ Generated by ExamPulse Antigravity for University Engineering Students`;
         if (pill) {
           if (c === cat) {
             pill.className = c === 'pyq'
-              ? 'px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold text-[11px] shadow-[0_0_12px_rgba(245,158,11,0.5)] transition-all'
-              : 'px-2.5 py-1 rounded-lg bg-emerald-500 text-slate-950 font-bold text-[11px] shadow-[0_0_10px_rgba(16,185,129,0.4)] transition-all';
+              ? 'px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 font-medium text-xs border border-amber-500/30 transition-colors'
+              : 'px-2.5 py-1 rounded-md bg-zinc-200 text-zinc-950 font-medium text-xs transition-colors';
           } else {
             pill.className = c === 'pyq'
-              ? 'px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-[11px] border border-amber-400/50 font-bold transition-all'
-              : 'px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all';
+              ? 'px-2.5 py-1 rounded-md bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 text-xs border border-amber-500/30 font-medium transition-colors'
+              : 'px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 text-xs border border-zinc-800 transition-colors';
           }
         }
       });
@@ -1878,7 +1789,7 @@ Generated by ExamPulse Antigravity for University Engineering Students`;
       const semFilter = document.getElementById('drive-sem-filter').value;
       const query = (document.getElementById('drive-search-input').value || '').trim();
 
-      listContainer.innerHTML = '<div class="p-6 text-center text-xs font-mono text-slate-400">⏳ Accessing Google Drive "1 sem ccs" study materials...</div>';
+      listContainer.innerHTML = '<div class="p-6 text-center text-xs font-mono text-zinc-400">Accessing Google Drive study materials...</div>';
 
       try {
         let url = `/api/drive/files?semester=${semFilter}`;
@@ -1891,7 +1802,7 @@ Generated by ExamPulse Antigravity for University Engineering Students`;
         const json = await res.json();
 
         if (!json.success || !json.files || json.files.length === 0) {
-          listContainer.innerHTML = '<div class="p-8 text-center text-xs font-mono text-slate-500">No matching study materials found in Google Drive for selected filter.</div>';
+          listContainer.innerHTML = '<div class="p-8 text-center text-xs font-mono text-zinc-500">No matching study materials found in Google Drive for selected filter.</div>';
           return;
         }
 
@@ -1902,36 +1813,36 @@ Generated by ExamPulse Antigravity for University Engineering Students`;
           const card = document.createElement('div');
           
           card.className = isMaster
-            ? "p-4 rounded-xl space-y-3 border-2 border-amber-400/80 bg-gradient-to-r from-amber-950/40 via-slate-900/90 to-amber-950/40 shadow-[0_0_25px_rgba(245,158,11,0.25)] transition-all"
-            : "glassmorphic-card p-4 rounded-xl space-y-2.5 border border-slate-800 hover:border-emerald-500/50 transition-all";
+            ? "p-4 rounded-xl space-y-3 border border-amber-500/30 bg-amber-500/[0.03] transition-colors"
+            : "p-4 rounded-xl space-y-2.5 border border-zinc-800 bg-zinc-900/40 hover:border-zinc-700 transition-colors";
 
           card.innerHTML = `
             <div class="flex flex-wrap items-center justify-between gap-2">
               <div class="flex items-center space-x-2.5">
-                <span class="text-xl">${isMaster ? '⭐' : (isPptx ? '📊' : '📋')}</span>
+                <span class="text-xl">${isMaster ? '⭐' : (isPptx ? '📊' : '📄')}</span>
                 <div>
                   <div class="flex flex-wrap items-center gap-1.5">
-                    <h4 class="text-xs font-mono font-bold ${isMaster ? 'text-amber-300' : 'text-white hover:text-emerald-400'} cursor-pointer" onclick="importFromDrive('${file.id}', '${file.name}')">${file.name}</h4>
-                    ${isMaster ? '<span class="px-2 py-0.5 rounded-full text-[9px] font-mono font-bold bg-amber-500 text-slate-950 uppercase">University Master PYQ</span>' : ''}
+                    <h4 class="text-xs font-mono font-medium ${isMaster ? 'text-amber-300' : 'text-zinc-200 hover:text-white'} cursor-pointer" onclick="importFromDrive('${file.id}', '${file.name}')">${file.name}</h4>
+                    ${isMaster ? '<span class="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-amber-500 text-zinc-950 uppercase">Master PYQ</span>' : ''}
                   </div>
-                  <p class="text-[10px] font-mono text-slate-400">${file.folder}</p>
+                  <p class="text-[10px] font-mono text-zinc-500">${file.folder}</p>
                 </div>
               </div>
               <div class="flex items-center space-x-2">
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-slate-800 text-slate-300 border border-slate-700">${file.size}</span>
-                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold ${isMaster ? 'bg-amber-500/20 text-amber-300 border border-amber-400/50' : 'bg-emerald-500/20 text-emerald-300 border border-emerald-500/40'}">${file.courseCode || file.university}</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-900 text-zinc-400 border border-zinc-800">${file.size}</span>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-medium ${isMaster ? 'bg-amber-500/10 text-amber-300 border border-amber-500/20' : 'bg-zinc-800 text-zinc-300 border border-zinc-700/60'}">${file.courseCode || file.university}</span>
               </div>
             </div>
-            <p class="text-[11px] text-slate-300 font-sans leading-relaxed">${file.description}</p>
-            <div class="pt-2 border-t border-slate-800/80 flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
-              <span class="text-[10px] text-slate-500">Author: ${file.author}</span>
+            <p class="text-[11px] text-zinc-400 font-sans leading-relaxed">${file.description}</p>
+            <div class="pt-2 border-t border-zinc-800/80 flex flex-wrap items-center justify-between gap-2 font-mono text-xs">
+              <span class="text-[10px] text-zinc-500">Author: ${file.author}</span>
               <div class="flex items-center space-x-2">
                 ${file.driveUrl ? `
-                  <a href="${file.driveUrl}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 rounded-lg bg-slate-800/90 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] flex items-center space-x-1 transition-all">
+                  <a href="${file.driveUrl}" target="_blank" rel="noopener noreferrer" class="px-2.5 py-1.5 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 hover:text-white border border-zinc-800 text-[11px] flex items-center space-x-1 transition-colors">
                     <span>🔗 Open in Drive</span>
                   </a>
                 ` : ''}
-                <button onclick="importFromDrive('${file.id}', '${file.name}')" id="btn-import-${file.id}" class="px-3 py-1.5 rounded-lg ${isMaster ? 'bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold shadow-[0_0_12px_rgba(245,158,11,0.4)]' : 'bg-emerald-600 hover:bg-emerald-500 text-white font-bold shadow-[0_0_12px_rgba(16,185,129,0.3)]'} text-xs flex items-center space-x-1.5 transition-all">
+                <button onclick="importFromDrive('${file.id}', '${file.name}')" id="btn-import-${file.id}" class="px-3 py-1.5 rounded-lg ${isMaster ? 'bg-amber-500 hover:bg-amber-400 text-zinc-950 font-medium' : 'bg-zinc-100 hover:bg-white text-zinc-950 font-medium'} text-xs flex items-center space-x-1.5 transition-colors shadow-sm">
                   <span>⚡ Import &amp; Process with AI</span>
                 </button>
               </div>
@@ -2096,12 +2007,12 @@ Generated by ExamPulse Antigravity for University Engineering Students`;
         if (btn) {
           if (c === cat) {
             btn.className = c === 'pyq'
-              ? 'px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold text-[11px] shadow-[0_0_12px_rgba(245,158,11,0.5)] transition-all'
-              : 'px-2.5 py-1 rounded-lg bg-cyan-500 text-slate-950 font-bold text-[11px] shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all';
+              ? 'px-2.5 py-1 rounded-md bg-amber-500/20 text-amber-300 font-medium text-xs border border-amber-500/30 transition-colors'
+              : 'px-2.5 py-1 rounded-md bg-zinc-200 text-zinc-950 font-medium text-xs transition-colors';
           } else {
             btn.className = c === 'pyq'
-              ? 'px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-[11px] border border-amber-400/50 font-bold transition-all'
-              : 'px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all';
+              ? 'px-2.5 py-1 rounded-md bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 text-xs border border-amber-500/30 font-medium transition-colors'
+              : 'px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 text-xs border border-zinc-800 transition-colors';
           }
         }
       });
@@ -2134,7 +2045,7 @@ Generated by ExamPulse Antigravity for University Engineering Students`;
       }
 
       if (filtered.length === 0) {
-        container.innerHTML = '<div class="p-8 text-center text-xs font-mono text-slate-500">No study materials match the filter criteria.</div>';
+        container.innerHTML = '<div class="p-8 text-center text-xs font-mono text-zinc-500">No study materials match the filter criteria.</div>';
         return;
       }
 
@@ -2143,20 +2054,20 @@ Generated by ExamPulse Antigravity for University Engineering Students`;
         const isMaster = !!file.isMasterPyq;
         const card = document.createElement('div');
         card.className = isMaster
-          ? "p-3.5 rounded-xl space-y-2 border-2 border-amber-400/80 bg-gradient-to-r from-amber-950/40 via-slate-900/90 to-amber-950/40 shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all hover:border-amber-300"
-          : "glassmorphic-card p-3 rounded-xl space-y-2 border border-slate-800 hover:border-cyan-500/50 transition-all";
+          ? "p-3 rounded-xl space-y-1.5 border border-amber-500/30 bg-amber-500/[0.03] hover:border-amber-500/50 transition-colors"
+          : "p-3 rounded-xl space-y-1.5 border border-zinc-800/80 bg-zinc-900/40 hover:bg-zinc-900/70 hover:border-zinc-700 transition-colors";
 
         card.innerHTML = `
           <div class="flex items-start justify-between gap-2">
             <div class="flex items-start space-x-2.5 min-w-0">
-              <span class="text-lg mt-0.5">${isMaster ? '⭐' : (file.name.endsWith('.pptx') ? '📊' : '📋')}</span>
+              <span class="text-base mt-0.5">${isMaster ? '⭐' : (file.name.endsWith('.pptx') ? '📊' : '📄')}</span>
               <div class="min-w-0">
                 <div class="flex flex-wrap items-center gap-1.5">
-                  <h4 class="text-xs font-mono font-bold ${isMaster ? 'text-amber-300' : 'text-slate-100 hover:text-cyan-400'} truncate cursor-pointer" title="${file.name}" onclick="importFromDrive('${file.id}', '${file.name}')">${file.name}</h4>
+                  <h4 class="text-xs font-medium ${isMaster ? 'text-amber-300' : 'text-zinc-200 hover:text-white'} truncate cursor-pointer" title="${file.name}" onclick="importFromDrive('${file.id}', '${file.name}')">${file.name}</h4>
                   ${isMaster ? '<span class="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-amber-500 text-slate-950">OFFICIAL PYQ</span>' : ''}
                 </div>
-                <div class="flex items-center space-x-2 text-[10px] font-mono text-slate-400">
-                  <span class="text-cyan-400 font-semibold">${file.courseCode || file.university}</span>
+                <div class="flex items-center space-x-2 text-[10px] font-mono text-zinc-500">
+                  <span class="text-zinc-400 font-medium">${file.courseCode || file.university}</span>
                   <span>•</span>
                   <span>${file.size}</span>
                 </div>
@@ -2164,17 +2075,17 @@ Generated by ExamPulse Antigravity for University Engineering Students`;
             </div>
             <div class="flex items-center space-x-1 shrink-0">
               ${file.driveUrl ? `
-                <a href="${file.driveUrl}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] transition-all" title="Open in Google Drive">
+                <a href="${file.driveUrl}" target="_blank" rel="noopener noreferrer" class="p-1 rounded bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 border border-zinc-800 text-[11px] transition-colors" title="Open in Google Drive">
                   🔗
                 </a>
               ` : ''}
-              <button onclick="importFromDrive('${file.id}', '${file.name}')" id="btn-import-deck-${file.id}" class="px-2.5 py-1 rounded-lg ${isMaster ? 'bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold shadow-[0_0_10px_rgba(245,158,11,0.4)]' : 'bg-cyan-600 hover:bg-cyan-500 text-white font-bold shadow-[0_0_10px_rgba(0,240,255,0.25)]'} text-[11px] font-mono flex items-center space-x-1 transition-all">
+              <button onclick="importFromDrive('${file.id}', '${file.name}')" id="btn-import-deck-${file.id}" class="px-2.5 py-1 rounded ${isMaster ? 'bg-amber-500 hover:bg-amber-400 text-zinc-950 font-medium' : 'bg-zinc-800 hover:bg-zinc-700 text-zinc-200 font-medium border border-zinc-700'} text-[11px] font-mono flex items-center space-x-1 transition-colors">
                 <span>⚡</span>
-                <span>Process with AI</span>
+                <span>Process</span>
               </button>
             </div>
           </div>
-          <p class="text-[11px] text-slate-300 font-sans line-clamp-2 leading-relaxed">${file.description}</p>
+          <p class="text-[11px] text-zinc-400 font-sans line-clamp-1 leading-relaxed">${file.description}</p>
         `;
         container.appendChild(card);
       });
@@ -2286,9 +2197,9 @@ UNIT 5: Intellectual Property Rights (IPR): Patents, Copyrights, Trademarks, Tra
 
       // Add user message
       const userBubble = document.createElement('div');
-      userBubble.className = "flex items-start justify-end space-x-2";
+      userBubble.className = "flex items-start justify-end";
       userBubble.innerHTML = `
-        <div class="p-3 rounded-2xl rounded-tr-none bg-cyan-600/30 border border-cyan-400/40 text-cyan-100 max-w-[85%] text-xs font-mono shadow-md">
+        <div class="p-2.5 rounded-xl bg-zinc-800 border border-zinc-700/80 text-zinc-100 max-w-[85%] text-xs font-sans">
           ${text}
         </div>
       `;
@@ -2299,13 +2210,13 @@ UNIT 5: Intellectual Property Rights (IPR): Patents, Copyrights, Trademarks, Tra
       // Add loading indicator
       const loadingBubble = document.createElement('div');
       loadingBubble.id = 'copilot-loading';
-      loadingBubble.className = "flex items-start space-x-2.5";
+      loadingBubble.className = "flex items-start space-x-2";
       loadingBubble.innerHTML = `
-        <div class="w-7 h-7 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-sm shrink-0">
-          🤖
+        <div class="w-6 h-6 rounded-md bg-zinc-800 border border-zinc-700 text-zinc-400 flex items-center justify-center text-xs shrink-0 mt-0.5">
+          ⚡
         </div>
-        <div class="p-3 rounded-2xl rounded-tl-none bg-slate-900 border border-white/10 text-slate-400 text-xs font-mono animate-pulse">
-          ⏳ Searching 34 Google Drive files & CUJammu PYQ database...
+        <div class="p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 text-xs font-mono animate-pulse">
+          Searching Drive files &amp; PYQ database...
         </div>
       `;
       messagesContainer.appendChild(loadingBubble);
@@ -2323,32 +2234,32 @@ UNIT 5: Intellectual Property Rights (IPR): Patents, Copyrights, Trademarks, Tra
         if (loader) loader.remove();
 
         const botBubble = document.createElement('div');
-        botBubble.className = "flex items-start space-x-2.5";
+        botBubble.className = "flex items-start space-x-2";
         
         let formattedReply = (json.reply || '')
-          .replace(/### (.*)/g, '<h4 class="text-xs font-mono font-bold text-cyan-300 mt-2 mb-1">$1</h4>')
-          .replace(/#### (.*)/g, '<h5 class="text-[11px] font-mono font-bold text-amber-300 mt-1.5 mb-1">$1</h5>')
-          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>')
-          .replace(/\*(.*?)\*/g, '<em class="text-slate-300">$1</em>')
-          .replace(/```c([\s\S]*?)```/g, '<pre class="bg-black/60 p-2.5 rounded-lg border border-slate-800 my-2 text-[10px] text-emerald-300 overflow-x-auto"><code>$1</code></pre>')
-          .replace(/```([\s\S]*?)```/g, '<pre class="bg-black/60 p-2.5 rounded-lg border border-slate-800 my-2 text-[10px] text-cyan-300 overflow-x-auto"><code>$1</code></pre>')
+          .replace(/### (.*)/g, '<h4 class="text-xs font-semibold text-zinc-100 mt-2 mb-1">$1</h4>')
+          .replace(/#### (.*)/g, '<h5 class="text-[11px] font-semibold text-zinc-300 mt-1.5 mb-1">$1</h5>')
+          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>')
+          .replace(/\*(.*?)\*/g, '<em class="text-zinc-300">$1</em>')
+          .replace(/```c([\s\S]*?)```/g, '<pre class="bg-zinc-950 p-2.5 rounded-lg border border-zinc-800 my-2 text-[11px] text-zinc-200 overflow-x-auto font-mono"><code>$1</code></pre>')
+          .replace(/```([\s\S]*?)```/g, '<pre class="bg-zinc-950 p-2.5 rounded-lg border border-zinc-800 my-2 text-[11px] text-zinc-200 overflow-x-auto font-mono"><code>$1</code></pre>')
           .replace(/\n/g, '<br>');
 
         let sourcesHtml = '';
         if (json.sources && json.sources.length > 0) {
           sourcesHtml = `
-            <div class="pt-2 mt-2 border-t border-slate-800/80 flex flex-wrap gap-1 text-[9px] font-mono text-slate-400">
-              <span class="text-slate-500">Sources:</span>
-              ${json.sources.map(s => `<span class="px-1.5 py-0.5 rounded bg-slate-800 text-cyan-400 border border-slate-700">${s.name || s.subject}</span>`).join('')}
+            <div class="pt-2 mt-2 border-t border-zinc-800/80 flex flex-wrap gap-1 text-[10px] font-mono text-zinc-500">
+              <span class="text-zinc-500">Sources:</span>
+              ${json.sources.map(s => `<span class="px-1.5 py-0.5 rounded bg-zinc-900 text-zinc-400 border border-zinc-800">${s.name || s.subject}</span>`).join('')}
             </div>
           `;
         }
 
         botBubble.innerHTML = `
-          <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-sm shrink-0 shadow-[0_0_10px_rgba(0,240,255,0.3)]">
-            🤖
+          <div class="w-6 h-6 rounded-md bg-zinc-800 border border-zinc-700 text-zinc-300 flex items-center justify-center text-xs shrink-0 mt-0.5">
+            ⚡
           </div>
-          <div class="p-3.5 rounded-2xl rounded-tl-none bg-slate-900 border border-white/10 text-slate-200 max-w-[90%] text-xs font-sans leading-relaxed space-y-1.5 shadow-lg">
+          <div class="p-3 rounded-xl bg-zinc-900/80 border border-zinc-800/80 text-zinc-300 max-w-[90%] text-xs font-sans leading-relaxed space-y-1.5">
             ${formattedReply}
             ${sourcesHtml}
           </div>
@@ -2361,7 +2272,7 @@ UNIT 5: Intellectual Property Rights (IPR): Patents, Copyrights, Trademarks, Tra
         const errBubble = document.createElement('div');
         errBubble.className = "flex items-start space-x-2";
         errBubble.innerHTML = `
-          <div class="p-3 rounded-2xl bg-red-950/40 border border-red-500/40 text-red-300 text-xs font-mono">
+          <div class="p-2.5 rounded-xl bg-red-950/30 border border-red-800/50 text-red-300 text-xs">
             Error contacting AI Copilot: ${err.message}
           </div>
         `;
@@ -2370,76 +2281,70 @@ UNIT 5: Intellectual Property Rights (IPR): Patents, Copyrights, Trademarks, Tra
     }
   </script>
 
-  <!-- Floating Cyber AI Copilot Button -->
-  <div class="fixed bottom-6 right-6 z-40">
-    <button onclick="toggleAiCopilot()" id="copilot-fab" class="relative group p-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:scale-105 active:scale-95 text-white shadow-[0_0_30px_rgba(0,240,255,0.5)] border border-cyan-400/50 flex items-center space-x-2.5 transition-all">
-      <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping absolute -top-1 -right-1"></div>
-      <div class="w-3 h-3 rounded-full bg-emerald-400 absolute -top-1 -right-1 border border-slate-900"></div>
-      <span class="text-xl">🤖</span>
-      <span class="font-mono font-bold text-xs tracking-wider hidden sm:inline">AI COPILOT</span>
-      <span class="px-2 py-0.5 rounded-full text-[9px] font-mono font-extrabold bg-black/40 text-cyan-300 border border-cyan-400/30">ONLINE</span>
+  <!-- Floating Clean AI Copilot Button (Linear/Raycast Style) -->
+  <div class="fixed bottom-5 right-5 z-40">
+    <button onclick="toggleAiCopilot()" id="copilot-fab" class="bg-zinc-900/90 hover:bg-zinc-800 text-zinc-200 border border-zinc-800 hover:border-zinc-700 px-3.5 py-2 rounded-full flex items-center space-x-2 shadow-xl backdrop-blur-md transition-all text-xs font-medium">
+      <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+      <span>Ask AI Copilot</span>
+      <span class="text-[10px] text-zinc-500 font-mono bg-zinc-800 px-1.5 py-0.5 rounded">⌘K</span>
     </button>
   </div>
 
-  <!-- AI Copilot Sliding Drawer -->
-  <div id="ai-copilot-drawer" class="fixed inset-y-0 right-0 z-50 w-full sm:w-[480px] bg-slate-950/95 backdrop-blur-2xl border-l border-cyan-500/40 shadow-[-15px_0_50px_rgba(0,0,0,0.85)] transform translate-x-full transition-transform duration-300 flex flex-col font-sans">
+  <!-- AI Copilot Sliding Drawer (Minimal Linear Style) -->
+  <div id="ai-copilot-drawer" class="fixed inset-y-0 right-0 z-50 w-full sm:w-[460px] bg-zinc-950 border-l border-zinc-800 shadow-2xl transform translate-x-full transition-transform duration-200 flex flex-col font-sans">
     
     <!-- Drawer Header -->
-    <div class="p-4 border-b border-white/10 flex items-center justify-between bg-slate-900/60">
-      <div class="flex items-center space-x-3">
-        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-lg shadow-[0_0_15px_rgba(0,240,255,0.4)]">
-          🤖
+    <div class="p-4 border-b border-zinc-800 flex items-center justify-between bg-zinc-900/40">
+      <div class="flex items-center space-x-2.5">
+        <div class="w-7 h-7 rounded-lg bg-zinc-800 border border-zinc-700 text-zinc-300 flex items-center justify-center text-xs">
+          ⚡
         </div>
         <div>
           <div class="flex items-center space-x-2">
-            <h3 class="text-sm font-bold font-mono text-white">Cyber Exam Copilot</h3>
-            <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">1 SEM CCS</span>
+            <h3 class="text-xs font-semibold text-zinc-200">AI Exam Copilot</h3>
+            <span class="px-1.5 py-0.2 rounded text-[10px] font-medium bg-zinc-800 text-zinc-400 border border-zinc-700">1 Sem CCS</span>
           </div>
-          <p class="text-[10px] font-mono text-slate-400">Indexed: 34 Drive Files + Master PYQ Paper</p>
+          <p class="text-[11px] text-zinc-500 font-mono">34 Drive Files &amp; Master PYQ indexed</p>
         </div>
       </div>
-      <button onclick="toggleAiCopilot()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center font-mono text-lg transition-all">
+      <button onclick="toggleAiCopilot()" class="w-7 h-7 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-zinc-200 flex items-center justify-center text-sm transition-colors">
         &times;
       </button>
     </div>
 
     <!-- Quick Question Chips -->
-    <div class="p-3 border-b border-white/10 bg-slate-900/30 overflow-x-auto">
-      <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block mb-1.5">Quick Prompts:</span>
-      <div class="flex gap-1.5 overflow-x-auto pb-1 text-[11px] font-mono whitespace-nowrap">
-        <button onclick="askCopilot('What is in examination pyq.pdf?')" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-400/40 transition-all">⭐ examination pyq.pdf</button>
-        <button onclick="askCopilot('Explain Dangling Pointers & UAF')" class="px-2.5 py-1 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-400/40 transition-all">💻 Dangling Pointers</button>
-        <button onclick="askCopilot('State Cayley-Hamilton Theorem and 2x2 proof')" class="px-2.5 py-1 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-400/40 transition-all">📐 Cayley-Hamilton</button>
-        <button onclick="askCopilot('What are Thevenin theorem steps and KCL?')" class="px-2.5 py-1 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-400/40 transition-all">⚡ Thevenin & KCL</button>
-        <button onclick="askCopilot('Explain Eutrophication and BOD vs DO')" class="px-2.5 py-1 rounded-lg bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 border border-teal-400/40 transition-all">🌱 Eutrophication</button>
-        <button onclick="askCopilot('What is MVP in Lean Startup?')" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-400/40 transition-all">🚀 Lean Startup MVP</button>
+    <div class="p-3 border-b border-zinc-800/80 bg-zinc-900/20 overflow-x-auto">
+      <span class="text-[10px] font-mono uppercase tracking-wider text-zinc-500 block mb-1.5">Quick Prompts:</span>
+      <div class="flex gap-1.5 overflow-x-auto pb-1 text-xs whitespace-nowrap">
+        <button onclick="askCopilot('What is in examination pyq.pdf?')" class="px-2.5 py-1 rounded-md bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/20 transition-colors">⭐ Master PYQ</button>
+        <button onclick="askCopilot('Explain Dangling Pointers & UAF')" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors">C Dangling Pointers</button>
+        <button onclick="askCopilot('State Cayley-Hamilton Theorem and 2x2 proof')" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors">Cayley-Hamilton</button>
+        <button onclick="askCopilot('What are Thevenin theorem steps and KCL?')" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors">Thevenin &amp; KCL</button>
+        <button onclick="askCopilot('Explain Eutrophication and BOD vs DO')" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors">Eutrophication</button>
+        <button onclick="askCopilot('What is MVP in Lean Startup?')" class="px-2.5 py-1 rounded-md bg-zinc-900 hover:bg-zinc-800 text-zinc-300 border border-zinc-800 transition-colors">Lean Startup MVP</button>
       </div>
     </div>
 
     <!-- Chat Messages Scroll Area -->
-    <div id="copilot-messages" class="flex-1 p-4 overflow-y-auto space-y-4 text-xs font-mono">
+    <div id="copilot-messages" class="flex-1 p-4 overflow-y-auto space-y-3.5 text-xs">
       <div class="flex items-start space-x-2.5">
-        <div class="w-7 h-7 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-sm shrink-0">
-          🤖
+        <div class="w-6 h-6 rounded-md bg-zinc-800 border border-zinc-700 text-zinc-400 flex items-center justify-center text-xs shrink-0 mt-0.5">
+          ⚡
         </div>
-        <div class="p-3.5 rounded-2xl rounded-tl-none bg-slate-900 border border-white/10 text-slate-200 space-y-2 leading-relaxed">
-          <p class="font-bold text-cyan-300 font-mono">ExamPulse AI Cyber Copilot Ready!</p>
-          <p class="text-[11px] text-slate-300 font-sans">
-            I am connected directly to your <strong>"1 sem ccs" Google Drive folder</strong> (34 files) and the official <strong>Semester 1 Master Examination PYQ Paper</strong>.
-          </p>
-          <p class="text-[11px] text-slate-400 font-sans">
-            Ask me to explain any difficult concept, solve a PYQ question, give formulas, or generate revision bullet points!
+        <div class="p-3.5 rounded-xl bg-zinc-900/60 border border-zinc-800/80 text-zinc-300 space-y-2 leading-relaxed">
+          <p class="font-medium text-zinc-200">ExamPulse AI Copilot Ready</p>
+          <p class="text-[12px] text-zinc-400">
+            Connected to <strong>Folder: 1 sem ccs</strong> (34 files) and the official <strong>Semester 1 Master Examination Paper</strong>. Ask any concept question, code explanation, or exam proof.
           </p>
         </div>
       </div>
     </div>
 
     <!-- Input Box -->
-    <form onsubmit="handleCopilotSubmit(event)" class="p-3.5 border-t border-white/10 bg-slate-900/80 flex items-center space-x-2">
-      <input type="text" id="copilot-input" placeholder="Ask AI Copilot about PYQ, C Pointers, Math, BEE..." class="flex-1 bg-slate-950 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 font-mono focus:outline-none focus:border-cyan-400">
-      <button type="submit" id="copilot-send-btn" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-mono font-bold text-xs flex items-center space-x-1 shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-all">
-        <span>Send</span>
-        <span>⚡</span>
+    <form onsubmit="handleCopilotSubmit(event)" class="p-3 border-t border-zinc-800 bg-zinc-900/40 flex items-center space-x-2">
+      <input type="text" id="copilot-input" placeholder="Ask about PYQ, C Pointers, Math, BEE, Startups..." class="flex-1 bg-zinc-950 border border-zinc-800 rounded-lg px-3 py-2 text-xs text-zinc-200 placeholder-zinc-500 focus:outline-none focus:border-zinc-700 font-mono">
+      <button type="submit" id="copilot-send-btn" class="px-3.5 py-2 rounded-lg bg-zinc-100 hover:bg-white text-zinc-950 font-medium text-xs transition-colors shadow-sm">
+        Send
       </button>
     </form>
   </div>
