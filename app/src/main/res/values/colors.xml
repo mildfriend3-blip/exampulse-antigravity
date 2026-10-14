@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Deep Cosmic Midnight Backgrounds -->
+    <color name="cosmic_deep">#080C14</color>
+    <color name="cosmic_surface">#0F172A</color>
+    <color name="cosmic_surface_variant">#1E293B</color>
+    <color name="cosmic_surface_translucent">#991E293B</color>
+
+    <!-- Electric Cyber Accents -->
+    <color name="cyber_cyan">#00F0FF</color>
+    <color name="electric_violet">#8B5CF6</color>
+    <color name="emerald_hyper">#10B981</color>
+    <color name="cyber_amber">#F59E0B</color>
+    <color name="cyber_crimson">#EF4444</color>
+
+    <!-- Text & Borders -->
+    <color name="text_high_contrast">#F8FAFC</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="cyber_border">#334155</color>
+    <color name="cyber_glow_cyan">#4D00F0FF</color>
+    <color name="cyber_glow_violet">#4D8B5CF6</color>
+</resources>
