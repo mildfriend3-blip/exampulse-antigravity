@@ -32,19 +32,13 @@ jobs:
           distribution: 'temurin'
           cache: gradle
 
-      - name: Setup Android SDK
-        uses: android-actions/setup-android@v3
-
-      - name: Setup Gradle
+      - name: Setup Gradle 8.7
         uses: gradle/actions/setup-gradle@v3
-
-      - name: Ensure Gradle Wrapper & Permissions
-        run: |
-          gradle wrapper --gradle-version 8.7
-          chmod +x gradlew
+        with:
+          gradle-version: '8.7'
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-daemon --stacktrace
+        run: gradle assembleDebug --no-daemon --stacktrace
 
       - name: Collect Built APK
         run: |
@@ -52,6 +46,7 @@ jobs:
           find app/build/outputs/apk/ -type f -name "*.apk" -exec cp {} release-artifacts/ExamPulse-Antigravity-v2.0.0.apk \;
           ls -la release-artifacts/
 
+      # 1. Upload Artifact to GitHub Actions Run
       - name: Upload APK Artifact
         uses: actions/upload-artifact@v4
         with:
@@ -60,6 +55,7 @@ jobs:
           retention-days: 90
           overwrite: true
 
+      # 2. Publish Public GitHub Release for 1-click anonymous downloads
       - name: Publish Public Release (Anonymous 1-Click Download)
         uses: softprops/action-gh-release@v2
         if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
@@ -96,6 +92,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      # 3. Public Step Summary
       - name: Write Public Download Summary
         run: |
           echo "## 🚀 ExamPulse Antigravity APK Built Successfully!" >> $GITHUB_STEP_SUMMARY
