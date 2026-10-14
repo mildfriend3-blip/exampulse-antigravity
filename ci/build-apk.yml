@@ -6,13 +6,28 @@ on:
   pull_request:
     branches: [ main, master ]
   workflow_dispatch:
+    inputs:
+      create_public_release:
+        description: 'Publish public release downloadable by anyone without login'
+        required: true
+        type: boolean
+        default: true
+      build_type:
+        description: 'Build Type'
+        required: true
+        type: choice
+        options:
+          - debug
+          - release
+        default: debug
 
 jobs:
   build:
-    name: Build Android APK
+    name: Build Android APK (Publicly Downloadable)
     runs-on: ubuntu-latest
     permissions:
       contents: write
+      actions: read
 
     steps:
       - name: Checkout Code
@@ -36,45 +51,73 @@ jobs:
       - name: Grant Execute Permission for Gradlew
         run: chmod +x gradlew
 
-      - name: Build Debug APK
-        run: ./gradlew assembleDebug --stacktrace
+      - name: Build APK (${{ inputs.build_type || 'debug' }})
+        run: |
+          if [ "${{ inputs.build_type }}" = "release" ]; then
+            ./gradlew assembleRelease --stacktrace || ./gradlew assembleDebug --stacktrace
+          else
+            ./gradlew assembleDebug --stacktrace
+          fi
 
-      - name: Rename and Prepare APK
+      - name: Prepare APK Output
         run: |
           mkdir -p release-artifacts
-          cp app/build/outputs/apk/debug/*.apk release-artifacts/ExamPulse-Antigravity-v2.0.0-debug.apk
+          find app/build/outputs/apk/ -type f -name "*.apk" -exec cp {} release-artifacts/ExamPulse-Antigravity-v2.0.0.apk \;
           ls -la release-artifacts/
 
+      # 1. GitHub Actions Artifact (Available on Run page)
       - name: Upload APK as Workflow Artifact
         uses: actions/upload-artifact@v4
         with:
           name: ExamPulse-Antigravity-v2.0.0-APK
-          path: release-artifacts/*.apk
+          path: release-artifacts/ExamPulse-Antigravity-v2.0.0.apk
+          retention-days: 90
+          overwrite: true
 
-      - name: Create or Update GitHub Release with Downloadable APK
+      # 2. Public GitHub Release (Downloadable by ANYONE without login)
+      - name: Publish Public Release (Anonymous 1-Click Download)
         uses: softprops/action-gh-release@v2
-        if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+        if: (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master') && (github.event_name != 'workflow_dispatch' || inputs.create_public_release == true)
         with:
           tag_name: v2.0.0-antigravity
-          name: "ExamPulse Antigravity v2.0.0 (CUJammu & Engineering)"
+          name: "ExamPulse Antigravity v2.0.0 (Public Downloadable APK)"
           body: |
-            # 🚀 ExamPulse // Antigravity v2.0.0
+            # 🚀 ExamPulse // Antigravity v2.0.0 (Public Release)
 
-            ### 📥 Download Android APK
-            Click the attached **`ExamPulse-Antigravity-v2.0.0-debug.apk`** below to install directly on your Android phone or emulator.
+            ### 📥 Download Android APK (No Sign-in Required)
+            Anyone can download and install the pre-compiled APK directly from the assets below:
+
+            - 👉 **[ExamPulse-Antigravity-v2.0.0.apk](https://github.com/${{ github.repository }}/releases/download/v2.0.0-antigravity/ExamPulse-Antigravity-v2.0.0.apk)**
 
             ---
 
-            ### 🌌 Upgraded Powerhouse Features
-            - **CUJammu B.Tech CSE Cyber Security (Sem 1-8)** curriculum, past 5-10 years PYQ topic frequency, and radar weightage breakdown.
-            - **60-70% Exam Probability Heatmap** with confidence scores (`97% Highest Yield`, `94% Frequent`).
-            - **Official Sectioned Exam Simulator** (Section A: 2M Compulsory, Section B: 5M Conceptual, Section C: 10M Architectural with internal choices).
-            - **Active Recall Engine** with SuperMemo-2 (SM-2) spaced repetition algorithm & 3D card flip physics.
-            - **Live Timed Mock Exam HUD** with floating timer, bookmark drawer, and **Instant Gemini AI Answer Grading** (10-point rubric breakdown, missed keywords, and benchmark answers).
-            - **Smart Viva & Rapid-Fire Quiz Mode** for laboratory oral exams.
-            - **Clean Printable Standard View** for offline study and batch sharing.
-          files: release-artifacts/*.apk
+            ### ⚡ Continuous Anonymous Download (nightly.link)
+            Download continuous build artifacts anonymously without a GitHub account:
+            - **Direct Link:** [nightly.link/mildfriend3-blip/exampulse-antigravity/workflows/build-apk/main/ExamPulse-Antigravity-v2.0.0-APK.zip](https://nightly.link/${{ github.repository }}/workflows/build-apk/main/ExamPulse-Antigravity-v2.0.0-APK.zip)
+
+            ---
+
+            ### 🌌 Key Engineering Intelligence Features
+            - **CUJammu B.Tech CSE Cyber Security (Sem 1-8)** curriculum & PYQ frequency radar.
+            - **60-70% Exam Probability Heatmap** with confidence scores.
+            - **Section A (2M), Section B (5M), Section C (10M with OR choices)** university simulator.
+            - **Active Recall Engine** with SuperMemo-2 (SM-2) spaced repetition & 3D card flips.
+            - **Live Timed Mock Exam HUD** with **Instant Gemini AI Answer Grading** (rubric score out of 10, keywords check, benchmark model answer).
+            - **One-Tap Rapid-Fire Viva Prep** with examiner follow-up traps.
+            - **Clean Printable Standard View** for offline study.
+          files: release-artifacts/ExamPulse-Antigravity-v2.0.0.apk
           draft: false
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # 3. Direct Markdown Summary with Download Badge
+      - name: Write Public Download Summary
+        run: |
+          echo "## 🚀 ExamPulse Antigravity APK Built Successfully!" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📥 Public Download Links (Downloadable by Anyone):" >> $GITHUB_STEP_SUMMARY
+          echo "- 🌐 **Direct Release APK:** [ExamPulse-Antigravity-v2.0.0.apk](https://github.com/${{ github.repository }}/releases/download/v2.0.0-antigravity/ExamPulse-Antigravity-v2.0.0.apk)" >> $GITHUB_STEP_SUMMARY
+          echo "- 📦 **Direct Anonymous Zip (nightly.link):** [Download APK Zip](https://nightly.link/${{ github.repository }}/workflows/build-apk/main/ExamPulse-Antigravity-v2.0.0-APK.zip)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Install on any Android device with *'Install Unknown Apps'* enabled." >> $GITHUB_STEP_SUMMARY

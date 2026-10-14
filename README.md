@@ -4,6 +4,18 @@
 
 ---
 
+## 📥 Instant Downloads (Publicly Available for Anyone)
+
+| Asset | Link | Who Can Download? |
+| :--- | :--- | :--- |
+| **🚀 Direct Pre-Compiled APK** | [**Download ExamPulse-Antigravity-v2.0.0.apk**](https://github.com/mildfriend3-blip/exampulse-antigravity/releases/download/v2.0.0-antigravity/ExamPulse-Antigravity-v2.0.0.apk) | **Anyone (No sign-in needed)** |
+| **⚡ Anonymous Artifact Zip** | [**Download via nightly.link**](https://nightly.link/mildfriend3-blip/exampulse-antigravity/workflows/build-apk/main/ExamPulse-Antigravity-v2.0.0-APK.zip) | **Anyone (Direct without login)** |
+| **🌐 GitHub Public Release** | [**View Release v2.0.0-antigravity**](https://github.com/mildfriend3-blip/exampulse-antigravity/releases/tag/v2.0.0-antigravity) | **Public GitHub Page** |
+| **📦 Complete Source (.zip)** | [**Download Source Package**](https://github.com/mildfriend3-blip/exampulse-antigravity/releases/download/v2.0.0-antigravity/exampulse-antigravity-source.zip) | **Ready for Android Studio** |
+| **🖥️ Localhost Live HUD** | [**http://localhost:3000**](http://localhost:3000) | **Live interactive browser simulator** |
+
+---
+
 ## 🌌 Overview
 ExamPulse Antigravity transforms exam preparation into an interactive zero-gravity command center. Engineered with **Kotlin**, **Jetpack Compose (Material 3 Glassmorphism)**, **Firebase Auth & Firestore backend**, and **Google Gemini Generative AI**, it equips engineering students with predictive examination intelligence and active recall systems.
 
