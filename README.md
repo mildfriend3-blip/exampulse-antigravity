@@ -17,16 +17,17 @@
 ---
 
 ## 🌌 Overview
-ExamPulse Antigravity transforms exam preparation into an interactive zero-gravity command center. Engineered with **Kotlin**, **Jetpack Compose (Material 3 Glassmorphism)**, **Firebase Auth & Firestore backend**, and **Google Gemini Generative AI**, it equips engineering students with predictive examination intelligence and active recall systems.
+ExamPulse Antigravity is a complete examination intelligence platform engineered for university engineering students. It features **PPTX & Syllabus ingestion**, **Google Login**, **AI Short Notes & Interactive Notes generation**, and a **60–70% accurate predicted question paper engine** powered by a database covering **Central University of Jammu (CUJammu) B.Tech CSE Cyber Security (Semesters 1 to 8)** as well as **IITs, NITs, and GFTIs**.
 
 ---
 
 ## 🛠️ Architecture & System Design
-- **Architecture:** Clean Architecture + MVVM + StateFlow + Kotlin Coroutines
-- **UI Toolkit:** Jetpack Compose (BOM 2024.08), Material 3, Custom Glassmorphic Modifiers, Canvas Radar Chart
-- **Cloud Backend:** Firebase Authentication (Anonymous & Email auth) + Cloud Firestore with offline cache persistence
-- **Intelligence Engine:** Google Gemini Generative AI SDK (`gemini-1.5-flash`) for instant rubric grading & question synthesis
-- **Active Recall Algorithm:** Pure SuperMemo-2 (SM-2) Spaced Repetition calculation (`E-Factor`, intervals, repetitions)
+- **Web & Backend Platform:** Node.js Express fullstack server with REST API (`server.js`), SQLite/JSON persistent database (`db_store.js`), and glassmorphic frontend (`web/index.html`).
+- **Mobile Android Engine:** Kotlin, Jetpack Compose Material 3, Clean Architecture + MVVM + StateFlow, Android Studio ready.
+- **Document Ingestion:** Native `.pptx` presentation parser (`pptx_parser.js`) extracting slide titles, bullet points, and speaker notes; plus Syllabus module parser (`syllabus_parser.js`) extracting units and course learning outcomes.
+- **Active Recall Algorithm:** Pure SuperMemo-2 (SM-2) Spaced Repetition calculation (`E-Factor`, intervals, repetitions, 3D flip physics).
+- **University PYQ Repository:** Comprehensive database across **Semesters 1 to 8** for **Central University of Jammu (CUJammu) B.Tech CSE (Cyber Security)**, IIT Jammu, IIT Delhi, NIT Srinagar, NIT Trichy, and SMVDU Katra.
+- **Authentication:** University Google Sign-In with Google Identity Services (GIS) & 1-Click CUJammu student demo mode.
 
 ---
 
@@ -62,11 +63,32 @@ ExamPulse Antigravity transforms exam preparation into an interactive zero-gravi
   - Missed university keywords alert
   - Bulletproof model benchmark answer
 
-### 5. Smart Viva & Rapid-Fire Quiz Mode
-- Designed for university laboratory viva and end-semester oral examinations.
-- One-tap punchline reveal & critical examiner follow-up traps.
+### 5. Document Ingestion Hub (PPTX & Syllabus)
+- **Native PPTX Presentation Parser:** Automatically unpacks `.pptx` XML archives to extract slide titles, bullet points, speaker notes, and high-frequency technical keywords.
+- **Syllabus Module Parser:** Structures raw text, `.txt`, `.md`, or `.pdf` syllabus documents into Units 1–5, Course Outcomes, and textbook references.
+- **1-Click Sample Deck Loader:** Instant pre-loaded CUJammu CYB-501 lecture presentation and syllabus for immediate zero-friction evaluation.
 
-### 6. Export & Offline Capability
+### 6. AI Short Notes & Interactive Notes Synthesis
+- **Executive Short Notes:** 1-Page exam morning summary, essential mathematical formulas (RSA, AES GF(2^8), Diffie-Hellman, Birthday bound), and 15 critical 2-mark definitions.
+- **Interactive Notes:** 3D Flip Flashcards with SM-2 spaced repetition ratings, interactive MCQ knowledge-check quizzes with explanations, and hierarchical visual mindmaps.
+
+### 7. Google University Login & Session Sync
+- **Google Identity Services (GIS):** Seamless Google OAuth login supporting university domain accounts (`@cujammu.ac.in`).
+- **Instant Demo Access:** 1-Click student demo mode pre-configured for CUJammu B.Tech CSE Cyber Security (Rahul Sharma, Sem 5, Roll: CUJ/CSE/22/042).
+
+### 8. Comprehensive University PYQ Repository (Semesters 1 to 8)
+- **Central University of Jammu (CUJammu):** Dedicated curriculum and question bank for **Semesters 1 through 8** for B.Tech CSE (Cyber Security):
+  - Sem 1 (C Programming, Math-I, Basic Electrical)
+  - Sem 2 (Data Structures, Math-II, Physics)
+  - Sem 3 (Advanced Data Structures, Digital Logic, Cyber Fundamentals)
+  - Sem 4 (Operating Systems, DBMS, Networks, Cyber Laws)
+  - Sem 5 (Cryptography, Design of Algorithms, Web App Security)
+  - Sem 6 (Digital Forensics, Malware Analysis, IDS/IPS, Cloud Security)
+  - Sem 7 (Ethical Hacking, SOC Operations, AI in Cyber Security, Blockchain)
+  - Sem 8 (Advanced Cyber Defense, Privacy Engineering, Capstone Viva)
+- **IITs, NITs, and GFTIs:** Additional question banks for IIT Jammu, IIT Delhi, NIT Srinagar, NIT Trichy, and SMVDU Katra.
+
+### 9. Export & Offline Capability
 - Printable clean view formatted to official university question paper standards.
 - 1-click clipboard copy and export.
 

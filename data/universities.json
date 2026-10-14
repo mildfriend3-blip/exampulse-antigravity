@@ -1,0 +1,92 @@
+[
+  {
+    "id": "cujammu",
+    "name": "Central University of Jammu (CUJammu)",
+    "shortName": "CUJammu",
+    "type": "Central University / GFTI",
+    "location": "Samba / Jammu, J&K",
+    "degrees": [
+      {
+        "id": "btech_cse_cyber",
+        "name": "B.Tech Computer Science & Engineering (Cyber Security)",
+        "duration": "4 Years (8 Semesters)",
+        "evaluationScheme": "End-Semester 70 Marks, Mid-Term/Internal 30 Marks"
+      }
+    ]
+  },
+  {
+    "id": "iit_jammu",
+    "name": "Indian Institute of Technology Jammu (IIT Jammu)",
+    "shortName": "IIT Jammu",
+    "type": "IIT (Institute of National Importance)",
+    "location": "Jagti, Jammu, J&K",
+    "degrees": [
+      {
+        "id": "btech_cse",
+        "name": "B.Tech Computer Science and Engineering",
+        "duration": "4 Years (8 Semesters)",
+        "evaluationScheme": "Major Exam 50 Marks, Minor Exam 30 Marks, Continuous 20 Marks"
+      }
+    ]
+  },
+  {
+    "id": "iit_delhi",
+    "name": "Indian Institute of Technology Delhi (IIT Delhi)",
+    "shortName": "IIT Delhi",
+    "type": "IIT",
+    "location": "Hauz Khas, New Delhi",
+    "degrees": [
+      {
+        "id": "btech_cse",
+        "name": "B.Tech Computer Science and Engineering",
+        "duration": "4 Years (8 Semesters)",
+        "evaluationScheme": "Major 40%, Minors 30%, Assignments 30%"
+      }
+    ]
+  },
+  {
+    "id": "nit_srinagar",
+    "name": "National Institute of Technology Srinagar (NIT Srinagar)",
+    "shortName": "NIT Srinagar",
+    "type": "NIT",
+    "location": "Hazratbal, Srinagar, J&K",
+    "degrees": [
+      {
+        "id": "btech_cse",
+        "name": "B.Tech Computer Science and Engineering",
+        "duration": "4 Years (8 Semesters)",
+        "evaluationScheme": "End-Term 60 Marks, Mid-Term 30 Marks, Class Assessment 10 Marks"
+      }
+    ]
+  },
+  {
+    "id": "nit_trichy",
+    "name": "National Institute of Technology Tiruchirappalli (NIT Trichy)",
+    "shortName": "NIT Trichy",
+    "type": "NIT",
+    "location": "Tiruchirappalli, Tamil Nadu",
+    "degrees": [
+      {
+        "id": "btech_cse",
+        "name": "B.Tech Computer Science and Engineering",
+        "duration": "4 Years (8 Semesters)",
+        "evaluationScheme": "End-Sem 50%, Cycle Tests 30%, Quizzes 20%"
+      }
+    ]
+  },
+  {
+    "id": "smvdu",
+    "name": "Shri Mata Vaishno Devi University (SMVDU)",
+    "shortName": "SMVDU Katra",
+    "type": "GFTI / State University",
+    "location": "Katra, J&K",
+    "degrees": [
+      {
+        "id": "btech_cse",
+        "name": "B.Tech Computer Science and Engineering",
+        "duration": "4 Years (8 Semesters)",
+        "evaluationScheme": "Major 50 Marks, Minor-I 20 Marks, Minor-II 20 Marks, Quiz 10 Marks"
+      }
+    ]
+  }
+]

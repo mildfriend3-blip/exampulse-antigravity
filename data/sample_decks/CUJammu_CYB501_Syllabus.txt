@@ -1,0 +1,41 @@
+CENTRAL UNIVERSITY OF JAMMU
+Department of Computer Science & Information Technology
+Course Code: CYB-501
+Course Title: Cryptography & Network Security
+Semester: 5
+Credits: 4
+Evaluation: End-Semester 70 Marks, Mid-Term 30 Marks
+
+Unit 1: Classical Ciphers & Number Theory
+- Historical Ciphers: Caesar, Playfair, Hill, Vigenere, Transposition ciphers
+- Modular Arithmetic, GCD, Extended Euclidean Algorithm
+- Fermat's and Euler's Totient Theorem, Discrete Logarithms
+
+Unit 2: Symmetric Block Ciphers & Hash Functions
+- Shannon's Principles of Confusion and Diffusion, Feistel Networks
+- Data Encryption Standard (DES) and Triple-DES
+- Advanced Encryption Standard (AES): SubBytes, ShiftRows, MixColumns, AddRoundKey
+- Block Cipher Modes: ECB, CBC, CFB, OFB, CTR, GCM
+- Cryptographic Hash Functions: SHA-256, SHA-3, Birthday Paradox & Collision Resistance
+
+Unit 3: Public Key Cryptography & Key Exchange
+- Principles of Asymmetric Cryptography
+- RSA Algorithm: Key Generation, Encryption, Decryption, Security against Wiener's Attack
+- Diffie-Hellman Key Exchange and Man-in-the-Middle (MITM) Vulnerability
+- Elliptic Curve Cryptography (ECC) & Digital Signature Standard (ECDSA)
+
+Unit 4: System & Network Security Protocols
+- Transport Layer Security (TLS 1.3) Handshake vs TLS 1.2
+- IPsec Architecture: AH vs ESP in Tunnel and Transport Modes
+- Kerberos v5 Authentication and Cross-Realm Trust
+- Buffer Overflows, Stack Canaries, ASLR, and Return-Oriented Programming (ROP)
+
+Unit 5: Perimeter Defense & Modern Threat Landscapes
+- Firewalls: Packet Filtering, Stateful Inspection, Next-Generation Firewalls (NGFW)
+- Intrusion Detection & Prevention (Snort / Suricata IDS/IPS)
+- Zero Trust Architecture (ZTA) under NIST SP 800-207
+- Digital Forensics Chain of Custody & RFC 3227 Order of Volatility
+
+Prescribed Textbooks:
+1. William Stallings, "Cryptography and Network Security: Principles and Practice", Pearson 8th Edition.
+2. Behrouz A. Forouzan, "Cryptography & Network Security", McGraw-Hill.

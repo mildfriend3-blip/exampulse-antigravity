@@ -16,3 +16,8 @@
 *.ap_
 exampulse-antigravity-source.zip
 node_modules
+
+.vercel
+
+uploads/
+test_upload.js

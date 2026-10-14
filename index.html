@@ -3,9 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ExamPulse Antigravity - University Engineering Exam Powerhouse</title>
-  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  <title>ExamPulse // Antigravity - CUJammu B.Tech CSE Cyber Security &amp; University PYQ Intelligence</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+    .font-mono {
+      font-family: 'JetBrains Mono', monospace;
+    }
     @keyframes floatZeroG {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-6px); }
@@ -21,9 +30,9 @@
       animation: pulseGlow 2s ease-in-out infinite;
     }
     .glassmorphic {
-      background: rgba(15, 23, 42, 0.75);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: rgba(15, 23, 42, 0.78);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
       border: 1px solid rgba(0, 240, 255, 0.22);
       box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
     }
@@ -49,12 +58,27 @@
     .rotate-y-180 {
       transform: rotateY(180deg);
     }
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #080C14;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #00F0FF;
+    }
   </style>
 </head>
 <body class="bg-[#080C14] text-slate-100 min-h-screen font-sans antialiased selection:bg-[#00F0FF] selection:text-black">
 
   <!-- Top Zero-G HUD Status Bar -->
-  <header class="sticky top-0 z-50 glassmorphic border-b border-[#00F0FF]/20 px-6 py-3.5 mb-6">
+  <header class="sticky top-0 z-50 glassmorphic border-b border-[#00F0FF]/25 px-4 sm:px-6 py-3 mb-6">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
       <div class="flex items-center space-x-3">
         <div class="relative flex items-center justify-center">
@@ -64,399 +88,644 @@
         <div>
           <div class="flex items-center space-x-2">
             <h1 class="text-base font-bold tracking-wider font-mono text-white">EXAMPULSE <span class="text-[#00F0FF]">//</span> ANTIGRAVITY</h1>
-            <span class="text-[11px] font-mono uppercase px-2 py-0.5 rounded-full bg-[#8B5CF6]/20 border border-[#8B5CF6]/50 text-[#8B5CF6] font-semibold">v2.0 HUD</span>
+            <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-[#8B5CF6]/20 border border-[#8B5CF6]/50 text-[#8B5CF6] font-semibold">v2.5 AI Powered</span>
           </div>
-          <p class="text-xs text-slate-400 font-mono">CUJammu B.Tech CSE Cyber Security • NITs • IITs Examination Intelligence</p>
+          <p class="text-xs text-slate-400 font-mono">Central University of Jammu (CUJammu) B.Tech CSE Cyber Security • IITs • NITs</p>
         </div>
       </div>
 
-      <!-- Navigation Tabs -->
-      <nav class="flex items-center space-x-1.5 overflow-x-auto pb-1 sm:pb-0">
-        <button onclick="switchTab('radar')" id="tab-btn-radar" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-semibold transition-all border border-[#00F0FF] bg-[#00F0FF]/20 text-[#00F0FF]">
-          ⚡ RADAR &amp; PYQ
+      <!-- User & Google Login Bar -->
+      <div class="flex items-center space-x-3">
+        <!-- Auth Profile State -->
+        <div id="auth-logged-in" class="flex items-center space-x-2.5 bg-slate-900/80 px-3 py-1.5 rounded-xl border border-slate-700/80">
+          <img id="user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250" alt="Avatar" class="w-6 h-6 rounded-full border border-[#00F0FF]">
+          <div class="text-left font-mono">
+            <span id="user-name" class="text-xs font-bold text-white block leading-tight">Rahul Sharma</span>
+            <span id="user-sub" class="text-[10px] text-[#00F0FF] block leading-tight">CUJammu • Cyber Security Sem 5</span>
+          </div>
+          <button onclick="toggleAuthModal()" title="Switch Account" class="text-slate-400 hover:text-white text-xs ml-1 font-mono">
+            ⚙️
+          </button>
+        </div>
+
+        <!-- Google Login Button (if logged out or switcher) -->
+        <button id="google-login-btn" onclick="toggleAuthModal()" class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all bg-white text-slate-900 hover:bg-slate-100 flex items-center space-x-2 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+          <svg class="w-4 h-4" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span class="hidden sm:inline">Google Login</span>
         </button>
-        <button onclick="switchTab('simulator')" id="tab-btn-simulator" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-semibold transition-all border border-slate-700 hover:border-slate-500 text-slate-300">
-          📜 EXAM SIMULATOR
-        </button>
-        <button onclick="switchTab('flashcards')" id="tab-btn-flashcards" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-semibold transition-all border border-slate-700 hover:border-slate-500 text-slate-300">
-          🧠 ACTIVE RECALL (SM-2)
-        </button>
-        <button onclick="switchTab('mockhud')" id="tab-btn-mockhud" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-semibold transition-all border border-slate-700 hover:border-slate-500 text-slate-300">
-          ⏱️ LIVE MOCK HUD
-        </button>
-        <button onclick="switchTab('viva')" id="tab-btn-viva" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-semibold transition-all border border-slate-700 hover:border-slate-500 text-slate-300">
-          🎙️ RAPID VIVA
-        </button>
-        <button onclick="openDownloadModal()" class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold transition-all bg-gradient-to-r from-[#00F0FF] to-[#10B981] text-[#080C14] shadow-[0_0_15px_rgba(0,240,255,0.4)] flex items-center space-x-1.5 hover:opacity-90">
-          <span>📥 DOWNLOAD APK</span>
-        </button>
-      </nav>
+
+        <a href="/download/apk" class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all bg-gradient-to-r from-[#00F0FF] to-[#10B981] text-[#080C14] shadow-[0_0_15px_rgba(0,240,255,0.35)] flex items-center space-x-1 hover:opacity-90">
+          <span>📥 APK</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Navigation Tabs Ribbon -->
+    <div class="max-w-7xl mx-auto mt-3 pt-3 border-t border-slate-800/80 flex items-center space-x-2 overflow-x-auto pb-1">
+      <button onclick="switchTab('upload')" id="tab-btn-upload" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-[#00F0FF] bg-[#00F0FF]/20 text-[#00F0FF] flex items-center space-x-1.5 whitespace-nowrap">
+        <span>📤 UPLOAD PPTX &amp; SYLLABUS</span>
+      </button>
+      <button onclick="switchTab('notes')" id="tab-btn-notes" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-slate-700 hover:border-slate-500 text-slate-300 flex items-center space-x-1.5 whitespace-nowrap">
+        <span>📜 AI SHORT NOTES</span>
+      </button>
+      <button onclick="switchTab('interactive')" id="tab-btn-interactive" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-slate-700 hover:border-slate-500 text-slate-300 flex items-center space-x-1.5 whitespace-nowrap">
+        <span>🧠 INTERACTIVE NOTES (SM-2)</span>
+      </button>
+      <button onclick="switchTab('simulator')" id="tab-btn-simulator" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-slate-700 hover:border-slate-500 text-slate-300 flex items-center space-x-1.5 whitespace-nowrap">
+        <span>🎯 60-70% EXAM PREDICTOR</span>
+      </button>
+      <button onclick="switchTab('pyqarchive')" id="tab-btn-pyqarchive" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-slate-700 hover:border-slate-500 text-slate-300 flex items-center space-x-1.5 whitespace-nowrap">
+        <span>📚 ALL UNIVERSITIES PYQ (CUJAMMU SEM 1-8)</span>
+      </button>
+      <button onclick="switchTab('viva')" id="tab-btn-viva" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-slate-700 hover:border-slate-500 text-slate-300 flex items-center space-x-1.5 whitespace-nowrap">
+        <span>🎙️ RAPID VIVA</span>
+      </button>
+      <button onclick="switchTab('export')" id="tab-btn-export" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-slate-700 hover:border-slate-500 text-slate-300 flex items-center space-x-1.5 whitespace-nowrap">
+        <span>🖨️ PRINT PDF</span>
+      </button>
     </div>
   </header>
 
-  <!-- Localhost & GitHub Intelligence Alert Banner -->
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 mb-6">
-    <div class="p-3.5 rounded-xl bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/90 border border-[#00F0FF]/30 flex flex-wrap items-center justify-between gap-3 text-xs font-mono shadow-[0_0_20px_rgba(0,240,255,0.08)]">
-      <div class="flex items-center space-x-2.5">
-        <span class="w-2.5 h-2.5 rounded-full bg-[#10B981] animate-pulse"></span>
-        <span class="text-slate-300">Live Preview: <strong class="text-[#00F0FF]">http://localhost:3000</strong></span>
-        <span class="text-slate-600">|</span>
-        <span class="text-slate-300">GitHub: <a href="https://github.com/mildfriend3-blip/exampulse-antigravity" target="_blank" class="text-[#8B5CF6] hover:underline font-bold">mildfriend3-blip/exampulse-antigravity</a></span>
+  <!-- Google Login / Profile Modal -->
+  <div id="auth-modal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+    <div class="glassmorphic rounded-2xl max-w-md w-full p-6 border border-[#00F0FF]/40 shadow-[0_0_50px_rgba(0,240,255,0.2)] space-y-5">
+      <div class="flex items-center justify-between border-b border-slate-700/80 pb-3">
+        <div class="flex items-center space-x-2">
+          <span class="text-xl">🔐</span>
+          <h3 class="text-base font-bold text-white font-mono">University Google Authentication</h3>
+        </div>
+        <button onclick="toggleAuthModal()" class="text-slate-400 hover:text-white text-lg font-mono">&times;</button>
       </div>
-      <div class="flex items-center space-x-3">
-        <a href="/download/project.zip" class="px-2.5 py-1 rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center space-x-1">
-          <span>📦 Download Source (.zip)</span>
-        </a>
-        <a href="https://github.com/mildfriend3-blip/exampulse-antigravity/actions" target="_blank" class="px-2.5 py-1 rounded bg-[#00F0FF]/15 text-[#00F0FF] border border-[#00F0FF]/40 hover:bg-[#00F0FF]/25">
-          <span>⚙️ CI/CD APK Build Pipeline</span>
-        </a>
+
+      <p class="text-xs text-slate-300 leading-relaxed font-sans">
+        Sign in with your university Google account (<code class="text-[#00F0FF]">@cujammu.ac.in</code> / <code class="text-[#00F0FF]">@iitjammu.ac.in</code> / <code class="text-[#00F0FF]">@nitsri.ac.in</code>) to sync your uploaded slides, personalized short notes, and predicted exam question papers.
+      </p>
+
+      <div class="space-y-3 pt-2">
+        <!-- 1-Click Instant CUJammu Student Demo Login -->
+        <button onclick="loginAsDemo('cujammu')" class="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-mono font-bold text-xs flex items-center justify-center space-x-2 shadow-lg transition-all">
+          <span>🎓</span>
+          <span>Sign In as CUJammu Cyber Security Student (Demo)</span>
+        </button>
+
+        <!-- Google OAuth Standard Button -->
+        <button onclick="simulateGoogleLogin()" class="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-slate-100 text-slate-900 font-mono font-bold text-xs flex items-center justify-center space-x-2 shadow transition-all">
+          <svg class="w-4 h-4" viewBox="0 0 24 24">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span>Continue with Google Account</span>
+        </button>
+      </div>
+
+      <div class="pt-3 border-t border-slate-800 text-[11px] font-mono text-slate-400 text-center">
+        Data encrypted &amp; stored locally in SQLite / JSON Database
       </div>
     </div>
   </div>
 
   <main class="max-w-7xl mx-auto px-4 sm:px-6 pb-20">
 
-    <!-- TAB 1: RADAR & 60-70% EXAM PREDICTION -->
-    <section id="tab-radar" class="space-y-6">
-      <!-- Semester & University Filter Ribbon -->
-      <div class="glassmorphic rounded-2xl p-5 border border-slate-700/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-        <div>
-          <label class="text-xs font-mono text-slate-400 font-bold block mb-1">SELECT UNIVERSITY &amp; DEGREE</label>
+    <!-- ===================================================================== -->
+    <!-- TAB 1: UPLOAD PPTX & SYLLABUS INGESTION HUB -->
+    <!-- ===================================================================== -->
+    <section id="tab-upload" class="space-y-6">
+      <!-- Banner Card -->
+      <div class="glassmorphic rounded-2xl p-6 border border-[#00F0FF]/30 relative overflow-hidden">
+        <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-[#00F0FF]/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <div>
+            <div class="flex items-center space-x-2 text-[#00F0FF] font-mono text-xs font-bold mb-1">
+              <span>⚡ DOCUMENT INGESTION &amp; AI EXTRACTION ENGINE</span>
+            </div>
+            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Upload Lecture PPTX &amp; Course Syllabus</h2>
+            <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mt-1 leading-relaxed">
+              Our neural parser unpacks PPTX slide structures, extracts speaker notes, parses syllabus units, and cross-references historical university examination patterns to generate high-yield short notes and a 60–70% accurate predicted question paper.
+            </p>
+          </div>
+          <button onclick="loadSampleDeck()" id="btn-load-sample" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-mono text-xs font-bold transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] flex items-center space-x-2 shrink-0">
+            <span>✨</span>
+            <span>1-Click Load CUJammu CYB-501 Sample Deck</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Form Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        <!-- Left: Upload Boxes -->
+        <div class="lg:col-span-7 space-y-6">
+          <form id="upload-form" onsubmit="handleUploadSubmit(event)" class="space-y-5">
+            <!-- Metadata Selectors -->
+            <div class="glassmorphic-card rounded-2xl p-5 space-y-4">
+              <h3 class="text-xs font-mono font-bold text-[#00F0FF] uppercase tracking-wider">Course Configuration</h3>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                <div>
+                  <label class="text-[11px] font-mono text-slate-400 block mb-1">UNIVERSITY</label>
+                  <select id="upload-university" class="w-full bg-[#0F172A] border border-slate-700 text-xs font-semibold rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-[#00F0FF]">
+                    <option value="cujammu" selected>CUJammu (B.Tech Cyber)</option>
+                    <option value="iit_jammu">IIT Jammu (B.Tech CSE)</option>
+                    <option value="nit_srinagar">NIT Srinagar (B.Tech CSE)</option>
+                    <option value="iit_delhi">IIT Delhi (B.Tech CSE)</option>
+                    <option value="nit_trichy">NIT Trichy (B.Tech CSE)</option>
+                    <option value="smvdu">SMVDU Katra (B.Tech CSE)</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="text-[11px] font-mono text-slate-400 block mb-1">SEMESTER</label>
+                  <select id="upload-semester" onchange="syncSubjectDropdown()" class="w-full bg-[#0F172A] border border-slate-700 text-xs font-semibold rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-[#00F0FF]">
+                    <option value="1">Semester 1</option>
+                    <option value="2">Semester 2</option>
+                    <option value="3">Semester 3</option>
+                    <option value="4">Semester 4</option>
+                    <option value="5" selected>Semester 5</option>
+                    <option value="6">Semester 6</option>
+                    <option value="7">Semester 7</option>
+                    <option value="8">Semester 8</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="text-[11px] font-mono text-slate-400 block mb-1">COURSE SUBJECT</label>
+                  <select id="upload-subject" class="w-full bg-[#0F172A] border border-slate-700 text-xs font-semibold rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-[#00F0FF]">
+                    <option value="CYB-501" selected>CYB-501: Cryptography &amp; Network Security</option>
+                    <option value="CYB-502">CYB-502: Design &amp; Analysis of Algorithms</option>
+                    <option value="CYB-504">CYB-504: Web Application Security &amp; OWASP</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Upload Box 1: PPTX -->
+            <div class="glassmorphic-card rounded-2xl p-5 border border-slate-700/80 hover:border-[#00F0FF]/50 transition-all">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center space-x-2">
+                  <span class="text-xl">📊</span>
+                  <div>
+                    <h4 class="text-sm font-bold text-white">1. Lecture Slide Deck (.PPTX)</h4>
+                    <p class="text-[11px] text-slate-400">PowerPoint presentations, slide decks, diagrams</p>
+                  </div>
+                </div>
+                <span id="pptx-file-status" class="text-[11px] font-mono text-slate-500">No file chosen</span>
+              </div>
+
+              <div class="border-2 border-dashed border-slate-700 hover:border-[#00F0FF] rounded-xl p-6 text-center cursor-pointer transition-all bg-slate-900/40" onclick="document.getElementById('pptx-input').click()">
+                <input type="file" id="pptx-input" accept=".pptx" class="hidden" onchange="handlePptxSelect(event)">
+                <div class="space-y-2">
+                  <div class="w-10 h-10 rounded-full bg-[#00F0FF]/10 text-[#00F0FF] flex items-center justify-center mx-auto text-lg">
+                    📁
+                  </div>
+                  <div class="text-xs text-slate-300 font-mono">
+                    <span class="text-[#00F0FF] font-bold">Click to browse</span> or drag &amp; drop PPTX file
+                  </div>
+                  <div class="text-[10px] text-slate-500 font-mono">Supports Microsoft PowerPoint .pptx up to 50MB</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Upload Box 2: Syllabus -->
+            <div class="glassmorphic-card rounded-2xl p-5 border border-slate-700/80 hover:border-[#8B5CF6]/50 transition-all">
+              <div class="flex items-center justify-between mb-3">
+                <div class="flex items-center space-x-2">
+                  <span class="text-xl">📋</span>
+                  <div>
+                    <h4 class="text-sm font-bold text-white">2. Course Syllabus / Curriculum</h4>
+                    <p class="text-[11px] text-slate-400">Official syllabus document, module units, or paste text</p>
+                  </div>
+                </div>
+                <span id="syllabus-file-status" class="text-[11px] font-mono text-slate-500">No file chosen</span>
+              </div>
+
+              <div class="space-y-3">
+                <div class="border-2 border-dashed border-slate-700 hover:border-[#8B5CF6] rounded-xl p-4 text-center cursor-pointer transition-all bg-slate-900/40" onclick="document.getElementById('syllabus-input').click()">
+                  <input type="file" id="syllabus-input" accept=".txt,.md,.json,.pdf,.docx" class="hidden" onchange="handleSyllabusSelect(event)">
+                  <div class="text-xs text-slate-300 font-mono">
+                    <span class="text-[#8B5CF6] font-bold">Click to select Syllabus File</span> (.txt, .md, .pdf)
+                  </div>
+                </div>
+
+                <div class="relative">
+                  <textarea id="syllabus-text-input" rows="3" placeholder="...or paste course syllabus text directly (e.g. Unit 1: Number Theory, Unit 2: AES...)" class="w-full bg-slate-900/70 border border-slate-800 rounded-xl p-3 text-xs text-slate-200 placeholder-slate-500 font-mono focus:outline-none focus:border-[#8B5CF6]"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Button -->
+            <button type="submit" id="btn-process-docs" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#00F0FF] via-[#8B5CF6] to-[#10B981] hover:opacity-95 text-[#080C14] font-mono font-bold text-sm tracking-wide shadow-[0_0_25px_rgba(0,240,255,0.4)] flex items-center justify-center space-x-2 transition-all">
+              <span>🚀</span>
+              <span>PROCESS DOCUMENTS &amp; GENERATE EXAM INTELLIGENCE</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Ingestion Live Radar & Status -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="glassmorphic rounded-2xl p-6 border border-slate-700/80 space-y-4">
+            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
+              <h3 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Document Ingestion Status</h3>
+              <span id="ingestion-badge" class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 font-bold">
+                READY
+              </span>
+            </div>
+
+            <div class="space-y-3 font-mono text-xs">
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
+                <span class="text-slate-400">Slides Parsed:</span>
+                <span id="stat-slides" class="text-[#00F0FF] font-bold">4 Slides</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
+                <span class="text-slate-400">Syllabus Units:</span>
+                <span id="stat-units" class="text-[#8B5CF6] font-bold">5 Units</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
+                <span class="text-slate-400">Keywords Mapped:</span>
+                <span id="stat-keywords" class="text-[#10B981] font-bold">25 Core Terms</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
+                <span class="text-slate-400">Predicted PYQ Accuracy:</span>
+                <span id="stat-accuracy" class="text-yellow-400 font-bold">96% High Match</span>
+              </div>
+            </div>
+
+            <!-- Extracted Keywords Tags -->
+            <div>
+              <span class="text-[11px] font-mono text-slate-400 block mb-2 font-bold">TOP EXTRACTED HIGH-YIELD TOPICS</span>
+              <div id="keywords-tags-container" class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-1 rounded bg-[#00F0FF]/15 border border-[#00F0FF]/30 text-[#00F0FF] text-[11px] font-mono font-semibold">AES Round Transformations</span>
+                <span class="px-2 py-1 rounded bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 text-[#8B5CF6] text-[11px] font-mono font-semibold">RSA Euclidean Proof</span>
+                <span class="px-2 py-1 rounded bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981] text-[11px] font-mono font-semibold">Diffie-Hellman MITM</span>
+                <span class="px-2 py-1 rounded bg-yellow-500/15 border border-yellow-500/30 text-yellow-400 text-[11px] font-mono font-semibold">ECB Mode Flaws</span>
+                <span class="px-2 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 text-[11px] font-mono font-semibold">Stack Canaries</span>
+              </div>
+            </div>
+
+            <!-- Quick Navigation Shortcuts -->
+            <div class="pt-4 border-t border-slate-800 grid grid-cols-2 gap-2 font-mono text-xs">
+              <button onclick="switchTab('notes')" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center justify-center space-x-1">
+                <span>📜 View Short Notes</span>
+              </button>
+              <button onclick="switchTab('simulator')" class="p-2.5 rounded-lg bg-[#00F0FF]/15 text-[#00F0FF] border border-[#00F0FF]/30 hover:bg-[#00F0FF]/25 flex items-center justify-center space-x-1">
+                <span>🎯 View Exam Paper</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- TAB 2: AI SHORT NOTES & EXAM CHEATSHEET -->
+    <!-- ===================================================================== -->
+    <section id="tab-notes" class="hidden space-y-6">
+      <div class="glassmorphic rounded-2xl p-6 border border-[#00F0FF]/30 space-y-6">
+        <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-700/80 gap-3">
+          <div>
+            <div class="flex items-center space-x-2 text-[#00F0FF] font-mono text-xs font-bold mb-1">
+              <span>⚡ HIGH-YIELD EXAM CHEATSHEET</span>
+            </div>
+            <h2 id="notes-course-title" class="text-xl font-bold text-white">CYB-501: Cryptography and Network Security</h2>
+            <p class="text-xs text-slate-400 font-mono">Synthesized from uploaded lecture slides, syllabus units, and CUJammu exam patterns</p>
+          </div>
           <div class="flex items-center space-x-2">
-            <select id="university-select" onchange="updateUniversityData()" class="bg-[#0F172A] border border-[#00F0FF]/40 text-sm font-semibold rounded-lg px-3 py-1.5 text-white focus:outline-none focus:border-[#00F0FF]">
-              <option value="cujammu" selected>Central University of Jammu (CUJammu) - B.Tech CSE (Cyber Security)</option>
-              <option value="nit_srinagar">National Institute of Technology (NIT) Srinagar - B.Tech CSE</option>
-              <option value="iit_jammu">Indian Institute of Technology (IIT) Jammu - B.Tech CSE</option>
-            </select>
+            <button onclick="copyShortNotes()" class="px-3 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-200 text-xs font-mono font-bold flex items-center space-x-1">
+              <span>📋 Copy Notes</span>
+            </button>
+            <button onclick="window.print()" class="px-3 py-1.5 rounded-lg bg-[#00F0FF]/20 hover:bg-[#00F0FF]/30 border border-[#00F0FF]/50 text-[#00F0FF] text-xs font-mono font-bold flex items-center space-x-1">
+              <span>🖨️ Export PDF</span>
+            </button>
           </div>
         </div>
 
-        <div>
-          <label class="text-xs font-mono text-slate-400 font-bold block mb-1">SEMESTER (1 TO 8)</label>
-          <div class="flex items-center space-x-1.5" id="semester-pills">
+        <!-- Executive Summary -->
+        <div class="space-y-3">
+          <h3 class="text-xs font-mono font-bold text-[#00F0FF] uppercase tracking-wider flex items-center space-x-1.5">
+            <span>📌</span>
+            <span>EXECUTIVE EXAMINATION TAKEAWAYS</span>
+          </h3>
+          <div id="notes-executive-summary" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- High-Yield Formulas -->
+        <div class="space-y-3 pt-2">
+          <h3 class="text-xs font-mono font-bold text-[#8B5CF6] uppercase tracking-wider flex items-center space-x-1.5">
+            <span>📐</span>
+            <span>MUST-MEMORIZE MATHEMATICAL FORMULAS &amp; ALGORITHMS</span>
+          </h3>
+          <div id="notes-formulas-container" class="space-y-3">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- 15 Must-Know Definitions -->
+        <div class="space-y-3 pt-2">
+          <h3 class="text-xs font-mono font-bold text-[#10B981] uppercase tracking-wider flex items-center space-x-1.5">
+            <span>🎯</span>
+            <span>CRITICAL UNIVERSITY EXAM BUZZWORDS &amp; DEFINITIONS (2-MARK YIELD)</span>
+          </h3>
+          <div id="notes-definitions-container" class="grid grid-cols-1 md:grid-cols-2 gap-3">
             <!-- Rendered by JS -->
           </div>
         </div>
       </div>
-
-      <!-- Main Radar Canvas & Heatmap Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <!-- Radar Visualization Card -->
-        <div class="lg:col-span-6 glassmorphic rounded-2xl p-6 border border-[#00F0FF]/30">
-          <div class="flex items-center justify-between mb-4">
-            <div>
-              <span class="text-xs font-mono text-[#00F0FF] uppercase tracking-wider font-semibold">10-Year PYQ Intelligence</span>
-              <h2 class="text-lg font-bold text-white" id="radar-subject-title">CYB-501: Cryptography &amp; Network Security</h2>
-            </div>
-            <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-[#10B981]/20 border border-[#10B981]/50 text-[#10B981] font-bold">
-              98.4% Accuracy
-            </span>
-          </div>
-
-          <div class="flex justify-center items-center py-4 relative">
-            <canvas id="radarCanvas" width="400" height="380" class="max-w-full h-auto"></canvas>
-          </div>
-
-          <div class="grid grid-cols-3 gap-2 mt-4 pt-4 border-t border-slate-700/60 text-center font-mono">
-            <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-800">
-              <span class="text-[11px] text-slate-400 block">Number Theory &amp; Math</span>
-              <span class="text-sm font-bold text-[#00F0FF]">32% Weight</span>
-            </div>
-            <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-800">
-              <span class="text-[11px] text-slate-400 block">Symmetric / AES</span>
-              <span class="text-sm font-bold text-[#8B5CF6]">28% Weight</span>
-            </div>
-            <div class="bg-slate-900/60 p-2 rounded-lg border border-slate-800">
-              <span class="text-[11px] text-slate-400 block">Protocols &amp; TLS</span>
-              <span class="text-sm font-bold text-[#10B981]">24% Weight</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- 60-70% Probability Prediction Heatmap Card -->
-        <div class="lg:col-span-6 glassmorphic rounded-2xl p-6 border border-slate-700/60 space-y-4">
-          <div class="flex items-center justify-between">
-            <div>
-              <span class="text-xs font-mono text-[#8B5CF6] uppercase tracking-wider font-semibold">Predicted High-Yield Topics</span>
-              <h2 class="text-lg font-bold text-white">60-70% Exam Probability Heatmap</h2>
-            </div>
-            <span class="text-xs font-mono text-slate-400">Past 8 Yrs PYQ Analyzed</span>
-          </div>
-
-          <div class="space-y-3" id="prediction-list">
-            <!-- Populated by JS -->
-          </div>
-        </div>
-      </div>
     </section>
 
-    <!-- TAB 2: SECTIONED EXAM SIMULATOR -->
-    <section id="tab-simulator" class="hidden space-y-6">
-      <div class="glassmorphic rounded-2xl p-6 border border-[#00F0FF]/30">
-        <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-700/80 gap-3">
-          <div>
-            <span class="text-xs font-mono text-[#00F0FF] uppercase tracking-wider font-bold">OFFICIAL UNIVERSITY EXAMINATION FORMAT</span>
-            <h2 class="text-xl font-bold text-white">CENTRAL UNIVERSITY OF JAMMU (B.TECH CSE CYBER SECURITY)</h2>
-            <p class="text-xs text-slate-400 font-mono">Session 2026 • Course: CYB-501 Cryptography &amp; Network Security</p>
-          </div>
-          <div class="flex items-center space-x-3 font-mono text-xs">
-            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300">Time: 3 Hours</span>
-            <span class="px-3 py-1.5 rounded-lg bg-[#10B981]/20 border border-[#10B981]/40 text-[#10B981] font-bold">Max Marks: 70</span>
-          </div>
-        </div>
-
-        <!-- Section Tabs -->
-        <div class="flex items-center space-x-2 my-4">
-          <button onclick="filterExamSection('ALL')" id="sec-filter-ALL" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#00F0FF]/20 text-[#00F0FF] border border-[#00F0FF]">All Sections</button>
-          <button onclick="filterExamSection('A')" id="sec-filter-A" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">Section A (2-Mark Compulsory)</button>
-          <button onclick="filterExamSection('B')" id="sec-filter-B" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">Section B (5-Mark Conceptual)</button>
-          <button onclick="filterExamSection('C')" id="sec-filter-C" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">Section C (10-Mark Architectural)</button>
-        </div>
-
-        <!-- Questions Container -->
-        <div class="space-y-4" id="exam-questions-container">
-          <!-- Populated by JS -->
-        </div>
-      </div>
-    </section>
-
-    <!-- TAB 3: ACTIVE RECALL (SM-2 FLASHCARDS) -->
-    <section id="tab-flashcards" class="hidden space-y-6">
+    <!-- ===================================================================== -->
+    <!-- TAB 3: INTERACTIVE NOTES (SM-2 FLASHCARDS & SELF-TEST QUIZ) -->
+    <!-- ===================================================================== -->
+    <section id="tab-interactive" class="hidden space-y-6">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <!-- Recall Mastery Meter -->
+        <!-- Left: Mastery Meter & Controls -->
         <div class="lg:col-span-4 glassmorphic rounded-2xl p-6 border border-[#8B5CF6]/40 flex flex-col justify-between">
           <div>
             <div class="flex items-center space-x-2 text-[#8B5CF6] font-mono text-xs font-bold mb-1">
               <span>🧠 ACTIVE RECALL SRS</span>
             </div>
             <h2 class="text-lg font-bold text-white mb-2">Subject Mastery Meter</h2>
-            <p class="text-xs text-slate-400 leading-relaxed mb-6">
-              Using SuperMemo-2 (SM-2) algorithm. Flashcards automatically adjust intervals (1d, 6d, e^EF) based on your recall accuracy.
+            <p class="text-xs text-slate-400 leading-relaxed mb-6 font-sans">
+              Powered by SuperMemo-2 (SM-2) algorithm. Flashcards adapt intervals based on your active recall precision.
             </p>
 
             <div class="flex flex-col items-center justify-center my-4">
               <div class="relative w-40 h-40 flex items-center justify-center">
                 <svg class="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
                   <circle cx="50" cy="50" r="42" stroke="currentColor" stroke-width="8" class="text-slate-800" fill="transparent" />
-                  <circle id="mastery-circle" cx="50" cy="50" r="42" stroke="currentColor" stroke-width="8" class="text-[#8B5CF6]" stroke-dasharray="264" stroke-dashoffset="75" stroke-linecap="round" fill="transparent" style="transition: stroke-dashoffset 0.8s ease;" />
+                  <circle id="mastery-circle" cx="50" cy="50" r="42" stroke="currentColor" stroke-width="8" class="text-[#8B5CF6]" stroke-dasharray="264" stroke-dashoffset="65" stroke-linecap="round" fill="transparent" style="transition: stroke-dashoffset 0.8s ease;" />
                 </svg>
-                <div class="absolute text-center">
-                  <span id="mastery-percentage-text" class="text-3xl font-mono font-bold text-white">72%</span>
-                  <span class="block text-[10px] font-mono text-slate-400 uppercase">Retention Rate</span>
+                <div class="absolute text-center font-mono">
+                  <span id="mastery-percentage-text" class="text-3xl font-bold text-white">76%</span>
+                  <span class="block text-[10px] text-slate-400 uppercase">Retention Rate</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="space-y-2 pt-4 border-t border-slate-800 text-xs font-mono">
-            <div class="flex justify-between text-slate-400">
-              <span>Total Flashcards in Deck:</span>
-              <span class="text-white font-bold" id="total-cards-count">5</span>
+          <div class="space-y-2 pt-4 border-t border-slate-800 font-mono text-xs">
+            <div class="flex justify-between text-slate-300">
+              <span>Cards Reviewed:</span>
+              <span id="fc-stat-reviewed" class="text-[#00F0FF] font-bold">12 / 18</span>
             </div>
-            <div class="flex justify-between text-slate-400">
-              <span>Cards Mastered (&gt;3 Reps):</span>
-              <span class="text-[#10B981] font-bold" id="mastered-cards-count">3</span>
+            <div class="flex justify-between text-slate-300">
+              <span>Average E-Factor:</span>
+              <span id="fc-stat-efactor" class="text-[#10B981] font-bold">2.52</span>
             </div>
-            <div class="flex justify-between text-slate-400">
-              <span>Average Easiness Factor:</span>
-              <span class="text-[#00F0FF] font-bold">2.48</span>
+            <div class="flex justify-between text-slate-300">
+              <span>Current Interval:</span>
+              <span class="text-[#8B5CF6] font-bold">6 Days</span>
             </div>
           </div>
         </div>
 
-        <!-- 3D Interactive Flashcard Deck -->
-        <div class="lg:col-span-8 flex flex-col space-y-4">
-          <div class="relative h-[360px] perspective-1000 cursor-pointer" onclick="toggleCardFlip()">
-            <div id="flashcard-card" class="relative w-full h-full transform-style-preserve-3d transition-transform duration-500 rounded-2xl">
-              <!-- FRONT -->
-              <div class="absolute inset-0 backface-hidden glassmorphic rounded-2xl p-8 border border-[#00F0FF]/40 flex flex-col justify-between shadow-[0_0_25px_rgba(0,240,255,0.1)]">
-                <div class="flex items-center justify-between">
-                  <span id="fc-unit-badge" class="px-2.5 py-1 rounded-full text-xs font-mono bg-[#00F0FF]/10 text-[#00F0FF] border border-[#00F0FF]/30 font-semibold">
-                    UNIT 1 • NUMBER THEORY
-                  </span>
-                  <span id="fc-probability-badge" class="px-2.5 py-1 rounded-full text-xs font-mono bg-[#10B981]/15 text-[#10B981] border border-[#10B981]/40 font-bold">
-                    94% Frequent PYQ
-                  </span>
-                </div>
+        <!-- Right: 3D Flashcard Deck & Interactive Quiz Switcher -->
+        <div class="lg:col-span-8 space-y-6">
+          <!-- Sub-mode buttons -->
+          <div class="flex items-center space-x-2">
+            <button onclick="switchInteractiveMode('flashcard')" id="sub-btn-flashcard" class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]">
+              🃏 3D FLASHCARDS (SM-2)
+            </button>
+            <button onclick="switchInteractiveMode('quiz')" id="sub-btn-quiz" class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">
+              ❓ INTERACTIVE SELF-TEST QUIZ
+            </button>
+            <button onclick="switchInteractiveMode('mindmap')" id="sub-btn-mindmap" class="px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">
+              🌳 CONCEPT MINDMAP
+            </button>
+          </div>
 
-                <div class="text-center px-4">
-                  <h3 id="fc-front-prompt" class="text-xl md:text-2xl font-semibold text-white leading-snug">
-                    What is the mathematical condition for an element 'a' to have a multiplicative inverse modulo 'm'?
-                  </h3>
-                  <p class="text-xs font-mono text-[#00F0FF]/70 mt-4 tracking-wider">
-                    CLICK ANYWHERE TO REVEAL ANSWER
-                  </p>
-                </div>
-
-                <div class="flex items-center justify-between text-xs font-mono text-slate-400">
-                  <span id="fc-index-indicator">Card 1 of 5</span>
-                  <span>SM-2 Engine Active</span>
-                </div>
+          <!-- Mode 1: 3D Flashcard Container -->
+          <div id="interactive-mode-flashcard" class="space-y-4">
+            <div class="flex items-center justify-between text-xs font-mono">
+              <span id="fc-unit-badge" class="px-2.5 py-1 rounded-full bg-[#00F0FF]/15 text-[#00F0FF] border border-[#00F0FF]/30 font-bold">
+                UNIT 1 • NUMBER THEORY
+              </span>
+              <div class="flex items-center space-x-2">
+                <span id="fc-index-indicator" class="text-slate-400">Card 1 of 5</span>
+                <span id="fc-probability-badge" class="px-2.5 py-1 rounded-full bg-[#10B981]/20 text-[#10B981] font-bold border border-[#10B981]/40">
+                  98% Highest Yield
+                </span>
               </div>
+            </div>
 
-              <!-- BACK -->
-              <div class="absolute inset-0 backface-hidden rotate-y-180 glassmorphic rounded-2xl p-8 border border-[#10B981]/40 flex flex-col justify-between shadow-[0_0_25px_rgba(16,185,129,0.15)] bg-slate-900/90">
-                <div class="flex items-center justify-between">
-                  <span class="px-2.5 py-1 rounded-full text-xs font-mono bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/40 font-bold">
-                    BENCHMARK MODEL ANSWER
-                  </span>
-                  <span id="fc-efactor-badge" class="text-xs font-mono text-slate-400">
-                    E-Factor: 2.50
-                  </span>
-                </div>
-
-                <div class="space-y-3">
-                  <p id="fc-back-answer" class="text-base text-slate-100 leading-relaxed">
-                    gcd(a, m) = 1 (i.e., 'a' and 'm' must be relatively prime / coprime). The inverse is computed using the Extended Euclidean Algorithm: a * x + m * y = 1 &rArr; a^-1 = x mod m.
-                  </p>
-                  <div class="p-3 rounded-lg bg-black/40 border border-slate-700/80 font-mono text-xs text-[#00F0FF]">
-                    <span class="text-slate-400 block mb-0.5">Exam Key Note:</span>
-                    <span id="fc-formula-note">Extended Euclidean Algorithm: gcd(a, m) = 1</span>
+            <!-- Flip Card -->
+            <div class="perspective-1000 w-full min-h-[300px] cursor-pointer" onclick="toggleCardFlip()">
+              <div id="flashcard-card" class="relative w-full min-h-[300px] transition-transform duration-700 transform-style-preserve-3d rounded-2xl">
+                <!-- Front Side -->
+                <div class="absolute inset-0 backface-hidden glassmorphic rounded-2xl p-8 border border-[#00F0FF]/30 flex flex-col justify-between shadow-2xl">
+                  <div>
+                    <span class="text-xs font-mono text-[#00F0FF] uppercase tracking-wider block mb-3 font-bold">ACTIVE RECALL CHALLENGE</span>
+                    <h3 id="fc-front-prompt" class="text-lg sm:text-xl font-semibold text-white leading-relaxed">
+                      What is the condition for an integer 'a' to have a modular multiplicative inverse modulo 'm'?
+                    </h3>
+                  </div>
+                  <div class="pt-4 border-t border-slate-800 flex items-center justify-between text-xs font-mono text-slate-400">
+                    <span>💡 Tap anywhere to flip card &amp; reveal answer</span>
+                    <span id="fc-efactor-badge" class="text-[#8B5CF6] font-bold">E-Factor: 2.50</span>
                   </div>
                 </div>
 
-                <div class="text-xs font-mono text-slate-400 text-center">
-                  Rate your recall below to schedule next review interval
+                <!-- Back Side -->
+                <div class="absolute inset-0 backface-hidden rotate-y-180 glassmorphic rounded-2xl p-8 border border-[#10B981]/40 flex flex-col justify-between shadow-2xl bg-[#0F172A]/90">
+                  <div>
+                    <span class="text-xs font-mono text-[#10B981] uppercase tracking-wider block mb-3 font-bold">BENCHMARK RECALL ANSWER</span>
+                    <p id="fc-back-answer" class="text-sm sm:text-base text-slate-100 leading-relaxed mb-4">
+                      gcd(a, m) = 1 (a and m must be relatively prime / coprime). The inverse is computed using the Extended Euclidean Algorithm: a*x + m*y = 1 => a^-1 = x mod m.
+                    </p>
+                    <div class="p-3 rounded-lg bg-black/40 border border-slate-800 text-xs font-mono text-[#00F0FF]" id="fc-formula-note">
+                      Extended Euclidean: a*x + m*y = 1
+                    </div>
+                  </div>
+
+                  <div class="pt-4 border-t border-slate-800 text-xs font-mono text-slate-400">
+                    <span>Rate your recall quality below to update next review interval</span>
+                  </div>
                 </div>
+              </div>
+            </div>
+
+            <!-- SM-2 Rating Buttons -->
+            <div class="grid grid-cols-4 gap-2 pt-2">
+              <button onclick="rateFlashcard(0)" class="py-2.5 px-3 rounded-xl bg-red-950/40 hover:bg-red-900/50 border border-red-500/40 text-red-300 font-mono text-xs font-bold transition-all text-center">
+                <span class="block">Again</span>
+                <span class="text-[10px] text-slate-400 font-normal">(&lt; 1 min)</span>
+              </button>
+              <button onclick="rateFlashcard(1)" class="py-2.5 px-3 rounded-xl bg-amber-950/40 hover:bg-amber-900/50 border border-amber-500/40 text-amber-300 font-mono text-xs font-bold transition-all text-center">
+                <span class="block">Hard</span>
+                <span class="text-[10px] text-slate-400 font-normal">(1 day)</span>
+              </button>
+              <button onclick="rateFlashcard(2)" class="py-2.5 px-3 rounded-xl bg-blue-950/40 hover:bg-blue-900/50 border border-blue-500/40 text-blue-300 font-mono text-xs font-bold transition-all text-center">
+                <span class="block">Good</span>
+                <span class="text-[10px] text-slate-400 font-normal">(3 days)</span>
+              </button>
+              <button onclick="rateFlashcard(3)" class="py-2.5 px-3 rounded-xl bg-emerald-950/40 hover:bg-emerald-900/50 border border-emerald-500/40 text-emerald-300 font-mono text-xs font-bold transition-all text-center">
+                <span class="block">Easy</span>
+                <span class="text-[10px] text-slate-400 font-normal">(6 days)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Mode 2: Interactive Quiz Container -->
+          <div id="interactive-mode-quiz" class="hidden space-y-4">
+            <div class="glassmorphic rounded-2xl p-6 border border-slate-700/80 space-y-5">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <span class="text-xs font-mono font-bold text-[#00F0FF] uppercase">Interactive Knowledge Check</span>
+                <span id="quiz-progress-text" class="text-xs font-mono text-slate-400">Question 1 of 4</span>
+              </div>
+
+              <div>
+                <h3 id="quiz-question-text" class="text-base sm:text-lg font-bold text-white leading-relaxed">
+                  In the AES cipher, which transformation round provides non-linear confusion?
+                </h3>
+              </div>
+
+              <!-- Options -->
+              <div id="quiz-options-container" class="space-y-2.5">
+                <!-- Populated by JS -->
+              </div>
+
+              <!-- Explanation Box -->
+              <div id="quiz-explanation-box" class="hidden p-4 rounded-xl border font-mono text-xs leading-relaxed">
+                <!-- Populated by JS -->
+              </div>
+
+              <div class="flex justify-end pt-3 border-t border-slate-800">
+                <button onclick="nextQuizQuestion()" id="btn-next-quiz" class="px-5 py-2 rounded-xl bg-[#00F0FF] hover:bg-[#00F0FF]/90 text-black font-mono font-bold text-xs transition-all flex items-center space-x-1.5 shadow-[0_0_15px_rgba(0,240,255,0.3)]">
+                  <span>Next Question &rarr;</span>
+                </button>
               </div>
             </div>
           </div>
 
-          <!-- SM-2 Rating Buttons -->
-          <div class="grid grid-cols-4 gap-3">
-            <button onclick="rateFlashcard(1)" class="p-3 rounded-xl bg-[#EF4444]/15 hover:bg-[#EF4444]/25 text-[#EF4444] border border-[#EF4444]/40 font-mono font-bold text-xs transition-all text-center">
-              AGAIN <span class="block text-[10px] text-slate-400 font-normal">Reset (&lt;1d)</span>
-            </button>
-            <button onclick="rateFlashcard(2)" class="p-3 rounded-xl bg-[#F59E0B]/15 hover:bg-[#F59E0B]/25 text-[#F59E0B] border border-[#F59E0B]/40 font-mono font-bold text-xs transition-all text-center">
-              HARD <span class="block text-[10px] text-slate-400 font-normal">3 Days</span>
-            </button>
-            <button onclick="rateFlashcard(3)" class="p-3 rounded-xl bg-[#00F0FF]/15 hover:bg-[#00F0FF]/25 text-[#00F0FF] border border-[#00F0FF]/40 font-mono font-bold text-xs transition-all text-center">
-              GOOD <span class="block text-[10px] text-slate-400 font-normal">6 Days</span>
-            </button>
-            <button onclick="rateFlashcard(4)" class="p-3 rounded-xl bg-[#10B981]/15 hover:bg-[#10B981]/25 text-[#10B981] border border-[#10B981]/40 font-mono font-bold text-xs transition-all text-center">
-              EASY <span class="block text-[10px] text-slate-400 font-normal">14 Days</span>
-            </button>
+          <!-- Mode 3: Concept Mindmap Container -->
+          <div id="interactive-mode-mindmap" class="hidden space-y-4">
+            <div class="glassmorphic rounded-2xl p-6 border border-slate-700/80 space-y-4">
+              <div class="flex items-center justify-between border-b border-slate-800 pb-3">
+                <span class="text-xs font-mono font-bold text-[#8B5CF6] uppercase">Hierarchical Concept Mindmap</span>
+                <span class="text-xs font-mono text-slate-400">Click branches to explore</span>
+              </div>
+              <div id="mindmap-container" class="space-y-3 font-mono text-xs">
+                <!-- Populated by JS -->
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- TAB 4: LIVE MOCK EXAM HUD -->
-    <section id="tab-mockhud" class="hidden space-y-6">
-      <!-- Live HUD Floating Header -->
-      <div class="glassmorphic rounded-2xl p-5 border border-[#00F0FF]/30 flex flex-wrap items-center justify-between gap-4">
-        <div class="flex items-center space-x-3">
-          <div class="p-2.5 rounded-xl bg-[#00F0FF]/10 border border-[#00F0FF]/30 text-[#00F0FF]">
-            ⏱️
-          </div>
+    <!-- ===================================================================== -->
+    <!-- TAB 4: 60-70% ACCURATE EXAM QUESTION PAPER GENERATOR -->
+    <!-- ===================================================================== -->
+    <section id="tab-simulator" class="hidden space-y-6">
+      <div class="glassmorphic rounded-2xl p-6 border border-[#00F0FF]/30 space-y-5">
+        <!-- University Official Header -->
+        <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-700/80 gap-3">
           <div>
             <div class="flex items-center space-x-2">
-              <span id="mock-countdown" class="text-2xl font-mono font-bold text-[#00F0FF] tracking-wider">02:59:45</span>
-              <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-400 border border-emerald-500/40">LIVE HUD</span>
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/40">
+                60-70% ACCURATE PYQ SYNTHESIS
+              </span>
+              <span id="exam-accuracy-badge" class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#00F0FF]/20 text-[#00F0FF] border border-[#00F0FF]/40">
+                96% Match
+              </span>
             </div>
-            <p class="text-xs text-slate-400 font-mono">CUJammu End-Semester Simulator • CYB-501</p>
+            <h2 id="paper-university-name" class="text-xl font-bold text-white mt-1">CENTRAL UNIVERSITY OF JAMMU (CUJAMMU)</h2>
+            <p id="paper-subtitle" class="text-xs text-slate-400 font-mono">B.Tech Computer Science &amp; Engineering (Cyber Security) • Semester V</p>
+            <p id="paper-subject-code" class="text-xs text-[#00F0FF] font-mono font-semibold">Subject: [CYB-501] Cryptography and Network Security</p>
           </div>
-        </div>
-
-        <div class="flex items-center space-x-3">
-          <button onclick="toggleMockTimer()" id="mock-timer-toggle-btn" class="px-4 py-2 rounded-xl bg-[#F59E0B]/20 border border-[#F59E0B]/50 text-[#F59E0B] font-mono font-bold text-xs hover:bg-[#F59E0B]/30 transition-all">
-            PAUSE CLOCK
-          </button>
-          <button onclick="toggleMockBookmark()" id="mock-bookmark-btn" class="px-4 py-2 rounded-xl bg-slate-800 border border-slate-700 text-slate-300 font-mono font-bold text-xs hover:border-[#F59E0B] hover:text-[#F59E0B] transition-all">
-            ⭐ BOOKMARK
-          </button>
-        </div>
-      </div>
-
-      <!-- Question Jump Ribbon -->
-      <div class="flex items-center space-x-2 overflow-x-auto pb-2" id="mock-question-ribbon">
-        <!-- Filled by JS -->
-      </div>
-
-      <!-- Mock Question & Answer Canvas Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <!-- Question Prompt & Input -->
-        <div class="lg:col-span-7 glassmorphic rounded-2xl p-6 border border-slate-700/60 space-y-4">
-          <div class="flex items-center justify-between">
-            <span id="mock-q-header" class="text-xs font-mono text-[#00F0FF] font-bold">QUESTION 1 (2 MARKS) • SECTION A</span>
-            <span id="mock-q-badge" class="px-2.5 py-0.5 rounded-full text-xs font-mono bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/40 font-bold">94% Frequent</span>
-          </div>
-
-          <h3 id="mock-q-text" class="text-base font-semibold text-white leading-relaxed">
-            Differentiate between Confusion and Diffusion as defined by Claude Shannon.
-          </h3>
-
-          <div>
-            <label class="block text-xs font-mono text-slate-400 mb-1.5 font-bold">YOUR TECHNICAL ANSWER (TYPE OR BULLET-POINT):</label>
-            <textarea id="mock-student-answer" rows="7" placeholder="Explain the mathematical mechanisms, S-box vs P-box, avalanche effect, and Shannon principles here..." class="w-full bg-[#0F172A] border border-slate-700 rounded-xl p-4 text-sm text-slate-100 font-sans focus:outline-none focus:border-[#00F0FF] focus:ring-1 focus:ring-[#00F0FF] transition-all leading-relaxed"></textarea>
-          </div>
-
-          <div class="flex items-center justify-between pt-2">
-            <span class="text-xs font-mono text-slate-400">Word count: <span id="word-count" class="text-white font-bold">0</span></span>
-            <button onclick="evaluateAnswerWithAI()" id="grade-ai-btn" class="px-5 py-2.5 rounded-xl bg-[#00F0FF] hover:bg-[#00F0FF]/90 text-[#080C14] font-mono font-bold text-xs transition-all shadow-[0_0_15px_rgba(0,240,255,0.4)] flex items-center space-x-2">
-              <span>⚡ INSTANT AI ANSWER GRADING</span>
+          <div class="flex flex-wrap items-center gap-2 font-mono text-xs">
+            <span class="px-3 py-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300">Time: 3 Hours</span>
+            <span class="px-3 py-1.5 rounded-lg bg-[#10B981]/20 border border-[#10B981]/40 text-[#10B981] font-bold">Max Marks: 70</span>
+            <button onclick="regenerateExamPaper()" class="px-3 py-1.5 rounded-lg bg-[#8B5CF6]/20 hover:bg-[#8B5CF6]/30 border border-[#8B5CF6]/50 text-[#8B5CF6] font-bold flex items-center space-x-1">
+              <span>🔄 Re-predict</span>
             </button>
           </div>
         </div>
 
-        <!-- AI Rubric Grade Sheet (Instant Feedback) -->
-        <div class="lg:col-span-5 glassmorphic rounded-2xl p-6 border border-[#10B981]/40 space-y-4" id="ai-evaluation-panel">
-          <div class="flex items-center justify-between border-b border-slate-800 pb-3">
-            <div>
-              <span class="text-[11px] font-mono text-[#10B981] font-bold uppercase">GEMINI RUBRIC EVALUATION</span>
-              <h4 class="text-base font-bold text-white">Engineering Answer Score</h4>
-            </div>
-            <div class="text-right">
-              <span id="ai-score-display" class="text-2xl font-mono font-bold text-[#10B981]">-- / 10</span>
-            </div>
-          </div>
+        <!-- Section Filters -->
+        <div class="flex items-center space-x-2 overflow-x-auto pb-1">
+          <button onclick="filterExamSection('ALL')" id="sec-filter-ALL" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#00F0FF]/20 text-[#00F0FF] border border-[#00F0FF]">All Sections</button>
+          <button onclick="filterExamSection('A')" id="sec-filter-A" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">Section A (2-Mark Compulsory)</button>
+          <button onclick="filterExamSection('B')" id="sec-filter-B" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">Section B (5-Mark Conceptual)</button>
+          <button onclick="filterExamSection('C')" id="sec-filter-C" class="sec-filter-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700">Section C (10-Mark Architectural)</button>
+        </div>
 
-          <!-- 4-Criterion Rubric Breakdown -->
-          <div class="grid grid-cols-2 gap-2 text-xs font-mono">
-            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-              <span class="text-slate-400 block text-[10px]">Technical Accuracy</span>
-              <span id="rubric-tech" class="text-[#00F0FF] font-bold text-sm">-- / 4.0</span>
-            </div>
-            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-              <span class="text-slate-400 block text-[10px]">Conceptual Completeness</span>
-              <span id="rubric-comp" class="text-[#8B5CF6] font-bold text-sm">-- / 3.0</span>
-            </div>
-            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-              <span class="text-slate-400 block text-[10px]">Diagram / Syntax Notes</span>
-              <span id="rubric-diag" class="text-[#10B981] font-bold text-sm">-- / 2.0</span>
-            </div>
-            <div class="bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
-              <span class="text-slate-400 block text-[10px]">Presentation Clarity</span>
-              <span id="rubric-clar" class="text-[#F59E0B] font-bold text-sm">-- / 1.0</span>
-            </div>
-          </div>
-
-          <!-- Missed Keywords -->
-          <div class="p-3 rounded-lg bg-red-950/20 border border-red-800/40 space-y-1">
-            <span class="text-[11px] font-mono text-red-400 font-bold block">MISSED UNIVERSITY KEYWORDS:</span>
-            <p id="missed-keywords-text" class="text-xs text-slate-300">
-              Click "Instant AI Answer Grading" to analyze against expected university rubric.
-            </p>
-          </div>
-
-          <!-- Benchmark Model Answer -->
-          <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-700/70 space-y-1">
-            <span class="text-[11px] font-mono text-emerald-400 font-bold block">BENCHMARK MODEL ANSWER:</span>
-            <p id="ai-model-answer-text" class="text-xs text-slate-300 leading-relaxed max-h-36 overflow-y-auto">
-              Confusion obscures the relationship between the key and the ciphertext (S-Boxes/substitution). Diffusion spreads the statistical structure of plaintext across ciphertext (P-Boxes/permutations).
-            </p>
-          </div>
+        <!-- Questions List -->
+        <div class="space-y-4" id="exam-questions-container">
+          <!-- Populated by JS -->
         </div>
       </div>
     </section>
 
-    <!-- TAB 5: RAPID VIVA PREP -->
+    <!-- ===================================================================== -->
+    <!-- TAB 5: ALL UNIVERSITIES PYQ ARCHIVE (CUJAMMU SEMESTERS 1 TO 8) -->
+    <!-- ===================================================================== -->
+    <section id="tab-pyqarchive" class="hidden space-y-6">
+      <div class="glassmorphic rounded-2xl p-6 border border-[#8B5CF6]/30 space-y-5">
+        <div class="flex flex-col md:flex-row md:items-center justify-between pb-4 border-b border-slate-700/80 gap-3">
+          <div>
+            <div class="flex items-center space-x-2 text-[#8B5CF6] font-mono text-xs font-bold mb-1">
+              <span>📚 COMPREHENSIVE UNIVERSITY PYQ REPOSITORY</span>
+            </div>
+            <h2 class="text-xl font-bold text-white">Central University of Jammu &amp; Premier Institutes PYQ Bank</h2>
+            <p class="text-xs text-slate-400 font-mono">Curated past exam papers across all 8 Semesters for B.Tech CSE (Cyber Security) &amp; IITs/NITs</p>
+          </div>
+          <div class="flex items-center space-x-2">
+            <span class="text-xs font-mono text-slate-400">Total Curated Questions:</span>
+            <span id="pyq-total-count" class="px-2 py-0.5 rounded font-mono text-xs font-bold bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/40">100+</span>
+          </div>
+        </div>
+
+        <!-- Filter Ribbon -->
+        <div class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+          <div>
+            <label class="text-[11px] font-mono text-slate-400 block mb-1">SELECT UNIVERSITY</label>
+            <select id="archive-uni-select" onchange="filterArchiveQuestions()" class="w-full bg-[#0F172A] border border-slate-700 text-xs font-semibold rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-[#8B5CF6]">
+              <option value="cujammu" selected>Central University of Jammu (CUJammu)</option>
+              <option value="iit_jammu">IIT Jammu</option>
+              <option value="nit_srinagar">NIT Srinagar</option>
+              <option value="iit_delhi">IIT Delhi</option>
+            </select>
+          </div>
+          <div>
+            <label class="text-[11px] font-mono text-slate-400 block mb-1">SELECT SEMESTER</label>
+            <select id="archive-sem-select" onchange="filterArchiveQuestions()" class="w-full bg-[#0F172A] border border-slate-700 text-xs font-semibold rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-[#8B5CF6]">
+              <option value="all">All Semesters (1 to 8)</option>
+              <option value="1">Semester 1 (C, Math-I)</option>
+              <option value="2">Semester 2 (Data Structures, Math-II)</option>
+              <option value="3">Semester 3 (Advanced DS, Cyber Fundamentals)</option>
+              <option value="4">Semester 4 (Operating Systems, Networks)</option>
+              <option value="5" selected>Semester 5 (Cryptography, Web Security)</option>
+              <option value="6">Semester 6 (Digital Forensics, Malware)</option>
+              <option value="7">Semester 7 (Ethical Hacking, SOC, AI)</option>
+              <option value="8">Semester 8 (Threat Hunting, Privacy)</option>
+            </select>
+          </div>
+          <div class="sm:col-span-2">
+            <label class="text-[11px] font-mono text-slate-400 block mb-1">SEARCH QUESTION OR TOPIC KEYWORD</label>
+            <input type="text" id="archive-search-input" oninput="filterArchiveQuestions()" placeholder="Search, e.g. RSA, AES, Deadlock, Buffer Overflow, Volatility, SUID..." class="w-full bg-[#0F172A] border border-slate-700 text-xs rounded-lg px-3 py-2 text-white placeholder-slate-500 focus:outline-none focus:border-[#8B5CF6] font-mono">
+          </div>
+        </div>
+
+        <!-- Archive Question Cards Container -->
+        <div id="archive-questions-container" class="space-y-3.5 pt-2">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================================== -->
+    <!-- TAB 6: RAPID VIVA -->
+    <!-- ===================================================================== -->
     <section id="tab-viva" class="hidden space-y-6">
       <div class="glassmorphic rounded-2xl p-6 border border-[#F59E0B]/30 space-y-4">
         <div class="flex items-center justify-between border-b border-slate-700/80 pb-4">
           <div>
             <span class="text-xs font-mono text-[#F59E0B] uppercase font-bold tracking-wider">END-SEMESTER ORAL &amp; LABORATORY VIVA</span>
-            <h2 class="text-xl font-bold text-white">One-Tap Rapid-Fire Viva Prep Module</h2>
+            <h2 class="text-xl font-bold text-white">One-Tap Rapid-Fire Viva Defense Prep</h2>
             <p class="text-xs text-slate-400 font-mono">High-pressure defense simulator: Instant punchlines and examiner trap warnings</p>
           </div>
           <span id="viva-difficulty-tag" class="px-3 py-1 rounded-full text-xs font-mono bg-[#F59E0B]/20 text-[#F59E0B] border border-[#F59E0B]/40 font-bold">
@@ -469,7 +738,7 @@
             <span class="text-xs font-mono text-[#00F0FF] uppercase tracking-wider block mb-2 font-bold" id="viva-lab-name">
               CYB-501P: CRYPTOGRAPHY LAB • UNIT 2
             </span>
-            <h3 id="viva-question-text" class="text-xl font-semibold text-white leading-relaxed">
+            <h3 id="viva-question-text" class="text-lg sm:text-xl font-semibold text-white leading-relaxed">
               Professor: "Can AES be broken by trying all 2^128 keys on a modern supercomputer?"
             </h3>
           </div>
@@ -491,7 +760,7 @@
             </button>
             <div id="viva-trap-box" class="hidden p-4 rounded-xl bg-red-950/25 border border-red-500/50 text-sm text-slate-100 leading-relaxed">
               <strong class="text-red-400 block mb-1">Critical Follow-up:</strong>
-              "The examiner will counter: 'What about quantum computers using Grover's Algorithm?' Be ready: 'Grover's algorithm reduces complexity to &radic;(2^128) = 2^64, which is why AES-256 (providing 128-bit quantum security) is mandated for post-quantum safety.'"
+              "The examiner will counter: 'What about quantum computers using Grover's Algorithm?' Answer: 'Grover's algorithm reduces complexity to &radic;(2^128) = 2^64, which is why AES-256 (providing 128-bit quantum security) is mandated for post-quantum safety.'"
             </div>
           </div>
 
@@ -504,14 +773,16 @@
       </div>
     </section>
 
-    <!-- TAB 6: PRINT & EXPORT CLEAN VIEW -->
+    <!-- ===================================================================== -->
+    <!-- TAB 7: PRINT & EXPORT CLEAN VIEW -->
+    <!-- ===================================================================== -->
     <section id="tab-export" class="hidden space-y-6">
       <div class="glassmorphic rounded-2xl p-6 border border-[#8B5CF6]/40 space-y-4">
         <div class="flex items-center justify-between border-b border-slate-700/80 pb-4">
           <div>
             <span class="text-xs font-mono text-[#8B5CF6] uppercase font-bold tracking-wider">OFFLINE PRACTICE &amp; PEER SHARING</span>
             <h2 class="text-xl font-bold text-white">Printable University Standard Layout</h2>
-            <p class="text-xs text-slate-400 font-mono">Format and copy official university paper for offline study or batch sharing</p>
+            <p class="text-xs text-slate-400 font-mono">Formatted to official Central University of Jammu examination standards</p>
           </div>
 
           <div class="flex items-center space-x-3">
@@ -528,7 +799,7 @@
         <div class="bg-slate-950 p-6 md:p-8 rounded-xl border border-slate-800 font-mono text-xs text-slate-200 leading-relaxed overflow-x-auto whitespace-pre-wrap selection:bg-[#8B5CF6]" id="printable-sheet">
 ================================================================================
 CENTRAL UNIVERSITY OF JAMMU
-Department of Computer Science &amp; Information Technology
+Department of Computer Science & Information Technology
 B.Tech CSE (Cyber Security) - Semester V Examination
 Subject: [CYB-501] Cryptography and Network Security
 Time Allowed: 3 Hours                                          Maximum Marks: 70
@@ -543,16 +814,16 @@ INSTRUCTIONS:
 SECTION A (Compulsory Short Answers - 10 x 2M = 20 Marks)
 Q1.(a) Differentiate between Confusion and Diffusion as defined by Claude Shannon. [2M]
 Q1.(b) Why is ECB (Electronic Codebook) mode insecure for transmitting bitmaps or structured records? [2M]
-Q1.(c) Compute Euler's Totient function value &phi;(55) and explain its role in RSA key generation. [2M]
-Q1.(d) State the difference between HMAC and a naive hash concatenation H(K || M). [2M]
-Q1.(e) What is a Replay Attack in mutual authentication, and how do Nonces mitigate it? [2M]
+Q1.(c) Compute Euler's Totient function value phi(55) and explain its role in RSA key generation. [2M]
+Q1.(d) What is a TCP SYN Flood attack and how do SYN Cookies mitigate it? [2M]
+Q1.(e) Define the Order of Volatility as mandated by RFC 3227 in live digital forensics. [2M]
 
-SECTION B (Conceptual &amp; Analytical - Attempt Any 4 - 4 x 5M = 20 Marks)
+SECTION B (Conceptual & Analytical - Attempt Any 4 - 4 x 5M = 20 Marks)
 Q2. Explain the step-by-step transformations in AES round operations: SubBytes, ShiftRows, MixColumns, and AddRoundKey. Why is MixColumns omitted in the final round? [5M]
 Q3. Illustrate Diffie-Hellman Key Exchange algorithm with mathematical proof. Demonstrate how a Man-In-The-Middle (MITM) attack occurs without authentication. [5M]
-Q4. Analyze the architecture of TLS 1.3 Handshake. How does it achieve 1-RTT connection setup compared to 2-RTT in TLS 1.2, and what are the security benefits of removing static RSA? [5M]
+Q4. Compare Role-Based Access Control (RBAC) and Attribute-Based Access Control (ABAC) in zero-trust architectures. [5M]
 
-SECTION C (Architectural, Numerical &amp; System Design - 3 x 10M = 30 Marks)
+SECTION C (Architectural, Numerical & System Design - 3 x 10M = 30 Marks)
 Q5. In an RSA cryptosystem, the prime numbers selected are p = 17 and q = 11. Public exponent e = 7.
     (i) Calculate the private key d using Extended Euclidean Algorithm.
     (ii) Encrypt plaintext message M = 88.
@@ -562,7 +833,7 @@ Q5. In an RSA cryptosystem, the prime numbers selected are p = 17 and q = 11. Pu
     Discuss Elliptic Curve Cryptography (ECC). Define the Weierstrass elliptic curve equation over GF(p). Explain point addition and point doubling geometrically and algebraically, and show why a 256-bit ECC key offers equivalent security to 3072-bit RSA. [10M]
 
 Q6. Architect a comprehensive defense-in-depth security infrastructure for a university enterprise campus network (such as CUJammu). Detail integration of:
-    (a) Next-Gen Firewall (NGFW) &amp; State Inspection
+    (a) Next-Gen Firewall (NGFW) & State Inspection
     (b) Suricata IDS/IPS placement with SPAN port tap
     (c) DMZ isolation for ERP and Exam Portals
     (d) Zero-Trust Network Access (ZTNA) with hardware FIDO2 MFA. [10M]
@@ -574,73 +845,25 @@ Generated by ExamPulse Antigravity for University Engineering Students
 
   </main>
 
+  <!-- Frontend Logic Script -->
   <script>
     // State
+    let currentUniversity = 'cujammu';
     let currentSemester = 5;
+    let currentSubjectCode = 'CYB-501';
     let currentFlashcardIndex = 0;
     let isFlipped = false;
+    let currentQuizIndex = 0;
     let currentVivaIndex = 0;
-    let mockRemainingSeconds = 10785;
-    let mockTimerInterval = null;
-    let isMockRunning = true;
+    let cujFullDataset = [];
+    let currentExamPaper = null;
+    let currentShortNotes = null;
+    let currentFlashcards = [];
+    let currentQuiz = [];
+    let currentMindmap = null;
 
-    // Flashcard Deck
-    const flashcardsData = [
-      {
-        unit: "UNIT 1 • NUMBER THEORY",
-        prompt: "What is the mathematical condition for an element 'a' to have a multiplicative inverse modulo 'm'?",
-        answer: "gcd(a, m) = 1 (i.e., 'a' and 'm' must be relatively prime / coprime). The inverse is computed using the Extended Euclidean Algorithm: a * x + m * y = 1 => a^-1 = x mod m.",
-        formula: "Extended Euclidean Algorithm: gcd(a, m) = 1",
-        probability: "94% Frequent",
-        efactor: 2.50
-      },
-      {
-        unit: "UNIT 2 • BLOCK CIPHERS",
-        prompt: "Explain why CBC (Cipher Block Chaining) requires an unpredictable IV (Initialization Vector).",
-        answer: "A predictable IV allows Chosen-Plaintext Attacks (like the BEAST attack in SSL/TLS). In CBC: C_i = E_K(P_i XOR C_{i-1}). If IV is known in advance, an attacker can construct a plaintext guess that tests equality against previous blocks.",
-        formula: "C_1 = E_K(P_1 XOR IV)",
-        probability: "91% Frequent",
-        efactor: 2.45
-      },
-      {
-        unit: "UNIT 3 • RSA & PUBLIC KEY",
-        prompt: "In RSA, why must 'p' and 'q' not be close to each other in magnitude?",
-        answer: "If p and q are close to sqrt(n), Fermat's Factorization Method can trivially factor n = p*q in O(|p-q|) steps by searching values of a = ceil(sqrt(n)) where a^2 - n is a square b^2.",
-        formula: "Fermat's Factorization: n = a^2 - b^2 = (a-b)(a+b)",
-        probability: "89% Core Concept",
-        efactor: 2.60
-      },
-      {
-        unit: "UNIT 4 • HASH FUNCTIONS",
-        prompt: "What constitutes the 'Birthday Paradox' in cryptographic hash functions and how does it affect collision resistance?",
-        answer: "To find a collision with probability > 50% in an n-bit hash output, an attacker needs only 2^(n/2) hash evaluations rather than 2^n due to pairwise birthday comparisons. Hence a 256-bit hash provides 128-bit collision resistance.",
-        formula: "Collision search complexity: O(2^(n/2))",
-        probability: "96% Highest Yield",
-        efactor: 2.55
-      },
-      {
-        unit: "UNIT 1 • DIGITAL FORENSICS",
-        prompt: "Define the 'Order of Volatility' as mandated by RFC 3227 during live incident response.",
-        answer: "Registers & CPU Cache -> Routing tables/process table/memory -> Temporary swap space -> Disk storage -> Remote logging & network topology -> Physical media / tapes.",
-        formula: "RFC 3227 Volatility Hierarchy",
-        probability: "92% Frequent",
-        efactor: 2.40
-      }
-    ];
-
-    // Predictions
-    const predictionsData = [
-      { name: "Extended Euclidean Algorithm & RSA Key Synthesis", prob: 97, tag: "Highest Yield", years: "2025, 2024, 2022, 2021, 2020", color: "#10B981" },
-      { name: "AES Round Operations: SubBytes, ShiftRows, MixColumns", prob: 96, tag: "Frequent", years: "2025, 2024, 2023, 2022, 2019", color: "#10B981" },
-      { name: "Diffie-Hellman Key Exchange & MITM Attack Vulnerability", prob: 92, tag: "Frequent", years: "2025, 2023, 2022, 2020", color: "#00F0FF" },
-      { name: "RFC 3227 Volatility Order in Digital Forensic Imaging", prob: 92, tag: "Frequent", years: "2025, 2024, 2022, 2021", color: "#00F0FF" },
-      { name: "Birthday Paradox & Collision Search in SHA-2 / SHA-3", prob: 88, tag: "Core Concept", years: "2024, 2023, 2021, 2018", color: "#8B5CF6" },
-      { name: "TLS 1.3 1-RTT Handshake vs TLS 1.2 Forward Secrecy", prob: 85, tag: "Core Concept", years: "2024, 2022, 2021", color: "#8B5CF6" },
-      { name: "Zero-Trust Architecture (ZTNA) Perimeter Defense", prob: 76, tag: "High Yield", years: "2024, 2023", color: "#F59E0B" }
-    ];
-
-    // Viva Items
-    const vivaItems = [
+    // Default Viva Items
+    const defaultVivaItems = [
       {
         lab: "CYB-501P: CRYPTOGRAPHY LAB • UNIT 2",
         question: 'Professor: "Can AES be broken by trying all 2^128 keys on a modern supercomputer?"',
@@ -649,46 +872,115 @@ Generated by ExamPulse Antigravity for University Engineering Students
         difficulty: "Pass Benchmark"
       },
       {
-        lab: "CYB-701P: DIGITAL FORENSICS LAB • UNIT 1",
+        lab: "CYB-601P: DIGITAL FORENSICS LAB • UNIT 1",
         question: 'External Examiner: "Why do we compute MD5/SHA256 hashes before and after creating a forensic image of a hard disk?"',
-        answer: '"To prove Mathematical Integrity and Chain of Custody in court: identical pre-acquisition and post-acquisition hashes prove under Federal Rule of Evidence 902 that the examiner did not alter even a single byte on the evidence disk."',
+        answer: '"To prove Mathematical Integrity and Chain of Custody in court: identical pre-acquisition and post-acquisition hashes prove under Section 65B of the Indian Evidence Act that the examiner did not alter even a single byte on the evidence disk."',
         trap: 'Follow-up: "What if a hardware write-blocker was NOT used?" Answer: "The host OS mounts the volume, writes hidden journal logs or timestamps, modifying the master boot record and rendering the entire digital evidence inadmissible."',
         difficulty: "Distinction Level"
       },
       {
-        lab: "CYB-303P: OPERATING SYSTEMS LAB • UNIT 3",
-        question: 'Examiner: "What is a Race Condition in shared memory, and how does Peterson\'s Algorithm solve it for two processes?"',
-        answer: '"A race condition occurs when concurrent threads access shared data and the final outcome depends on thread scheduling order. Peterson\'s algorithm uses two shared variables (boolean flag[2] and int turn) to guarantee Mutual Exclusion, Progress, and Bounded Waiting without locks."',
-        trap: 'Examiner: "Does Peterson\'s algorithm work on modern multi-core x86/ARM CPUs?" Answer: "No! Out-of-order execution and store buffering by modern hardware violate sequential consistency, requiring explicit CPU memory barriers (mfence) or atomic test-and-set instructions."',
+        lab: "CYB-401P: OPERATING SYSTEMS LAB • UNIT 5",
+        question: 'Examiner: "How does a Stack Canary detect a Buffer Overflow attack?"',
+        answer: '"A Stack Canary is a random 32/64-bit integer placed between local variables and the saved return pointer (EIP/RIP). If an overflow corrupts the return address, it inevitably alters the canary. In the function epilogue, __stack_chk_fail detects mismatch and halts execution."',
+        trap: 'Examiner: "Can an attacker bypass stack canaries?" Answer: "Yes, by information disclosure (leaking canary value via format string bug) or by overwriting exception handlers (SEH) before the canary check executes."',
         difficulty: "Lab Mastery"
       }
     ];
 
-    // Exam Questions
-    const examQuestions = [
-      { id: "Q1A", number: "Q1.(a)", section: "A", marks: 2, text: "Differentiate between Confusion and Diffusion as defined by Claude Shannon.", freq: "94% Frequent", answer: "Confusion obscures relationship between ciphertext and key (via S-Boxes). Diffusion spreads statistical structure of plaintext over ciphertext (via P-Boxes)." },
-      { id: "Q1B", number: "Q1.(b)", section: "A", marks: 2, text: "Why is ECB (Electronic Codebook) mode insecure for transmitting bitmaps or structured records?", freq: "91% Frequent", answer: "In ECB, identical plaintext blocks always encrypt to identical ciphertext blocks under the same key. Patterns in visual data or repeated records remain clearly distinguishable (Tux penguin leak)." },
-      { id: "Q1C", number: "Q1.(c)", section: "A", marks: 2, text: "Compute Euler's Totient function value \u03c6(55) and explain its role in RSA key generation.", freq: "88% Core Concept", answer: "55 = 5 * 11 (two primes p=5, q=11). \u03c6(55) = (5-1) * (11-1) = 4 * 10 = 40. In RSA, public exponent e must satisfy gcd(e, \u03c6(n)) = 1." },
-      { id: "Q2", number: "Q2", section: "B", marks: 5, text: "Explain the step-by-step transformations in AES round operations: SubBytes, ShiftRows, MixColumns, and AddRoundKey. Why is MixColumns omitted in the final round?", freq: "96% Highest Yield", answer: "SubBytes (non-linear S-box GF(2^8)), ShiftRows (cyclic byte shifts), MixColumns (matrix multiplication for diffusion), AddRoundKey (XOR with subkey). Omitted in 10th round to harmonize decryption logic and save clock cycles." },
-      { id: "Q3", number: "Q3", section: "B", marks: 5, text: "Illustrate Diffie-Hellman Key Exchange algorithm with mathematical proof. Demonstrate how a Man-In-The-Middle (MITM) attack occurs without authentication.", freq: "92% Frequent", answer: "Public p, primitive root g. Alice sends A=g^a mod p; Bob sends B=g^b mod p. Both compute K = g^(ab) mod p. MITM intercepts public values and establishes two separate session keys." },
-      { id: "Q5", number: "Q5", section: "C", marks: 10, text: "In an RSA cryptosystem, prime numbers selected are p = 17 and q = 11. Public exponent e = 7.\n(i) Calculate private key d using Extended Euclidean Algorithm.\n(ii) Encrypt plaintext M = 88.\n(iii) Decrypt ciphertext C to prove correctness.\n(iv) Explain how Wiener's Attack exploits small private exponents.", freq: "97% Highest Yield", choice: "OR: Discuss Elliptic Curve Cryptography (ECC). Define Weierstrass curve equation over GF(p). Explain point addition and doubling geometrically, and show why 256-bit ECC key equals 3072-bit RSA.", answer: "n = 187, \u03c6(n) = 160. d * 7 = 1 mod 160 => d = 23. C = 88^7 mod 187 = 11. Decryption M = 11^23 mod 187 = 88. Wiener's attack uses continued fractions when d < (1/3)n^(0.25)." }
-    ];
+    // Initialization
+    window.addEventListener('DOMContentLoaded', async () => {
+      await loadCujammuData();
+      await loadInitialSample();
+      filterArchiveQuestions();
+    });
 
-    // Initialize UI
-    function init() {
-      renderSemesterPills();
-      renderPredictions();
-      renderExamQuestions('ALL');
-      renderMockRibbon();
-      drawRadar();
-      startMockTimer();
-      updateFlashcardView();
-      updateVivaView();
+    async function loadCujammuData() {
+      try {
+        const res = await fetch('/api/pyq/cujammu');
+        const json = await res.json();
+        if (json.success && json.semesters) {
+          cujFullDataset = json.semesters;
+        }
+      } catch (e) {
+        console.warn('Failed to load CUJammu dataset from server:', e);
+      }
     }
 
+    async function loadInitialSample() {
+      try {
+        const res = await fetch('/api/upload/load-sample', { method: 'POST' });
+        const json = await res.json();
+        if (json.success && json.data) {
+          applyProcessedData(json.data);
+        }
+      } catch (e) {
+        console.warn('Initial sample load fallback:', e);
+      }
+    }
+
+    // Apply Processed Server Data into UI
+    function applyProcessedData(data) {
+      if (data.pptx) {
+        document.getElementById('stat-slides').innerText = `${data.pptx.totalSlides} Slides`;
+      }
+      if (data.syllabus) {
+        document.getElementById('stat-units').innerText = `${data.syllabus.totalUnits} Units`;
+      }
+      if (data.predictedPaper) {
+        currentExamPaper = data.predictedPaper;
+        document.getElementById('stat-accuracy').innerText = `${data.predictedPaper.overallAccuracy}% Match`;
+        document.getElementById('exam-accuracy-badge').innerText = `${data.predictedPaper.overallAccuracy}% Match`;
+        renderExamQuestions('ALL');
+        updatePrintableSheet();
+      }
+      if (data.shortNotes) {
+        currentShortNotes = data.shortNotes;
+        renderShortNotes(data.shortNotes);
+      }
+      if (data.interactiveNotes) {
+        if (data.interactiveNotes.flashcards) {
+          currentFlashcards = data.interactiveNotes.flashcards;
+          currentFlashcardIndex = 0;
+          updateFlashcardView();
+        }
+        if (data.interactiveNotes.quiz) {
+          currentQuiz = data.interactiveNotes.quiz;
+          currentQuizIndex = 0;
+          renderCurrentQuiz();
+        }
+        if (data.interactiveNotes.mindmap) {
+          currentMindmap = data.interactiveNotes.mindmap;
+          renderMindmap(data.interactiveNotes.mindmap);
+        }
+      }
+
+      // Keywords tags
+      if (data.pptx?.keywords) {
+        document.getElementById('stat-keywords').innerText = `${data.pptx.keywords.length} Keywords`;
+        const kwContainer = document.getElementById('keywords-tags-container');
+        kwContainer.innerHTML = '';
+        data.pptx.keywords.slice(0, 8).forEach((k, idx) => {
+          const colors = ['#00F0FF', '#8B5CF6', '#10B981', '#F59E0B'];
+          const col = colors[idx % colors.length];
+          const span = document.createElement('span');
+          span.className = "px-2 py-1 rounded text-[11px] font-mono font-semibold border";
+          span.style.color = col;
+          span.style.borderColor = col + '55';
+          span.style.background = col + '18';
+          span.innerText = k;
+          kwContainer.appendChild(span);
+        });
+      }
+
+      document.getElementById('ingestion-badge').innerText = 'PROCESSED';
+      document.getElementById('ingestion-badge').className = 'px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 font-bold';
+    }
+
+    // Switch Navigation Tabs
     function switchTab(tabId) {
       document.querySelectorAll('section[id^="tab-"]').forEach(el => el.classList.add('hidden'));
-      document.getElementById('tab-' + tabId).classList.remove('hidden');
+      const activeSec = document.getElementById('tab-' + tabId);
+      if (activeSec) activeSec.classList.remove('hidden');
 
       document.querySelectorAll('.tab-btn').forEach(btn => {
         btn.classList.remove('bg-[#00F0FF]/20', 'text-[#00F0FF]', 'border-[#00F0FF]');
@@ -700,97 +992,196 @@ Generated by ExamPulse Antigravity for University Engineering Students
         activeBtn.classList.remove('border-slate-700', 'text-slate-300');
         activeBtn.classList.add('bg-[#00F0FF]/20', 'text-[#00F0FF]', 'border-[#00F0FF]');
       }
+    }
 
-      if (tabId === 'radar') {
-        setTimeout(drawRadar, 50);
+    // Load Sample Button Handler
+    async function loadSampleDeck() {
+      const btn = document.getElementById('btn-load-sample');
+      btn.innerText = '⏳ Processing Sample...';
+      try {
+        const res = await fetch('/api/upload/load-sample', { method: 'POST' });
+        const json = await res.json();
+        if (json.success && json.data) {
+          applyProcessedData(json.data);
+          btn.innerText = '✅ Sample Loaded!';
+          setTimeout(() => { btn.innerText = '✨ 1-Click Load CUJammu CYB-501 Sample Deck'; }, 2000);
+        }
+      } catch (err) {
+        alert('Failed to load sample: ' + err.message);
+        btn.innerText = '✨ 1-Click Load CUJammu CYB-501 Sample Deck';
       }
     }
 
-    function renderSemesterPills() {
-      const container = document.getElementById('semester-pills');
+    // File Upload Handlers
+    function handlePptxSelect(e) {
+      const file = e.target.files[0];
+      if (file) {
+        document.getElementById('pptx-file-status').innerText = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        document.getElementById('pptx-file-status').className = 'text-[11px] font-mono text-[#00F0FF] font-bold';
+      }
+    }
+
+    function handleSyllabusSelect(e) {
+      const file = e.target.files[0];
+      if (file) {
+        document.getElementById('syllabus-file-status').innerText = `${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+        document.getElementById('syllabus-file-status').className = 'text-[11px] font-mono text-[#8B5CF6] font-bold';
+      }
+    }
+
+    async function handleUploadSubmit(e) {
+      e.preventDefault();
+      const btn = document.getElementById('btn-process-docs');
+      btn.innerHTML = '<span>⏳</span><span>NEURAL PROCESSING IN PROGRESS...</span>';
+      btn.disabled = true;
+
+      const formData = new FormData();
+      const pptxInput = document.getElementById('pptx-input');
+      const syllabusInput = document.getElementById('syllabus-input');
+      const syllabusText = document.getElementById('syllabus-text-input').value;
+      const uni = document.getElementById('upload-university').value;
+      const sem = document.getElementById('upload-semester').value;
+      const subject = document.getElementById('upload-subject').value;
+
+      if (pptxInput.files[0]) formData.append('pptx', pptxInput.files[0]);
+      if (syllabusInput.files[0]) formData.append('syllabus', syllabusInput.files[0]);
+      formData.append('syllabusText', syllabusText);
+      formData.append('universityId', uni);
+      formData.append('semester', sem);
+      formData.append('courseTitle', subject);
+
+      try {
+        const res = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData
+        });
+        const json = await res.json();
+        if (json.success && json.data) {
+          applyProcessedData(json.data);
+          btn.innerHTML = '<span>✅</span><span>SUCCESSFULLY GENERATED!</span>';
+          setTimeout(() => {
+            btn.innerHTML = '<span>🚀</span><span>PROCESS DOCUMENTS &amp; GENERATE EXAM INTELLIGENCE</span>';
+            btn.disabled = false;
+            switchTab('notes');
+          }, 1000);
+        } else {
+          throw new Error(json.error || 'Server error parsing documents');
+        }
+      } catch (err) {
+        alert('Upload Error: ' + err.message);
+        btn.innerHTML = '<span>🚀</span><span>PROCESS DOCUMENTS &amp; GENERATE EXAM INTELLIGENCE</span>';
+        btn.disabled = false;
+      }
+    }
+
+    // Render Short Notes
+    function renderShortNotes(notes) {
+      if (!notes) return;
+      document.getElementById('notes-course-title').innerText = notes.courseTitle || 'Cyber Security';
+
+      // Executive Summary
+      const sumContainer = document.getElementById('notes-executive-summary');
+      sumContainer.innerHTML = '';
+      (notes.executiveSummary || []).forEach(point => {
+        const div = document.createElement('div');
+        div.className = "p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 text-xs text-slate-200 leading-relaxed font-sans";
+        div.innerHTML = `<span class="text-[#00F0FF] font-bold mr-1.5">&bull;</span> ${point}`;
+        sumContainer.appendChild(div);
+      });
+
+      // Formulas
+      const fContainer = document.getElementById('notes-formulas-container');
+      fContainer.innerHTML = '';
+      (notes.highYieldFormulas || []).forEach(f => {
+        const div = document.createElement('div');
+        div.className = "glassmorphic-card p-4 rounded-xl space-y-1.5 border border-slate-800";
+        div.innerHTML = `
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-mono font-bold text-white">${f.topic}</span>
+            <span class="px-2 py-0.5 rounded text-[10px] font-mono bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]/40">High Frequency</span>
+          </div>
+          <div class="p-2.5 rounded-lg bg-black/50 border border-slate-800 font-mono text-xs text-[#00F0FF] overflow-x-auto">
+            ${f.formula}
+          </div>
+          <p class="text-[11px] text-slate-400 font-sans">${f.explanation}</p>
+        `;
+        fContainer.appendChild(div);
+      });
+
+      // Definitions
+      const defContainer = document.getElementById('notes-definitions-container');
+      defContainer.innerHTML = '';
+      (notes.keyDefinitions || []).forEach(d => {
+        const div = document.createElement('div');
+        div.className = "p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 space-y-1";
+        div.innerHTML = `
+          <span class="text-xs font-mono font-bold text-[#10B981] block">${d.term}</span>
+          <p class="text-xs text-slate-300 font-sans leading-relaxed">${d.definition}</p>
+        `;
+        defContainer.appendChild(div);
+      });
+    }
+
+    // Render Exam Simulator Questions
+    function renderExamQuestions(filter = 'ALL') {
+      const container = document.getElementById('exam-questions-container');
       container.innerHTML = '';
-      for (let s = 1; s <= 8; s++) {
-        const btn = document.createElement('button');
-        const isSelected = s === currentSemester;
-        btn.className = `px-3 py-1 rounded-lg text-xs font-mono font-bold transition-all ${
-          isSelected ? 'bg-[#00F0FF]/25 text-[#00F0FF] border border-[#00F0FF]' : 'bg-slate-800 text-slate-400 border border-slate-700 hover:border-slate-500'
-        }`;
-        btn.innerText = `SEM ${s}`;
-        btn.onclick = () => {
-          currentSemester = s;
-          renderSemesterPills();
-          drawRadar();
-        };
-        container.appendChild(btn);
-      }
-    }
 
-    function updateUniversityData() {
-      const uni = document.getElementById('university-select').value;
-      const title = document.getElementById('radar-subject-title');
-      if (uni === 'cujammu') {
-        title.innerText = "CYB-501: Cryptography & Network Security (CUJammu)";
-      } else if (uni === 'nit_srinagar') {
-        title.innerText = "CST-502: Advanced Network Security (NIT Srinagar)";
-      } else {
-        title.innerText = "CS-520: Cryptographic Engineering (IIT Jammu)";
-      }
-      drawRadar();
-    }
+      if (!currentExamPaper || !currentExamPaper.sections) return;
 
-    function renderPredictions() {
-      const container = document.getElementById('prediction-list');
-      container.innerHTML = '';
-      predictionsData.forEach(p => {
+      const questionsToRender = [];
+      if (filter === 'ALL' || filter === 'A') {
+        (currentExamPaper.sections.A?.questions || []).forEach((q, i) => questionsToRender.push({ ...q, sectionLabel: 'Section A', qNum: `Q1.(${String.fromCharCode(97 + i)})` }));
+      }
+      if (filter === 'ALL' || filter === 'B') {
+        (currentExamPaper.sections.B?.questions || []).forEach((q, i) => questionsToRender.push({ ...q, sectionLabel: 'Section B', qNum: `Q${2 + i}` }));
+      }
+      if (filter === 'ALL' || filter === 'C') {
+        (currentExamPaper.sections.C?.questions || []).forEach((q, i) => questionsToRender.push({ ...q, sectionLabel: 'Section C', qNum: `Q${5 + i}` }));
+      }
+
+      questionsToRender.forEach(q => {
         const card = document.createElement('div');
-        card.className = "glassmorphic-card p-3.5 rounded-xl flex items-center justify-between transition-all";
+        card.className = "glassmorphic-card p-5 rounded-xl space-y-3 transition-all";
         card.innerHTML = `
-          <div class="flex items-center space-x-3">
-            <span class="w-2.5 h-2.5 rounded-full" style="background:${p.color}; box-shadow: 0 0 8px ${p.color};"></span>
-            <div>
-              <h4 class="text-xs font-semibold text-white">${p.name}</h4>
-              <p class="text-[11px] font-mono text-slate-400">Past Papers: ${p.years}</p>
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center space-x-2">
+              <span class="px-2.5 py-0.5 rounded font-mono text-xs font-bold bg-[#00F0FF]/15 text-[#00F0FF] border border-[#00F0FF]/30">${q.qNum}</span>
+              <span class="text-xs font-mono font-bold text-[#10B981]">[${q.marks} Marks]</span>
+              <span class="text-[11px] font-mono text-slate-400">(${q.sectionLabel})</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="px-2 py-0.5 rounded-full font-mono text-[11px] font-semibold bg-[#8B5CF6]/15 text-[#8B5CF6] border border-[#8B5CF6]/40">
+                Bloom: ${q.bloom || 'Analyze'}
+              </span>
+              <span class="px-2 py-0.5 rounded-full font-mono text-[11px] font-semibold bg-[#10B981]/15 text-[#10B981] border border-[#10B981]/40">
+                ${q.freq || `${q.probability}% Probability`}
+              </span>
             </div>
           </div>
-          <span class="px-2.5 py-1 rounded-full text-xs font-mono font-bold border" style="color:${p.color}; border-color:${p.color}66; background:${p.color}18;">
-            ${p.prob}% ${p.tag}
-          </span>
+          <p class="text-sm font-medium text-slate-100 leading-relaxed font-sans">${q.text.replace(/\n/g, '<br>')}</p>
+          ${q.choice ? `<div class="p-3 rounded-lg bg-[#8B5CF6]/10 border border-[#8B5CF6]/30 text-xs italic text-slate-300 font-sans">${q.choice.replace(/\n/g, '<br>')}</div>` : ''}
+          <div class="pt-2 border-t border-slate-700/60 flex items-center justify-between">
+            <button onclick="toggleExamAnswer('${q.id}')" class="text-xs font-mono text-[#00F0FF] hover:underline font-semibold flex items-center space-x-1">
+              <span>View Benchmark Model Answer &amp; Rubric</span> &darr;
+            </button>
+            <span class="text-[10px] font-mono text-slate-400">Past Papers: ${(q.years || ['2024', '2022']).join(', ')}</span>
+          </div>
+          <div id="exam-ans-${q.id}" class="hidden p-4 rounded-xl bg-black/60 border border-slate-700 text-xs text-slate-300 space-y-2 font-mono">
+            <div>
+              <span class="text-[#10B981] font-bold block mb-1">BENCHMARK MODEL SOLUTION:</span>
+              <p class="leading-relaxed font-sans text-slate-200">${q.answer}</p>
+            </div>
+            ${q.rubric ? `<div class="pt-2 border-t border-slate-800 text-[11px] text-yellow-400"><strong class="text-white">Examiner Rubric:</strong> ${q.rubric}</div>` : ''}
+          </div>
         `;
         container.appendChild(card);
       });
     }
 
-    function renderExamQuestions(filter) {
-      const container = document.getElementById('exam-questions-container');
-      container.innerHTML = '';
-
-      const filtered = filter === 'ALL' ? examQuestions : examQuestions.filter(q => q.section === filter);
-
-      filtered.forEach(q => {
-        const div = document.createElement('div');
-        div.className = "glassmorphic-card p-5 rounded-xl space-y-3 transition-all";
-        div.innerHTML = `
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-2">
-              <span class="px-2 py-0.5 rounded font-mono text-xs font-bold bg-[#00F0FF]/15 text-[#00F0FF] border border-[#00F0FF]/30">${q.number}</span>
-              <span class="text-xs font-mono font-bold text-[#10B981]">[${q.marks} Marks]</span>
-            </div>
-            <span class="px-2 py-0.5 rounded-full font-mono text-xs font-semibold bg-[#10B981]/15 text-[#10B981] border border-[#10B981]/40">${q.freq}</span>
-          </div>
-          <p class="text-sm font-medium text-slate-100 leading-relaxed">${q.text.replace('\n', '<br>')}</p>
-          ${q.choice ? `<div class="p-3 rounded-lg bg-[#8B5CF6]/10 border border-[#8B5CF6]/30 text-xs italic text-slate-300 font-sans">${q.choice}</div>` : ''}
-          <div class="pt-2 border-t border-slate-700/60 flex items-center justify-between">
-            <button onclick="toggleExamAnswer('${q.id}')" class="text-xs font-mono text-[#00F0FF] hover:underline font-semibold flex items-center space-x-1">
-              <span>View Benchmark Answer &amp; Rubric</span> &darr;
-            </button>
-          </div>
-          <div id="exam-ans-${q.id}" class="hidden p-3.5 rounded-lg bg-black/50 border border-slate-700 text-xs text-slate-300 space-y-1 font-mono">
-            <span class="text-[#10B981] font-bold block">BENCHMARK MODEL ANSWER:</span>
-            <p>${q.answer}</p>
-          </div>
-        `;
-        container.appendChild(div);
-      });
+    function toggleExamAnswer(id) {
+      const el = document.getElementById('exam-ans-' + id);
+      if (el) el.classList.toggle('hidden');
     }
 
     function filterExamSection(sec) {
@@ -806,12 +1197,45 @@ Generated by ExamPulse Antigravity for University Engineering Students
       renderExamQuestions(sec);
     }
 
-    function toggleExamAnswer(qid) {
-      const el = document.getElementById('exam-ans-' + qid);
-      if (el) el.classList.toggle('hidden');
+    async function regenerateExamPaper() {
+      try {
+        const uni = document.getElementById('upload-university').value || 'cujammu';
+        const sem = document.getElementById('upload-semester').value || 5;
+        const res = await fetch('/api/exam/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            universityId: uni,
+            semester: sem,
+            subjectCode: currentSubjectCode
+          })
+        });
+        const json = await res.json();
+        if (json.success && json.paper) {
+          currentExamPaper = json.paper;
+          renderExamQuestions('ALL');
+          updatePrintableSheet();
+          alert('Exam Paper re-synthesized for ' + json.paper.courseTitle);
+        }
+      } catch (e) {
+        alert('Regenerate error: ' + e.message);
+      }
     }
 
-    // Flashcard SRS Logic
+    // Flashcard Active Recall (SM-2)
+    function switchInteractiveMode(mode) {
+      document.getElementById('interactive-mode-flashcard').classList.add('hidden');
+      document.getElementById('interactive-mode-quiz').classList.add('hidden');
+      document.getElementById('interactive-mode-mindmap').classList.add('hidden');
+
+      document.getElementById('sub-btn-flashcard').className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700';
+      document.getElementById('sub-btn-quiz').className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700';
+      document.getElementById('sub-btn-mindmap').className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-slate-800 text-slate-400 border border-slate-700';
+
+      document.getElementById(`interactive-mode-${mode}`).classList.remove('hidden');
+      document.getElementById(`sub-btn-${mode}`).className = 'px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]';
+    }
+
     function toggleCardFlip() {
       isFlipped = !isFlipped;
       const card = document.getElementById('flashcard-card');
@@ -823,145 +1247,114 @@ Generated by ExamPulse Antigravity for University Engineering Students
     }
 
     function updateFlashcardView() {
-      const fc = flashcardsData[currentFlashcardIndex];
-      document.getElementById('fc-unit-badge').innerText = fc.unit;
-      document.getElementById('fc-probability-badge').innerText = fc.probability;
+      if (!currentFlashcards || currentFlashcards.length === 0) return;
+      const fc = currentFlashcards[currentFlashcardIndex];
+      document.getElementById('fc-unit-badge').innerText = fc.unit || 'UNIT 1';
+      document.getElementById('fc-probability-badge').innerText = fc.probability || '95% Yield';
       document.getElementById('fc-front-prompt').innerText = fc.prompt;
       document.getElementById('fc-back-answer').innerText = fc.answer;
-      document.getElementById('fc-formula-note').innerText = fc.formula;
-      document.getElementById('fc-efactor-badge').innerText = `E-Factor: ${fc.efactor.toFixed(2)}`;
-      document.getElementById('fc-index-indicator').innerText = `Card ${currentFlashcardIndex + 1} of ${flashcardsData.length}`;
+      document.getElementById('fc-formula-note').innerText = fc.formula || '';
+      document.getElementById('fc-efactor-badge').innerText = `E-Factor: ${(fc.efactor || 2.5).toFixed(2)}`;
+      document.getElementById('fc-index-indicator').innerText = `Card ${currentFlashcardIndex + 1} of ${currentFlashcards.length}`;
 
-      if (isFlipped) {
-        toggleCardFlip();
-      }
+      if (isFlipped) toggleCardFlip();
     }
 
     function rateFlashcard(q) {
-      const fc = flashcardsData[currentFlashcardIndex];
-      // Update E-factor
+      if (!currentFlashcards || currentFlashcards.length === 0) return;
+      const fc = currentFlashcards[currentFlashcardIndex];
       const delta = 0.1 - (5 - (q + 1)) * (0.08 + (5 - (q + 1)) * 0.02);
-      fc.efactor = Math.max(1.3, fc.efactor + delta);
+      fc.efactor = Math.max(1.3, (fc.efactor || 2.5) + delta);
 
-      currentFlashcardIndex = (currentFlashcardIndex + 1) % flashcardsData.length;
+      currentFlashcardIndex = (currentFlashcardIndex + 1) % currentFlashcards.length;
       updateFlashcardView();
 
-      // Mastery Meter calculation
-      const mastered = Math.min(5, Math.floor(currentFlashcardIndex + 2));
-      const pct = Math.round((mastered / flashcardsData.length) * 100);
-      document.getElementById('mastery-percentage-text').innerText = `${pct}%`;
-      document.getElementById('mastered-cards-count').innerText = mastered;
-
-      const offset = 264 - (264 * (pct / 100));
+      // Update Mastery Circle
+      const retention = Math.min(98, 70 + (currentFlashcardIndex * 6));
+      document.getElementById('mastery-percentage-text').innerText = `${retention}%`;
+      const offset = 264 - (264 * (retention / 100));
       document.getElementById('mastery-circle').style.strokeDashoffset = offset;
     }
 
-    // Live Mock Timer
-    function startMockTimer() {
-      if (mockTimerInterval) clearInterval(mockTimerInterval);
-      mockTimerInterval = setInterval(() => {
-        if (!isMockRunning) return;
-        if (mockRemainingSeconds > 0) {
-          mockRemainingSeconds--;
-          const h = Math.floor(mockRemainingSeconds / 3600);
-          const m = Math.floor((mockRemainingSeconds % 3600) / 60);
-          const s = mockRemainingSeconds % 60;
-          document.getElementById('mock-countdown').innerText =
-            `${String(h).padStart(2,'0')}:${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
-        }
-      }, 1000);
-    }
+    // Quiz Mode
+    function renderCurrentQuiz() {
+      if (!currentQuiz || currentQuiz.length === 0) return;
+      const item = currentQuiz[currentQuizIndex];
+      document.getElementById('quiz-progress-text').innerText = `Question ${currentQuizIndex + 1} of ${currentQuiz.length}`;
+      document.getElementById('quiz-question-text').innerText = item.question;
 
-    function toggleMockTimer() {
-      isMockRunning = !isMockRunning;
-      const btn = document.getElementById('mock-timer-toggle-btn');
-      btn.innerText = isMockRunning ? "PAUSE CLOCK" : "RESUME CLOCK";
-      btn.className = isMockRunning
-        ? "px-4 py-2 rounded-xl bg-[#F59E0B]/20 border border-[#F59E0B]/50 text-[#F59E0B] font-mono font-bold text-xs hover:bg-[#F59E0B]/30 transition-all"
-        : "px-4 py-2 rounded-xl bg-[#10B981]/20 border border-[#10B981]/50 text-[#10B981] font-mono font-bold text-xs hover:bg-[#10B981]/30 transition-all";
-    }
+      const optContainer = document.getElementById('quiz-options-container');
+      optContainer.innerHTML = '';
+      document.getElementById('quiz-explanation-box').classList.add('hidden');
 
-    function renderMockRibbon() {
-      const ribbon = document.getElementById('mock-question-ribbon');
-      ribbon.innerHTML = '';
-      examQuestions.forEach((q, idx) => {
+      item.options.forEach((opt, idx) => {
         const btn = document.createElement('button');
-        btn.className = `px-3 py-1.5 rounded-lg font-mono text-xs font-bold transition-all whitespace-nowrap ${
-          idx === 0 ? 'bg-[#00F0FF]/20 text-[#00F0FF] border border-[#00F0FF]' : 'bg-slate-800 text-slate-300 border border-slate-700'
-        }`;
-        btn.innerText = q.number;
-        btn.onclick = () => selectMockQuestion(idx);
-        ribbon.appendChild(btn);
+        btn.className = "w-full text-left p-3.5 rounded-xl bg-slate-900/60 border border-slate-800 hover:border-[#00F0FF] text-xs text-slate-200 font-mono transition-all flex items-center space-x-3";
+        btn.innerHTML = `
+          <span class="w-6 h-6 rounded-full bg-slate-800 text-slate-300 flex items-center justify-center font-bold text-[11px] shrink-0">${String.fromCharCode(65 + idx)}</span>
+          <span>${opt}</span>
+        `;
+        btn.onclick = () => selectQuizOption(idx, item.correctIndex, item.explanation);
+        optContainer.appendChild(btn);
       });
     }
 
-    function selectMockQuestion(idx) {
-      const q = examQuestions[idx];
-      document.getElementById('mock-q-header').innerText = `QUESTION ${idx + 1} (${q.marks} MARKS) • SECTION ${q.section}`;
-      document.getElementById('mock-q-badge').innerText = q.freq;
-      document.getElementById('mock-q-text').innerText = q.text;
-      document.getElementById('ai-model-answer-text').innerText = q.answer;
-      document.getElementById('mock-student-answer').value = '';
-      document.getElementById('word-count').innerText = '0';
-    }
-
-    // Word counter
-    document.addEventListener('input', (e) => {
-      if (e.target.id === 'mock-student-answer') {
-        const words = e.target.value.trim().split(/\s+/).filter(Boolean).length;
-        document.getElementById('word-count').innerText = words;
-      }
-    });
-
-    function evaluateAnswerWithAI() {
-      const text = document.getElementById('mock-student-answer').value.trim();
-      const btn = document.getElementById('grade-ai-btn');
-      btn.innerHTML = `<span>⏳ EVALUATING RUBRIC...</span>`;
-      btn.disabled = true;
-
-      setTimeout(() => {
-        btn.innerHTML = `<span>⚡ INSTANT AI ANSWER GRADING</span>`;
-        btn.disabled = false;
-
-        const words = text.split(/\s+/).filter(Boolean).length;
-        let score = 0;
-        let tech = 0, comp = 0, diag = 0, clar = 0;
-
-        if (words >= 25) {
-          score = 8.5;
-          tech = 3.5; comp = 2.5; diag = 1.6; clar = 0.9;
-          document.getElementById('missed-keywords-text').innerText = "None critical! Excellent mention of S-Box non-linearity and Shannon diffusion axioms.";
-        } else if (words >= 10) {
-          score = 6.2;
-          tech = 2.4; comp = 2.0; diag = 1.0; clar = 0.8;
-          document.getElementById('missed-keywords-text').innerText = "Missed: 'Permutation P-Boxes', 'Non-linear S-Box', 'Avalanche Effect'.";
-        } else {
-          score = 3.0;
-          tech = 1.0; comp = 1.0; diag = 0.5; clar = 0.5;
-          document.getElementById('missed-keywords-text').innerText = "Incomplete explanation. Required: Shannon's definitions of substitution vs permutation and mathematical diffusion spread.";
+    function selectQuizOption(selectedIdx, correctIdx, explanation) {
+      const options = document.querySelectorAll('#quiz-options-container button');
+      options.forEach((btn, idx) => {
+        btn.disabled = true;
+        if (idx === correctIdx) {
+          btn.className = "w-full text-left p-3.5 rounded-xl bg-emerald-950/40 border border-emerald-500 text-xs text-emerald-200 font-mono transition-all flex items-center space-x-3";
+        } else if (idx === selectedIdx) {
+          btn.className = "w-full text-left p-3.5 rounded-xl bg-red-950/40 border border-red-500 text-xs text-red-200 font-mono transition-all flex items-center space-x-3";
         }
+      });
 
-        document.getElementById('ai-score-display').innerText = `${score} / 10`;
-        document.getElementById('rubric-tech').innerText = `${tech.toFixed(1)} / 4.0`;
-        document.getElementById('rubric-comp').innerText = `${comp.toFixed(1)} / 3.0`;
-        document.getElementById('rubric-diag').innerText = `${diag.toFixed(1)} / 2.0`;
-        document.getElementById('rubric-clar').innerText = `${clar.toFixed(1)} / 1.0`;
-      }, 700);
+      const expBox = document.getElementById('quiz-explanation-box');
+      expBox.classList.remove('hidden');
+      if (selectedIdx === correctIdx) {
+        expBox.className = "p-4 rounded-xl bg-emerald-950/20 border border-emerald-500/50 text-emerald-300 font-mono text-xs";
+        expBox.innerHTML = `<strong>✅ Correct!</strong> ${explanation}`;
+      } else {
+        expBox.className = "p-4 rounded-xl bg-red-950/20 border border-red-500/50 text-red-300 font-mono text-xs";
+        expBox.innerHTML = `<strong>❌ Incorrect.</strong> ${explanation}`;
+      }
     }
 
-    // Viva Prep logic
-    function updateVivaView() {
-      const v = vivaItems[currentVivaIndex];
-      document.getElementById('viva-difficulty-tag').innerText = v.difficulty;
-      document.getElementById('viva-lab-name').innerText = v.lab;
-      document.getElementById('viva-question-text').innerText = v.question;
-      document.getElementById('viva-answer-box').innerHTML = `<strong>Expected Answer:</strong> ${v.answer}`;
-      document.getElementById('viva-trap-box').innerHTML = `<strong class="text-red-400 block mb-1">Critical Follow-up:</strong> ${v.trap}`;
-
-      document.getElementById('viva-answer-box').classList.add('hidden');
-      document.getElementById('viva-trap-box').classList.add('hidden');
+    function nextQuizQuestion() {
+      if (!currentQuiz || currentQuiz.length === 0) return;
+      currentQuizIndex = (currentQuizIndex + 1) % currentQuiz.length;
+      renderCurrentQuiz();
     }
 
+    // Concept Mindmap
+    function renderMindmap(mindmap) {
+      const container = document.getElementById('mindmap-container');
+      container.innerHTML = '';
+      if (!mindmap) return;
+
+      const rootDiv = document.createElement('div');
+      rootDiv.className = "p-3 rounded-xl bg-[#8B5CF6]/15 border border-[#8B5CF6]/40 text-[#8B5CF6] font-bold";
+      rootDiv.innerText = `🌌 ${mindmap.root}`;
+      container.appendChild(rootDiv);
+
+      (mindmap.children || []).forEach(child => {
+        const branch = document.createElement('div');
+        branch.className = "ml-4 pl-4 border-l-2 border-slate-800 space-y-2 py-1";
+        branch.innerHTML = `
+          <div class="text-white font-bold text-xs flex items-center space-x-1.5">
+            <span>🔹</span>
+            <span>${child.name}</span>
+          </div>
+          <div class="ml-4 space-y-1">
+            ${(child.children || []).map(leaf => `<div class="text-slate-400 text-[11px]">&bull; ${leaf.name}</div>`).join('')}
+          </div>
+        `;
+        container.appendChild(branch);
+      });
+    }
+
+    // Rapid Viva Handlers
     function toggleVivaAnswer() {
       document.getElementById('viva-answer-box').classList.toggle('hidden');
     }
@@ -971,191 +1364,200 @@ Generated by ExamPulse Antigravity for University Engineering Students
     }
 
     function nextVivaQuestion() {
-      currentVivaIndex = (currentVivaIndex + 1) % vivaItems.length;
-      updateVivaView();
+      currentVivaIndex = (currentVivaIndex + 1) % defaultVivaItems.length;
+      const v = defaultVivaItems[currentVivaIndex];
+      document.getElementById('viva-lab-name').innerText = v.lab;
+      document.getElementById('viva-question-text').innerText = v.question;
+      document.getElementById('viva-answer-box').innerHTML = `<strong>Expected Answer:</strong> ${v.answer}`;
+      document.getElementById('viva-trap-box').innerHTML = `<strong class="text-red-400 block mb-1">Critical Follow-up:</strong> ${v.trap}`;
+      document.getElementById('viva-difficulty-tag').innerText = v.difficulty;
+
+      document.getElementById('viva-answer-box').classList.add('hidden');
+      document.getElementById('viva-trap-box').classList.add('hidden');
     }
 
-    // Copy Printable Paper
-    function copyPrintablePaper() {
-      const text = document.getElementById('printable-sheet').innerText;
-      navigator.clipboard.writeText(text).then(() => {
-        alert("Clean university question paper copied to clipboard!");
-      });
-    }
+    // All Universities Archive Explorer Filter
+    function filterArchiveQuestions() {
+      const uni = document.getElementById('archive-uni-select').value;
+      const semVal = document.getElementById('archive-sem-select').value;
+      const query = (document.getElementById('archive-search-input').value || '').toLowerCase();
+      const container = document.getElementById('archive-questions-container');
+      container.innerHTML = '';
 
-    // Radar Canvas Drawing
-    function drawRadar() {
-      const canvas = document.getElementById('radarCanvas');
-      if (!canvas) return;
-      const ctx = canvas.getContext('2d');
-      const width = canvas.width;
-      const height = canvas.height;
-      ctx.clearRect(0, 0, width, height);
+      let matching = [];
 
-      const centerX = width / 2;
-      const centerY = height / 2;
-      const radius = 135;
-
-      const categories = [
-        { label: "Theory / Shannon", value: 0.85 },
-        { label: "AES / DES Sym", value: 0.92 },
-        { label: "RSA / Math Num", value: 0.96 },
-        { label: "TLS & Network", value: 0.78 },
-        { label: "Forensics RFC", value: 0.68 },
-        { label: "Zero-Trust Laws", value: 0.72 }
-      ];
-
-      const count = categories.length;
-      const angleStep = (2 * Math.PI) / count;
-
-      // Draw concentric webs
-      const levels = [0.25, 0.50, 0.75, 1.0];
-      levels.forEach(lvl => {
-        ctx.beginPath();
-        for (let i = 0; i < count; i++) {
-          const angle = (i * angleStep) - (Math.PI / 2);
-          const x = centerX + (radius * lvl) * Math.cos(angle);
-          const y = centerY + (radius * lvl) * Math.sin(angle);
-          if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
-        }
-        ctx.closePath();
-        ctx.strokeStyle = "rgba(0, 240, 255, 0.15)";
-        ctx.lineWidth = 1;
-        ctx.stroke();
-      });
-
-      // Spokes
-      for (let i = 0; i < count; i++) {
-        const angle = (i * angleStep) - (Math.PI / 2);
-        const endX = centerX + radius * Math.cos(angle);
-        const endY = centerY + radius * Math.sin(angle);
-        ctx.beginPath();
-        ctx.moveTo(centerX, centerY);
-        ctx.lineTo(endX, endY);
-        ctx.strokeStyle = "rgba(148, 163, 184, 0.25)";
-        ctx.stroke();
-
-        // Labels
-        const labelX = centerX + (radius + 22) * Math.cos(angle);
-        const labelY = centerY + (radius + 18) * Math.sin(angle);
-        ctx.fillStyle = "#94A3B8";
-        ctx.font = "11px monospace";
-        ctx.textAlign = "center";
-        ctx.textBaseline = "middle";
-        ctx.fillText(categories[i].label, labelX, labelY);
+      if (uni === 'cujammu') {
+        cujFullDataset.forEach(s => {
+          if (semVal !== 'all' && s.sem !== parseInt(semVal, 10)) return;
+          s.subjects.forEach(sub => {
+            (sub.pyqs || []).forEach(q => {
+              if (!query || q.text.toLowerCase().includes(query) || q.answer.toLowerCase().includes(query) || sub.title.toLowerCase().includes(query)) {
+                matching.push({
+                  sem: s.sem,
+                  subjectCode: sub.code,
+                  subjectTitle: sub.title,
+                  ...q
+                });
+              }
+            });
+          });
+        });
+      } else {
+        // Fallback demo for IITs/NITs
+        matching.push({
+          sem: 5,
+          subjectCode: uni === 'iit_jammu' ? 'CS-520' : 'CST-502',
+          subjectTitle: uni === 'iit_jammu' ? 'Cryptographic Engineering' : 'Advanced Network Security',
+          marks: 10,
+          section: 'Major',
+          text: uni === 'iit_jammu' ? 'Explain Side-Channel Attacks (SCA) on AES hardware implementations. Analyze DPA power traces and masking countermeasures.' : 'Detail IPsec Architecture. Compare Tunnel Mode vs Transport Mode for AH and ESP with packet headers.',
+          freq: '96% Recurring',
+          years: ['2024', '2022'],
+          answer: 'Comprehensive analysis of cryptographic hardware power side-channels / IPsec security associations.'
+        });
       }
 
-      // Draw Data Polygon
-      ctx.beginPath();
-      categories.forEach((cat, i) => {
-        const angle = (i * angleStep) - (Math.PI / 2);
-        const r = radius * cat.value;
-        const x = centerX + r * Math.cos(angle);
-        const y = centerY + r * Math.sin(angle);
-        if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+      document.getElementById('pyq-total-count').innerText = `${matching.length} Questions`;
+
+      if (matching.length === 0) {
+        container.innerHTML = '<div class="p-6 text-center text-xs font-mono text-slate-500">No questions match the selected semester/search criteria.</div>';
+        return;
+      }
+
+      matching.forEach(q => {
+        const div = document.createElement('div');
+        div.className = "glassmorphic-card p-4 rounded-xl space-y-2 border border-slate-800";
+        div.innerHTML = `
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center space-x-2">
+              <span class="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-[#8B5CF6]/20 text-[#8B5CF6] border border-[#8B5CF6]/40">
+                SEM ${q.sem} • ${q.subjectCode}
+              </span>
+              <span class="text-xs font-mono font-bold text-[#10B981]">[${q.marks} Marks]</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-[11px] font-mono text-slate-400">${(q.years || []).join(', ')}</span>
+              <span class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/15 text-emerald-400 font-bold">
+                ${q.freq || 'High Yield'}
+              </span>
+            </div>
+          </div>
+          <h4 class="text-xs font-semibold text-white font-mono leading-relaxed">${q.subjectTitle}</h4>
+          <p class="text-xs text-slate-200 font-sans leading-relaxed">${q.text.replace(/\n/g, '<br>')}</p>
+          <div class="pt-2 border-t border-slate-800">
+            <button onclick="this.nextElementSibling.classList.toggle('hidden')" class="text-[11px] font-mono text-[#00F0FF] hover:underline font-semibold">
+              Show Model Solution &darr;
+            </button>
+            <div class="hidden mt-2 p-3 rounded-lg bg-black/60 border border-slate-800 text-xs font-mono text-slate-300">
+              <span class="text-[#10B981] font-bold block mb-1">MODEL ANSWER:</span>
+              ${q.answer}
+            </div>
+          </div>
+        `;
+        container.appendChild(div);
       });
-      ctx.closePath();
-
-      // Neon Gradient Fill
-      const grad = ctx.createRadialGradient(centerX, centerY, 10, centerX, centerY, radius);
-      grad.addColorStop(0, "rgba(0, 240, 255, 0.45)");
-      grad.addColorStop(1, "rgba(139, 92, 246, 0.2)");
-      ctx.fillStyle = grad;
-      ctx.fill();
-
-      // Cyber Cyan Stroke
-      ctx.strokeStyle = "#00F0FF";
-      ctx.lineWidth = 2.5;
-      ctx.stroke();
-
-      // Draw Vertex Dots
-      categories.forEach((cat, i) => {
-        const angle = (i * angleStep) - (Math.PI / 2);
-        const r = radius * cat.value;
-        const x = centerX + r * Math.cos(angle);
-        const y = centerY + r * Math.sin(angle);
-
-        ctx.beginPath();
-        ctx.arc(x, y, 4.5, 0, 2 * Math.PI);
-        ctx.fillStyle = "#10B981";
-        ctx.fill();
-        ctx.strokeStyle = "#00F0FF";
-        ctx.lineWidth = 1.5;
-        ctx.stroke();
-      });
-    // Download Modal Handler
-    function openDownloadModal() {
-      document.getElementById('download-modal').classList.remove('hidden');
-    }
-    function closeDownloadModal() {
-      document.getElementById('download-modal').classList.add('hidden');
     }
 
-    window.onload = init;
+    function syncSubjectDropdown() {
+      const sem = parseInt(document.getElementById('upload-semester').value, 10);
+      const subSelect = document.getElementById('upload-subject');
+      subSelect.innerHTML = '';
+
+      const semData = cujFullDataset.find(s => s.sem === sem);
+      if (semData && semData.subjects) {
+        semData.subjects.forEach(sub => {
+          const opt = document.createElement('option');
+          opt.value = sub.code;
+          opt.innerText = `${sub.code}: ${sub.title}`;
+          subSelect.appendChild(opt);
+        });
+        currentSubjectCode = semData.subjects[0].code;
+      } else {
+        const opt = document.createElement('option');
+        opt.value = 'CYB-501';
+        opt.innerText = 'CYB-501: Cryptography & Network Security';
+        subSelect.appendChild(opt);
+      }
+    }
+
+    // Printable Sheet Formatter
+    function updatePrintableSheet() {
+      if (!currentExamPaper) return;
+      const sheet = document.getElementById('printable-sheet');
+      let txt = `================================================================================
+${currentExamPaper.university.toUpperCase()}
+${currentExamPaper.department}
+${currentExamPaper.program} - Semester ${currentExamPaper.semester} Examination
+Subject: [${currentExamPaper.courseCode}] ${currentExamPaper.courseTitle}
+Time Allowed: ${currentExamPaper.durationHours} Hours                                          Maximum Marks: ${currentExamPaper.maxMarks}
+================================================================================
+
+INSTRUCTIONS:
+${currentExamPaper.instructions.map((ins, i) => `${i + 1}. ${ins}`).join('\n')}
+--------------------------------------------------------------------------------
+
+SECTION A (Compulsory Short Answers - 2 Marks Each)
+`;
+      (currentExamPaper.sections.A?.questions || []).forEach((q, i) => {
+        txt += `Q1.(${String.fromCharCode(97 + i)}) ${q.text} [${q.marks}M]\n`;
+      });
+
+      txt += `\nSECTION B (Conceptual & Analytical - 5 Marks Each)\n`;
+      (currentExamPaper.sections.B?.questions || []).forEach((q, i) => {
+        txt += `Q${2 + i}. ${q.text} [${q.marks}M]\n`;
+      });
+
+      txt += `\nSECTION C (Architectural, Numerical & System Design - 10 Marks Each)\n`;
+      (currentExamPaper.sections.C?.questions || []).forEach((q, i) => {
+        txt += `Q${5 + i}. ${q.text} [${q.marks}M]\n`;
+        if (q.choice) txt += `    -- OR --\n    ${q.choice} [${q.marks}M]\n`;
+      });
+
+      txt += `\n================================================================================
+Generated by ExamPulse Antigravity for University Engineering Students`;
+
+      sheet.innerText = txt;
+    }
+
+    function copyPrintablePaper() {
+      const text = document.getElementById('printable-sheet').innerText;
+      navigator.clipboard.writeText(text);
+      alert('Paper copied to clipboard in official university format!');
+    }
+
+    function copyShortNotes() {
+      if (!currentShortNotes) return;
+      let md = `# ${currentShortNotes.courseTitle} - High Yield Exam Notes\n\n`;
+      md += `## Executive Summary\n` + (currentShortNotes.executiveSummary || []).map(p => `- ${p}`).join('\n') + `\n\n`;
+      md += `## High-Yield Formulas\n` + (currentShortNotes.highYieldFormulas || []).map(f => `### ${f.topic}\n\`${f.formula}\`\n${f.explanation}\n`).join('\n') + `\n\n`;
+      md += `## Critical Definitions\n` + (currentShortNotes.keyDefinitions || []).map(d => `- **${d.term}**: ${d.definition}`).join('\n');
+      navigator.clipboard.writeText(md);
+      alert('Short Notes copied in Markdown format!');
+    }
+
+    // Google Auth Modal & Logins
+    function toggleAuthModal() {
+      document.getElementById('auth-modal').classList.toggle('hidden');
+    }
+
+    function loginAsDemo(uni) {
+      document.getElementById('user-name').innerText = "Rahul Sharma";
+      document.getElementById('user-sub').innerText = "CUJammu • Cyber Security Sem 5";
+      document.getElementById('user-avatar').src = "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250";
+      toggleAuthModal();
+      alert('Signed in as CUJammu Cyber Security Student (rahul.sharma@cujammu.ac.in)!');
+    }
+
+    function simulateGoogleLogin() {
+      const email = prompt("Enter your University Google Email:", "student@cujammu.ac.in");
+      if (email) {
+        const name = email.split('@')[0].replace('.', ' ').toUpperCase();
+        document.getElementById('user-name').innerText = name;
+        document.getElementById('user-sub').innerText = email.includes('cujammu') ? "CUJammu • Cyber Security" : "University Student";
+        toggleAuthModal();
+        alert(`Signed in with Google as ${email}!`);
+      }
+    }
   </script>
-
-  <!-- Download APK & Source Modal -->
-  <div id="download-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-    <div class="glassmorphic rounded-2xl max-w-lg w-full p-6 border border-[#00F0FF]/50 shadow-[0_0_50px_rgba(0,240,255,0.25)] space-y-5">
-      <div class="flex items-center justify-between border-b border-slate-700/80 pb-3">
-        <div class="flex items-center space-x-2.5">
-          <span class="text-xl">🚀</span>
-          <div>
-            <h3 class="text-base font-bold text-white font-mono">ExamPulse Antigravity APK &amp; Source</h3>
-            <span class="text-xs font-mono text-[#00F0FF]">CUJammu Cyber Security • NITs • IITs</span>
-          </div>
-        </div>
-        <button onclick="closeDownloadModal()" class="text-slate-400 hover:text-white text-lg font-mono">&times;</button>
-      </div>
-
-      <div class="space-y-3 text-xs font-mono">
-        <!-- Direct Source Package Download -->
-        <a href="/download/project.zip" class="block p-4 rounded-xl bg-slate-900 hover:bg-slate-850 border border-[#00F0FF]/40 hover:border-[#00F0FF] transition-all">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-              <span class="text-2xl">📦</span>
-              <div>
-                <h4 class="text-sm font-bold text-white">Full Android Project Bundle (.zip)</h4>
-                <p class="text-slate-400 text-[11px]">Ready to open in Android Studio &bull; All Jetpack Compose Code &amp; Models</p>
-              </div>
-            </div>
-            <span class="px-3 py-1 rounded-lg bg-[#00F0FF]/20 text-[#00F0FF] font-bold">DOWNLOAD</span>
-          </div>
-        </a>
-
-        <!-- GitHub Release APK -->
-        <a href="https://github.com/mildfriend3-blip/exampulse-antigravity/releases/tag/v2.0.0-antigravity" target="_blank" class="block p-4 rounded-xl bg-slate-900 hover:bg-slate-850 border border-[#10B981]/40 hover:border-[#10B981] transition-all">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-              <span class="text-2xl">🤖</span>
-              <div>
-                <h4 class="text-sm font-bold text-white">GitHub Actions APK Releases</h4>
-                <p class="text-slate-400 text-[11px]">Pre-compiled Android debug APK built via GitHub Actions CI/CD</p>
-              </div>
-            </div>
-            <span class="px-3 py-1 rounded-lg bg-[#10B981]/20 text-[#10B981] font-bold">GET APK</span>
-          </div>
-        </a>
-
-        <!-- GitHub Repository -->
-        <a href="https://github.com/mildfriend3-blip/exampulse-antigravity" target="_blank" class="block p-4 rounded-xl bg-slate-900 hover:bg-slate-850 border border-[#8B5CF6]/40 hover:border-[#8B5CF6] transition-all">
-          <div class="flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-              <span class="text-2xl">🌐</span>
-              <div>
-                <h4 class="text-sm font-bold text-white">GitHub Git Repository</h4>
-                <p class="text-slate-400 text-[11px]">https://github.com/mildfriend3-blip/exampulse-antigravity</p>
-              </div>
-            </div>
-            <span class="px-3 py-1 rounded-lg bg-[#8B5CF6]/20 text-[#8B5CF6] font-bold">VIEW REPO</span>
-          </div>
-        </a>
-      </div>
-
-      <div class="pt-2 border-t border-slate-800 text-[11px] text-slate-400 text-center font-mono">
-        💡 To run on your phone: install the downloaded .apk with "Install Unknown Apps" enabled.
-      </div>
-    </div>
-  </div>
 </body>
 </html>
