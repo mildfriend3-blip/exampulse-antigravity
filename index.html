@@ -11,40 +11,112 @@
   <style>
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #040711;
+      color: #f1f5f9;
+      overflow-x: hidden;
     }
     .font-mono {
       font-family: 'JetBrains Mono', monospace;
     }
-    @keyframes floatZeroG {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-6px); }
+    /* Dynamic Cyber Grid */
+    .cyber-grid {
+      background-image: 
+        linear-gradient(to right, rgba(0, 240, 255, 0.04) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(139, 92, 246, 0.04) 1px, transparent 1px);
+      background-size: 36px 36px;
     }
-    @keyframes pulseGlow {
-      0%, 100% { opacity: 0.4; }
-      50% { opacity: 1; }
+    /* Ambient Glowing Nebula Orbs */
+    .mesh-orb {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      filter: blur(120px);
+      opacity: 0.55;
     }
-    .animate-float-zerog {
-      animation: floatZeroG 3.6s ease-in-out infinite;
+    .orb-cyan {
+      top: -12%;
+      left: 15%;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(0, 240, 255, 0.22) 0%, rgba(0,0,0,0) 70%);
+      animation: floatOrb 18s ease-in-out infinite alternate;
     }
-    .animate-glow-pulse {
-      animation: pulseGlow 2s ease-in-out infinite;
+    .orb-purple {
+      top: 35%;
+      right: -8%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(139, 92, 246, 0.20) 0%, rgba(0,0,0,0) 70%);
+      animation: floatOrb 24s ease-in-out infinite alternate-reverse;
     }
+    .orb-emerald {
+      bottom: -15%;
+      left: 25%;
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(16, 185, 129, 0.18) 0%, rgba(0,0,0,0) 70%);
+      animation: floatOrb 20s ease-in-out infinite alternate;
+    }
+    .orb-amber {
+      top: 60%;
+      left: -10%;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, rgba(0,0,0,0) 70%);
+      animation: floatOrb 22s ease-in-out infinite alternate;
+    }
+    @keyframes floatOrb {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(40px, -30px) scale(1.08); }
+      100% { transform: translate(-30px, 40px) scale(0.95); }
+    }
+    /* Glassmorphism 2.0 */
     .glassmorphic {
-      background: rgba(15, 23, 42, 0.78);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border: 1px solid rgba(0, 240, 255, 0.22);
-      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+      background: rgba(10, 16, 30, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.55);
     }
     .glassmorphic-card {
-      background: rgba(30, 41, 59, 0.65);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(148, 163, 184, 0.18);
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .glassmorphic-card:hover {
       border-color: rgba(0, 240, 255, 0.45);
-      box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px -10px rgba(0, 240, 255, 0.25);
     }
+    /* Laser Scanner Beam */
+    @keyframes laserScan {
+      0% { top: 4%; opacity: 0.9; }
+      50% { top: 92%; opacity: 1; }
+      100% { top: 4%; opacity: 0.9; }
+    }
+    .laser-beam {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, transparent 5%, #00F0FF 30%, #8B5CF6 70%, transparent 95%);
+      box-shadow: 0 0 16px #00F0FF, 0 0 32px #8B5CF6;
+      animation: laserScan 3.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+    /* Shimmer Badge */
+    @keyframes shimmerGold {
+      0% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.3); }
+      50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.65), 0 0 10px rgba(251, 191, 36, 0.4); }
+      100% { box-shadow: 0 0 15px rgba(245, 158, 11, 0.3); }
+    }
+    .glow-gold-pulse {
+      animation: shimmerGold 2.8s ease-in-out infinite;
+    }
+    /* 3D Perspective Card */
     .perspective-1000 {
       perspective: 1000px;
     }
@@ -64,44 +136,75 @@
       height: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #080C14;
+      background: #040711;
     }
     ::-webkit-scrollbar-thumb {
       background: #1e293b;
-      border-radius: 3px;
+      border-radius: 4px;
     }
     ::-webkit-scrollbar-thumb:hover {
       background: #00F0FF;
     }
   </style>
 </head>
-<body class="bg-[#080C14] text-slate-100 min-h-screen font-sans antialiased selection:bg-[#00F0FF] selection:text-black">
+<body class="bg-[#040711] text-slate-100 min-h-screen font-sans antialiased selection:bg-[#00F0FF] selection:text-black relative cyber-grid">
+
+  <!-- Ambient Glowing Nebula Mesh -->
+  <div class="mesh-orb orb-cyan"></div>
+  <div class="mesh-orb orb-purple"></div>
+  <div class="mesh-orb orb-emerald"></div>
+  <div class="mesh-orb orb-amber"></div>
 
   <!-- Top Zero-G HUD Status Bar -->
-  <header class="sticky top-0 z-50 glassmorphic border-b border-[#00F0FF]/25 px-4 sm:px-6 py-3 mb-6">
+  <header class="sticky top-0 z-50 glassmorphic border-b border-white/10 px-4 sm:px-6 py-2.5 mb-6 backdrop-blur-2xl">
     <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
-      <div class="flex items-center space-x-3">
+      <div class="flex items-center space-x-3.5">
         <div class="relative flex items-center justify-center">
-          <div class="w-3.5 h-3.5 rounded-full bg-[#00F0FF] animate-ping absolute"></div>
-          <div class="w-3.5 h-3.5 rounded-full bg-[#00F0FF] relative shadow-[0_0_12px_#00F0FF]"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-[#00F0FF] animate-ping absolute opacity-75"></div>
+          <div class="w-3.5 h-3.5 rounded-full bg-[#00F0FF] relative shadow-[0_0_15px_#00F0FF]"></div>
         </div>
         <div>
           <div class="flex items-center space-x-2">
-            <h1 class="text-base font-bold tracking-wider font-mono text-white">EXAMPULSE <span class="text-[#00F0FF]">//</span> ANTIGRAVITY</h1>
-            <span class="text-[10px] font-mono uppercase px-2 py-0.5 rounded-full bg-[#8B5CF6]/20 border border-[#8B5CF6]/50 text-[#8B5CF6] font-semibold">v2.5 AI Powered</span>
+            <h1 class="text-base font-extrabold tracking-wider font-mono text-white flex items-center">
+              EXAMPULSE <span class="text-[#00F0FF] mx-1">//</span> <span class="bg-gradient-to-r from-[#00F0FF] via-[#A78BFA] to-[#34D399] bg-clip-text text-transparent">ANTIGRAVITY</span>
+            </h1>
+            <span class="text-[10px] font-mono uppercase px-2.5 py-0.5 rounded-full bg-cyan-500/15 border border-cyan-400/40 text-cyan-300 font-bold tracking-wide">AI EXAM COCKPIT 2026</span>
           </div>
-          <p class="text-xs text-slate-400 font-mono">Central University of Jammu (CUJammu) B.Tech CSE Cyber Security • IITs • NITs</p>
+          <p class="text-[11px] text-slate-400 font-mono flex items-center space-x-1.5">
+            <span>Central University of Jammu</span>
+            <span class="text-slate-600">•</span>
+            <span class="text-cyan-400 font-semibold">B.Tech CSE Cyber Security (Sem 1-8)</span>
+            <span class="text-slate-600">•</span>
+            <span>IITs &amp; NITs</span>
+          </p>
+        </div>
+      </div>
+
+      <!-- Quick Ticker Stats HUD -->
+      <div class="hidden xl:flex items-center space-x-2 font-mono text-xs">
+        <div class="px-3 py-1 rounded-lg bg-slate-900/80 border border-slate-800 flex items-center space-x-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span class="text-slate-400">Drive:</span>
+          <span class="text-emerald-400 font-bold">34 Files Synced</span>
+        </div>
+        <div class="px-3 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center space-x-1.5">
+          <span class="text-amber-400">⭐ Master PYQ:</span>
+          <span class="text-amber-300 font-bold">70M Ready</span>
+        </div>
+        <div class="px-3 py-1 rounded-lg bg-purple-500/10 border border-purple-500/30 flex items-center space-x-1.5">
+          <span class="text-purple-400">Accuracy:</span>
+          <span class="text-purple-300 font-bold">96% High Match</span>
         </div>
       </div>
 
       <!-- User & Google Login Bar -->
       <div class="flex items-center space-x-3">
         <!-- Auth Profile State -->
-        <div id="auth-logged-in" class="flex items-center space-x-2.5 bg-slate-900/80 px-3 py-1.5 rounded-xl border border-slate-700/80">
+        <div id="auth-logged-in" class="flex items-center space-x-2.5 bg-slate-900/90 px-3 py-1.5 rounded-xl border border-white/10 shadow-inner">
           <img id="user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=250" alt="Avatar" class="w-6 h-6 rounded-full border border-[#00F0FF]">
           <div class="text-left font-mono">
             <span id="user-name" class="text-xs font-bold text-white block leading-tight">Rahul Sharma</span>
-            <span id="user-sub" class="text-[10px] text-[#00F0FF] block leading-tight">CUJammu • Cyber Security Sem 5</span>
+            <span id="user-sub" class="text-[10px] text-[#00F0FF] block leading-tight">CUJammu • Cyber Security Sem 1</span>
           </div>
           <button onclick="toggleAuthModal()" title="Switch Account" class="text-slate-400 hover:text-white text-xs ml-1 font-mono">
             ⚙️
@@ -109,7 +212,7 @@
         </div>
 
         <!-- Google Login Button (if logged out or switcher) -->
-        <button id="google-login-btn" onclick="toggleAuthModal()" class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all bg-white text-slate-900 hover:bg-slate-100 flex items-center space-x-2 shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+        <button id="google-login-btn" onclick="toggleAuthModal()" class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all bg-white text-slate-900 hover:bg-slate-100 flex items-center space-x-2 shadow-[0_0_20px_rgba(255,255,255,0.25)]">
           <svg class="w-4 h-4" viewBox="0 0 24 24">
             <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
             <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -119,34 +222,35 @@
           <span class="hidden sm:inline">Google Login</span>
         </button>
 
-        <a href="/download/apk" class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all bg-gradient-to-r from-[#00F0FF] to-[#10B981] text-[#080C14] shadow-[0_0_15px_rgba(0,240,255,0.35)] flex items-center space-x-1 hover:opacity-90">
-          <span>📥 APK</span>
+        <a href="/download/apk" class="px-3.5 py-1.5 rounded-xl text-xs font-mono font-bold transition-all bg-gradient-to-r from-[#00F0FF] to-[#10B981] text-[#080C14] shadow-[0_0_20px_rgba(0,240,255,0.4)] flex items-center space-x-1.5 hover:opacity-90">
+          <span>📱</span>
+          <span>APK</span>
         </a>
       </div>
     </div>
 
     <!-- Navigation Tabs Ribbon -->
-    <div class="max-w-7xl mx-auto mt-3 pt-3 border-t border-slate-800/80 flex items-center space-x-2 overflow-x-auto pb-1">
-      <button onclick="switchTab('upload')" id="tab-btn-upload" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-[#00F0FF] bg-[#00F0FF]/20 text-[#00F0FF] flex items-center space-x-1.5 whitespace-nowrap">
-        <span>📤 UPLOAD PPTX &amp; SYLLABUS</span>
+    <div class="max-w-7xl mx-auto mt-3 pt-2.5 border-t border-white/10 flex items-center space-x-2 overflow-x-auto pb-1 scrollbar-none">
+      <button onclick="switchTab('upload')" id="tab-btn-upload" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-[#00F0FF] bg-[#00F0FF]/20 text-[#00F0FF] flex items-center space-x-2 whitespace-nowrap shadow-[0_0_15px_rgba(0,240,255,0.25)]">
+        <span>⚡ 1. STUDY MATRIX &amp; DRIVE</span>
       </button>
-      <button onclick="switchTab('notes')" id="tab-btn-notes" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-slate-700 hover:border-slate-500 text-slate-300 flex items-center space-x-1.5 whitespace-nowrap">
-        <span>📜 AI SHORT NOTES</span>
+      <button onclick="switchTab('notes')" id="tab-btn-notes" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-slate-800 hover:border-slate-600 text-slate-300 flex items-center space-x-2 whitespace-nowrap">
+        <span>📜 2. AI SHORT NOTES</span>
       </button>
-      <button onclick="switchTab('interactive')" id="tab-btn-interactive" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-slate-700 hover:border-slate-500 text-slate-300 flex items-center space-x-1.5 whitespace-nowrap">
-        <span>🧠 INTERACTIVE NOTES (SM-2)</span>
+      <button onclick="switchTab('interactive')" id="tab-btn-interactive" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-slate-800 hover:border-slate-600 text-slate-300 flex items-center space-x-2 whitespace-nowrap">
+        <span>🧠 3. SM-2 RECALL STUDIO</span>
       </button>
-      <button onclick="switchTab('simulator')" id="tab-btn-simulator" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-slate-700 hover:border-slate-500 text-slate-300 flex items-center space-x-1.5 whitespace-nowrap">
-        <span>🎯 60-70% EXAM PREDICTOR</span>
+      <button onclick="switchTab('simulator')" id="tab-btn-simulator" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-slate-800 hover:border-slate-600 text-slate-300 flex items-center space-x-2 whitespace-nowrap">
+        <span>🎯 4. EXAM PREDICTOR (70M)</span>
       </button>
-      <button onclick="switchTab('pyqarchive')" id="tab-btn-pyqarchive" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-slate-700 hover:border-slate-500 text-slate-300 flex items-center space-x-1.5 whitespace-nowrap">
-        <span>📚 ALL UNIVERSITIES PYQ (CUJAMMU SEM 1-8)</span>
+      <button onclick="switchTab('pyqarchive')" id="tab-btn-pyqarchive" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-slate-800 hover:border-slate-600 text-slate-300 flex items-center space-x-2 whitespace-nowrap">
+        <span>📚 5. ALL UNIVERSITIES (SEM 1-8)</span>
       </button>
-      <button onclick="switchTab('viva')" id="tab-btn-viva" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-slate-700 hover:border-slate-500 text-slate-300 flex items-center space-x-1.5 whitespace-nowrap">
-        <span>🎙️ RAPID VIVA</span>
+      <button onclick="switchTab('viva')" id="tab-btn-viva" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-slate-800 hover:border-slate-600 text-slate-300 flex items-center space-x-2 whitespace-nowrap">
+        <span>🎙️ 6. RAPID VIVA</span>
       </button>
-      <button onclick="switchTab('export')" id="tab-btn-export" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition-all border border-slate-700 hover:border-slate-500 text-slate-300 flex items-center space-x-1.5 whitespace-nowrap">
-        <span>🖨️ PRINT PDF</span>
+      <button onclick="switchTab('export')" id="tab-btn-export" class="tab-btn px-3.5 py-2 rounded-xl text-xs font-mono font-bold transition-all border border-slate-800 hover:border-slate-600 text-slate-300 flex items-center space-x-2 whitespace-nowrap">
+        <span>🖨️ 7. PRINT PDF</span>
       </button>
     </div>
   </header>
@@ -287,255 +391,262 @@
   <main class="max-w-7xl mx-auto px-4 sm:px-6 pb-20">
 
     <!-- ===================================================================== -->
-    <!-- TAB 1: UPLOAD PPTX & SYLLABUS INGESTION HUB -->
+    <!-- TAB 1: UPLOAD PPTX, SYLLABUS & LIVE DRIVE STUDY MATRIX -->
     <!-- ===================================================================== -->
     <section id="tab-upload" class="space-y-6">
-      <!-- Banner Card -->
-      <div class="glassmorphic rounded-2xl p-6 border border-[#00F0FF]/30 relative overflow-hidden">
-        <div class="absolute -right-10 -bottom-10 w-60 h-60 bg-[#00F0FF]/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
-          <div>
-            <div class="flex items-center space-x-2 text-[#00F0FF] font-mono text-xs font-bold mb-1">
-              <span>⚡ DOCUMENT INGESTION &amp; AI EXTRACTION ENGINE</span>
-            </div>
-            <h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight">Upload Lecture PPTX &amp; Course Syllabus</h2>
-            <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mt-1 leading-relaxed">
-              Our neural parser unpacks PPTX slide structures, extracts speaker notes, parses syllabus units, and cross-references historical university examination patterns to generate high-yield short notes and a 60–70% accurate predicted question paper.
-            </p>
-          </div>
-          <div class="flex flex-wrap items-center gap-2">
-            <button onclick="toggleDriveModal()" id="btn-open-drive" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-mono text-xs font-bold transition-all shadow-[0_0_20px_rgba(16,185,129,0.35)] flex items-center space-x-2 shrink-0">
-              <svg class="w-4 h-4" viewBox="0 0 24 24">
-                <path fill="#ffffff" d="M12.01 1.5l-8.5 14.72 4.25 7.36 8.5-14.72z" opacity=".8"/>
-                <path fill="#ffffff" d="M20.51 16.22l-4.25 7.36h-8.5l4.25-7.36z" opacity=".9"/>
-                <path fill="#ffffff" d="M12.01 1.5l4.25 7.36-8.5 14.72-4.25-7.36z"/>
-              </svg>
-              <span>📂 Connect Google Drive Study Materials</span>
-            </button>
-            <button onclick="loadSampleDeck()" id="btn-load-sample" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white font-mono text-xs font-bold transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] flex items-center space-x-2 shrink-0">
-              <span>✨</span>
-              <span>1-Click Load CUJammu CYB-501 Deck</span>
-            </button>
-          </div>
-        </div>
-      </div>
 
-      <!-- Google Drive Cloud Status Banner & Folder "1 sem ccs" Spotlight -->
-      <div class="glassmorphic rounded-2xl p-5 border border-emerald-500/40 space-y-4 shadow-[0_0_25px_rgba(16,185,129,0.15)]">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <div class="flex items-center space-x-3.5">
-            <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/30 flex items-center justify-center shrink-0">
-              <svg class="w-6 h-6" viewBox="0 0 24 24">
-                <path fill="#4285F4" d="M12.01 1.5l-8.5 14.72 4.25 7.36 8.5-14.72z"/>
-                <path fill="#34A853" d="M20.51 16.22l-4.25 7.36h-8.5l4.25-7.36z"/>
-                <path fill="#FBBC05" d="M12.01 1.5l4.25 7.36-8.5 14.72-4.25-7.36z"/>
-              </svg>
-            </div>
-            <div>
-              <div class="flex items-center space-x-2">
-                <span class="text-xs font-mono font-bold text-white">Google Drive Connected:</span>
-                <span id="drive-user-email" class="text-xs font-mono font-bold text-emerald-400">rahul.sharma@cujammu.ac.in</span>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-semibold">Active Sync</span>
-              </div>
-              <p class="text-[11px] text-slate-400 font-mono">CUJammu Institutional Shared Drive • <span class="text-emerald-300 font-semibold">Folder: "1 sem ccs" Connected (All Study Materials &amp; PYQs)</span></p>
-            </div>
-          </div>
-          <div class="flex items-center space-x-2">
-            <button onclick="toggleDriveModal()" class="px-3.5 py-1.5 rounded-lg bg-emerald-600/30 hover:bg-emerald-600/50 border border-emerald-500/50 text-emerald-300 font-mono text-xs font-bold flex items-center space-x-1.5 transition-all">
-              <span>🔍 Browse "1 sem ccs"</span>
-            </button>
-            <button onclick="connectNewDriveAccount()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 text-slate-300 font-mono text-xs">
-              Switch Drive
-            </button>
-          </div>
-        </div>
+      <!-- MASTER UNIVERSITY EXAMINATION PYQ HERO SPOTLIGHT -->
+      <div class="relative rounded-3xl p-6 sm:p-7 border-2 border-amber-400/80 bg-gradient-to-r from-amber-950/40 via-slate-900/95 to-cyan-950/40 shadow-[0_0_40px_rgba(245,158,11,0.22)] overflow-hidden glow-gold-pulse">
+        <div class="absolute -right-16 -top-16 w-64 h-64 bg-amber-500/15 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-16 -bottom-16 w-64 h-64 bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
 
-        <!-- 1 sem ccs One-Click Feature Card -->
-        <div class="p-4 rounded-xl bg-gradient-to-r from-emerald-950/60 via-slate-900/90 to-amber-950/40 border border-emerald-500/40 flex flex-col md:flex-row md:items-center justify-between gap-4 shadow-inner">
-          <div class="flex items-center space-x-3.5">
-            <div class="w-11 h-11 rounded-xl bg-emerald-500/20 border border-emerald-500/30 text-emerald-400 flex items-center justify-center text-2xl shrink-0">
-              📁
-            </div>
-            <div>
-              <div class="flex flex-wrap items-center gap-2">
-                <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Folder: 1 sem ccs</h4>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 border border-emerald-500/40 font-bold">34 REAL DRIVE FILES</span>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 font-bold">⭐ MASTER PYQ ATTACHED</span>
-              </div>
-              <p class="text-xs text-slate-300 font-sans mt-1">
-                Connected: <strong>Programming in C &amp; Python</strong> (8 files), <strong>Math-I &amp; Vectors</strong> (5 files), <strong>BEE Electrical</strong> (7 files), <strong>Environmental Studies</strong> (3 files), <strong>Entrepreneurship</strong> (10 files), and <strong>examination pyq.pdf</strong> (Master University Paper).
-              </p>
-            </div>
-          </div>
-          <div class="flex flex-wrap items-center gap-2 shrink-0">
-            <button onclick="importFromDrive('gdrive_master_examination_pyq', 'examination pyq.pdf')" class="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-mono font-bold text-xs flex items-center space-x-1.5 shadow-[0_0_15px_rgba(245,158,11,0.4)] transition-all">
-              <span>⭐ Ingest Master PYQ</span>
-            </button>
-            <button onclick="load1SemCcsPack()" id="btn-load-1sem-pack" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-cyan-500 hover:from-emerald-400 hover:to-cyan-400 text-slate-950 font-mono font-bold text-xs flex items-center space-x-1.5 shadow-[0_0_15px_rgba(16,185,129,0.35)] transition-all">
-              <span>⚡ Load Full Study Pack</span>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Form Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
-        <!-- Left: Upload Boxes -->
-        <div class="lg:col-span-7 space-y-6">
-          <form id="upload-form" onsubmit="handleUploadSubmit(event)" class="space-y-5">
-            <!-- Metadata Selectors -->
-            <div class="glassmorphic-card rounded-2xl p-5 space-y-4">
-              <h3 class="text-xs font-mono font-bold text-[#00F0FF] uppercase tracking-wider">Course Configuration</h3>
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div>
-                  <label class="text-[11px] font-mono text-slate-400 block mb-1">UNIVERSITY</label>
-                  <select id="upload-university" class="w-full bg-[#0F172A] border border-slate-700 text-xs font-semibold rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-[#00F0FF]">
-                    <option value="cujammu" selected>CUJammu (B.Tech Cyber)</option>
-                    <option value="iit_jammu">IIT Jammu (B.Tech CSE)</option>
-                    <option value="nit_srinagar">NIT Srinagar (B.Tech CSE)</option>
-                    <option value="iit_delhi">IIT Delhi (B.Tech CSE)</option>
-                    <option value="nit_trichy">NIT Trichy (B.Tech CSE)</option>
-                    <option value="smvdu">SMVDU Katra (B.Tech CSE)</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="text-[11px] font-mono text-slate-400 block mb-1">SEMESTER</label>
-                  <select id="upload-semester" onchange="syncSubjectDropdown()" class="w-full bg-[#0F172A] border border-slate-700 text-xs font-semibold rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-[#00F0FF]">
-                    <option value="1">Semester 1</option>
-                    <option value="2">Semester 2</option>
-                    <option value="3">Semester 3</option>
-                    <option value="4">Semester 4</option>
-                    <option value="5" selected>Semester 5</option>
-                    <option value="6">Semester 6</option>
-                    <option value="7">Semester 7</option>
-                    <option value="8">Semester 8</option>
-                  </select>
-                </div>
-                <div>
-                  <label class="text-[11px] font-mono text-slate-400 block mb-1">COURSE SUBJECT</label>
-                  <select id="upload-subject" class="w-full bg-[#0F172A] border border-slate-700 text-xs font-semibold rounded-lg px-2.5 py-2 text-white focus:outline-none focus:border-[#00F0FF]">
-                    <option value="CYB-501" selected>CYB-501: Cryptography &amp; Network Security</option>
-                    <option value="CYB-502">CYB-502: Design &amp; Analysis of Algorithms</option>
-                    <option value="CYB-504">CYB-504: Web Application Security &amp; OWASP</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-
-            <!-- Upload Box 1: PPTX -->
-            <div class="glassmorphic-card rounded-2xl p-5 border border-slate-700/80 hover:border-[#00F0FF]/50 transition-all">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center space-x-2">
-                  <span class="text-xl">📊</span>
-                  <div>
-                    <h4 class="text-sm font-bold text-white">1. Lecture Slide Deck (.PPTX)</h4>
-                    <p class="text-[11px] text-slate-400">PowerPoint presentations, slide decks, diagrams</p>
-                  </div>
-                </div>
-                <span id="pptx-file-status" class="text-[11px] font-mono text-slate-500">No file chosen</span>
-              </div>
-
-              <div class="border-2 border-dashed border-slate-700 hover:border-[#00F0FF] rounded-xl p-6 text-center cursor-pointer transition-all bg-slate-900/40" onclick="document.getElementById('pptx-input').click()">
-                <input type="file" id="pptx-input" accept=".pptx" class="hidden" onchange="handlePptxSelect(event)">
-                <div class="space-y-2">
-                  <div class="w-10 h-10 rounded-full bg-[#00F0FF]/10 text-[#00F0FF] flex items-center justify-center mx-auto text-lg">
-                    📁
-                  </div>
-                  <div class="text-xs text-slate-300 font-mono">
-                    <span class="text-[#00F0FF] font-bold">Click to browse</span> or drag &amp; drop PPTX file
-                  </div>
-                  <div class="text-[10px] text-slate-500 font-mono">Supports Microsoft PowerPoint .pptx up to 50MB</div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Upload Box 2: Syllabus -->
-            <div class="glassmorphic-card rounded-2xl p-5 border border-slate-700/80 hover:border-[#8B5CF6]/50 transition-all">
-              <div class="flex items-center justify-between mb-3">
-                <div class="flex items-center space-x-2">
-                  <span class="text-xl">📋</span>
-                  <div>
-                    <h4 class="text-sm font-bold text-white">2. Course Syllabus / Curriculum</h4>
-                    <p class="text-[11px] text-slate-400">Official syllabus document, module units, or paste text</p>
-                  </div>
-                </div>
-                <span id="syllabus-file-status" class="text-[11px] font-mono text-slate-500">No file chosen</span>
-              </div>
-
-              <div class="space-y-3">
-                <div class="border-2 border-dashed border-slate-700 hover:border-[#8B5CF6] rounded-xl p-4 text-center cursor-pointer transition-all bg-slate-900/40" onclick="document.getElementById('syllabus-input').click()">
-                  <input type="file" id="syllabus-input" accept=".txt,.md,.json,.pdf,.docx" class="hidden" onchange="handleSyllabusSelect(event)">
-                  <div class="text-xs text-slate-300 font-mono">
-                    <span class="text-[#8B5CF6] font-bold">Click to select Syllabus File</span> (.txt, .md, .pdf)
-                  </div>
-                </div>
-
-                <div class="relative">
-                  <textarea id="syllabus-text-input" rows="3" placeholder="...or paste course syllabus text directly (e.g. Unit 1: Number Theory, Unit 2: AES...)" class="w-full bg-slate-900/70 border border-slate-800 rounded-xl p-3 text-xs text-slate-200 placeholder-slate-500 font-mono focus:outline-none focus:border-[#8B5CF6]"></textarea>
-                </div>
-              </div>
-            </div>
-
-            <!-- Action Button -->
-            <button type="submit" id="btn-process-docs" class="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r from-[#00F0FF] via-[#8B5CF6] to-[#10B981] hover:opacity-95 text-[#080C14] font-mono font-bold text-sm tracking-wide shadow-[0_0_25px_rgba(0,240,255,0.4)] flex items-center justify-center space-x-2 transition-all">
-              <span>🚀</span>
-              <span>PROCESS DOCUMENTS &amp; GENERATE EXAM INTELLIGENCE</span>
-            </button>
-          </form>
-        </div>
-
-        <!-- Right: Ingestion Live Radar & Status -->
-        <div class="lg:col-span-5 space-y-6">
-          <div class="glassmorphic rounded-2xl p-6 border border-slate-700/80 space-y-4">
-            <div class="flex items-center justify-between pb-3 border-b border-slate-800">
-              <h3 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Document Ingestion Status</h3>
-              <span id="ingestion-badge" class="px-2.5 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 font-bold">
-                READY
+        <div class="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
+          <div class="space-y-2.5 max-w-3xl">
+            <div class="flex flex-wrap items-center gap-2">
+              <span class="px-3 py-1 rounded-full text-xs font-mono font-extrabold bg-amber-500 text-slate-950 flex items-center space-x-1.5 shadow-[0_0_15px_rgba(245,158,11,0.6)]">
+                <span>⭐</span>
+                <span>OFFICIAL UNIVERSITY MASTER EXAMINATION PAPER</span>
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-cyan-500/20 text-cyan-300 border border-cyan-400/40">
+                100% CUJAMMU BLUEPRINT
+              </span>
+              <span class="px-2.5 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-400/40">
+                60–70% ACCURACY TARGET
               </span>
             </div>
 
-            <div class="space-y-3 font-mono text-xs">
-              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-                <span class="text-slate-400">Slides Parsed:</span>
-                <span id="stat-slides" class="text-[#00F0FF] font-bold">4 Slides</span>
+            <h2 class="text-xl sm:text-2xl font-extrabold text-white tracking-tight font-mono">
+              Central University of Jammu <span class="text-amber-400">//</span> Semester 1 End-Term Examination Paper
+            </h2>
+
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-sans">
+              Linked file: <code class="text-amber-300 font-mono font-bold bg-amber-500/15 px-2 py-0.5 rounded border border-amber-500/30">examination pyq.pdf</code>. Official 70-mark paper containing <strong>Section A</strong> (10 × 2M Compulsory), <strong>Section B</strong> (4 × 5M Analytical &amp; Code), and <strong>Section C</strong> (3 × 10M Design &amp; Proofs with internal choices).
+            </p>
+
+            <!-- Marks Blueprint Quick Chips -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5 pt-1 font-mono text-xs">
+              <div class="px-3 py-2 rounded-xl bg-slate-900/80 border border-amber-500/30 flex items-center justify-between">
+                <span class="text-slate-400">Section A:</span>
+                <span class="text-amber-300 font-bold">10 Qs × 2M = 20M</span>
               </div>
-              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-                <span class="text-slate-400">Syllabus Units:</span>
-                <span id="stat-units" class="text-[#8B5CF6] font-bold">5 Units</span>
+              <div class="px-3 py-2 rounded-xl bg-slate-900/80 border border-cyan-500/30 flex items-center justify-between">
+                <span class="text-slate-400">Section B:</span>
+                <span class="text-cyan-300 font-bold">4 Qs × 5M = 20M</span>
               </div>
-              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-                <span class="text-slate-400">Keywords Mapped:</span>
-                <span id="stat-keywords" class="text-[#10B981] font-bold">25 Core Terms</span>
-              </div>
-              <div class="p-3 rounded-xl bg-slate-900/60 border border-slate-800 flex items-center justify-between">
-                <span class="text-slate-400">Predicted PYQ Accuracy:</span>
-                <span id="stat-accuracy" class="text-yellow-400 font-bold">96% High Match</span>
+              <div class="px-3 py-2 rounded-xl bg-slate-900/80 border border-purple-500/30 flex items-center justify-between">
+                <span class="text-slate-400">Section C:</span>
+                <span class="text-purple-300 font-bold">3 Qs × 10M = 30M (OR)</span>
               </div>
             </div>
+          </div>
 
-            <!-- Extracted Keywords Tags -->
-            <div>
-              <span class="text-[11px] font-mono text-slate-400 block mb-2 font-bold">TOP EXTRACTED HIGH-YIELD TOPICS</span>
-              <div id="keywords-tags-container" class="flex flex-wrap gap-1.5">
-                <span class="px-2 py-1 rounded bg-[#00F0FF]/15 border border-[#00F0FF]/30 text-[#00F0FF] text-[11px] font-mono font-semibold">AES Round Transformations</span>
-                <span class="px-2 py-1 rounded bg-[#8B5CF6]/15 border border-[#8B5CF6]/30 text-[#8B5CF6] text-[11px] font-mono font-semibold">RSA Euclidean Proof</span>
-                <span class="px-2 py-1 rounded bg-[#10B981]/15 border border-[#10B981]/30 text-[#10B981] text-[11px] font-mono font-semibold">Diffie-Hellman MITM</span>
-                <span class="px-2 py-1 rounded bg-yellow-500/15 border border-yellow-500/30 text-yellow-400 text-[11px] font-mono font-semibold">ECB Mode Flaws</span>
-                <span class="px-2 py-1 rounded bg-slate-800 border border-slate-700 text-slate-300 text-[11px] font-mono font-semibold">Stack Canaries</span>
-              </div>
-            </div>
-
-            <!-- Quick Navigation Shortcuts -->
-            <div class="pt-4 border-t border-slate-800 grid grid-cols-2 gap-2 font-mono text-xs">
-              <button onclick="switchTab('notes')" class="p-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 flex items-center justify-center space-x-1">
-                <span>📜 View Short Notes</span>
-              </button>
-              <button onclick="switchTab('simulator')" class="p-2.5 rounded-lg bg-[#00F0FF]/15 text-[#00F0FF] border border-[#00F0FF]/30 hover:bg-[#00F0FF]/25 flex items-center justify-center space-x-1">
-                <span>🎯 View Exam Paper</span>
+          <!-- Hero Action Buttons -->
+          <div class="flex flex-col sm:flex-row lg:flex-col gap-2.5 shrink-0">
+            <button onclick="importFromDrive('gdrive_master_examination_pyq', 'examination pyq.pdf')" class="px-5 py-3 rounded-xl bg-gradient-to-r from-amber-500 via-amber-400 to-yellow-400 hover:from-amber-400 hover:to-yellow-300 text-slate-950 font-mono font-extrabold text-xs flex items-center justify-center space-x-2 shadow-[0_0_25px_rgba(245,158,11,0.5)] hover:scale-[1.02] transition-all">
+              <span>⭐</span>
+              <span>INGEST MASTER PYQ &amp; PREDICT PAPER</span>
+            </button>
+            <div class="flex items-center space-x-2">
+              <a href="https://drive.google.com/file/d/1N7kbMvHBw_4OnOlA66NNRobLGgcA1CDC/view" target="_blank" rel="noopener noreferrer" class="flex-1 px-3.5 py-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 border border-white/15 text-slate-200 hover:text-white font-mono text-xs font-bold flex items-center justify-center space-x-1.5 transition-all">
+                <span>🔗</span>
+                <span>Open in Drive</span>
+              </a>
+              <button onclick="switchTab('simulator')" class="flex-1 px-3.5 py-2.5 rounded-xl bg-cyan-500/20 hover:bg-cyan-500/30 border border-cyan-400/50 text-cyan-300 font-mono text-xs font-bold flex items-center justify-center space-x-1.5 transition-all">
+                <span>🎯</span>
+                <span>Exam Simulator</span>
               </button>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- MAIN DUAL-DECK WORKSPACE -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+        <!-- DECK 1 (LEFT): GOOGLE DRIVE "1 SEM CCS" EMBEDDED STUDY MATRIX (34 FILES) -->
+        <div class="lg:col-span-7 space-y-4">
+          <div class="glassmorphic rounded-2xl p-5 border border-cyan-500/30 space-y-4">
+            
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-white/10 pb-3">
+              <div class="flex items-center space-x-3">
+                <div class="w-10 h-10 rounded-xl bg-emerald-500/15 border border-emerald-500/40 flex items-center justify-center shrink-0">
+                  <svg class="w-6 h-6" viewBox="0 0 24 24">
+                    <path fill="#4285F4" d="M12.01 1.5l-8.5 14.72 4.25 7.36 8.5-14.72z"/>
+                    <path fill="#34A853" d="M20.51 16.22l-4.25 7.36h-8.5l4.25-7.36z"/>
+                    <path fill="#FBBC05" d="M12.01 1.5l4.25 7.36-8.5 14.72-4.25-7.36z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div class="flex items-center space-x-2">
+                    <h3 class="text-sm font-bold font-mono text-white">Google Drive: Folder "1 sem ccs"</h3>
+                    <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">34 Files Synced</span>
+                  </div>
+                  <p class="text-[11px] text-slate-400 font-mono">CUJammu Shared Workspace • rahul.sharma@cujammu.ac.in</p>
+                </div>
+              </div>
+              <div class="flex items-center space-x-2">
+                <button onclick="load1SemCcsPack()" class="px-3 py-1.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-white font-mono text-xs font-bold flex items-center space-x-1.5 shadow-[0_0_15px_rgba(16,185,129,0.35)] transition-all">
+                  <span>⚡</span>
+                  <span>1-Click Load Full Pack</span>
+                </button>
+                <button onclick="toggleDriveModal()" class="px-2.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 font-mono text-xs">
+                  Full Modal
+                </button>
+              </div>
+            </div>
+
+            <!-- Real-time Filter & Search Bar -->
+            <div class="space-y-2.5">
+              <div class="relative">
+                <input type="text" id="deck-drive-search" oninput="filterDeckDriveFiles()" placeholder="🔍 Live search 34 study files (e.g. malloc, KCL, Vectors, BMC, Eutrophication)..." class="w-full bg-slate-900/90 border border-white/10 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 font-mono focus:outline-none focus:border-cyan-400 shadow-inner">
+              </div>
+
+              <!-- Subject Category Filter Pills -->
+              <div class="flex flex-wrap items-center gap-1.5 font-mono text-xs">
+                <button onclick="setDeckCategory('all')" id="deck-cat-all" class="px-2.5 py-1 rounded-lg bg-cyan-500 text-slate-950 font-bold text-[11px] shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all">All (34)</button>
+                <button onclick="setDeckCategory('programming')" id="deck-cat-programming" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">💻 Programming (8)</button>
+                <button onclick="setDeckCategory('math')" id="deck-cat-math" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">📐 Math &amp; Vectors (5)</button>
+                <button onclick="setDeckCategory('bee')" id="deck-cat-bee" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">⚡ Electrical BEE (7)</button>
+                <button onclick="setDeckCategory('evs')" id="deck-cat-evs" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">🌱 EVS (3)</button>
+                <button onclick="setDeckCategory('entrepreneurship')" id="deck-cat-entrepreneurship" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all">🚀 Startups (10)</button>
+                <button onclick="setDeckCategory('pyq')" id="deck-cat-pyq" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-[11px] border border-amber-400/50 font-bold transition-all">⭐ Master PYQ (1)</button>
+              </div>
+            </div>
+
+            <!-- Embedded Live Drive File Scrollable List -->
+            <div id="deck-drive-file-list" class="space-y-2.5 max-h-[560px] overflow-y-auto pr-1">
+              <!-- Dynamically rendered by deck file renderer -->
+            </div>
+
+            <div class="pt-2 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-slate-400">
+              <span>💡 Tap "⚡ Process with AI" on any file to immediately synthesize notes &amp; questions.</span>
+              <span id="deck-file-count-badge" class="text-cyan-400 font-bold">34 Files</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- DECK 2 (RIGHT): NEURAL INGESTION REACTOR & RADAR -->
+        <div class="lg:col-span-5 space-y-4">
+
+          <!-- Drag & Drop Reactor Box with Laser Scanner -->
+          <div class="glassmorphic rounded-2xl p-5 border border-purple-500/30 space-y-4 relative overflow-hidden">
+            <div class="flex items-center justify-between border-b border-white/10 pb-3">
+              <div class="flex items-center space-x-2">
+                <span class="text-lg">⚡</span>
+                <h3 class="text-xs font-mono font-bold text-white uppercase tracking-wider">Neural Document Ingestion Reactor</h3>
+              </div>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 border border-purple-400/40 font-bold">AI Scanner</span>
+            </div>
+
+            <!-- Quick Subject Presets -->
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold block mb-1.5">Quick Subject Presets:</span>
+              <div class="flex flex-wrap gap-1.5 text-[11px] font-mono">
+                <button type="button" onclick="loadSubjectPreset('programming')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-cyan-300 border border-cyan-500/30 transition-all">💻 C Pointers</button>
+                <button type="button" onclick="loadSubjectPreset('math')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-purple-300 border border-purple-500/30 transition-all">📐 Cayley-Hamilton</button>
+                <button type="button" onclick="loadSubjectPreset('bee')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-emerald-300 border border-emerald-500/30 transition-all">⚡ Thevenin &amp; RLC</button>
+                <button type="button" onclick="loadSubjectPreset('evs')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-teal-300 border border-teal-500/30 transition-all">🌱 EVS Dead Zones</button>
+                <button type="button" onclick="loadSubjectPreset('entrepreneurship')" class="px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-amber-300 border border-amber-500/30 transition-all">🚀 Business Canvas</button>
+              </div>
+            </div>
+
+            <form id="upload-form" onsubmit="handleUploadSubmit(event)" class="space-y-3.5">
+              <!-- Upload Box with Laser Scanner -->
+              <div class="relative border-2 border-dashed border-cyan-500/40 hover:border-cyan-400 rounded-2xl p-5 text-center cursor-pointer transition-all bg-slate-900/60 overflow-hidden group" onclick="document.getElementById('pptx-input').click()">
+                <div class="laser-beam"></div>
+                <input type="file" id="pptx-input" accept=".pptx" class="hidden" onchange="handlePptxSelect(event)">
+                <div class="space-y-1.5 relative z-10">
+                  <div class="w-10 h-10 rounded-xl bg-cyan-500/15 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mx-auto text-xl shadow-[0_0_15px_rgba(0,240,255,0.25)]">
+                    📊
+                  </div>
+                  <div class="text-xs text-white font-mono font-bold">
+                    Drop Slide Deck (.PPTX) or <span class="text-cyan-400 underline">Browse</span>
+                  </div>
+                  <div id="pptx-file-status" class="text-[10px] text-slate-400 font-mono">
+                    Ready for PPTX XML unpacking
+                  </div>
+                </div>
+              </div>
+
+              <!-- Syllabus Text Paste -->
+              <div class="space-y-1.5">
+                <div class="flex items-center justify-between text-xs font-mono">
+                  <span class="text-slate-300 font-bold flex items-center space-x-1">
+                    <span>📋</span>
+                    <span>Syllabus or Module Text:</span>
+                  </span>
+                  <button type="button" onclick="document.getElementById('syllabus-input').click()" class="text-purple-400 hover:underline text-[10px]">Attach File</button>
+                </div>
+                <input type="file" id="syllabus-input" accept=".txt,.md,.json,.pdf,.docx" class="hidden" onchange="handleSyllabusSelect(event)">
+                <textarea id="syllabus-text-input" rows="3" placeholder="...or paste course syllabus units directly (e.g. Unit 1: Pointers & Memory, Unit 2: Matrices...)" class="w-full bg-slate-900/80 border border-white/10 rounded-xl p-2.5 text-xs text-slate-200 placeholder-slate-500 font-mono focus:outline-none focus:border-purple-400 shadow-inner"></textarea>
+                <div id="syllabus-file-status" class="text-[10px] font-mono text-slate-500">Default: CUJammu Cyber Security Syllabus</div>
+              </div>
+
+              <!-- Main Ingestion Action Button -->
+              <button type="submit" id="btn-process-docs" class="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-cyan-400 via-indigo-500 to-emerald-400 hover:opacity-95 text-slate-950 font-mono font-extrabold text-xs tracking-wider shadow-[0_0_25px_rgba(0,240,255,0.4)] flex items-center justify-center space-x-2 transition-all">
+                <span>🚀</span>
+                <span>SYNTHESIZE CHEATSHEET &amp; PREDICT EXAM</span>
+              </button>
+            </form>
+          </div>
+
+          <!-- Neural Radar Telemetry Card -->
+          <div class="glassmorphic rounded-2xl p-5 border border-white/10 space-y-3.5">
+            <div class="flex items-center justify-between border-b border-white/10 pb-2.5">
+              <h4 class="text-xs font-mono font-bold text-white uppercase tracking-wider flex items-center space-x-1.5">
+                <span>📡</span>
+                <span>Live Neural Telemetry Radar</span>
+              </h4>
+              <span id="ingestion-badge" class="px-2 py-0.5 rounded-full text-[10px] font-mono bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 font-bold">
+                ACTIVE
+              </span>
+            </div>
+
+            <div class="grid grid-cols-2 gap-2.5 font-mono text-xs">
+              <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
+                <span class="text-slate-400 block text-[10px]">Slides Unpacked:</span>
+                <span id="stat-slides" class="text-cyan-400 font-bold text-sm">4 Slides</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
+                <span class="text-slate-400 block text-[10px]">Syllabus Modules:</span>
+                <span id="stat-units" class="text-purple-400 font-bold text-sm">5 Units</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
+                <span class="text-slate-400 block text-[10px]">Core Concepts:</span>
+                <span id="stat-keywords" class="text-emerald-400 font-bold text-sm">25 Terms</span>
+              </div>
+              <div class="p-3 rounded-xl bg-slate-900/70 border border-slate-800">
+                <span class="text-slate-400 block text-[10px]">PYQ Accuracy Match:</span>
+                <span id="stat-accuracy" class="text-amber-300 font-bold text-sm">96% High Match</span>
+              </div>
+            </div>
+
+            <!-- Extracted High-Yield Topic Tags -->
+            <div>
+              <span class="text-[10px] font-mono text-slate-400 uppercase font-bold block mb-1.5">Extracted High-Yield Exam Topics:</span>
+              <div id="keywords-tags-container" class="flex flex-wrap gap-1.5">
+                <span class="px-2 py-1 rounded bg-cyan-500/15 border border-cyan-400/30 text-cyan-300 text-[10px] font-mono font-semibold">Dangling Pointer &amp; Malloc</span>
+                <span class="px-2 py-1 rounded bg-purple-500/15 border border-purple-400/30 text-purple-300 text-[10px] font-mono font-semibold">Rank-Nullity Theorem</span>
+                <span class="px-2 py-1 rounded bg-emerald-500/15 border border-emerald-400/30 text-emerald-300 text-[10px] font-mono font-semibold">Thevenin &amp; KCL/KVL</span>
+                <span class="px-2 py-1 rounded bg-teal-500/15 border border-teal-400/30 text-teal-300 text-[10px] font-mono font-semibold">Eutrophication Dead Zones</span>
+                <span class="px-2 py-1 rounded bg-amber-500/15 border border-amber-400/30 text-amber-300 text-[10px] font-mono font-semibold">Business Model Canvas</span>
+              </div>
+            </div>
+
+            <!-- Fast Tab Navigation Quick Buttons -->
+            <div class="pt-3 border-t border-white/10 grid grid-cols-2 gap-2 font-mono text-xs">
+              <button onclick="switchTab('notes')" class="p-2.5 rounded-xl bg-slate-900/90 hover:bg-slate-800 text-slate-200 border border-white/10 flex items-center justify-center space-x-1.5 transition-all">
+                <span>📜</span>
+                <span>View Cheatsheet</span>
+              </button>
+              <button onclick="switchTab('simulator')" class="p-2.5 rounded-xl bg-cyan-500/20 text-cyan-300 border border-cyan-400/40 hover:bg-cyan-500/30 flex items-center justify-center space-x-1.5 transition-all">
+                <span>🎯</span>
+                <span>Predict Exam Paper</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
       </div>
     </section>
 
@@ -1059,6 +1170,9 @@ Generated by ExamPulse Antigravity for University Engineering Students
       await loadCujammuData();
       await loadInitialSample();
       filterArchiveQuestions();
+      if (typeof initDeckDriveFiles === 'function') {
+        await initDeckDriveFiles();
+      }
     });
 
     async function loadCujammuData() {
@@ -1949,6 +2063,385 @@ Generated by ExamPulse Antigravity for University Engineering Students`;
         if (btn) btn.innerHTML = '<span>⚡ Load \'1 sem ccs\' Study Pack</span>';
       }
     }
+
+    // =========================================================================
+    // EMBEDDED DRIVE "1 SEM CCS" MATRIX (34 FILES) CONTROLS
+    // =========================================================================
+    let deckDriveFilesCache = [];
+    let currentDeckCategory = 'all';
+
+    async function initDeckDriveFiles() {
+      const container = document.getElementById('deck-drive-file-list');
+      if (!container) return;
+      container.innerHTML = '<div class="p-6 text-center text-xs font-mono text-cyan-400 animate-pulse">⏳ Initializing Google Drive "1 sem ccs" Matrix (34 Files)...</div>';
+      try {
+        const res = await fetch('/api/drive/files?semester=1_sem_ccs');
+        const json = await res.json();
+        if (json.success && json.files) {
+          deckDriveFilesCache = json.files;
+          filterDeckDriveFiles();
+        } else {
+          container.innerHTML = '<div class="p-4 text-center text-xs font-mono text-slate-500">Could not retrieve Drive files.</div>';
+        }
+      } catch (e) {
+        container.innerHTML = `<div class="p-4 text-center text-xs font-mono text-red-400">Drive connection error: ${e.message}</div>`;
+      }
+    }
+
+    function setDeckCategory(cat) {
+      currentDeckCategory = cat;
+      const categories = ['all', 'programming', 'math', 'bee', 'evs', 'entrepreneurship', 'pyq'];
+      categories.forEach(c => {
+        const btn = document.getElementById(`deck-cat-${c}`);
+        if (btn) {
+          if (c === cat) {
+            btn.className = c === 'pyq'
+              ? 'px-2.5 py-1 rounded-lg bg-amber-500 text-slate-950 font-bold text-[11px] shadow-[0_0_12px_rgba(245,158,11,0.5)] transition-all'
+              : 'px-2.5 py-1 rounded-lg bg-cyan-500 text-slate-950 font-bold text-[11px] shadow-[0_0_10px_rgba(0,240,255,0.4)] transition-all';
+          } else {
+            btn.className = c === 'pyq'
+              ? 'px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 text-[11px] border border-amber-400/50 font-bold transition-all'
+              : 'px-2.5 py-1 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 text-[11px] border border-slate-700 transition-all';
+          }
+        }
+      });
+      filterDeckDriveFiles();
+    }
+
+    function filterDeckDriveFiles() {
+      const container = document.getElementById('deck-drive-file-list');
+      const searchInput = document.getElementById('deck-drive-search');
+      const query = (searchInput?.value || '').trim().toLowerCase();
+      const badge = document.getElementById('deck-file-count-badge');
+
+      if (!container) return;
+
+      let filtered = deckDriveFilesCache;
+      if (currentDeckCategory && currentDeckCategory !== 'all') {
+        filtered = filtered.filter(f => f.subjectCategory === currentDeckCategory);
+      }
+      if (query) {
+        filtered = filtered.filter(f => 
+          f.name.toLowerCase().includes(query) ||
+          (f.description && f.description.toLowerCase().includes(query)) ||
+          (f.courseCode && f.courseCode.toLowerCase().includes(query)) ||
+          (f.courseTitle && f.courseTitle.toLowerCase().includes(query))
+        );
+      }
+
+      if (badge) {
+        badge.innerText = `${filtered.length} of ${deckDriveFilesCache.length} Files`;
+      }
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="p-8 text-center text-xs font-mono text-slate-500">No study materials match the filter criteria.</div>';
+        return;
+      }
+
+      container.innerHTML = '';
+      filtered.forEach(file => {
+        const isMaster = !!file.isMasterPyq;
+        const card = document.createElement('div');
+        card.className = isMaster
+          ? "p-3.5 rounded-xl space-y-2 border-2 border-amber-400/80 bg-gradient-to-r from-amber-950/40 via-slate-900/90 to-amber-950/40 shadow-[0_0_20px_rgba(245,158,11,0.2)] transition-all hover:border-amber-300"
+          : "glassmorphic-card p-3 rounded-xl space-y-2 border border-slate-800 hover:border-cyan-500/50 transition-all";
+
+        card.innerHTML = `
+          <div class="flex items-start justify-between gap-2">
+            <div class="flex items-start space-x-2.5 min-w-0">
+              <span class="text-lg mt-0.5">${isMaster ? '⭐' : (file.name.endsWith('.pptx') ? '📊' : '📋')}</span>
+              <div class="min-w-0">
+                <div class="flex flex-wrap items-center gap-1.5">
+                  <h4 class="text-xs font-mono font-bold ${isMaster ? 'text-amber-300' : 'text-slate-100 hover:text-cyan-400'} truncate cursor-pointer" title="${file.name}" onclick="importFromDrive('${file.id}', '${file.name}')">${file.name}</h4>
+                  ${isMaster ? '<span class="px-1.5 py-0.2 rounded text-[9px] font-mono font-bold bg-amber-500 text-slate-950">OFFICIAL PYQ</span>' : ''}
+                </div>
+                <div class="flex items-center space-x-2 text-[10px] font-mono text-slate-400">
+                  <span class="text-cyan-400 font-semibold">${file.courseCode || file.university}</span>
+                  <span>•</span>
+                  <span>${file.size}</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center space-x-1 shrink-0">
+              ${file.driveUrl ? `
+                <a href="${file.driveUrl}" target="_blank" rel="noopener noreferrer" class="p-1.5 rounded-lg bg-slate-800/80 hover:bg-slate-700 text-slate-300 hover:text-white border border-slate-700 text-[11px] transition-all" title="Open in Google Drive">
+                  🔗
+                </a>
+              ` : ''}
+              <button onclick="importFromDrive('${file.id}', '${file.name}')" id="btn-import-deck-${file.id}" class="px-2.5 py-1 rounded-lg ${isMaster ? 'bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold shadow-[0_0_10px_rgba(245,158,11,0.4)]' : 'bg-cyan-600 hover:bg-cyan-500 text-white font-bold shadow-[0_0_10px_rgba(0,240,255,0.25)]'} text-[11px] font-mono flex items-center space-x-1 transition-all">
+                <span>⚡</span>
+                <span>Process with AI</span>
+              </button>
+            </div>
+          </div>
+          <p class="text-[11px] text-slate-300 font-sans line-clamp-2 leading-relaxed">${file.description}</p>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // =========================================================================
+    // QUICK SUBJECT PRESETS
+    // =========================================================================
+    const subjectPresetsData = {
+      programming: {
+        code: 'CSE-101',
+        title: 'Programming for Problem Solving in C & Python',
+        syllabus: `UNIT 1: Imperative Programming Basics, Flowcharts, Compilation pipeline (gcc, preprocessing, assembly, link).
+UNIT 2: Operators & Expressions, Operator Precedence, Control structures (if-else, switch, while, for).
+UNIT 3: Modular Programming & Functions, Recursion, Scope, Storage classes (auto, static, extern, register).
+UNIT 4: Pointers, Dynamic Memory Allocation (malloc, calloc, realloc, free), Pointer arithmetic, Dangling pointers.
+UNIT 5: Structures, Unions, File I/O, Buffer Overflow vulnerabilities (gets vs fgets), Defensive coding.`
+      },
+      math: {
+        code: 'MTH-101',
+        title: 'Engineering Mathematics - I (Linear Algebra & Calculus)',
+        syllabus: `UNIT 1: Vector Spaces, Subspaces, Linear Independence, Basis & Dimension, Inner Product Spaces.
+UNIT 2: Linear Transformations, Rank-Nullity Theorem, Matrix Representation, Change of Basis.
+UNIT 3: Eigenvalues & Eigenvectors, Cayley-Hamilton Theorem and inverse computation, Diagonalization.
+UNIT 4: Gram-Schmidt Orthonormalization, Orthogonal Projections, Spectral Decomposition.
+UNIT 5: Multivariable Calculus, Taylor expansions, Maxima/Minima, Vector Differential Operators (Grad, Div, Curl).`
+      },
+      bee: {
+        code: 'BEE-101',
+        title: 'Basic Electrical Engineering & Circuit Analysis',
+        syllabus: `UNIT 1: DC Circuit Analysis, Kirchhoff's Laws (KCL, KVL), Mesh and Nodal analysis, Source transformation.
+UNIT 2: Network Theorems: Superposition Theorem, Thevenin's Theorem, Norton's Theorem, Maximum Power Transfer.
+UNIT 3: Single-Phase AC Fundamentals, Phasor representations, RMS & Average values, Impedance triangle.
+UNIT 4: RLC Series and Parallel Resonance, Quality factor Q, Bandwidth, 3-Phase balanced circuits.
+UNIT 5: Magnetic Circuits, Single-Phase Transformers, Core losses, Efficiency, DC/AC Machines introduction.`
+      },
+      evs: {
+        code: 'EVS-101',
+        title: 'Environmental Studies & Sustainable Systems',
+        syllabus: `UNIT 1: Multidisciplinary nature of environmental studies, Ecosystems structure & energy flow, Trophic cascades.
+UNIT 2: Natural Resources: Water resources, Forest degradation, Renewable energy, Mining impacts.
+UNIT 3: Biodiversity & Conservation: Hotspots of biodiversity, In-situ vs Ex-situ, Red Data Book, Poaching.
+UNIT 4: Environmental Pollution: Water pollution, Eutrophication, BOD & DO, Photochemical smog, Acid rain, Solid waste.
+UNIT 5: Environmental Policies: Environment Protection Act 1986, Montreal & Kyoto protocols, Climate change mitigation.`
+      },
+      entrepreneurship: {
+        code: 'ENT-101',
+        title: 'Introduction to Entrepreneurship & Startups',
+        syllabus: `UNIT 1: Entrepreneurship Mindset, Innovation vs Invention, Entrepreneurial ecosystem, Opportunity identification.
+UNIT 2: Lean Startup Methodology (Eric Ries), Build-Measure-Learn feedback loop, Minimum Viable Product (MVP).
+UNIT 3: Business Model Canvas (Alexander Osterwalder): 9 building blocks, Customer discovery, Pivot vs Persevere.
+UNIT 4: Startup Financing: Bootstrapping, Angel Investors, Venture Capital, Term sheets, Cap tables, Dilution.
+UNIT 5: Intellectual Property Rights (IPR): Patents, Copyrights, Trademarks, Trade secrets, Regulatory filings in India.`
+      }
+    };
+
+    function loadSubjectPreset(subjectKey) {
+      const preset = subjectPresetsData[subjectKey];
+      if (!preset) return;
+
+      const syllabusArea = document.getElementById('syllabus-input-text');
+      if (syllabusArea) {
+        syllabusArea.value = preset.syllabus;
+      }
+      const titleInput = document.getElementById('upload-course-title');
+      if (titleInput) {
+        titleInput.value = preset.title;
+      }
+      const uniSelect = document.getElementById('upload-university-select');
+      if (uniSelect) {
+        uniSelect.value = 'cujammu';
+      }
+      const semSelect = document.getElementById('upload-semester-select');
+      if (semSelect) {
+        semSelect.value = '1';
+      }
+
+      alert(`✅ Loaded Preset: ${preset.title} (${preset.code})!\nSyllabus populated. Click "SYNTHESIZE CHEATSHEET & EXAM PAPER" to generate.`);
+    }
+
+    // =========================================================================
+    // AI CYBER COPILOT CHAT ASSISTANT
+    // =========================================================================
+    function toggleAiCopilot() {
+      const drawer = document.getElementById('ai-copilot-drawer');
+      if (drawer) {
+        drawer.classList.toggle('translate-x-full');
+      }
+    }
+
+    function askCopilot(promptText) {
+      const drawer = document.getElementById('ai-copilot-drawer');
+      if (drawer && drawer.classList.contains('translate-x-full')) {
+        drawer.classList.remove('translate-x-full');
+      }
+      const input = document.getElementById('copilot-input');
+      if (input) {
+        input.value = promptText;
+        handleCopilotSubmit(new Event('submit'));
+      }
+    }
+
+    async function handleCopilotSubmit(e) {
+      if (e) e.preventDefault();
+      const input = document.getElementById('copilot-input');
+      const messagesContainer = document.getElementById('copilot-messages');
+      const text = (input?.value || '').trim();
+      if (!text) return;
+
+      // Add user message
+      const userBubble = document.createElement('div');
+      userBubble.className = "flex items-start justify-end space-x-2";
+      userBubble.innerHTML = `
+        <div class="p-3 rounded-2xl rounded-tr-none bg-cyan-600/30 border border-cyan-400/40 text-cyan-100 max-w-[85%] text-xs font-mono shadow-md">
+          ${text}
+        </div>
+      `;
+      messagesContainer.appendChild(userBubble);
+      input.value = '';
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+      // Add loading indicator
+      const loadingBubble = document.createElement('div');
+      loadingBubble.id = 'copilot-loading';
+      loadingBubble.className = "flex items-start space-x-2.5";
+      loadingBubble.innerHTML = `
+        <div class="w-7 h-7 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-sm shrink-0">
+          🤖
+        </div>
+        <div class="p-3 rounded-2xl rounded-tl-none bg-slate-900 border border-white/10 text-slate-400 text-xs font-mono animate-pulse">
+          ⏳ Searching 34 Google Drive files & CUJammu PYQ database...
+        </div>
+      `;
+      messagesContainer.appendChild(loadingBubble);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+      try {
+        const res = await fetch('/api/copilot/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ message: text, semester: 1 })
+        });
+        const json = await res.json();
+        
+        const loader = document.getElementById('copilot-loading');
+        if (loader) loader.remove();
+
+        const botBubble = document.createElement('div');
+        botBubble.className = "flex items-start space-x-2.5";
+        
+        let formattedReply = (json.reply || '')
+          .replace(/### (.*)/g, '<h4 class="text-xs font-mono font-bold text-cyan-300 mt-2 mb-1">$1</h4>')
+          .replace(/#### (.*)/g, '<h5 class="text-[11px] font-mono font-bold text-amber-300 mt-1.5 mb-1">$1</h5>')
+          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-white">$1</strong>')
+          .replace(/\*(.*?)\*/g, '<em class="text-slate-300">$1</em>')
+          .replace(/```c([\s\S]*?)```/g, '<pre class="bg-black/60 p-2.5 rounded-lg border border-slate-800 my-2 text-[10px] text-emerald-300 overflow-x-auto"><code>$1</code></pre>')
+          .replace(/```([\s\S]*?)```/g, '<pre class="bg-black/60 p-2.5 rounded-lg border border-slate-800 my-2 text-[10px] text-cyan-300 overflow-x-auto"><code>$1</code></pre>')
+          .replace(/\n/g, '<br>');
+
+        let sourcesHtml = '';
+        if (json.sources && json.sources.length > 0) {
+          sourcesHtml = `
+            <div class="pt-2 mt-2 border-t border-slate-800/80 flex flex-wrap gap-1 text-[9px] font-mono text-slate-400">
+              <span class="text-slate-500">Sources:</span>
+              ${json.sources.map(s => `<span class="px-1.5 py-0.5 rounded bg-slate-800 text-cyan-400 border border-slate-700">${s.name || s.subject}</span>`).join('')}
+            </div>
+          `;
+        }
+
+        botBubble.innerHTML = `
+          <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-sm shrink-0 shadow-[0_0_10px_rgba(0,240,255,0.3)]">
+            🤖
+          </div>
+          <div class="p-3.5 rounded-2xl rounded-tl-none bg-slate-900 border border-white/10 text-slate-200 max-w-[90%] text-xs font-sans leading-relaxed space-y-1.5 shadow-lg">
+            ${formattedReply}
+            ${sourcesHtml}
+          </div>
+        `;
+        messagesContainer.appendChild(botBubble);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      } catch (err) {
+        const loader = document.getElementById('copilot-loading');
+        if (loader) loader.remove();
+        const errBubble = document.createElement('div');
+        errBubble.className = "flex items-start space-x-2";
+        errBubble.innerHTML = `
+          <div class="p-3 rounded-2xl bg-red-950/40 border border-red-500/40 text-red-300 text-xs font-mono">
+            Error contacting AI Copilot: ${err.message}
+          </div>
+        `;
+        messagesContainer.appendChild(errBubble);
+      }
+    }
   </script>
+
+  <!-- Floating Cyber AI Copilot Button -->
+  <div class="fixed bottom-6 right-6 z-40">
+    <button onclick="toggleAiCopilot()" id="copilot-fab" class="relative group p-3.5 rounded-2xl bg-gradient-to-r from-cyan-500 via-indigo-600 to-purple-600 hover:scale-105 active:scale-95 text-white shadow-[0_0_30px_rgba(0,240,255,0.5)] border border-cyan-400/50 flex items-center space-x-2.5 transition-all">
+      <div class="w-3 h-3 rounded-full bg-emerald-400 animate-ping absolute -top-1 -right-1"></div>
+      <div class="w-3 h-3 rounded-full bg-emerald-400 absolute -top-1 -right-1 border border-slate-900"></div>
+      <span class="text-xl">🤖</span>
+      <span class="font-mono font-bold text-xs tracking-wider hidden sm:inline">AI COPILOT</span>
+      <span class="px-2 py-0.5 rounded-full text-[9px] font-mono font-extrabold bg-black/40 text-cyan-300 border border-cyan-400/30">ONLINE</span>
+    </button>
+  </div>
+
+  <!-- AI Copilot Sliding Drawer -->
+  <div id="ai-copilot-drawer" class="fixed inset-y-0 right-0 z-50 w-full sm:w-[480px] bg-slate-950/95 backdrop-blur-2xl border-l border-cyan-500/40 shadow-[-15px_0_50px_rgba(0,0,0,0.85)] transform translate-x-full transition-transform duration-300 flex flex-col font-sans">
+    
+    <!-- Drawer Header -->
+    <div class="p-4 border-b border-white/10 flex items-center justify-between bg-slate-900/60">
+      <div class="flex items-center space-x-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-cyan-500 to-purple-600 flex items-center justify-center text-lg shadow-[0_0_15px_rgba(0,240,255,0.4)]">
+          🤖
+        </div>
+        <div>
+          <div class="flex items-center space-x-2">
+            <h3 class="text-sm font-bold font-mono text-white">Cyber Exam Copilot</h3>
+            <span class="px-1.5 py-0.5 rounded text-[9px] font-mono font-extrabold bg-emerald-500/20 text-emerald-300 border border-emerald-500/40">1 SEM CCS</span>
+          </div>
+          <p class="text-[10px] font-mono text-slate-400">Indexed: 34 Drive Files + Master PYQ Paper</p>
+        </div>
+      </div>
+      <button onclick="toggleAiCopilot()" class="w-8 h-8 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white flex items-center justify-center font-mono text-lg transition-all">
+        &times;
+      </button>
+    </div>
+
+    <!-- Quick Question Chips -->
+    <div class="p-3 border-b border-white/10 bg-slate-900/30 overflow-x-auto">
+      <span class="text-[10px] font-mono uppercase text-slate-400 font-bold block mb-1.5">Quick Prompts:</span>
+      <div class="flex gap-1.5 overflow-x-auto pb-1 text-[11px] font-mono whitespace-nowrap">
+        <button onclick="askCopilot('What is in examination pyq.pdf?')" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-400/40 transition-all">⭐ examination pyq.pdf</button>
+        <button onclick="askCopilot('Explain Dangling Pointers & UAF')" class="px-2.5 py-1 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/30 text-cyan-300 border border-cyan-400/40 transition-all">💻 Dangling Pointers</button>
+        <button onclick="askCopilot('State Cayley-Hamilton Theorem and 2x2 proof')" class="px-2.5 py-1 rounded-lg bg-purple-500/20 hover:bg-purple-500/30 text-purple-300 border border-purple-400/40 transition-all">📐 Cayley-Hamilton</button>
+        <button onclick="askCopilot('What are Thevenin theorem steps and KCL?')" class="px-2.5 py-1 rounded-lg bg-emerald-500/20 hover:bg-emerald-500/30 text-emerald-300 border border-emerald-400/40 transition-all">⚡ Thevenin & KCL</button>
+        <button onclick="askCopilot('Explain Eutrophication and BOD vs DO')" class="px-2.5 py-1 rounded-lg bg-teal-500/20 hover:bg-teal-500/30 text-teal-300 border border-teal-400/40 transition-all">🌱 Eutrophication</button>
+        <button onclick="askCopilot('What is MVP in Lean Startup?')" class="px-2.5 py-1 rounded-lg bg-amber-500/20 hover:bg-amber-500/30 text-amber-300 border border-amber-400/40 transition-all">🚀 Lean Startup MVP</button>
+      </div>
+    </div>
+
+    <!-- Chat Messages Scroll Area -->
+    <div id="copilot-messages" class="flex-1 p-4 overflow-y-auto space-y-4 text-xs font-mono">
+      <div class="flex items-start space-x-2.5">
+        <div class="w-7 h-7 rounded-lg bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center text-sm shrink-0">
+          🤖
+        </div>
+        <div class="p-3.5 rounded-2xl rounded-tl-none bg-slate-900 border border-white/10 text-slate-200 space-y-2 leading-relaxed">
+          <p class="font-bold text-cyan-300 font-mono">ExamPulse AI Cyber Copilot Ready!</p>
+          <p class="text-[11px] text-slate-300 font-sans">
+            I am connected directly to your <strong>"1 sem ccs" Google Drive folder</strong> (34 files) and the official <strong>Semester 1 Master Examination PYQ Paper</strong>.
+          </p>
+          <p class="text-[11px] text-slate-400 font-sans">
+            Ask me to explain any difficult concept, solve a PYQ question, give formulas, or generate revision bullet points!
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Input Box -->
+    <form onsubmit="handleCopilotSubmit(event)" class="p-3.5 border-t border-white/10 bg-slate-900/80 flex items-center space-x-2">
+      <input type="text" id="copilot-input" placeholder="Ask AI Copilot about PYQ, C Pointers, Math, BEE..." class="flex-1 bg-slate-950 border border-white/15 rounded-xl px-3.5 py-2.5 text-xs text-white placeholder-slate-500 font-mono focus:outline-none focus:border-cyan-400">
+      <button type="submit" id="copilot-send-btn" class="px-4 py-2.5 rounded-xl bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-white font-mono font-bold text-xs flex items-center space-x-1 shadow-[0_0_15px_rgba(0,240,255,0.4)] transition-all">
+        <span>Send</span>
+        <span>⚡</span>
+      </button>
+    </form>
+  </div>
 </body>
 </html>
