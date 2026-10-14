@@ -23,6 +23,20 @@ const server = http.createServer((req, res) => {
       res.writeHead(404, { 'Content-Type': 'text/plain' });
       res.end('HTML UI not found');
     }
+  } else if (url.endsWith('.apk') || url === '/download/apk') {
+    const apkPath = path.join(PROJECT_DIR, 'ExamPulse-Antigravity-v2.0.0.apk');
+    if (fs.existsSync(apkPath)) {
+      const stat = fs.statSync(apkPath);
+      res.writeHead(200, {
+        'Content-Type': 'application/vnd.android.package-archive',
+        'Content-Disposition': 'attachment; filename="ExamPulse-Antigravity-v2.0.0.apk"',
+        'Content-Length': stat.size
+      });
+      fs.createReadStream(apkPath).pipe(res);
+    } else {
+      res.writeHead(302, { 'Location': 'https://github.com/mildfriend3-blip/exampulse-antigravity/releases/download/v2.0.0-antigravity/ExamPulse-Antigravity-v2.0.0.apk' });
+      res.end();
+    }
   } else if (url === '/download/project.zip') {
     const zipPath = path.join(PROJECT_DIR, 'exampulse-antigravity-source.zip');
     try {
